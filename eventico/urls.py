@@ -18,5 +18,6 @@ from django.conf.urls import url
 from django.urls import include, path
 
 urlpatterns = [
+    path('', include('events.urls')),
     url(r'^users/', include(('users.urls', 'users'), namespace='users')),
 ]
