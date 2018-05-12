@@ -39,6 +39,8 @@ module.exports = function(grunt) {
         files: [
           {expand: true, src: ['dist/*js'], dest: '../eventico/static/', filter: 'isFile', flatten: true},
           {expand: true, src: ['dist/*map'], dest: '../eventico/static/', filter: 'isFile', flatten: true},
+          {expand: true, src: ['dist/*js'], dest: '../static/', filter: 'isFile', flatten: true},
+          {expand: true, src: ['dist/*map'], dest: '../static/', filter: 'isFile', flatten: true},
         ],
       },
     }
