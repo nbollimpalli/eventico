@@ -250,7 +250,7 @@ module.exports = ""
 /***/ "./src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-light bg-faded\">\n  <ul class=\"nav navbar-nav\">\n    <li class=\"nav-item active\">\n      <a class=\"nav-link\" href=\"\">Home</a>\n    </li>\n    <li class=\"nav-item\">\n      <a class=\"nav-link\" href=\"/signup\">Signup</a>\n    </li>\n    <li class=\"nav-item\">\n      <a class=\"nav-link\" href=\"/login\">login</a>\n    </li>\n  </ul>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-light bg-faded\">\n  <ul class=\"nav navbar-nav\">\n    <li class=\"nav-item active\">\n      <a class=\"nav-link\" routerLink=\"\">Home</a>\n    </li>\n    <li class=\"nav-item\">\n      <a class=\"nav-link\" routerLink=\"signup\">Signup</a>\n    </li>\n    <li class=\"nav-item\">\n      <a class=\"nav-link\" routerLink=\"login\">login</a>\n    </li>\n  </ul>\n</nav>\n"
 
 /***/ }),
 
