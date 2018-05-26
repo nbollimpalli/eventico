@@ -598,7 +598,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var UserService = /** @class */ (function () {
     function UserService(http) {
         this.http = http;
-        this.rootUrl = "http://127.0.0.1:8000";
+        this.rootUrl = "https://www.eventico.algovent.com";
         this.user = new __WEBPACK_IMPORTED_MODULE_3__user_model__["a" /* User */]();
     }
     UserService.prototype.setGuestProfile = function () {
