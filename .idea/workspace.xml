@@ -2,56 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4aa6be1b-e7e7-4311-ab0f-471f7feaa3e5" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/eventicoUI/src/app/auth/auth.interceptor.ts" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/eventicoUI/src/app/routes.ts" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/eventico/static/inline.bundle.js.map" afterPath="$PROJECT_DIR$/eventico/static/inline.bundle.js.map" />
-      <change beforePath="$PROJECT_DIR$/eventico/static/main.bundle.js" afterPath="$PROJECT_DIR$/eventico/static/main.bundle.js" />
-      <change beforePath="$PROJECT_DIR$/eventico/static/main.bundle.js.map" afterPath="$PROJECT_DIR$/eventico/static/main.bundle.js.map" />
-      <change beforePath="$PROJECT_DIR$/eventico/static/scripts.bundle.js" afterPath="$PROJECT_DIR$/eventico/static/scripts.bundle.js" />
-      <change beforePath="$PROJECT_DIR$/eventico/static/scripts.bundle.js.map" afterPath="$PROJECT_DIR$/eventico/static/scripts.bundle.js.map" />
-      <change beforePath="$PROJECT_DIR$/eventico/static/styles.bundle.js" afterPath="$PROJECT_DIR$/eventico/static/styles.bundle.js" />
-      <change beforePath="$PROJECT_DIR$/eventico/static/styles.bundle.js.map" afterPath="$PROJECT_DIR$/eventico/static/styles.bundle.js.map" />
-      <change beforePath="$PROJECT_DIR$/eventico/static/vendor.bundle.js" afterPath="$PROJECT_DIR$/eventico/static/vendor.bundle.js" />
-      <change beforePath="$PROJECT_DIR$/eventico/static/vendor.bundle.js.map" afterPath="$PROJECT_DIR$/eventico/static/vendor.bundle.js.map" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/Gruntfile.js" afterPath="$PROJECT_DIR$/eventicoUI/Gruntfile.js" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/app.component.ts" afterPath="$PROJECT_DIR$/eventicoUI/src/app/app.component.ts" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/app.module.ts" afterPath="$PROJECT_DIR$/eventicoUI/src/app/app.module.ts" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/events/events.component.css" afterPath="$PROJECT_DIR$/eventicoUI/src/app/events/events.component.css" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/events/events.component.html" afterPath="$PROJECT_DIR$/eventicoUI/src/app/events/events.component.html" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/header/header.component.css" afterPath="$PROJECT_DIR$/eventicoUI/src/app/header/header.component.css" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/header/header.component.html" afterPath="$PROJECT_DIR$/eventicoUI/src/app/header/header.component.html" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/header/header.component.ts" afterPath="$PROJECT_DIR$/eventicoUI/src/app/header/header.component.ts" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/login/login.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/login/login.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/login/login.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/login/login.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/new-event/new-event.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/new-event/new-event.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/new-event/new-event.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/new-event/new-event.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/register/register.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/register/register.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/register/register.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/register/register.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/shared/event.model.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/shared/event.service.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/shared/event.service.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/shared/user.model.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/shared/user.service.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/shared/user.service.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/inline.bundle.js.map" afterPath="$PROJECT_DIR$/static/inline.bundle.js.map" />
-      <change beforePath="$PROJECT_DIR$/static/main.bundle.js" afterPath="$PROJECT_DIR$/static/main.bundle.js" />
-      <change beforePath="$PROJECT_DIR$/static/main.bundle.js.map" afterPath="$PROJECT_DIR$/static/main.bundle.js.map" />
-      <change beforePath="$PROJECT_DIR$/static/scripts.bundle.js" afterPath="$PROJECT_DIR$/static/scripts.bundle.js" />
-      <change beforePath="$PROJECT_DIR$/static/scripts.bundle.js.map" afterPath="$PROJECT_DIR$/static/scripts.bundle.js.map" />
-      <change beforePath="$PROJECT_DIR$/static/styles.bundle.js" afterPath="$PROJECT_DIR$/static/styles.bundle.js" />
-      <change beforePath="$PROJECT_DIR$/static/styles.bundle.js.map" afterPath="$PROJECT_DIR$/static/styles.bundle.js.map" />
-      <change beforePath="$PROJECT_DIR$/static/vendor.bundle.js" afterPath="$PROJECT_DIR$/static/vendor.bundle.js" />
-      <change beforePath="$PROJECT_DIR$/static/vendor.bundle.js.map" afterPath="$PROJECT_DIR$/static/vendor.bundle.js.map" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
-      <change beforePath="$PROJECT_DIR$/users/urls.py" afterPath="$PROJECT_DIR$/users/urls.py" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" afterPath="$PROJECT_DIR$/users/views.py" />
+      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/event-user/shared/user.service.ts" afterPath="$PROJECT_DIR$/eventicoUI/src/app/event-user/shared/user.service.ts" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -62,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="user.service.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="user.service.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/event-user/shared/user.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="747">
-              <caret line="65" column="29" lean-forward="false" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="29" />
+            <state relative-caret-position="135">
+              <caret line="9" column="55" lean-forward="false" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -86,7 +37,7 @@
         <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/event-user/login/login.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-              <caret line="21" column="11" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <caret line="21" column="11" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -142,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new-event.component.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="new-event.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/events/new-event/new-event.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <caret line="3" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -246,10 +197,10 @@
         <option value="$PROJECT_DIR$/eventicoUI/src/app/event-user/login/login.component.ts" />
         <option value="$PROJECT_DIR$/eventicoUI/src/app/event-user/shared/user.model.ts" />
         <option value="$PROJECT_DIR$/eventicoUI/src/app/header/header.component.html" />
-        <option value="$PROJECT_DIR$/eventicoUI/src/app/event-user/shared/user.service.ts" />
         <option value="$PROJECT_DIR$/eventicoUI/src/app/header/header.component.ts" />
         <option value="$PROJECT_DIR$/eventicoUI/src/app/event-user/event-user.component.html" />
         <option value="$PROJECT_DIR$/eventicoUI/src/app/events/new-event/new-event.component.html" />
+        <option value="$PROJECT_DIR$/eventicoUI/src/app/event-user/shared/user.service.ts" />
       </list>
     </option>
   </component>
@@ -315,6 +266,15 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="event-user" type="462c0819:PsiDirectoryNode" />
               <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eventico" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eventico" type="462c0819:PsiDirectoryNode" />
+              <item name="eventicoUI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="event-user" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="eventico" type="b2602c69:ProjectViewProjectNode" />
@@ -785,14 +745,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/event-user/shared/user.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="747">
-          <caret line="65" column="29" lean-forward="false" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/events/new-event/new-event.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -828,7 +780,7 @@
     <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/event-user/login/login.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="21" column="11" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <caret line="21" column="11" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -844,7 +796,15 @@
     <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/events/new-event/new-event.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <caret line="3" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/event-user/shared/user.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="55" lean-forward="false" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
           <folding />
         </state>
       </provider>
