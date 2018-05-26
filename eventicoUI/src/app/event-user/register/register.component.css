@@ -1,0 +1,16 @@
+.register-card
+{
+   max-width: 30%;
+   margin: 100px auto;
+}
+
+.full-width
+{
+  width : 100%;
+}
+
+.register-title
+{
+  flex: 1 1 auto;
+  text-align: center;
+}

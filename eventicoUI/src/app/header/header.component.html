@@ -3,12 +3,12 @@
     <button mat-button routerLink="">Eventico</button>
     <button mat-button routerLink=""><i class="material-icons md-18">home</i></button>
     <span class="tollbar-splitter"></span>
-    <button mat-button routerLink="logout">Logout</button>
-    <button mat-button routerLink="login">Login</button>
-    <button mat-button routerLink="signup">SignUp</button>
+    <button *ngIf="loggedIn" mat-button (click)="logout()" >LOGOUT</button>
+    <button *ngIf="loggedIn == false" mat-button routerLink="login">LOGIN</button>
+    <button *ngIf="loggedIn == false" mat-button routerLink="signup">SIGNUP</button>
   </mat-toolbar-row>
 </mat-toolbar>
-<mat-toolbar class="admin-toolbar">
+<mat-toolbar *ngIf="adminToolBar['allowed'] == true" class="admin-toolbar">
   <i class="material-icons md-dark">supervisor_account</i>
   <button mat-button routerLink="event/new"><i class="material-icons md-dark">playlist_add</i> New Event</button>
   <span class="admin-tollbar-spacer"></span>

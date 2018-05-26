@@ -67,3 +67,15 @@ def authenticate_user(request):
     except KeyError:
         res = {'error': 'please provide a email and a password'}
         return Response(res)
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def fetchDefaultProfile(request):
+    res = {'FirstName':'Guest','LastName':'User','Email':'', 'AdminToolBar' : {'allowed': False}, 'EventCard' : {'allowed' : True, 'edit': False, 'share' : True, 'book' : True}};
+    return  Response(res)
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def fetchProfile(request):
+    res = {'AdminToolBar' : False}
+    return  Response(res)

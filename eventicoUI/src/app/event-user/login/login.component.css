@@ -1,0 +1,16 @@
+.login-card
+{
+   max-width: 30%;
+   margin: 100px auto;
+}
+
+.full-width
+{
+  width : 100%;
+}
+
+.login-title
+{
+  flex: 1 1 auto;
+  text-align: center;
+}

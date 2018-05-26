@@ -9,14 +9,14 @@ module.exports = function(grunt) {
           '**/*.sass',
           '**/*.scss'
         ],
-        tasks: ['compass']
+        tasks: ['compass', 'copy']
       },
       js: {
         files: [
           'assets/js/*.js',
           'Gruntfile.js'
         ],
-        tasks: ['jshint']
+        tasks: ['jshint', 'copy']
       }
     },
     compass: {
