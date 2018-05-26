@@ -12,11 +12,14 @@ import { FooterComponent } from './footer/footer.component';
 import { RouterModule, Routes } from '@angular/router';
 import { EventsComponent } from './events/events.component';
 import { LoginComponent } from './login/login.component';
+import { NewEventComponent } from './new-event/new-event.component';
+import { MaterialModule } from './material.module';
 
 const appRoutes: Routes = [
   { path: '', component: EventsComponent , pathMatch: 'full'},
   { path: 'signup', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'event/new', component: NewEventComponent },
   {path: '**', component: EventsComponent}
 ];
 
@@ -27,7 +30,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     EventsComponent,
-    LoginComponent
+    LoginComponent,
+    NewEventComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +39,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
+    MaterialModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true} // <-- debugging purposes only

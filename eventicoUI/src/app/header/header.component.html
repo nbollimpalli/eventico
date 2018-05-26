@@ -1,13 +1,33 @@
-<nav class="navbar navbar-light bg-faded">
-  <ul class="nav navbar-nav">
-    <li class="nav-item active">
-      <a class="nav-link" routerLink="">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="signup">Signup</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="login">login</a>
-    </li>
-  </ul>
-</nav>
+<!--<nav class="navbar navbar-light bg-faded">-->
+  <!--<ul class="nav navbar-nav">-->
+    <!--<li class="nav-item active">-->
+      <!--<a class="nav-link" routerLink="">Home</a>-->
+    <!--</li>-->
+    <!--<li class="nav-item">-->
+      <!--<a class="nav-link" routerLink="signup">Signup</a>-->
+    <!--</li>-->
+    <!--<li class="nav-item">-->
+      <!--<a class="nav-link" routerLink="login">login</a>-->
+    <!--</li>-->
+    <!--<li class="nav-item">-->
+      <!--<a class="nav-link" routerLink="event/new">New Event</a>-->
+    <!--</li>-->
+  <!--</ul>-->
+<!--</nav>-->
+<mat-toolbar class="header" color="primary">
+  <mat-toolbar-row>
+    <button mat-button routerLink="">Eventico</button>
+    <button mat-button routerLink=""><i class="material-icons md-18">home</i></button>
+    <span class="tollbar-splitter"></span>
+    <button mat-button routerLink="logout">Logout</button>
+    <button mat-button routerLink="login">Login</button>
+    <button mat-button routerLink="signup">SignUp</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-toolbar class="admin-toolbar">
+  <i class="material-icons md-dark">supervisor_account</i>
+  <button mat-button routerLink="event/new"><i class="material-icons md-dark">playlist_add</i> New Event</button>
+  <span class="admin-tollbar-spacer"></span>
+  <button mat-button routerLink=""><i class="material-icons md-dark">find_replace</i> User Management</button>
+  <button mat-button routerLink=""><i class="material-icons md-dark">cloud_download</i> Reports</button>
+</mat-toolbar>
