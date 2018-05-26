@@ -23,4 +23,14 @@ export class UserService {
     return this.http.post(this.rootUrl+'/users/create/', body);
   }
 
+  loginUser(user : User)
+  {
+    const body = {
+      email : user.Email,
+      password : user.Password
+    }
+
+    return this.http.post(this.rootUrl+'/users/api-token-auth/', body);
+  }
+
 }

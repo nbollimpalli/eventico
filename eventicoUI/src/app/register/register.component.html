@@ -1,36 +1,28 @@
-<div class="row">
-  <div class="col s8 offset-s2">
-  <div class="card">
-    <div class="sm-jumbotron center-align">
-      <h2>Sign Up</h2>
-      <form class="col s12 white" #userRegistrationForm="ngForm" (ngSubmit)="onRegister(userRegistrationForm)">
-        <div class="row">
-          <div class="input-field col s6">
-            <input class="validate" type="email" #Email="ngModel" [(ngModel)]="user.Email" name="Email" required>
-            <label [attr.data-error]="Email.errors!=null?(Email.errors.required?'Email is mandatory field':'Invalid Email Id') : '' ">Email</label>
-          </div>
-          <div class="input-field col s6">
-            <input class="validate" type="password" #Password="ngModel" [(ngModel)]="user.Password" name="Password" required [pattern]="passwordPattern">
-            <label [attr.data-error]="Password.errors!=null?(Password.errors.required?'password is mandatory field':'Minimum eight characters, at least one letter and one number') : '' ">Password</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s6">
-            <input class="validate" type="text" #FirstName="ngModel" [(ngModel)]="user.FirstName" name="FirstName" required>
-            <label data-error="Required">First Name</label>
-          </div>
-          <div class="input-field col s6">
-            <input class="validate" type="text" #LastName="ngModel" [(ngModel)]="user.LastName" name="LastName" required>
-            <label data-error="Required">Last Name</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <button class="btn-large btn-submit" type="submit">Register</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-  </div>
-</div>
+<mat-card class="register-card">
+  <mat-card-title class="register-title">SIGNUP</mat-card-title>
+  <form class="register-form" #userRegistrationForm="ngForm" (ngSubmit)="onRegister(userRegistrationForm)">
+  <mat-card-content>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Firstname" #FirstName="ngModel" [(ngModel)]="user.FirstName" name="FirstName" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Lastname" #LastName="ngModel" [(ngModel)]="user.LastName" name="LastName" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput type="email" placeholder="Email" #Email="ngModel" [(ngModel)]="user.Email" name="Email" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Password" type="password" #Password="ngModel" [(ngModel)]="user.Password" name="Password" required>
+      </mat-form-field>
+    <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button type="submit" class="full-width" color="primary">REGISTER</button>
+  </mat-card-actions>
+  </form>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <button mat-button  color="primary"><i class="material-icons md-dark">book</i> Facebook</button>
+    <button mat-button  color="primary"><i class="material-icons md-dark">book</i> Google</button>
+  </mat-card-actions>
+</mat-card>
