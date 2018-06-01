@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
+    'events'
 ]
 
 JWT_AUTH = {
@@ -125,6 +126,17 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ),
+}
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'loggers': {
+        'django': {
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
 }
 
 AUTH_USER_MODEL = 'users.User'

@@ -1,0 +1,17 @@
+<mat-card class="new-event-type-card">
+  <mat-card-title class="new-event-type-card-title">New Event Type</mat-card-title>
+  <form class="new-event-type-form" #eventTypeCreationForm="ngForm" (ngSubmit)="onSubmit(eventTypeCreationForm)">
+  <mat-card-content>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Name" #Name="ngModel" [(ngModel)]="eventType.Name" name="Name" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="Description" #Desc="ngModel" [(ngModel)]="eventType.Desc" name="Description" required></textarea>
+      </mat-form-field>
+    <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button type="submit" class="full-width" color="primary">CREATE</button>
+  </mat-card-actions>
+  </form>
+</mat-card>

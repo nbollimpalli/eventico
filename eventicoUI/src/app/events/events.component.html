@@ -39,9 +39,30 @@
       <!--</mat-card-actions>-->
     <!--</mat-card>-->
 
- <mat-card>
-      Filter Bar
- </mat-card>
+<mat-toolbar class="events-filter-toolbar">
+  <mat-toolbar-row>
+    <mat-form-field>
+    <mat-select placeholder="Select">
+      <mat-option value="option">Option</mat-option>
+    </mat-select>
+  </mat-form-field>
+    <mat-divider [vertical]="true"></mat-divider>
+    <mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+    <span class="tollbar-splitter"></span>
+    <mat-form-field>
+    <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of options" [value]="option">
+        {{ option }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  </mat-toolbar-row>
+</mat-toolbar>
 <mat-divider></mat-divider>
 <mat-grid-list cols="3" rowHeight="1:1">
   <mat-grid-tile>

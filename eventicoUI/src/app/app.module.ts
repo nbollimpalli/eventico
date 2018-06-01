@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './event-user/shared/user.service';
+import { EventService } from './events/shared/event.service';
+import { EventTypeService } from './event-types/shared/event-type.service';
+
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,6 +24,10 @@ import { SuperadminauthGuard } from './auth/superadminauth.guard';
 import { appRoutes } from './routes';
 import { HTTP_INTERCEPTORS } from '@angular/common/http'
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { EventTypesComponent } from './event-types/event-types.component';
+import { NewEventTypeComponent } from './event-types/new-event-type/new-event-type.component';
+import { EditEventTypeComponent } from './event-types/edit-event-type/edit-event-type.component';
+import { EditEventComponent } from './events/edit-event/edit-event.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +37,11 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     FooterComponent,
     EventsComponent,
     LoginComponent,
-    NewEventComponent
+    NewEventComponent,
+    EditEventComponent,
+    EventTypesComponent,
+    NewEventTypeComponent,
+    EditEventTypeComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +56,7 @@ import { AuthInterceptor } from './auth/auth.interceptor';
       { enableTracing: true} // <-- debugging purposes only
     ),
   ],
-  providers: [UserService, AuthGuard, AntiauthGuard, AdminauthGuard, SuperadminauthGuard,
+  providers: [EventTypeService, EventService, UserService, AuthGuard, AntiauthGuard, AdminauthGuard, SuperadminauthGuard,
   {
     provide : HTTP_INTERCEPTORS,
     useClass : AuthInterceptor,

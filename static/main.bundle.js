@@ -81,24 +81,30 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__event_user_shared_user_service__ = __webpack_require__("./src/app/event-user/shared/user.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/animations.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ngx_toastr__ = __webpack_require__("./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__event_user_register_register_component__ = __webpack_require__("./src/app/event-user/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__header_header_component__ = __webpack_require__("./src/app/header/header.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__footer_footer_component__ = __webpack_require__("./src/app/footer/footer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__events_events_component__ = __webpack_require__("./src/app/events/events.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__event_user_login_login_component__ = __webpack_require__("./src/app/event-user/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__events_new_event_new_event_component__ = __webpack_require__("./src/app/events/new-event/new-event.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__material_module__ = __webpack_require__("./src/app/material.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__auth_auth_guard__ = __webpack_require__("./src/app/auth/auth.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__auth_antiauth_guard__ = __webpack_require__("./src/app/auth/antiauth.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__auth_adminauth_guard__ = __webpack_require__("./src/app/auth/adminauth.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__auth_superadminauth_guard__ = __webpack_require__("./src/app/auth/superadminauth.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__routes__ = __webpack_require__("./src/app/routes.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__auth_auth_interceptor__ = __webpack_require__("./src/app/auth/auth.interceptor.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__events_shared_event_service__ = __webpack_require__("./src/app/events/shared/event.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__event_types_shared_event_type_service__ = __webpack_require__("./src/app/event-types/shared/event-type.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/animations.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ngx_toastr__ = __webpack_require__("./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__event_user_register_register_component__ = __webpack_require__("./src/app/event-user/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__header_header_component__ = __webpack_require__("./src/app/header/header.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__footer_footer_component__ = __webpack_require__("./src/app/footer/footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__events_events_component__ = __webpack_require__("./src/app/events/events.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__event_user_login_login_component__ = __webpack_require__("./src/app/event-user/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__events_new_event_new_event_component__ = __webpack_require__("./src/app/events/new-event/new-event.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__material_module__ = __webpack_require__("./src/app/material.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__auth_auth_guard__ = __webpack_require__("./src/app/auth/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__auth_antiauth_guard__ = __webpack_require__("./src/app/auth/antiauth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__auth_adminauth_guard__ = __webpack_require__("./src/app/auth/adminauth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__auth_superadminauth_guard__ = __webpack_require__("./src/app/auth/superadminauth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__routes__ = __webpack_require__("./src/app/routes.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__auth_auth_interceptor__ = __webpack_require__("./src/app/auth/auth.interceptor.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__event_types_event_types_component__ = __webpack_require__("./src/app/event-types/event-types.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__event_types_new_event_type_new_event_type_component__ = __webpack_require__("./src/app/event-types/new-event-type/new-event-type.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__event_types_edit_event_type_edit_event_type_component__ = __webpack_require__("./src/app/event-types/edit-event-type/edit-event-type.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__events_edit_event_edit_event_component__ = __webpack_require__("./src/app/events/edit-event/edit-event.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -128,39 +134,49 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
+
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["K" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__event_user_register_register_component__["a" /* RegisterComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__header_header_component__["a" /* HeaderComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__footer_footer_component__["a" /* FooterComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__events_events_component__["a" /* EventsComponent */],
-                __WEBPACK_IMPORTED_MODULE_13__event_user_login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__events_new_event_new_event_component__["a" /* NewEventComponent */]
+                __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__event_user_register_register_component__["a" /* RegisterComponent */],
+                __WEBPACK_IMPORTED_MODULE_12__header_header_component__["a" /* HeaderComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__footer_footer_component__["a" /* FooterComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__events_events_component__["a" /* EventsComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__event_user_login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__events_new_event_new_event_component__["a" /* NewEventComponent */],
+                __WEBPACK_IMPORTED_MODULE_27__events_edit_event_edit_event_component__["a" /* EditEventComponent */],
+                __WEBPACK_IMPORTED_MODULE_24__event_types_event_types_component__["a" /* EventTypesComponent */],
+                __WEBPACK_IMPORTED_MODULE_25__event_types_new_event_type_new_event_type_component__["a" /* NewEventTypeComponent */],
+                __WEBPACK_IMPORTED_MODULE_26__event_types_edit_event_type_edit_event_type_component__["a" /* EditEventTypeComponent */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["c" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_7_ngx_toastr__["a" /* ToastrModule */].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_6__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-                __WEBPACK_IMPORTED_MODULE_15__material_module__["a" /* MaterialModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* ReactiveFormsModule */],
-                __WEBPACK_IMPORTED_MODULE_8__angular_router__["b" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_20__routes__["a" /* appRoutes */], { enableTracing: true } // <-- debugging purposes only
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_6__angular_common_http__["c" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_9_ngx_toastr__["a" /* ToastrModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_8__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+                __WEBPACK_IMPORTED_MODULE_17__material_module__["a" /* MaterialModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* ReactiveFormsModule */],
+                __WEBPACK_IMPORTED_MODULE_10__angular_router__["b" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_22__routes__["a" /* appRoutes */], { enableTracing: true } // <-- debugging purposes only
                 ),
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_3__event_user_shared_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_16__auth_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_17__auth_antiauth_guard__["a" /* AntiauthGuard */], __WEBPACK_IMPORTED_MODULE_18__auth_adminauth_guard__["a" /* AdminauthGuard */], __WEBPACK_IMPORTED_MODULE_19__auth_superadminauth_guard__["a" /* SuperadminauthGuard */],
+            providers: [__WEBPACK_IMPORTED_MODULE_5__event_types_shared_event_type_service__["a" /* EventTypeService */], __WEBPACK_IMPORTED_MODULE_4__events_shared_event_service__["a" /* EventService */], __WEBPACK_IMPORTED_MODULE_3__event_user_shared_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_18__auth_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_19__auth_antiauth_guard__["a" /* AntiauthGuard */], __WEBPACK_IMPORTED_MODULE_20__auth_adminauth_guard__["a" /* AdminauthGuard */], __WEBPACK_IMPORTED_MODULE_21__auth_superadminauth_guard__["a" /* SuperadminauthGuard */],
                 {
-                    provide: __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HTTP_INTERCEPTORS */],
-                    useClass: __WEBPACK_IMPORTED_MODULE_21__auth_auth_interceptor__["a" /* AuthInterceptor */],
+                    provide: __WEBPACK_IMPORTED_MODULE_6__angular_common_http__["a" /* HTTP_INTERCEPTORS */],
+                    useClass: __WEBPACK_IMPORTED_MODULE_23__auth_auth_interceptor__["a" /* AuthInterceptor */],
                     multi: true
                 }
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -385,6 +401,297 @@ var SuperadminauthGuard = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/event-types/edit-event-type/edit-event-type.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/event-types/edit-event-type/edit-event-type.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  edit-event-type works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/event-types/edit-event-type/edit-event-type.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditEventTypeComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var EditEventTypeComponent = /** @class */ (function () {
+    function EditEventTypeComponent() {
+    }
+    EditEventTypeComponent.prototype.ngOnInit = function () {
+    };
+    EditEventTypeComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-edit-event-type',
+            template: __webpack_require__("./src/app/event-types/edit-event-type/edit-event-type.component.html"),
+            styles: [__webpack_require__("./src/app/event-types/edit-event-type/edit-event-type.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], EditEventTypeComponent);
+    return EditEventTypeComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/event-types/event-types.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ".example-card {\n  max-width: 400px;\n}\n\n.example-header-image {\n  background-image: url('https://ibb.co/jNkMT8');\n  background-size: cover;\n}\n\n.events-filter-toolbar\n{\n  margin-top : 20px;\n}\n\n.tollbar-splitter\n{\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 auto;\n          flex: 1 1 auto;\n}\n\nmat-form-field.mat-form-field {\n  font-size: 14px;\n}\n"
+
+/***/ }),
+
+/***/ "./src/app/event-types/event-types.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<mat-toolbar class=\"events-filter-toolbar\">\n  <mat-toolbar-row>\n    <mat-form-field primary>\n      <input matInput type=\"text\" placeholder=\"Search\">\n    </mat-form-field>\n    <span class=\"tollbar-splitter\"></span>\n    <button mat-button routerLink=\"new\"><i class=\"material-icons md-dark\">playlist_add</i> New Event Type</button>\n  </mat-toolbar-row>\n</mat-toolbar>\n<mat-divider></mat-divider>\n<mat-grid-list cols=\"3\" rowHeight=\"6:3\">\n  <mat-grid-tile *ngFor=\"let eventType of eventTypes\">\n    <mat-card class=\"example-card\">\n      <mat-card-header>\n        <mat-card-title>{{ eventType.Name }}</mat-card-title>\n      </mat-card-header>\n      <mat-card-content>\n        <p>\n          {{ eventType.Desc }}\n        </p>\n      </mat-card-content>\n      <mat-card-actions>\n        <button mat-button >EDIT</button>\n      </mat-card-actions>\n    </mat-card>\n  </mat-grid-tile>\n</mat-grid-list>\n"
+
+/***/ }),
+
+/***/ "./src/app/event-types/event-types.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventTypesComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_event_type_service__ = __webpack_require__("./src/app/event-types/shared/event-type.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var EventTypesComponent = /** @class */ (function () {
+    function EventTypesComponent(eventTypeService) {
+        this.eventTypeService = eventTypeService;
+    }
+    EventTypesComponent.prototype.ngOnInit = function () {
+        this.eventTypeService.loadEventTypes();
+    };
+    Object.defineProperty(EventTypesComponent.prototype, "eventTypes", {
+        get: function () {
+            return this.eventTypeService.eventTypes;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    EventTypesComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-event-types',
+            template: __webpack_require__("./src/app/event-types/event-types.component.html"),
+            styles: [__webpack_require__("./src/app/event-types/event-types.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_event_type_service__["a" /* EventTypeService */]])
+    ], EventTypesComponent);
+    return EventTypesComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/event-types/new-event-type/new-event-type.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ".new-event-type-card\n{\n   max-width: 30%;\n   margin: 100px auto;\n}\n\n.full-width\n{\n  width : 100%;\n}\n\n.new-event-type-card-title\n{\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 auto;\n          flex: 1 1 auto;\n  text-align: center;\n}\n"
+
+/***/ }),
+
+/***/ "./src/app/event-types/new-event-type/new-event-type.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<mat-card class=\"new-event-type-card\">\n  <mat-card-title class=\"new-event-type-card-title\">New Event Type</mat-card-title>\n  <form class=\"new-event-type-form\" #eventTypeCreationForm=\"ngForm\" (ngSubmit)=\"onSubmit(eventTypeCreationForm)\">\n  <mat-card-content>\n      <mat-form-field class=\"full-width\">\n        <input matInput placeholder=\"Name\" #Name=\"ngModel\" [(ngModel)]=\"eventType.Name\" name=\"Name\" required>\n      </mat-form-field>\n      <mat-form-field class=\"full-width\">\n        <textarea matInput placeholder=\"Description\" #Desc=\"ngModel\" [(ngModel)]=\"eventType.Desc\" name=\"Description\" required></textarea>\n      </mat-form-field>\n    <mat-spinner [style.display]=\"showSpinner ? 'block' : 'none'\"></mat-spinner>\n  </mat-card-content>\n  <mat-card-actions>\n    <button mat-raised-button type=\"submit\" class=\"full-width\" color=\"primary\">CREATE</button>\n  </mat-card-actions>\n  </form>\n</mat-card>\n"
+
+/***/ }),
+
+/***/ "./src/app/event-types/new-event-type/new-event-type.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewEventTypeComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_event_type_model__ = __webpack_require__("./src/app/event-types/shared/event-type.model.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_event_type_service__ = __webpack_require__("./src/app/event-types/shared/event-type.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var NewEventTypeComponent = /** @class */ (function () {
+    function NewEventTypeComponent(eventTypeService, router) {
+        this.eventTypeService = eventTypeService;
+        this.router = router;
+        this.eventType = new __WEBPACK_IMPORTED_MODULE_1__shared_event_type_model__["a" /* EventType */]({});
+    }
+    NewEventTypeComponent.prototype.ngOnInit = function () {
+        this.resetForm();
+    };
+    NewEventTypeComponent.prototype.resetForm = function (form) {
+        if (form != null) {
+            form.reset();
+            this.eventType = new __WEBPACK_IMPORTED_MODULE_1__shared_event_type_model__["a" /* EventType */]({});
+        }
+    };
+    NewEventTypeComponent.prototype.onSubmit = function (form) {
+        var _this = this;
+        this.eventTypeService.createEventType(this.eventType)
+            .subscribe(function (data) {
+            _this.resetForm(form);
+            _this.router.navigate(['']);
+        });
+    };
+    NewEventTypeComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-new-event-type',
+            template: __webpack_require__("./src/app/event-types/new-event-type/new-event-type.component.html"),
+            styles: [__webpack_require__("./src/app/event-types/new-event-type/new-event-type.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__shared_event_type_service__["a" /* EventTypeService */], __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]])
+    ], NewEventTypeComponent);
+    return NewEventTypeComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/event-types/shared/event-type.model.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventType; });
+var EventType = /** @class */ (function () {
+    function EventType(eventTypeJsonObject) {
+        this.Id = eventTypeJsonObject["id"];
+        this.Name = eventTypeJsonObject["name"];
+        this.Desc = eventTypeJsonObject["desc"];
+    }
+    EventType.prototype.getCreateJSON = function () {
+        var createJSON = {
+            "name": this.Name,
+            "desc": this.Desc
+        };
+        return createJSON;
+    };
+    EventType.prototype.getUpdateJSON = function () {
+        var updateJSON = {
+            "id": this.Id,
+            "name": this.Name,
+            "desc": this.Desc
+        };
+        return updateJSON;
+    };
+    return EventType;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/event-types/shared/event-type.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventTypeService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__event_type_model__ = __webpack_require__("./src/app/event-types/shared/event-type.model.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var EventTypeService = /** @class */ (function () {
+    function EventTypeService(http) {
+        this.http = http;
+        this.eventTypes = [];
+        this.rootUrl = "http://127.0.0.1:8000";
+    }
+    EventTypeService.prototype.createEventType = function (createETObj) {
+        var createJSON = createETObj.getCreateJSON();
+        var reqHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({ 'No-Auth': 'True' });
+        return this.http.post(this.rootUrl + '/eventtype/create/', createJSON, { headers: reqHeaders });
+    };
+    EventTypeService.prototype.updateEventType = function (updateETObj) {
+        var updateJSON = updateETObj.getUpdateJSON();
+        var reqHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({ 'No-Auth': 'True' });
+        return this.http.post(this.rootUrl + '/eventtype/update/', updateJSON, { headers: reqHeaders });
+    };
+    EventTypeService.prototype.loadEventTypes = function () {
+        var _this = this;
+        this.eventTypes = [];
+        this.fetchEventTypes().subscribe(function (data) {
+            _this.syncUIEventTypes(data);
+        });
+    };
+    EventTypeService.prototype.fetchEventTypes = function () {
+        var actionUrl = '/eventtypes/';
+        return this.http.get(this.rootUrl + actionUrl);
+    };
+    EventTypeService.prototype.syncUIEventTypes = function (data) {
+        console.log('sync data ::');
+        console.log(data);
+        var eventTypeList = JSON.parse(data);
+        for (var i = 0; i < eventTypeList.length; i++) {
+            var id = eventTypeList[i]["pk"];
+            var eventTypeJsonObject = eventTypeList[i]["fields"];
+            eventTypeJsonObject["id"] = id;
+            var eventType = new __WEBPACK_IMPORTED_MODULE_3__event_type_model__["a" /* EventType */](eventTypeJsonObject);
+            this.eventTypes.push(eventType);
+        }
+        console.log(this.eventTypes);
+    };
+    EventTypeService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+    ], EventTypeService);
+    return EventTypeService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/event-user/login/login.component.css":
 /***/ (function(module, exports) {
 
@@ -598,7 +905,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var UserService = /** @class */ (function () {
     function UserService(http) {
         this.http = http;
-        this.rootUrl = "https://www.eventico.algovent.com";
+        this.rootUrl = "http://127.0.0.1:8000";
         this.user = new __WEBPACK_IMPORTED_MODULE_3__user_model__["a" /* User */]();
     }
     UserService.prototype.setGuestProfile = function () {
@@ -665,25 +972,25 @@ var UserService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/events/events.component.css":
+/***/ "./src/app/events/edit-event/edit-event.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ".example-card {\n  max-width: 400px;\n}\n\n.example-header-image {\n  background-image: url('https://ibb.co/jNkMT8');\n  background-size: cover;\n}\n"
+module.exports = ""
 
 /***/ }),
 
-/***/ "./src/app/events/events.component.html":
+/***/ "./src/app/events/edit-event/edit-event.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--<mat-card class=\"example-card\">-->\n      <!--<mat-card-header>-->\n        <!--<mat-card-title>Event Name</mat-card-title>-->\n        <!--<mat-card-subtitle>Event subtitle</mat-card-subtitle>-->\n      <!--</mat-card-header>-->\n      <!--<img mat-card-image src=\"https://material.angular.io/assets/img/examples/shiba2.jpg\" alt=\"Photo of a Shiba Inu\">-->\n      <!--<mat-card-content>-->\n        <!--<p>-->\n          <!--The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.-->\n          <!--A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally-->\n          <!--bred for hunting.-->\n        <!--</p>-->\n      <!--</mat-card-content>-->\n      <!--<mat-card-actions>-->\n        <!--<button mat-button>Book</button>-->\n        <!--<button mat-button>SHARE</button>-->\n        <!--<button mat-button>ACTIVATE</button>-->\n        <!--<button mat-button>EDIT</button>-->\n      <!--</mat-card-actions>-->\n    <!--</mat-card>-->\n<!--<mat-card class=\"example-card\">-->\n      <!--<mat-card-header>-->\n        <!--<mat-card-title>Event Name</mat-card-title>-->\n        <!--<mat-card-subtitle>Event subtitle</mat-card-subtitle>-->\n      <!--</mat-card-header>-->\n      <!--<img mat-card-image src=\"https://material.angular.io/assets/img/examples/shiba2.jpg\" alt=\"Photo of a Shiba Inu\">-->\n      <!--<mat-card-content>-->\n        <!--<p>-->\n          <!--The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.-->\n          <!--A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally-->\n          <!--bred for hunting.-->\n        <!--</p>-->\n      <!--</mat-card-content>-->\n      <!--<mat-card-actions>-->\n        <!--<button mat-button>Book</button>-->\n        <!--<button mat-button>SHARE</button>-->\n        <!--<button mat-button>ACTIVATE</button>-->\n        <!--<button mat-button>EDIT</button>-->\n      <!--</mat-card-actions>-->\n    <!--</mat-card>-->\n\n <mat-card>\n      Filter Bar\n </mat-card>\n<mat-divider></mat-divider>\n<mat-grid-list cols=\"3\" rowHeight=\"1:1\">\n  <mat-grid-tile>\n    <mat-card class=\"example-card\">\n      <mat-card-header>\n        <mat-card-title>Event Name</mat-card-title>\n        <mat-card-subtitle>Event subtitle</mat-card-subtitle>\n      </mat-card-header>\n      <img mat-card-image src=\"https://material.angular.io/assets/img/examples/shiba2.jpg\" alt=\"Photo of a Shiba Inu\">\n      <mat-card-content>\n        <p>\n          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.\n          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally\n          bred for hunting.\n        </p>\n      </mat-card-content>\n      <mat-card-actions>\n        <button mat-button>Book</button>\n        <button mat-button>SHARE</button>\n        <button mat-button>ACTIVATE</button>\n        <button mat-button>EDIT</button>\n      </mat-card-actions>\n    </mat-card>\n  </mat-grid-tile>\n  <mat-grid-tile>\n    <mat-card class=\"example-card\">\n      <mat-card-header>\n        <mat-card-title>Event Name</mat-card-title>\n        <mat-card-subtitle>Event subtitle</mat-card-subtitle>\n      </mat-card-header>\n      <img mat-card-image src=\"https://material.angular.io/assets/img/examples/shiba2.jpg\" alt=\"Photo of a Shiba Inu\">\n      <mat-card-content>\n        <p>\n          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.\n          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally\n          bred for hunting.\n        </p>\n      </mat-card-content>\n      <mat-card-actions>\n        <button mat-button>Book</button>\n        <button mat-button>SHARE</button>\n        <button mat-button>ACTIVATE</button>\n        <button mat-button>EDIT</button>\n      </mat-card-actions>\n    </mat-card>\n  </mat-grid-tile>\n  <mat-grid-tile>\n    <mat-card class=\"example-card\">\n      <mat-card-header>\n        <mat-card-title>Event Name</mat-card-title>\n        <mat-card-subtitle>Event subtitle</mat-card-subtitle>\n      </mat-card-header>\n      <img mat-card-image src=\"https://material.angular.io/assets/img/examples/shiba2.jpg\" alt=\"Photo of a Shiba Inu\">\n      <mat-card-content>\n        <p>\n          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.\n          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally\n          bred for hunting.\n        </p>\n      </mat-card-content>\n      <mat-card-actions>\n        <button mat-button>Book</button>\n        <button mat-button>SHARE</button>\n        <button mat-button>ACTIVATE</button>\n        <button mat-button>EDIT</button>\n      </mat-card-actions>\n    </mat-card>\n  </mat-grid-tile>\n  <mat-grid-tile><mat-card class=\"example-card\">\n      <mat-card-header>\n        <mat-card-title>Event Name</mat-card-title>\n        <mat-card-subtitle>Event subtitle</mat-card-subtitle>\n      </mat-card-header>\n      <img mat-card-image src=\"https://material.angular.io/assets/img/examples/shiba2.jpg\" alt=\"Photo of a Shiba Inu\">\n      <mat-card-content>\n        <p>\n          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.\n          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally\n          bred for hunting.\n        </p>\n      </mat-card-content>\n      <mat-card-actions>\n        <button mat-button>Book</button>\n        <button mat-button>SHARE</button>\n        <button mat-button>ACTIVATE</button>\n        <button mat-button>EDIT</button>\n      </mat-card-actions>\n    </mat-card></mat-grid-tile>\n  <mat-grid-tile></mat-grid-tile>\n  <mat-grid-tile></mat-grid-tile>\n  <mat-grid-tile></mat-grid-tile>\n  <mat-grid-tile></mat-grid-tile>\n  <mat-grid-tile></mat-grid-tile>\n\n  <mat-grid-tile></mat-grid-tile>\n</mat-grid-list>\n"
+module.exports = "<p>\n  edit-event works!\n</p>\n"
 
 /***/ }),
 
-/***/ "./src/app/events/events.component.ts":
+/***/ "./src/app/events/edit-event/edit-event.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventsComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditEventComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -695,18 +1002,87 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+var EditEventComponent = /** @class */ (function () {
+    function EditEventComponent() {
+    }
+    EditEventComponent.prototype.ngOnInit = function () {
+    };
+    EditEventComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-edit-event',
+            template: __webpack_require__("./src/app/events/edit-event/edit-event.component.html"),
+            styles: [__webpack_require__("./src/app/events/edit-event/edit-event.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], EditEventComponent);
+    return EditEventComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/events/events.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ".example-card {\n  max-width: 400px;\n}\n\n.example-header-image {\n  background-image: url('https://ibb.co/jNkMT8');\n  background-size: cover;\n}\n\n.events-filter-toolbar\n{\n  margin-top : 20px;\n}\n\n.tollbar-splitter\n{\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 auto;\n          flex: 1 1 auto;\n}\n\nmat-form-field.mat-form-field {\n  font-size: 14px;\n}\n"
+
+/***/ }),
+
+/***/ "./src/app/events/events.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!--<mat-card class=\"example-card\">-->\n      <!--<mat-card-header>-->\n        <!--<mat-card-title>Event Name</mat-card-title>-->\n        <!--<mat-card-subtitle>Event subtitle</mat-card-subtitle>-->\n      <!--</mat-card-header>-->\n      <!--<img mat-card-image src=\"https://material.angular.io/assets/img/examples/shiba2.jpg\" alt=\"Photo of a Shiba Inu\">-->\n      <!--<mat-card-content>-->\n        <!--<p>-->\n          <!--The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.-->\n          <!--A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally-->\n          <!--bred for hunting.-->\n        <!--</p>-->\n      <!--</mat-card-content>-->\n      <!--<mat-card-actions>-->\n        <!--<button mat-button>Book</button>-->\n        <!--<button mat-button>SHARE</button>-->\n        <!--<button mat-button>ACTIVATE</button>-->\n        <!--<button mat-button>EDIT</button>-->\n      <!--</mat-card-actions>-->\n    <!--</mat-card>-->\n<!--<mat-card class=\"example-card\">-->\n      <!--<mat-card-header>-->\n        <!--<mat-card-title>Event Name</mat-card-title>-->\n        <!--<mat-card-subtitle>Event subtitle</mat-card-subtitle>-->\n      <!--</mat-card-header>-->\n      <!--<img mat-card-image src=\"https://material.angular.io/assets/img/examples/shiba2.jpg\" alt=\"Photo of a Shiba Inu\">-->\n      <!--<mat-card-content>-->\n        <!--<p>-->\n          <!--The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.-->\n          <!--A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally-->\n          <!--bred for hunting.-->\n        <!--</p>-->\n      <!--</mat-card-content>-->\n      <!--<mat-card-actions>-->\n        <!--<button mat-button>Book</button>-->\n        <!--<button mat-button>SHARE</button>-->\n        <!--<button mat-button>ACTIVATE</button>-->\n        <!--<button mat-button>EDIT</button>-->\n      <!--</mat-card-actions>-->\n    <!--</mat-card>-->\n\n<mat-toolbar class=\"events-filter-toolbar\">\n  <mat-toolbar-row>\n    <mat-form-field>\n    <mat-select placeholder=\"Select\">\n      <mat-option value=\"option\">Option</mat-option>\n    </mat-select>\n  </mat-form-field>\n    <mat-divider [vertical]=\"true\"></mat-divider>\n    <mat-form-field>\n  <input matInput [matDatepicker]=\"picker\" placeholder=\"Choose a date\">\n  <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n  <mat-datepicker #picker></mat-datepicker>\n</mat-form-field>\n    <span class=\"tollbar-splitter\"></span>\n    <mat-form-field>\n    <input type=\"text\" placeholder=\"Pick one\" aria-label=\"Number\" matInput [formControl]=\"myControl\" [matAutocomplete]=\"auto\">\n    <mat-autocomplete #auto=\"matAutocomplete\">\n      <mat-option *ngFor=\"let option of options\" [value]=\"option\">\n        {{ option }}\n      </mat-option>\n    </mat-autocomplete>\n  </mat-form-field>\n  </mat-toolbar-row>\n</mat-toolbar>\n<mat-divider></mat-divider>\n<mat-grid-list cols=\"3\" rowHeight=\"1:1\">\n  <mat-grid-tile>\n    <mat-card class=\"example-card\">\n      <mat-card-header>\n        <mat-card-title>Event Name</mat-card-title>\n        <mat-card-subtitle>Event subtitle</mat-card-subtitle>\n      </mat-card-header>\n      <img mat-card-image src=\"https://material.angular.io/assets/img/examples/shiba2.jpg\" alt=\"Photo of a Shiba Inu\">\n      <mat-card-content>\n        <p>\n          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.\n          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally\n          bred for hunting.\n        </p>\n      </mat-card-content>\n      <mat-card-actions>\n        <button mat-button>Book</button>\n        <button mat-button>SHARE</button>\n        <button mat-button>ACTIVATE</button>\n        <button mat-button>EDIT</button>\n      </mat-card-actions>\n    </mat-card>\n  </mat-grid-tile>\n  <mat-grid-tile>\n    <mat-card class=\"example-card\">\n      <mat-card-header>\n        <mat-card-title>Event Name</mat-card-title>\n        <mat-card-subtitle>Event subtitle</mat-card-subtitle>\n      </mat-card-header>\n      <img mat-card-image src=\"https://material.angular.io/assets/img/examples/shiba2.jpg\" alt=\"Photo of a Shiba Inu\">\n      <mat-card-content>\n        <p>\n          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.\n          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally\n          bred for hunting.\n        </p>\n      </mat-card-content>\n      <mat-card-actions>\n        <button mat-button>Book</button>\n        <button mat-button>SHARE</button>\n        <button mat-button>ACTIVATE</button>\n        <button mat-button>EDIT</button>\n      </mat-card-actions>\n    </mat-card>\n  </mat-grid-tile>\n  <mat-grid-tile>\n    <mat-card class=\"example-card\">\n      <mat-card-header>\n        <mat-card-title>Event Name</mat-card-title>\n        <mat-card-subtitle>Event subtitle</mat-card-subtitle>\n      </mat-card-header>\n      <img mat-card-image src=\"https://material.angular.io/assets/img/examples/shiba2.jpg\" alt=\"Photo of a Shiba Inu\">\n      <mat-card-content>\n        <p>\n          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.\n          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally\n          bred for hunting.\n        </p>\n      </mat-card-content>\n      <mat-card-actions>\n        <button mat-button>Book</button>\n        <button mat-button>SHARE</button>\n        <button mat-button>ACTIVATE</button>\n        <button mat-button>EDIT</button>\n      </mat-card-actions>\n    </mat-card>\n  </mat-grid-tile>\n  <mat-grid-tile><mat-card class=\"example-card\">\n      <mat-card-header>\n        <mat-card-title>Event Name</mat-card-title>\n        <mat-card-subtitle>Event subtitle</mat-card-subtitle>\n      </mat-card-header>\n      <img mat-card-image src=\"https://material.angular.io/assets/img/examples/shiba2.jpg\" alt=\"Photo of a Shiba Inu\">\n      <mat-card-content>\n        <p>\n          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.\n          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally\n          bred for hunting.\n        </p>\n      </mat-card-content>\n      <mat-card-actions>\n        <button mat-button>Book</button>\n        <button mat-button>SHARE</button>\n        <button mat-button>ACTIVATE</button>\n        <button mat-button>EDIT</button>\n      </mat-card-actions>\n    </mat-card></mat-grid-tile>\n  <mat-grid-tile></mat-grid-tile>\n  <mat-grid-tile></mat-grid-tile>\n  <mat-grid-tile></mat-grid-tile>\n  <mat-grid-tile></mat-grid-tile>\n  <mat-grid-tile></mat-grid-tile>\n\n  <mat-grid-tile></mat-grid-tile>\n</mat-grid-list>\n"
+
+/***/ }),
+
+/***/ "./src/app/events/events.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_event_service__ = __webpack_require__("./src/app/events/shared/event.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
 var EventsComponent = /** @class */ (function () {
-    function EventsComponent() {
+    function EventsComponent(eventService) {
+        this.eventService = eventService;
+        this.myControl = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]();
+        this.options = [
+            'One',
+            'Two',
+            'Three'
+        ];
     }
     EventsComponent.prototype.ngOnInit = function () {
+        this.eventService.loadEvents();
     };
+    Object.defineProperty(EventsComponent.prototype, "events", {
+        get: function () {
+            return this.eventService.events;
+        },
+        enumerable: true,
+        configurable: true
+    });
     EventsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-events',
             template: __webpack_require__("./src/app/events/events.component.html"),
             styles: [__webpack_require__("./src/app/events/events.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__shared_event_service__["a" /* EventService */]])
     ], EventsComponent);
     return EventsComponent;
 }());
@@ -718,14 +1094,14 @@ var EventsComponent = /** @class */ (function () {
 /***/ "./src/app/events/new-event/new-event.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".new-event-card\n{\n   max-width: 30%;\n   margin: 100px auto;\n}\n\n.full-width\n{\n  width : 100%;\n}\n\n.new-event-card-title\n{\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 auto;\n          flex: 1 1 auto;\n  text-align: center;\n}\n"
 
 /***/ }),
 
 /***/ "./src/app/events/new-event/new-event.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  new-event works!\n</p>\n"
+module.exports = "<mat-card class=\"new-event-card\">\n  <mat-card-title class=\"new-event-card-title\">New Event</mat-card-title>\n  <form class=\"new-event-form\" #eventCreationForm=\"ngForm\" (ngSubmit)=\"onSubmit(eventCreationForm)\">\n  <mat-card-content>\n      <mat-form-field class=\"full-width\">\n        <input matInput placeholder=\"Name\" #Name=\"ngModel\" [(ngModel)]=\"event.Name\" name=\"Name\" required>\n      </mat-form-field>\n        <mat-form-field class=\"full-width\">\n        <textarea matInput placeholder=\"Description\" #Desc=\"ngModel\" [(ngModel)]=\"event.Desc\" name=\"Description\" required></textarea>\n      </mat-form-field>\n      <mat-form-field>\n      <mat-select placeholder=\"Select EventType\">\n          <mat-option *ngFor=\"let eventType of eventTypes\" value=\"{{eventType.Id}}\">{{eventType.Name}}</mat-option>\n        </mat-select>\n      </mat-form-field>\n      <input type=\"file\" id=\"myFile\">\n      <mat-checkbox  [(ngModel)]=\"event.IsLayoutBased\" [ngModelOptions]=\"{standalone: true}\">Is Layout Based</mat-checkbox>\n    <mat-spinner [style.display]=\"showSpinner ? 'block' : 'none'\"></mat-spinner>\n  </mat-card-content>\n    <mat-card-content *ngIf=\"event.IsLayoutBased == true\">\n      Screen Here\n    </mat-card-content>\n  <mat-card-actions>\n    <button mat-raised-button type=\"submit\" class=\"full-width\" color=\"primary\">CREATE</button>\n  </mat-card-actions>\n  </form>\n</mat-card>\n"
 
 /***/ }),
 
@@ -735,6 +1111,10 @@ module.exports = "<p>\n  new-event works!\n</p>\n"
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewEventComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_event_model__ = __webpack_require__("./src/app/events/shared/event.model.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__event_types_shared_event_type_service__ = __webpack_require__("./src/app/event-types/shared/event-type.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_event_service__ = __webpack_require__("./src/app/events/shared/event.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -745,20 +1125,158 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
+
 var NewEventComponent = /** @class */ (function () {
-    function NewEventComponent() {
+    function NewEventComponent(eventService, router, eventTypeService) {
+        this.eventService = eventService;
+        this.router = router;
+        this.eventTypeService = eventTypeService;
+        this.event = new __WEBPACK_IMPORTED_MODULE_1__shared_event_model__["a" /* Event */]({});
     }
     NewEventComponent.prototype.ngOnInit = function () {
+        this.resetForm();
+        this.eventTypeService.loadEventTypes();
     };
+    NewEventComponent.prototype.resetForm = function (form) {
+        if (form != null) {
+            form.reset();
+            this.event = new __WEBPACK_IMPORTED_MODULE_1__shared_event_model__["a" /* Event */]({});
+        }
+    };
+    NewEventComponent.prototype.onSubmit = function (form) {
+        var _this = this;
+        this.eventService.createEvent(this.event)
+            .subscribe(function (data) {
+            _this.resetForm(form);
+            _this.router.navigate(['']);
+        });
+    };
+    Object.defineProperty(NewEventComponent.prototype, "eventTypes", {
+        get: function () {
+            return this.eventTypeService.eventTypes;
+        },
+        enumerable: true,
+        configurable: true
+    });
     NewEventComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-new-event',
             template: __webpack_require__("./src/app/events/new-event/new-event.component.html"),
             styles: [__webpack_require__("./src/app/events/new-event/new-event.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__shared_event_service__["a" /* EventService */], __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */], __WEBPACK_IMPORTED_MODULE_2__event_types_shared_event_type_service__["a" /* EventTypeService */]])
     ], NewEventComponent);
     return NewEventComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/events/shared/event.model.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Event; });
+var Event = /** @class */ (function () {
+    function Event(eventJsonObject) {
+        this.Id = eventJsonObject["id"];
+        this.Name = eventJsonObject["name"];
+        this.Desc = eventJsonObject["desc"];
+        this.IsLayoutBased = eventJsonObject["is_layout_based"];
+    }
+    Event.prototype.getCreateJSON = function () {
+        var createJSON = {
+            "name": this.Name,
+            "desc": this.Desc
+        };
+        return createJSON;
+    };
+    Event.prototype.getUpdateJSON = function () {
+        var updateJSON = {
+            "id": this.Id,
+            "name": this.Name,
+            "desc": this.Desc
+        };
+        return updateJSON;
+    };
+    return Event;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/events/shared/event.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__event_model__ = __webpack_require__("./src/app/events/shared/event.model.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var EventService = /** @class */ (function () {
+    function EventService(http) {
+        this.http = http;
+        this.events = [];
+        this.rootUrl = "http://127.0.0.1:8000";
+    }
+    EventService.prototype.createEvent = function (createEventObj) {
+        var createJSON = createEventObj.getCreateJSON();
+        var reqHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({ 'No-Auth': 'True' });
+        return this.http.post(this.rootUrl + '/event/create/', createJSON, { headers: reqHeaders });
+    };
+    EventService.prototype.updateEventType = function (updateETObj) {
+        var updateJSON = updateETObj.getUpdateJSON();
+        var reqHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({ 'No-Auth': 'True' });
+        return this.http.post(this.rootUrl + '/event/update/', updateJSON, { headers: reqHeaders });
+    };
+    EventService.prototype.loadEvents = function () {
+        var _this = this;
+        this.events = [];
+        this.fetchEvents().subscribe(function (data) {
+            _this.syncUIEvents(data);
+        });
+    };
+    EventService.prototype.fetchEvents = function () {
+        var actionUrl = '/events/';
+        return this.http.get(this.rootUrl + actionUrl);
+    };
+    EventService.prototype.syncUIEvents = function (data) {
+        console.log('sync data ::');
+        console.log(data);
+        var eventList = JSON.parse(data);
+        for (var i = 0; i < eventList.length; i++) {
+            var id = eventList[i]["pk"];
+            var eventJsonObject = eventList[i]["fields"];
+            eventJsonObject["id"] = id;
+            var event = new __WEBPACK_IMPORTED_MODULE_3__event_model__["a" /* Event */](eventJsonObject);
+            this.events.push(event);
+        }
+        console.log(this.events);
+    };
+    EventService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+    ], EventService);
+    return EventService;
 }());
 
 
@@ -825,7 +1343,7 @@ module.exports = ".tollbar-splitter\n{\n  -webkit-box-flex: 1;\n      -ms-flex: 
 /***/ "./src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar class=\"header\" color=\"primary\">\n  <mat-toolbar-row>\n    <button mat-button routerLink=\"\">Eventico</button>\n    <button mat-button routerLink=\"\"><i class=\"material-icons md-18\">home</i></button>\n    <span class=\"tollbar-splitter\"></span>\n    <button *ngIf=\"loggedIn\" mat-button (click)=\"logout()\" >LOGOUT</button>\n    <button *ngIf=\"loggedIn == false\" mat-button routerLink=\"login\">LOGIN</button>\n    <button *ngIf=\"loggedIn == false\" mat-button routerLink=\"signup\">SIGNUP</button>\n  </mat-toolbar-row>\n</mat-toolbar>\n<mat-toolbar *ngIf=\"adminToolBar['allowed'] == true\" class=\"admin-toolbar\">\n  <i class=\"material-icons md-dark\">supervisor_account</i>\n  <button mat-button routerLink=\"event/new\"><i class=\"material-icons md-dark\">playlist_add</i> New Event</button>\n  <span class=\"admin-tollbar-spacer\"></span>\n  <button mat-button routerLink=\"\"><i class=\"material-icons md-dark\">find_replace</i> User Management</button>\n  <button mat-button routerLink=\"\"><i class=\"material-icons md-dark\">cloud_download</i> Reports</button>\n</mat-toolbar>\n"
+module.exports = "<mat-toolbar class=\"header\" color=\"primary\">\n  <mat-toolbar-row>\n    <button mat-button routerLink=\"\">Eventico</button>\n    <button mat-button routerLink=\"\"><i class=\"material-icons md-18\">home</i></button>\n    <span class=\"tollbar-splitter\"></span>\n    <button *ngIf=\"loggedIn\" mat-button (click)=\"logout()\" >LOGOUT</button>\n    <button *ngIf=\"loggedIn == false\" mat-button routerLink=\"login\">LOGIN</button>\n    <button *ngIf=\"loggedIn == false\" mat-button routerLink=\"signup\">SIGNUP</button>\n  </mat-toolbar-row>\n</mat-toolbar>\n<mat-toolbar *ngIf=\"adminToolBar['allowed'] == true\" class=\"admin-toolbar\">\n  <i class=\"material-icons md-dark\">supervisor_account</i>\n  <button mat-button routerLink=\"event/new\"><i class=\"material-icons md-dark\">playlist_add</i> New Event</button>\n  <button mat-button routerLink=\"event-types\"><i class=\"material-icons md-dark\">find_replace</i> Event Types</button>\n  <span class=\"admin-tollbar-spacer\"></span>\n  <button mat-button routerLink=\"\"><i class=\"material-icons md-dark\">find_replace</i> User Management</button>\n  <button mat-button routerLink=\"\"><i class=\"material-icons md-dark\">cloud_download</i> Reports</button>\n</mat-toolbar>\n"
 
 /***/ }),
 
@@ -996,8 +1514,16 @@ var MaterialModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__events_events_component__ = __webpack_require__("./src/app/events/events.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__event_user_login_login_component__ = __webpack_require__("./src/app/event-user/login/login.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__events_new_event_new_event_component__ = __webpack_require__("./src/app/events/new-event/new-event.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__auth_auth_guard__ = __webpack_require__("./src/app/auth/auth.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__auth_antiauth_guard__ = __webpack_require__("./src/app/auth/antiauth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__events_edit_event_edit_event_component__ = __webpack_require__("./src/app/events/edit-event/edit-event.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__auth_auth_guard__ = __webpack_require__("./src/app/auth/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__auth_antiauth_guard__ = __webpack_require__("./src/app/auth/antiauth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__event_types_event_types_component__ = __webpack_require__("./src/app/event-types/event-types.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__event_types_new_event_type_new_event_type_component__ = __webpack_require__("./src/app/event-types/new-event-type/new-event-type.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__event_types_edit_event_type_edit_event_type_component__ = __webpack_require__("./src/app/event-types/edit-event-type/edit-event-type.component.ts");
+
+
+
+
 
 
 
@@ -1006,9 +1532,13 @@ var MaterialModule = /** @class */ (function () {
 
 var appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_1__events_events_component__["a" /* EventsComponent */], pathMatch: 'full' },
-    { path: 'signup', component: __WEBPACK_IMPORTED_MODULE_0__event_user_register_register_component__["a" /* RegisterComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_5__auth_antiauth_guard__["a" /* AntiauthGuard */]] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_2__event_user_login_login_component__["a" /* LoginComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_5__auth_antiauth_guard__["a" /* AntiauthGuard */]] },
-    { path: 'event/new', component: __WEBPACK_IMPORTED_MODULE_3__events_new_event_new_event_component__["a" /* NewEventComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_4__auth_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'signup', component: __WEBPACK_IMPORTED_MODULE_0__event_user_register_register_component__["a" /* RegisterComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__auth_antiauth_guard__["a" /* AntiauthGuard */]] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_2__event_user_login_login_component__["a" /* LoginComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__auth_antiauth_guard__["a" /* AntiauthGuard */]] },
+    { path: 'event/new', component: __WEBPACK_IMPORTED_MODULE_3__events_new_event_new_event_component__["a" /* NewEventComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_5__auth_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'event/update', component: __WEBPACK_IMPORTED_MODULE_4__events_edit_event_edit_event_component__["a" /* EditEventComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_5__auth_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'event-types', component: __WEBPACK_IMPORTED_MODULE_7__event_types_event_types_component__["a" /* EventTypesComponent */] },
+    { path: 'event-types/new', component: __WEBPACK_IMPORTED_MODULE_8__event_types_new_event_type_new_event_type_component__["a" /* NewEventTypeComponent */] },
+    { path: 'event-types/update', component: __WEBPACK_IMPORTED_MODULE_9__event_types_edit_event_type_edit_event_type_component__["a" /* EditEventTypeComponent */] },
     { path: '**', component: __WEBPACK_IMPORTED_MODULE_1__events_events_component__["a" /* EventsComponent */] }
 ];
 
