@@ -1,0 +1,237 @@
+<mat-horizontal-stepper *ngIf="eventVenue != null">
+  <mat-step label="Setup Event Venue">
+    <form class="new-event-venue-form" #eventVenueCreationForm="ngForm" (ngSubmit)="onSubmit(eventVenueCreationForm)">
+      <mat-card class="new-event-venue-card">
+        <mat-card-content>
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Name" #Name="ngModel" [(ngModel)]="eventVenue.Name" name="Name" required>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <textarea matInput placeholder="Description" #Desc="ngModel" [(ngModel)]="eventVenue.Desc" name="Description" required></textarea>
+            </mat-form-field>
+            <mat-form-field>
+            <mat-select  #LayoutType placeholder="Layout Type" [(ngModel)]="eventVenue.LayoutType" name="LayoutType">
+              <mat-option value="none">
+                NONE
+              </mat-option>
+              <mat-option value="box">
+                BOX
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+        </mat-card-content>
+      </mat-card>
+      <div>
+        <button mat-button type="submit" color="primary">CREATE</button>
+        <button mat-button matStepperNext>Next to Add Layout</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step label="Set Layout">
+    <mat-toolbar class="layout-create-toolbar">
+      <mat-toolbar-row>
+        <form class="new-event-venue-form" #addGroupForm="ngForm" (ngSubmit)="addGroup(addGroupForm)">
+          <input mat-input type="text" #groupName="ngModel" [(ngModel)]="addGroupFormData.group_name" placeholder="Group Name" name="groupName" >
+          <input mat-input type="number" #rows="ngModel" [(ngModel)]="addGroupFormData.rows" placeholder="Rows" name="rows" >
+          <input mat-input type="number" #cols="ngModel" [(ngModel)]="addGroupFormData.cols" placeholder="Cols" name="cols" >
+          <span class="tollbar-splitter"></span>
+          <button mat-button type="submit" color="primary" >Add Group</button>
+          <button mat-button >Reset Layout</button>
+        </form>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-card class="layout-card scrollable-content">
+      <mat-card-content>
+        <table *ngFor="let group of layout_groups">
+          <tr *ngFor="let row of group.rows">
+            <td class="row-name-col">
+              <button mat-icon-button>{{row.name}}</button>
+            </td>
+            <td *ngFor="let col of row.cols" class="seat-col">
+              <button *ngIf="col.blank" mat-icon-button disabled></button>
+              <button *ngIf="col.active" mat-icon-button><mat-icon aria-label="Event Seat">event_seat</mat-icon></button>
+              <button *ngIf="col.na" mat-icon-button disabled><mat-icon aria-label="Event Seat">event_seat</mat-icon></button>
+              <button *ngIf="col.blocked" mat-icon-button disabled><mat-icon aria-label="Event Seat">event_seat</mat-icon></button>
+              <button *ngIf="col.path" mat-icon-button><mat-icon aria-label="Event Seat">reorder</mat-icon></button>
+            </td>
+          <tr>
+          <tr *ngIf="group != null && group.rows != null && group.rows[0] != null">
+            <td class="row-name-col">
+              <button mat-icon-button>seat</button>
+            </td>
+            <td *ngFor="let col of group.rows[0].cols; let m = index" class="seat-col">
+              <button mat-icon-button>{{ m }}</button>
+            </td>
+          <tr>
+        </table>
+        <div class="screen-div">SCREEN HERE</div>
+      </mat-card-content>
+    </mat-card>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </div>
+  </mat-step>
+
+  <mat-step label="Mark Empty Space">
+    <mat-toolbar class="layout-create-toolbar">
+      <mat-toolbar-row>
+        <form class="new-event-venue-form" #markEmptyForm="ngForm" (ngSubmit)="markEmpty(markEmptyForm)">
+
+          <mat-form-field>
+            <mat-select placeholder="Select Group" #GroupSelect="ngModel" [(ngModel)]="markEmptyFormData.group_index" name="GroupSelect">
+              <mat-option *ngFor="let group of layout_groups;let i = index" [value]="i">
+                {{ group.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field *ngIf="markEmptyFormData.group_index != -1">
+            <mat-select  #RowSelect placeholder="Select Row" [(ngModel)]="markEmptyFormData.row_index" name="RowSelect">
+              <mat-option *ngFor="let row of layout_groups[markEmptyFormData.group_index].rows ;let j = index" [value]="j">
+                {{ row.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field *ngIf="markEmptyFormData.row_index != -1">
+            <mat-select  #StartColSelect placeholder="Select Start Column" [(ngModel)]="markEmptyFormData.start_col_index" name="StartColSelect">
+              <mat-option *ngFor="let col of layout_groups[markEmptyFormData.group_index].rows[markEmptyFormData.row_index].cols ;let k = index" [value]="k">
+                {{ k }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field *ngIf="markEmptyFormData.row_index != -1">
+            <mat-select  #EndColSelect placeholder="Select End Column" [(ngModel)]="markEmptyFormData.end_col_index" name="EndColSelect">
+              <mat-option *ngFor="let col of layout_groups[markEmptyFormData.group_index].rows[markEmptyFormData.row_index].cols;let l = index" [value]="l">
+                {{ l }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <span class="tollbar-splitter"></span>
+          <button mat-button type="submit" color="primary" >Mark Empty</button>
+          <button mat-button >Reset Layout</button>
+        </form>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-card class="layout-card scrollable-content">
+      <mat-card-content>
+        <table *ngFor="let group of layout_groups">
+          <tr *ngFor="let row of group.rows">
+            <td class="row-name-col">
+              <button mat-icon-button>{{row.name}}</button>
+            </td>
+            <td *ngFor="let col of row.cols" class="seat-col">
+              <button *ngIf="col.blank" mat-icon-button disabled></button>
+              <button *ngIf="col.active" mat-icon-button><mat-icon aria-label="Event Seat">event_seat</mat-icon></button>
+              <button *ngIf="col.na" mat-icon-button disabled><mat-icon aria-label="Event Seat">event_seat</mat-icon></button>
+              <button *ngIf="col.blocked" mat-icon-button disabled><mat-icon aria-label="Event Seat">event_seat</mat-icon></button>
+              <button *ngIf="col.path" mat-icon-button><mat-icon aria-label="Event Seat">reorder</mat-icon></button>
+
+            </td>
+          <tr>
+          <tr *ngIf="group != null && group.rows != null && group.rows[0] != null">
+            <td class="row-name-col">
+              <button mat-icon-button>seat</button>
+            </td>
+            <td *ngFor="let col of group.rows[0].cols; let m = index" class="seat-col">
+              <button mat-icon-button>{{ m }}</button>
+            </td>
+          <tr>
+        </table>
+        <div class="screen-div">SCREEN HERE</div>
+      </mat-card-content>
+    </mat-card>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </div>
+  </mat-step>
+
+  <mat-step label="Set Path">
+    <mat-toolbar class="layout-create-toolbar">
+      <mat-toolbar-row>
+        <form class="new-event-venue-form" #addPathForm="ngForm" (ngSubmit)="addPath(addPathForm)">
+          <mat-form-field>
+            <mat-select placeholder="Select Group" #GroupSelect="ngModel" [(ngModel)]="addPathFormData.group_index" name="GroupSelect">
+              <mat-option *ngFor="let group of layout_groups;let i = index" [value]="i">
+                {{ group.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field *ngIf="addPathFormData.group_index != -1">
+            <mat-select  #ColSelect placeholder="Select Col index" [(ngModel)]="addPathFormData.col_index" name="ColSelect">
+              <mat-option *ngFor="let col of layout_groups[addPathFormData.group_index].rows[0].cols ;let j = index" [value]="j">
+                {{ j }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <span class="tollbar-splitter"></span>
+          <button mat-button type="submit" color="primary" >Add Path</button>
+          <button mat-button >Reset Layout</button>
+        </form>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-card class="layout-card scrollable-content">
+      <mat-card-content>
+        <table *ngFor="let group of layout_groups">
+          <tr *ngFor="let row of group.rows">
+            <td class="row-name-col">
+              <button mat-icon-button>{{row.name}}</button>
+            </td>
+            <td *ngFor="let col of row.cols" class="seat-col">
+              <button *ngIf="col.blank" mat-icon-button disabled></button>
+              <button *ngIf="col.active" mat-icon-button><mat-icon aria-label="Event Seat">event_seat</mat-icon></button>
+              <button *ngIf="col.na" mat-icon-button disabled><mat-icon aria-label="Event Seat">event_seat</mat-icon></button>
+              <button *ngIf="col.blocked" mat-icon-button disabled><mat-icon aria-label="Event Seat">event_seat</mat-icon></button>
+              <button *ngIf="col.path" mat-icon-button><mat-icon aria-label="Event Seat">reorder</mat-icon></button>
+            </td>
+          <tr>
+          <tr *ngIf="group != null && group.rows != null && group.rows[0] != null">
+            <td class="row-name-col">
+              <button mat-icon-button>seat</button>
+            </td>
+            <td *ngFor="let col of group.rows[0].cols; let m = index" class="seat-col">
+              <button mat-icon-button>{{ m }}</button>
+            </td>
+          <tr>
+        </table>
+        <div class="screen-div">SCREEN HERE</div>
+      </mat-card-content>
+    </mat-card>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </div>
+  </mat-step>
+
+  <mat-step label="Confirm Details">
+    <mat-card class="layout-card scrollable-content">
+      <mat-card-content>
+        <table *ngFor="let group of layout_groups" disabled>
+          <tr *ngFor="let row of group.rows">
+            <td class="row-name-col">
+              <button mat-icon-button>{{row.name}}</button>
+            </td>
+            <td *ngFor="let col of row.cols" class="seat-col">
+              <button *ngIf="col.blank" mat-icon-button disabled>{{ col.number }}</button>
+              <button *ngIf="col.active" mat-icon-button><mat-icon aria-label="Event Seat">event_seat</mat-icon>{{ col.number }}</button>
+              <button *ngIf="col.na" mat-icon-button disabled><mat-icon aria-label="Event Seat">event_seat</mat-icon>{{ col.number }}</button>
+              <button *ngIf="col.blocked" mat-icon-button disabled><mat-icon aria-label="Event Seat">event_seat</mat-icon>{{ col.number }}</button>
+              <button *ngIf="col.path" mat-icon-button><mat-icon aria-label="Event Seat">reorder</mat-icon>{{ col.number }}</button>
+            </td>
+          <tr>
+        </table>
+        <div class="screen-div">SCREEN HERE</div>
+      </mat-card-content>
+    </mat-card>
+    <div>
+      <button mat-button (click)="upsertEventVenue()">Create Event Venue</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

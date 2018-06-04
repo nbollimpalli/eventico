@@ -14,4 +14,19 @@
 {
   flex: 1 1 auto;
 }
+.addon-tools {
+  display: display;
+}
+@media only screen and (max-width: 700px) {
+    .responsive_span_text {
+        display: none;
+    }
+    .addon-tools {
+      display: display;
+    }
+    .big-screen {
+      display: none;
+    }
+
+}
 

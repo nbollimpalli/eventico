@@ -1,0 +1,27 @@
+<mat-toolbar class="event-venues-filter-toolbar">
+  <mat-toolbar-row>
+    <mat-form-field primary>
+      <input matInput type="text" placeholder="Search">
+    </mat-form-field>
+    <span class="tollbar-splitter"></span>
+    <button mat-button routerLink="event-venue"><i class="material-icons md-dark">playlist_add</i> New Event Venue</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-divider></mat-divider>
+<mat-grid-list cols="3" rowHeight="6:3">
+  <mat-grid-tile *ngFor="let eventVenue of eventVenues">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>{{ eventVenue.Name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          {{ eventVenue.Desc }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button [routerLink]="['event-venue',{id: eventVenue.Id }]">EDIT</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

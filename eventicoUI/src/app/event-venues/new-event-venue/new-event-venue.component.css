@@ -1,0 +1,36 @@
+.new-event-venue-card
+{
+   max-width: 30%;
+   margin: 100px auto;
+}
+
+.full-width
+{
+  width : 100%;
+}
+
+.new-event-venue-card-title
+{
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.layout-create-toolbar
+{
+  margin-top : 20px;
+}
+
+.tollbar-splitter
+{
+  flex: 1 1 auto;
+}
+.layout-content
+{
+  align: center;
+}
+
+table { margin: auto; }

@@ -9,6 +9,12 @@
   width : 100%;
 }
 
+.half-width
+{
+  width : 50%;
+}
+
+
 .new-event-card-title
 {
   flex: 1 1 auto;

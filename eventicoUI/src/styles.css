@@ -4,3 +4,46 @@ body
    margin: 0px;
    padding: 0px;
 }
+
+.screen-div {
+    width: 100%;
+    text-align: center;
+}
+
+.layout-card
+{
+   max-width: 70%;
+   margin: 10px auto;
+}
+
+.mat-card.scrollable-content {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  > .mat-card-title-group {
+    display: block;
+  }
+
+  > .mat-card-content {
+    overflow-y: auto;
+  }
+}
+
+.seat-col
+{
+
+}
+
+.seat-button
+{
+
+}
+
+.row-name-col
+{
+}
+
+mat-form-field.mat-form-field {
+  font-size: 14px;
+}

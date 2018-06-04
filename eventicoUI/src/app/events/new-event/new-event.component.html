@@ -1,27 +1,59 @@
-<mat-card class="new-event-card">
-  <mat-card-title class="new-event-card-title">New Event</mat-card-title>
-  <form class="new-event-form" #eventCreationForm="ngForm" (ngSubmit)="onSubmit(eventCreationForm)">
-  <mat-card-content>
-      <mat-form-field class="full-width">
-        <input matInput placeholder="Name" #Name="ngModel" [(ngModel)]="event.Name" name="Name" required>
-      </mat-form-field>
-        <mat-form-field class="full-width">
-        <textarea matInput placeholder="Description" #Desc="ngModel" [(ngModel)]="event.Desc" name="Description" required></textarea>
-      </mat-form-field>
-      <mat-form-field>
-      <mat-select placeholder="Select EventType">
-          <mat-option *ngFor="let eventType of eventTypes" value="{{eventType.Id}}">{{eventType.Name}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <input type="file" id="myFile">
-      <mat-checkbox  [(ngModel)]="event.IsLayoutBased" [ngModelOptions]="{standalone: true}">Is Layout Based</mat-checkbox>
-    <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
-  </mat-card-content>
-    <mat-card-content *ngIf="event.IsLayoutBased == true">
-      Screen Here
-    </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button type="submit" class="full-width" color="primary">CREATE</button>
-  </mat-card-actions>
-  </form>
-</mat-card>
+<mat-horizontal-stepper>
+  <mat-step label="Setup Event Info">
+    <mat-card class="new-event-card">
+      <form class="new-event-form" #eventCreationForm="ngForm" (ngSubmit)="onSubmit(eventCreationForm)">
+      <mat-card-content>
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Name" #Name="ngModel" [(ngModel)]="event.Name" name="Name" required>
+          </mat-form-field>
+            <mat-form-field class="full-width">
+            <textarea matInput placeholder="Description" #Desc="ngModel" [(ngModel)]="event.Desc" name="Description" required></textarea>
+          </mat-form-field>
+          <mat-form-field class="half-width">
+          <mat-select placeholder="Select EventType">
+              <mat-option *ngFor="let eventType of eventTypes" value="{{eventType.Id}}">{{eventType.Name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="half-width">
+            <mat-select placeholder="Select Event venue">
+              <mat-option *ngFor="let eventVenue of eventVenues" value="{{eventVenue.Id}}">{{eventVenue.Name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <input type="file" id="myFile">
+          <mat-checkbox  [(ngModel)]="event.IsLayoutBased" [ngModelOptions]="{standalone: true}">Is Layout Based</mat-checkbox>
+        <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+      </mat-card-content>
+        <mat-card-content *ngIf="event.IsLayoutBased == true">
+          Screen Here
+        </mat-card-content>
+      </form>
+    </mat-card>
+    <div>
+      <button mat-button type="submit" color="primary">CREATE</button>
+      <button mat-button matStepperNext>Next</button>
+    </div>
+  </mat-step>
+  <mat-step label="Edit Layout">
+    <table *ngFor="let group of layout.groups">
+      <tr *ngFor="let row of group.rows">
+        <td >
+          <button mat-icon-button>{{row.name}}</button>
+        </td>
+        <td *ngFor="let col of row.cols" >
+          <button *ngIf="col.number != 0" mat-icon-button disabled="{{col.disabled == true}}"><mat-icon aria-label="Event Seat">event_seat</mat-icon></button>
+          <button *ngIf="col.number == 0" mat-icon-button disabled></button>
+        </td>
+      <tr>
+    </table>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </div>
+  </mat-step>
+  <mat-step label="Done">
+    Content 3
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
