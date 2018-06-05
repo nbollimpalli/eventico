@@ -53,9 +53,9 @@ var AppComponent = /** @class */ (function () {
     function AppComponent(userservice) {
         this.userservice = userservice;
         this.title = 'app';
+        this.userservice.updateProfile();
     }
     AppComponent.prototype.ngOnInit = function () {
-        this.userservice.updateProfile();
     };
     AppComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -90,29 +90,31 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__auth_adminauth_guard__ = __webpack_require__("./src/app/auth/adminauth.guard.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__auth_superadminauth_guard__ = __webpack_require__("./src/app/auth/superadminauth.guard.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__auth_auth_interceptor__ = __webpack_require__("./src/app/auth/auth.interceptor.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__routes__ = __webpack_require__("./src/app/routes.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__event_user_shared_user_service__ = __webpack_require__("./src/app/event-user/shared/user.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__events_shared_event_service__ = __webpack_require__("./src/app/events/shared/event.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__event_types_shared_event_type_service__ = __webpack_require__("./src/app/event-types/shared/event-type.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__event_venues_shared_event_venue_service__ = __webpack_require__("./src/app/event-venues/shared/event-venue.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__event_user_register_register_component__ = __webpack_require__("./src/app/event-user/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__event_user_login_login_component__ = __webpack_require__("./src/app/event-user/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__header_header_component__ = __webpack_require__("./src/app/header/header.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__footer_footer_component__ = __webpack_require__("./src/app/footer/footer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__events_events_component__ = __webpack_require__("./src/app/events/events.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__events_new_event_new_event_component__ = __webpack_require__("./src/app/events/new-event/new-event.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__event_types_event_types_component__ = __webpack_require__("./src/app/event-types/event-types.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__event_types_new_event_type_new_event_type_component__ = __webpack_require__("./src/app/event-types/new-event-type/new-event-type.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__event_venues_event_venues_component__ = __webpack_require__("./src/app/event-venues/event-venues.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__event_venues_new_event_venue_new_event_venue_component__ = __webpack_require__("./src/app/event-venues/new-event-venue/new-event-venue.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__form_dialog_form_dialog_component__ = __webpack_require__("./src/app/form-dialog/form-dialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__routes__ = __webpack_require__("./src/app/routes.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__event_user_shared_user_service__ = __webpack_require__("./src/app/event-user/shared/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__events_shared_event_service__ = __webpack_require__("./src/app/events/shared/event.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__event_types_shared_event_type_service__ = __webpack_require__("./src/app/event-types/shared/event-type.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__event_venues_shared_event_venue_service__ = __webpack_require__("./src/app/event-venues/shared/event-venue.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__event_user_register_register_component__ = __webpack_require__("./src/app/event-user/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__event_user_login_login_component__ = __webpack_require__("./src/app/event-user/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__header_header_component__ = __webpack_require__("./src/app/header/header.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__footer_footer_component__ = __webpack_require__("./src/app/footer/footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__events_events_component__ = __webpack_require__("./src/app/events/events.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__events_new_event_new_event_component__ = __webpack_require__("./src/app/events/new-event/new-event.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__event_types_event_types_component__ = __webpack_require__("./src/app/event-types/event-types.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__event_types_new_event_type_new_event_type_component__ = __webpack_require__("./src/app/event-types/new-event-type/new-event-type.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__event_venues_event_venues_component__ = __webpack_require__("./src/app/event-venues/event-venues.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__event_venues_new_event_venue_new_event_venue_component__ = __webpack_require__("./src/app/event-venues/new-event-venue/new-event-venue.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__form_dialog_form_dialog_component__ = __webpack_require__("./src/app/form-dialog/form-dialog.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -153,18 +155,18 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["K" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_13__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_19__event_user_register_register_component__["a" /* RegisterComponent */],
-                __WEBPACK_IMPORTED_MODULE_21__header_header_component__["a" /* HeaderComponent */],
-                __WEBPACK_IMPORTED_MODULE_22__footer_footer_component__["a" /* FooterComponent */],
-                __WEBPACK_IMPORTED_MODULE_23__events_events_component__["a" /* EventsComponent */],
-                __WEBPACK_IMPORTED_MODULE_20__event_user_login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_24__events_new_event_new_event_component__["a" /* NewEventComponent */],
-                __WEBPACK_IMPORTED_MODULE_25__event_types_event_types_component__["a" /* EventTypesComponent */],
-                __WEBPACK_IMPORTED_MODULE_26__event_types_new_event_type_new_event_type_component__["a" /* NewEventTypeComponent */],
-                __WEBPACK_IMPORTED_MODULE_27__event_venues_event_venues_component__["a" /* EventVenuesComponent */],
-                __WEBPACK_IMPORTED_MODULE_28__event_venues_new_event_venue_new_event_venue_component__["a" /* NewEventVenueComponent */],
-                __WEBPACK_IMPORTED_MODULE_29__form_dialog_form_dialog_component__["a" /* FormDialogComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_20__event_user_register_register_component__["a" /* RegisterComponent */],
+                __WEBPACK_IMPORTED_MODULE_22__header_header_component__["a" /* HeaderComponent */],
+                __WEBPACK_IMPORTED_MODULE_23__footer_footer_component__["a" /* FooterComponent */],
+                __WEBPACK_IMPORTED_MODULE_24__events_events_component__["a" /* EventsComponent */],
+                __WEBPACK_IMPORTED_MODULE_21__event_user_login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_25__events_new_event_new_event_component__["a" /* NewEventComponent */],
+                __WEBPACK_IMPORTED_MODULE_26__event_types_event_types_component__["a" /* EventTypesComponent */],
+                __WEBPACK_IMPORTED_MODULE_27__event_types_new_event_type_new_event_type_component__["a" /* NewEventTypeComponent */],
+                __WEBPACK_IMPORTED_MODULE_28__event_venues_event_venues_component__["a" /* EventVenuesComponent */],
+                __WEBPACK_IMPORTED_MODULE_29__event_venues_new_event_venue_new_event_venue_component__["a" /* NewEventVenueComponent */],
+                __WEBPACK_IMPORTED_MODULE_30__form_dialog_form_dialog_component__["a" /* FormDialogComponent */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -174,20 +176,24 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
                 __WEBPACK_IMPORTED_MODULE_7__material_module__["a" /* MaterialModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* ReactiveFormsModule */],
-                __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_14__routes__["a" /* appRoutes */], { enableTracing: true } // <-- debugging purposes only
+                __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_15__routes__["a" /* appRoutes */], { enableTracing: true } // <-- debugging purposes only
                 ),
             ],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_29__form_dialog_form_dialog_component__["a" /* FormDialogComponent */],
+                __WEBPACK_IMPORTED_MODULE_30__form_dialog_form_dialog_component__["a" /* FormDialogComponent */],
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_18__event_venues_shared_event_venue_service__["a" /* EventVenueService */], __WEBPACK_IMPORTED_MODULE_17__event_types_shared_event_type_service__["a" /* EventTypeService */], __WEBPACK_IMPORTED_MODULE_16__events_shared_event_service__["a" /* EventService */], __WEBPACK_IMPORTED_MODULE_15__event_user_shared_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_8__auth_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_9__auth_antiauth_guard__["a" /* AntiauthGuard */], __WEBPACK_IMPORTED_MODULE_10__auth_adminauth_guard__["a" /* AdminauthGuard */], __WEBPACK_IMPORTED_MODULE_11__auth_superadminauth_guard__["a" /* SuperadminauthGuard */],
+            providers: [__WEBPACK_IMPORTED_MODULE_19__event_venues_shared_event_venue_service__["a" /* EventVenueService */], __WEBPACK_IMPORTED_MODULE_18__event_types_shared_event_type_service__["a" /* EventTypeService */], __WEBPACK_IMPORTED_MODULE_17__events_shared_event_service__["a" /* EventService */], __WEBPACK_IMPORTED_MODULE_16__event_user_shared_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_8__auth_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_9__auth_antiauth_guard__["a" /* AntiauthGuard */], __WEBPACK_IMPORTED_MODULE_10__auth_adminauth_guard__["a" /* AdminauthGuard */], __WEBPACK_IMPORTED_MODULE_11__auth_superadminauth_guard__["a" /* SuperadminauthGuard */],
                 {
                     provide: __WEBPACK_IMPORTED_MODULE_6__angular_common_http__["a" /* HTTP_INTERCEPTORS */],
                     useClass: __WEBPACK_IMPORTED_MODULE_12__auth_auth_interceptor__["a" /* AuthInterceptor */],
                     multi: true
+                },
+                {
+                    provide: __WEBPACK_IMPORTED_MODULE_13__angular_common__["g" /* LocationStrategy */],
+                    useClass: __WEBPACK_IMPORTED_MODULE_13__angular_common__["d" /* HashLocationStrategy */]
                 }
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_13__app_component__["a" /* AppComponent */]]
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_14__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -901,6 +907,7 @@ var UserService = /** @class */ (function () {
     };
     UserService.prototype.updateProfile = function () {
         var _this = this;
+        this.setGuestProfile();
         if (localStorage.getItem('userToken') != null) {
             this.fetchProfile().subscribe(function (data) {
                 _this.user.LoggedIn = true;
@@ -913,9 +920,6 @@ var UserService = /** @class */ (function () {
                     'manageUsers': true
                 };
             });
-        }
-        else {
-            this.setGuestProfile();
         }
     };
     UserService.prototype.fetchProfile = function () {
@@ -1004,7 +1008,7 @@ module.exports = ".new-event-venue-card\n{\n   max-width: 30%;\n   margin: 100px
 /***/ "./src/app/event-venues/new-event-venue/new-event-venue.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-horizontal-stepper *ngIf=\"eventVenue != null\">\n  <mat-step label=\"Setup Event Venue\">\n    <form class=\"new-event-venue-form\" #eventVenueCreationForm=\"ngForm\" (ngSubmit)=\"onSubmit(eventVenueCreationForm)\">\n      <mat-card class=\"new-event-venue-card\">\n        <mat-card-content>\n            <mat-form-field class=\"full-width\">\n              <input matInput placeholder=\"Name\" #Name=\"ngModel\" [(ngModel)]=\"eventVenue.Name\" name=\"Name\" required>\n            </mat-form-field>\n            <mat-form-field class=\"full-width\">\n              <textarea matInput placeholder=\"Description\" #Desc=\"ngModel\" [(ngModel)]=\"eventVenue.Desc\" name=\"Description\" required></textarea>\n            </mat-form-field>\n            <mat-form-field>\n            <mat-select  #LayoutType placeholder=\"Layout Type\" [(ngModel)]=\"eventVenue.LayoutType\" name=\"LayoutType\">\n              <mat-option value=\"none\">\n                NONE\n              </mat-option>\n              <mat-option value=\"box\">\n                BOX\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-spinner [style.display]=\"showSpinner ? 'block' : 'none'\"></mat-spinner>\n        </mat-card-content>\n      </mat-card>\n      <div>\n        <button mat-button type=\"submit\" color=\"primary\">CREATE</button>\n        <button mat-button matStepperNext>Next to Add Layout</button>\n      </div>\n    </form>\n  </mat-step>\n  <mat-step label=\"Set Layout\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-venue-form\" #addGroupForm=\"ngForm\" (ngSubmit)=\"addGroup(addGroupForm)\">\n          <input mat-input type=\"text\" #groupName=\"ngModel\" [(ngModel)]=\"addGroupFormData.group_name\" placeholder=\"Group Name\" name=\"groupName\" >\n          <input mat-input type=\"number\" #rows=\"ngModel\" [(ngModel)]=\"addGroupFormData.rows\" placeholder=\"Rows\" name=\"rows\" >\n          <input mat-input type=\"number\" #cols=\"ngModel\" [(ngModel)]=\"addGroupFormData.cols\" placeholder=\"Cols\" name=\"cols\" >\n          <span class=\"tollbar-splitter\"></span>\n          <button mat-button type=\"submit\" color=\"primary\" >Add Group</button>\n          <button mat-button >Reset Layout</button>\n        </form>\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\">\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.blank\" mat-icon-button disabled></button>\n              <button *ngIf=\"col.active\" mat-icon-button><mat-icon aria-label=\"Event Seat\">event_seat</mat-icon></button>\n              <button *ngIf=\"col.na\" mat-icon-button disabled><mat-icon aria-label=\"Event Seat\">event_seat</mat-icon></button>\n              <button *ngIf=\"col.blocked\" mat-icon-button disabled><mat-icon aria-label=\"Event Seat\">event_seat</mat-icon></button>\n              <button *ngIf=\"col.path\" mat-icon-button><mat-icon aria-label=\"Event Seat\">reorder</mat-icon></button>\n            </td>\n          <tr>\n          <tr *ngIf=\"group != null && group.rows != null && group.rows[0] != null\">\n            <td class=\"row-name-col\">\n              <button mat-icon-button>seat</button>\n            </td>\n            <td *ngFor=\"let col of group.rows[0].cols; let m = index\" class=\"seat-col\">\n              <button mat-icon-button>{{ m }}</button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Mark Empty Space\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-venue-form\" #markEmptyForm=\"ngForm\" (ngSubmit)=\"markEmpty(markEmptyForm)\">\n\n          <mat-form-field>\n            <mat-select placeholder=\"Select Group\" #GroupSelect=\"ngModel\" [(ngModel)]=\"markEmptyFormData.group_index\" name=\"GroupSelect\">\n              <mat-option *ngFor=\"let group of layout_groups;let i = index\" [value]=\"i\">\n                {{ group.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markEmptyFormData.group_index != -1\">\n            <mat-select  #RowSelect placeholder=\"Select Row\" [(ngModel)]=\"markEmptyFormData.row_index\" name=\"RowSelect\">\n              <mat-option *ngFor=\"let row of layout_groups[markEmptyFormData.group_index].rows ;let j = index\" [value]=\"j\">\n                {{ row.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markEmptyFormData.row_index != -1\">\n            <mat-select  #StartColSelect placeholder=\"Select Start Column\" [(ngModel)]=\"markEmptyFormData.start_col_index\" name=\"StartColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markEmptyFormData.group_index].rows[markEmptyFormData.row_index].cols ;let k = index\" [value]=\"k\">\n                {{ k }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markEmptyFormData.row_index != -1\">\n            <mat-select  #EndColSelect placeholder=\"Select End Column\" [(ngModel)]=\"markEmptyFormData.end_col_index\" name=\"EndColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markEmptyFormData.group_index].rows[markEmptyFormData.row_index].cols;let l = index\" [value]=\"l\">\n                {{ l }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <span class=\"tollbar-splitter\"></span>\n          <button mat-button type=\"submit\" color=\"primary\" >Mark Empty</button>\n          <button mat-button >Reset Layout</button>\n        </form>\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\">\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.blank\" mat-icon-button disabled></button>\n              <button *ngIf=\"col.active\" mat-icon-button><mat-icon aria-label=\"Event Seat\">event_seat</mat-icon></button>\n              <button *ngIf=\"col.na\" mat-icon-button disabled><mat-icon aria-label=\"Event Seat\">event_seat</mat-icon></button>\n              <button *ngIf=\"col.blocked\" mat-icon-button disabled><mat-icon aria-label=\"Event Seat\">event_seat</mat-icon></button>\n              <button *ngIf=\"col.path\" mat-icon-button><mat-icon aria-label=\"Event Seat\">reorder</mat-icon></button>\n\n            </td>\n          <tr>\n          <tr *ngIf=\"group != null && group.rows != null && group.rows[0] != null\">\n            <td class=\"row-name-col\">\n              <button mat-icon-button>seat</button>\n            </td>\n            <td *ngFor=\"let col of group.rows[0].cols; let m = index\" class=\"seat-col\">\n              <button mat-icon-button>{{ m }}</button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Set Path\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-venue-form\" #addPathForm=\"ngForm\" (ngSubmit)=\"addPath(addPathForm)\">\n          <mat-form-field>\n            <mat-select placeholder=\"Select Group\" #GroupSelect=\"ngModel\" [(ngModel)]=\"addPathFormData.group_index\" name=\"GroupSelect\">\n              <mat-option *ngFor=\"let group of layout_groups;let i = index\" [value]=\"i\">\n                {{ group.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"addPathFormData.group_index != -1\">\n            <mat-select  #ColSelect placeholder=\"Select Col index\" [(ngModel)]=\"addPathFormData.col_index\" name=\"ColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[addPathFormData.group_index].rows[0].cols ;let j = index\" [value]=\"j\">\n                {{ j }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <span class=\"tollbar-splitter\"></span>\n          <button mat-button type=\"submit\" color=\"primary\" >Add Path</button>\n          <button mat-button >Reset Layout</button>\n        </form>\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\">\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.blank\" mat-icon-button disabled></button>\n              <button *ngIf=\"col.active\" mat-icon-button><mat-icon aria-label=\"Event Seat\">event_seat</mat-icon></button>\n              <button *ngIf=\"col.na\" mat-icon-button disabled><mat-icon aria-label=\"Event Seat\">event_seat</mat-icon></button>\n              <button *ngIf=\"col.blocked\" mat-icon-button disabled><mat-icon aria-label=\"Event Seat\">event_seat</mat-icon></button>\n              <button *ngIf=\"col.path\" mat-icon-button><mat-icon aria-label=\"Event Seat\">reorder</mat-icon></button>\n            </td>\n          <tr>\n          <tr *ngIf=\"group != null && group.rows != null && group.rows[0] != null\">\n            <td class=\"row-name-col\">\n              <button mat-icon-button>seat</button>\n            </td>\n            <td *ngFor=\"let col of group.rows[0].cols; let m = index\" class=\"seat-col\">\n              <button mat-icon-button>{{ m }}</button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Confirm Details\">\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\" disabled>\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.blank\" mat-icon-button disabled>{{ col.number }}</button>\n              <button *ngIf=\"col.active\" mat-icon-button><mat-icon aria-label=\"Event Seat\">event_seat</mat-icon>{{ col.number }}</button>\n              <button *ngIf=\"col.na\" mat-icon-button disabled><mat-icon aria-label=\"Event Seat\">event_seat</mat-icon>{{ col.number }}</button>\n              <button *ngIf=\"col.blocked\" mat-icon-button disabled><mat-icon aria-label=\"Event Seat\">event_seat</mat-icon>{{ col.number }}</button>\n              <button *ngIf=\"col.path\" mat-icon-button><mat-icon aria-label=\"Event Seat\">reorder</mat-icon>{{ col.number }}</button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button (click)=\"upsertEventVenue()\">Create Event Venue</button>\n    </div>\n  </mat-step>\n</mat-horizontal-stepper>\n"
+module.exports = "<div  [style.display]=\"showOverlay\" class=\"overlay\"><mat-spinner style=\"margin: auto;\"></mat-spinner></div>\n<mat-horizontal-stepper *ngIf=\"eventVenue != null\">\n  <mat-step label=\"Setup Event Venue\">\n    <form class=\"new-event-venue-form\" #eventVenueCreationForm=\"ngForm\">\n      <mat-card class=\"new-event-venue-card\">\n        <mat-card-content>\n            <mat-form-field class=\"full-width\">\n              <input matInput placeholder=\"Name\" #Name=\"ngModel\" [(ngModel)]=\"eventVenue.Name\" name=\"Name\" required>\n            </mat-form-field>\n            <mat-form-field class=\"full-width\">\n              <textarea matInput placeholder=\"Description\" #Desc=\"ngModel\" [(ngModel)]=\"eventVenue.Desc\" name=\"Description\" required></textarea>\n            </mat-form-field>\n            <mat-form-field>\n            <mat-select  #LayoutType placeholder=\"Layout Type\" [(ngModel)]=\"eventVenue.LayoutType\" name=\"LayoutType\">\n              <mat-option value=\"none\">\n                NONE\n              </mat-option>\n              <mat-option value=\"box\">\n                BOX\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-spinner [style.display]=\"showSpinner ? 'block' : 'none'\"></mat-spinner>\n        </mat-card-content>\n      </mat-card>\n      <div *ngIf=\"eventVenue.LayoutType == 'none'\">\n        <button  mat-button type=\"submit\" (click)=\"upsertEventVenue()\">UPSERT</button>\n      </div>\n      <div *ngIf=\"mode == new || eventVenue.LayoutType == 'box'\">\n        <button  mat-button matStepperNext >Next</button>\n      </div>\n    </form>\n  </mat-step>\n  <mat-step label=\"Set Layout\" *ngIf=\"eventVenue.LayoutType == 'box'\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-venue-form\" #addGroupForm=\"ngForm\" (ngSubmit)=\"addGroup(addGroupForm)\">\n          <input mat-input type=\"text\" #groupName=\"ngModel\" [(ngModel)]=\"addGroupFormData.group_name\" placeholder=\"Group Name\" name=\"groupName\" >\n          <input mat-input type=\"number\" #rows=\"ngModel\" [(ngModel)]=\"addGroupFormData.rows\" placeholder=\"Rows\" name=\"rows\" >\n          <input mat-input type=\"number\" #cols=\"ngModel\" [(ngModel)]=\"addGroupFormData.cols\" placeholder=\"Cols\" name=\"cols\" >\n          <span class=\"tollbar-splitter\"></span>\n          <button mat-button type=\"submit\" color=\"primary\" >Add Group</button>\n          <button mat-button >Reset Layout</button>\n        </form>\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\">\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button [matTooltip]=\"col.number\" class=\"seat-button\" [disabled]=\"col.disabled\"  mat-icon-button><mat-icon [style.color]=\"col.color\" aria-label=\"Event Seat\">{{ col.icon }}</mat-icon></button>\n            </td>\n          <tr>\n          <tr *ngIf=\"group != null && group.rows != null && group.rows[0] != null\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>.</button>\n            </td>\n            <td *ngFor=\"let col of group.rows[0].cols; let m = index\" class=\"seat-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ m }}</button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Mark Empty Space\" *ngIf=\"eventVenue.LayoutType == 'box'\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-venue-form\" #markEmptyForm=\"ngForm\" (ngSubmit)=\"markEmpty(markEmptyForm)\">\n\n          <mat-form-field>\n            <mat-select placeholder=\"Select Group\" #GroupSelect=\"ngModel\" [(ngModel)]=\"markEmptyFormData.group_index\" name=\"GroupSelect\">\n              <mat-option *ngFor=\"let group of layout_groups;let i = index\" [value]=\"i\">\n                {{ group.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markEmptyFormData.group_index != -1\">\n            <mat-select  #RowSelect placeholder=\"Select Row\" [(ngModel)]=\"markEmptyFormData.row_index\" name=\"RowSelect\">\n              <mat-option *ngFor=\"let row of layout_groups[markEmptyFormData.group_index].rows ;let j = index\" [value]=\"j\">\n                {{ row.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markEmptyFormData.row_index != -1\">\n            <mat-select  #StartColSelect placeholder=\"Select Start Column\" [(ngModel)]=\"markEmptyFormData.start_col_index\" name=\"StartColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markEmptyFormData.group_index].rows[markEmptyFormData.row_index].cols ;let k = index\" [value]=\"k\">\n                {{ k }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markEmptyFormData.row_index != -1\">\n            <mat-select  #EndColSelect placeholder=\"Select End Column\" [(ngModel)]=\"markEmptyFormData.end_col_index\" name=\"EndColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markEmptyFormData.group_index].rows[markEmptyFormData.row_index].cols;let l = index\" [value]=\"l\">\n                {{ l }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <span class=\"tollbar-splitter\"></span>\n          <button mat-button type=\"submit\" color=\"primary\" >Mark Empty</button>\n          <button mat-button >Reset Layout</button>\n        </form>\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\">\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button [matTooltip]=\"col.number\" class=\"seat-button\" [disabled]=\"col.disabled\"  mat-icon-button><mat-icon [style.color]=\"col.color\" aria-label=\"Event Seat\">{{ col.icon }}</mat-icon></button>\n            </td>\n          <tr>\n          <tr *ngIf=\"group != null && group.rows != null && group.rows[0] != null\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>.</button>\n            </td>\n            <td *ngFor=\"let col of group.rows[0].cols; let m = index\" class=\"seat-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ m }}</button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Set Path\" *ngIf=\"eventVenue.LayoutType == 'box'\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-venue-form\" #addPathForm=\"ngForm\" (ngSubmit)=\"addPath(addPathForm)\">\n          <mat-form-field>\n            <mat-select placeholder=\"Select Group\" #GroupSelect=\"ngModel\" [(ngModel)]=\"addPathFormData.group_index\" name=\"GroupSelect\">\n              <mat-option *ngFor=\"let group of layout_groups;let i = index\" [value]=\"i\">\n                {{ group.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"addPathFormData.group_index != -1\">\n            <mat-select  #ColSelect placeholder=\"Select Col index\" [(ngModel)]=\"addPathFormData.col_index\" name=\"ColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[addPathFormData.group_index].rows[0].cols ;let j = index\" [value]=\"j\">\n                {{ j }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <span class=\"tollbar-splitter\"></span>\n          <button mat-button type=\"submit\" color=\"primary\" >Add Path</button>\n          <button mat-button >Reset Layout</button>\n        </form>\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\">\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button [matTooltip]=\"col.number\" class=\"seat-button\" [disabled]=\"col.disabled\"  mat-icon-button><mat-icon [style.color]=\"col.color\" aria-label=\"Event Seat\">{{ col.icon }}</mat-icon></button>\n            </td>\n          <tr>\n          <tr *ngIf=\"group != null && group.rows != null && group.rows[0] != null\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>seat</button>\n            </td>\n            <td *ngFor=\"let col of group.rows[0].cols; let m = index\" class=\"seat-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ m }}</button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Confirm Details\" *ngIf=\"eventVenue.LayoutType == 'box'\">\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\" disabled>\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button [matTooltip]=\"col.number\" class=\"seat-button\" [disabled]=\"col.disabled\"  mat-icon-button><mat-icon [style.color]=\"col.color\" aria-label=\"Event Seat\">{{ col.icon }}</mat-icon></button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button (click)=\"upsertEventVenue()\">UPSERT</button>\n    </div>\n  </mat-step>\n</mat-horizontal-stepper>\n"
 
 /***/ }),
 
@@ -1069,8 +1073,8 @@ var NewEventVenueComponent = /** @class */ (function () {
         };
         this.addGroupFormData = {
             group_name: '',
-            rows: -1,
-            cols: -1,
+            rows: null,
+            cols: null,
         };
         this.markEmptyFormData = {
             group_index: -1,
@@ -1082,23 +1086,28 @@ var NewEventVenueComponent = /** @class */ (function () {
             group_index: -1,
             col_index: -1
         };
+        this.showOverlay = 'block';
         this.route.params.subscribe(function (params) { return _this.setupEventVenue(params['id']); });
     }
     NewEventVenueComponent.prototype.setupEventVenue = function (id) {
         var _this = this;
-        if (id != null || id != '') {
+        console.log(id);
+        if (id != null && id != '' && id != "undefined") {
+            this.mode = "update";
             this.eventVenueService.getEventVenue(id)
                 .subscribe(function (data) {
-                debugger;
                 var obj = JSON.parse(data.toString());
                 _this.eventVenue = _this.eventVenueService.makeEventVenueObject(obj[0]);
                 _this.eventVenueLayout = _this.eventVenue.eventVenueLayout;
                 console.log(_this.eventVenue);
+                _this.showOverlay = 'none';
             });
         }
         else {
+            this.mode = "new";
             this.eventVenue = new __WEBPACK_IMPORTED_MODULE_1__shared_event_venue_model__["a" /* EventVenue */]({});
             this.eventVenueLayout = this.eventVenue.eventVenueLayout;
+            this.showOverlay = 'none';
         }
     };
     NewEventVenueComponent.prototype.ngOnInit = function () {
@@ -1440,7 +1449,7 @@ module.exports = ".new-event-card\n{\n   max-width: 30%;\n   margin: 100px auto;
 /***/ "./src/app/events/new-event/new-event.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-horizontal-stepper>\n  <mat-step label=\"Setup Event Info\">\n    <mat-card class=\"new-event-card\">\n      <form class=\"new-event-form\" #eventCreationForm=\"ngForm\" (ngSubmit)=\"onSubmit(eventCreationForm)\">\n      <mat-card-content>\n          <mat-form-field class=\"full-width\">\n            <input matInput placeholder=\"Name\" #Name=\"ngModel\" [(ngModel)]=\"event.Name\" name=\"Name\" required>\n          </mat-form-field>\n            <mat-form-field class=\"full-width\">\n            <textarea matInput placeholder=\"Description\" #Desc=\"ngModel\" [(ngModel)]=\"event.Desc\" name=\"Description\" required></textarea>\n          </mat-form-field>\n          <mat-form-field class=\"half-width\">\n          <mat-select placeholder=\"Select EventType\">\n              <mat-option *ngFor=\"let eventType of eventTypes\" value=\"{{eventType.Id}}\">{{eventType.Name}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field class=\"half-width\">\n            <mat-select placeholder=\"Select Event venue\">\n              <mat-option *ngFor=\"let eventVenue of eventVenues\" value=\"{{eventVenue.Id}}\">{{eventVenue.Name}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <input type=\"file\" id=\"myFile\">\n          <mat-checkbox  [(ngModel)]=\"event.IsLayoutBased\" [ngModelOptions]=\"{standalone: true}\">Is Layout Based</mat-checkbox>\n        <mat-spinner [style.display]=\"showSpinner ? 'block' : 'none'\"></mat-spinner>\n      </mat-card-content>\n        <mat-card-content *ngIf=\"event.IsLayoutBased == true\">\n          Screen Here\n        </mat-card-content>\n      </form>\n    </mat-card>\n    <div>\n      <button mat-button type=\"submit\" color=\"primary\">CREATE</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n  <mat-step label=\"Edit Layout\">\n    <table *ngFor=\"let group of layout.groups\">\n      <tr *ngFor=\"let row of group.rows\">\n        <td >\n          <button mat-icon-button>{{row.name}}</button>\n        </td>\n        <td *ngFor=\"let col of row.cols\" >\n          <button *ngIf=\"col.number != 0\" mat-icon-button disabled=\"{{col.disabled == true}}\"><mat-icon aria-label=\"Event Seat\">event_seat</mat-icon></button>\n          <button *ngIf=\"col.number == 0\" mat-icon-button disabled></button>\n        </td>\n      <tr>\n    </table>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n  <mat-step label=\"Done\">\n    Content 3\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n    </div>\n  </mat-step>\n</mat-horizontal-stepper>\n"
+module.exports = "<div  class=\"overlay\" [style.display]=\"showOverlay\"> <mat-spinner display='block'></mat-spinner> </div>\n<mat-horizontal-stepper>\n  <mat-step label=\"Setup Event Info\">\n    <mat-card class=\"new-event-card\">\n      <form class=\"new-event-form\" #eventCreationForm=\"ngForm\" >\n      <mat-card-content>\n          <mat-form-field class=\"full-width\">\n            <input matInput placeholder=\"Name\" #Name=\"ngModel\" [(ngModel)]=\"event.Name\" name=\"Name\" required>\n          </mat-form-field>\n          <mat-form-field class=\"full-width\">\n            <input matInput type=\"number\" placeholder=\"Default Price\" #Name=\"ngModel\" [(ngModel)]=\"event.DefaultPrice\" name=\"DefaultPrice\" required>\n          </mat-form-field>\n            <mat-form-field class=\"full-width\">\n            <textarea matInput placeholder=\"Description\" #Desc=\"ngModel\" [(ngModel)]=\"event.Desc\" name=\"Description\" required></textarea>\n          </mat-form-field>\n          <mat-form-field class=\"half-width\">\n          <mat-select placeholder=\"Select EventType\" #EventType=\"ngModel\" [(ngModel)]=\"event.EventTypeId\" name=\"EventType\">\n              <mat-option *ngFor=\"let eventType of eventTypes\" value=\"{{eventType.Id}}\">{{eventType.Name}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field class=\"half-width\">\n            <mat-select placeholder=\"Select Event venue\" #EventVenue=\"ngModel\" [(ngModel)]=\"event.EventVenueId\" (change)=\"updateVenueDetails()\" name=\"EventVenue\" >\n              <mat-option *ngFor=\"let eventVenue of eventVenues\" value=\"{{eventVenue.Id}}\" >{{eventVenue.Name}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field>\n            <mat-select  #LayoutType placeholder=\"Layout Type\" #LayoutType=\"ngModel\" [(ngModel)]=\"event.LayoutType\" name=\"LayoutType\" disabled>\n              <mat-option value=\"none\">\n                NONE\n              </mat-option>\n              <mat-option value=\"box\">\n                BOX\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n      </mat-card-content>\n      </form>\n    </mat-card>\n    <div *ngIf=\"event.LayoutType == 'none'\">\n      <button  mat-button type=\"submit\" (click)=\"upsertEvent()\">UPSERT</button>\n    </div>\n    <div *ngIf=\"mode == new || event.LayoutType == 'box'\">\n      <button  mat-button matStepperNext >Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Mark Unavailability\" *ngIf=\"event.LayoutType == 'box'\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-form\" #markNAForm=\"ngForm\" (ngSubmit)=\"markNA(markNAForm)\">\n\n          <mat-form-field>\n            <mat-select placeholder=\"Select Group\" #GroupSelect=\"ngModel\" [(ngModel)]=\"markNAFormData.group_index\" name=\"GroupSelect\">\n              <mat-option *ngFor=\"let group of layout_groups;let i = index\" [value]=\"i\">\n                {{ group.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markNAFormData.group_index != -1\">\n            <mat-select  #RowSelect placeholder=\"Select Row\" [(ngModel)]=\"markNAFormData.row_index\" name=\"RowSelect\">\n              <mat-option *ngFor=\"let row of layout_groups[markNAFormData.group_index].rows ;let j = index\" [value]=\"j\">\n                {{ row.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markNAFormData.row_index != -1\">\n            <mat-select  #StartColSelect placeholder=\"Select Start Column\" [(ngModel)]=\"markNAFormData.start_col_index\" name=\"StartColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markNAFormData.group_index].rows[markNAFormData.row_index].cols ;let k = index\" [value]=\"k\">\n                {{ k }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markNAFormData.row_index != -1\">\n            <mat-select  #EndColSelect placeholder=\"Select End Column\" [(ngModel)]=\"markNAFormData.end_col_index\" name=\"EndColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markNAFormData.group_index].rows[markNAFormData.row_index].cols;let l = index\" [value]=\"l\">\n                {{ l }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <span class=\"tollbar-splitter\"></span>\n          <button mat-button type=\"submit\" color=\"primary\" >Mark Unavailable</button>\n          <button mat-button >Reset Layout</button>\n        </form>\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\">\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button [matTooltip]=\"col.number\" class=\"seat-button\" [disabled]=\"col.disabled\"  mat-icon-button><mat-icon [style.color]=\"col.color\" aria-label=\"Event Seat\">{{ col.icon }}</mat-icon></button>\n            </td>\n          <tr>\n          <tr *ngIf=\"group != null && group.rows != null && group.rows[0] != null\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>.</button>\n            </td>\n            <td *ngFor=\"let col of group.rows[0].cols; let m = index\" class=\"seat-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ m }}</button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n\n\n  <mat-step label=\"Confirm Details\">\n    Content 3\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n    </div>\n  </mat-step>\n</mat-horizontal-stepper>\n"
 
 /***/ }),
 
@@ -1470,18 +1479,109 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var NewEventComponent = /** @class */ (function () {
-    function NewEventComponent(eventService, router, eventTypeService, eventVenueService) {
+    function NewEventComponent(eventService, router, eventTypeService, eventVenueService, route) {
+        var _this = this;
         this.eventService = eventService;
         this.router = router;
         this.eventTypeService = eventTypeService;
         this.eventVenueService = eventVenueService;
-        this.event = new __WEBPACK_IMPORTED_MODULE_1__shared_event_model__["a" /* Event */]({});
+        this.route = route;
+        this.markNAFormData = {
+            group_index: -1,
+            row_index: -1,
+            start_col_index: -1,
+            end_col_index: -1,
+        };
+        this.pricingFormData = {
+            group_index: -1,
+            row_index: -1,
+            start_col_index: -1,
+            end_col_index: -1,
+        };
+        this.mode = "new";
+        this.showOverlay = 'none';
+        this.route.params.subscribe(function (params) { return _this.setupEvent(params['id']); });
     }
     NewEventComponent.prototype.ngOnInit = function () {
         this.resetForm();
         this.eventTypeService.loadEventTypes();
         this.eventVenueService.loadEventVenues();
+    };
+    NewEventComponent.prototype.setupEvent = function (id) {
+        var _this = this;
+        console.log(id);
+        console.log('-------');
+        if (id != null && id != '' && id != "undefined") {
+            this.mode = "update";
+            this.eventService.getEvent(id)
+                .subscribe(function (data) {
+                var obj = JSON.parse(data.toString());
+                _this.event = _this.eventService.makeEventObject(obj[0]);
+                _this.eventLayout = _this.event.eventLayout;
+                _this.showOverlay = 'none';
+            });
+        }
+        else {
+            this.mode = "new";
+            this.event = new __WEBPACK_IMPORTED_MODULE_1__shared_event_model__["a" /* Event */]({});
+            this.eventLayout = this.event.eventLayout;
+            this.showOverlay = 'none';
+        }
+    };
+    NewEventComponent.prototype.updateVenueDetails = function () {
+        var _this = this;
+        if (this.event.EventVenueId != null) {
+            this.showOverlay = 'block';
+            this.eventVenueService.getEventVenue(this.event.EventVenueId)
+                .subscribe(function (data) {
+                var obj = JSON.parse(data.toString());
+                var eventVenue = _this.eventVenueService.makeEventVenueObject(obj[0]);
+                _this.eventLayout.import(eventVenue.eventVenueLayout.export());
+                _this.event.LayoutType = eventVenue.LayoutType;
+                _this.showOverlay = 'none';
+                console.log(_this.eventLayout);
+            });
+        }
+    };
+    NewEventComponent.prototype.markNA = function (form) {
+        console.log(this.markNAFormData);
+        var response = this.eventLayout.markUnavailable(this.markNAFormData);
+        if (response.success) {
+        }
+        else {
+            alert(response.message);
+        }
+        this.resetMarkNAForm(form);
+    };
+    NewEventComponent.prototype.resetMarkNAForm = function (form) {
+        if (form != null) {
+            form.reset();
+            this.markNAFormData.group_index = -1;
+            this.markNAFormData.row_index = -1;
+            this.markNAFormData.start_col_index = -1;
+            this.markNAFormData.end_col_index = -1;
+        }
+    };
+    NewEventComponent.prototype.updatePrice = function (form) {
+        console.log(this.pricingFormData);
+        var response = this.eventLayout.markPricing(this.pricingFormData);
+        if (response.success) {
+        }
+        else {
+            alert(response.message);
+        }
+        this.resetPricingForm(form);
+    };
+    NewEventComponent.prototype.resetPricingForm = function (form) {
+        if (form != null) {
+            form.reset();
+            this.pricingFormData.group_index = -1;
+            this.pricingFormData.row_index = -1;
+            this.pricingFormData.start_col_index = -1;
+            this.pricingFormData.end_col_index = -1;
+        }
     };
     NewEventComponent.prototype.resetForm = function (form) {
         if (form != null) {
@@ -1491,8 +1591,10 @@ var NewEventComponent = /** @class */ (function () {
     };
     NewEventComponent.prototype.onSubmit = function (form) {
         var _this = this;
+        this.showOverlay = 'block';
         this.eventService.createEvent(this.event)
             .subscribe(function (data) {
+            _this.showOverlay = 'none';
             _this.resetForm(form);
             _this.router.navigate(['']);
         });
@@ -1511,87 +1613,9 @@ var NewEventComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(NewEventComponent.prototype, "layout", {
+    Object.defineProperty(NewEventComponent.prototype, "layout_groups", {
         get: function () {
-            return {
-                groups: [
-                    {
-                        name: "Gold",
-                        rows: [
-                            {
-                                name: "A",
-                                number: 1,
-                                cols: [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 0 }, { number: 5 }, { number: 6 }, { number: 7, disabled: true }, { number: 8 }, { number: 9 }, { number: 10 }]
-                            },
-                            {
-                                name: "B",
-                                number: 2,
-                                cols: [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 0 }, { number: 5 }, { number: 6 }, { number: 7, disabled: true }, { number: 8 }, { number: 9 }, { number: 10 }]
-                            },
-                            {
-                                name: "C",
-                                number: 3,
-                                cols: [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 0 }, { number: 5 }, { number: 6 }, { number: 7, disabled: true }, { number: 8 }, { number: 9 }, { number: 10 }]
-                            },
-                            {
-                                name: "D",
-                                number: 4,
-                                cols: [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 0 }, { number: 5 }, { number: 6 }, { number: 7, disabled: true }, { number: 8 }, { number: 9 }, { number: 10 }]
-                            }
-                        ]
-                    },
-                    {
-                        name: "Silver",
-                        rows: [
-                            {
-                                name: "A",
-                                number: 1,
-                                cols: [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 0 }, { number: 5 }, { number: 6 }, { number: 7, disabled: true }, { number: 8 }, { number: 9 }, { number: 10 }]
-                            },
-                            {
-                                name: "B",
-                                number: 2,
-                                cols: [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 0 }, { number: 5 }, { number: 6 }, { number: 7, disabled: true }, { number: 8 }, { number: 9 }, { number: 10 }]
-                            },
-                            {
-                                name: "C",
-                                number: 3,
-                                cols: [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 0 }, { number: 5 }, { number: 6 }, { number: 7, disabled: true }, { number: 8 }, { number: 9 }, { number: 10 }]
-                            },
-                            {
-                                name: "D",
-                                number: 4,
-                                cols: [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 0 }, { number: 5 }, { number: 6 }, { number: 7, disabled: true }, { number: 8 }, { number: 9 }, { number: 10 }]
-                            }
-                        ]
-                    },
-                    {
-                        name: "Bronze",
-                        rows: [
-                            {
-                                name: "A",
-                                number: 1,
-                                cols: [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 0 }, { number: 5 }, { number: 6 }, { number: 7, disabled: true }, { number: 8 }, { number: 9 }, { number: 10 }]
-                            },
-                            {
-                                name: "B",
-                                number: 2,
-                                cols: [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 0 }, { number: 5 }, { number: 6 }, { number: 7, disabled: true }, { number: 8 }, { number: 9 }, { number: 10 }]
-                            },
-                            {
-                                name: "C",
-                                number: 3,
-                                cols: [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 0 }, { number: 5 }, { number: 6 }, { number: 7, disabled: true }, { number: 8 }, { number: 9 }, { number: 10 }]
-                            },
-                            {
-                                name: "D",
-                                number: 4,
-                                cols: [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }, { number: 0 }, { number: 5 }, { number: 6 }, { number: 7, disabled: true }, { number: 8 }, { number: 9 }, { number: 10 }]
-                            }
-                        ]
-                    }
-                ]
-            };
+            return this.eventLayout.groups;
         },
         enumerable: true,
         configurable: true
@@ -1602,7 +1626,7 @@ var NewEventComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/events/new-event/new-event.component.html"),
             styles: [__webpack_require__("./src/app/events/new-event/new-event.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__shared_event_service__["a" /* EventService */], __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_2__event_types_shared_event_type_service__["a" /* EventTypeService */], __WEBPACK_IMPORTED_MODULE_3__event_venues_shared_event_venue_service__["a" /* EventVenueService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__shared_event_service__["a" /* EventService */], __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_2__event_types_shared_event_type_service__["a" /* EventTypeService */], __WEBPACK_IMPORTED_MODULE_3__event_venues_shared_event_venue_service__["a" /* EventVenueService */], __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* ActivatedRoute */]])
     ], NewEventComponent);
     return NewEventComponent;
 }());
@@ -1616,27 +1640,33 @@ var NewEventComponent = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Event; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_event_layout_model__ = __webpack_require__("./src/app/shared/event-layout.model.ts");
+
 var Event = /** @class */ (function () {
     function Event(eventJsonObject) {
+        this.import(eventJsonObject);
+    }
+    Event.prototype.import = function (eventJsonObject) {
         this.Id = eventJsonObject["id"];
         this.Name = eventJsonObject["name"];
         this.Desc = eventJsonObject["desc"];
-        this.IsLayoutBased = eventJsonObject["is_layout_based"];
-    }
-    Event.prototype.getCreateJSON = function () {
-        var createJSON = {
-            "name": this.Name,
-            "desc": this.Desc
-        };
-        return createJSON;
+        this.LayoutType = eventJsonObject["layout_type"];
+        this.DefaultPrice = eventJsonObject["default_price"];
+        this.EventTypeId = eventJsonObject["event_type_id"];
+        this.EventVenueId = eventJsonObject["event_venue_id"];
+        this.eventLayout = new __WEBPACK_IMPORTED_MODULE_0__shared_event_layout_model__["a" /* EventLayout */](eventJsonObject["layout"]);
     };
-    Event.prototype.getUpdateJSON = function () {
-        var updateJSON = {
+    Event.prototype.export = function () {
+        var exportJSON = {
             "id": this.Id,
             "name": this.Name,
-            "desc": this.Desc
+            "desc": this.Desc,
+            "layout_type": this.LayoutType,
+            "default_price": this.DefaultPrice,
+            "event_type_id": this.EventTypeId,
+            "event_venue_id": this.EventVenueId
         };
-        return updateJSON;
+        return exportJSON;
     };
     return Event;
 }());
@@ -1673,15 +1703,27 @@ var EventService = /** @class */ (function () {
         this.events = [];
         this.rootUrl = "http://127.0.0.1:8000";
     }
+    EventService.prototype.upsertEventVenue = function (upsertEventObj) {
+        if (upsertEventObj.Id == null || upsertEventObj.Id == '' || upsertEventObj.Id == undefined) {
+            return this.createEvent(upsertEventObj);
+        }
+        else {
+            return this.updateEvent(upsertEventObj);
+        }
+    };
     EventService.prototype.createEvent = function (createEventObj) {
-        var createJSON = createEventObj.getCreateJSON();
+        var createJSON = createEventObj.export();
         var reqHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({ 'No-Auth': 'True' });
         return this.http.post(this.rootUrl + '/event/create/', createJSON, { headers: reqHeaders });
     };
-    EventService.prototype.updateEventType = function (updateETObj) {
-        var updateJSON = updateETObj.getUpdateJSON();
+    EventService.prototype.updateEvent = function (updateEventObj) {
+        var updateJSON = updateEventObj.export();
         var reqHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({ 'No-Auth': 'True' });
         return this.http.post(this.rootUrl + '/event/update/', updateJSON, { headers: reqHeaders });
+    };
+    EventService.prototype.getEvent = function (id) {
+        var reqHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({ 'No-Auth': 'True' });
+        return this.http.get(this.rootUrl + '/event/', { params: { id: id }, headers: reqHeaders });
     };
     EventService.prototype.loadEvents = function () {
         var _this = this;
@@ -1706,6 +1748,13 @@ var EventService = /** @class */ (function () {
             this.events.push(event);
         }
         console.log(this.events);
+    };
+    EventService.prototype.makeEventObject = function (data) {
+        var id = data["pk"];
+        var EventJsonObject = data["fields"];
+        EventJsonObject["id"] = id;
+        var event = new __WEBPACK_IMPORTED_MODULE_3__event_model__["a" /* Event */](EventJsonObject);
+        return event;
     };
     EventService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
@@ -1837,7 +1886,7 @@ module.exports = ".tollbar-splitter\n{\n  -webkit-box-flex: 1;\n      -ms-flex: 
 /***/ "./src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar class=\"header\" color=\"primary\">\n  <mat-toolbar-row>\n    <button mat-button routerLink=\"\">Eventico</button>\n    <button mat-icon-button routerLink=\"\"><mat-icon aria-label=\"home\">home</mat-icon></button>\n\n    <span class=\"tollbar-splitter\"></span>\n    <button *ngIf=\"loggedIn\" mat-icon-button ><mat-icon aria-label=\"Settings\">settings</mat-icon></button>\n    <button *ngIf=\"loggedIn\" mat-icon-button (click)=\"logout()\"><mat-icon aria-label=\"Settings\">exit_to_app</mat-icon></button>\n    <button *ngIf=\"loggedIn == false\" mat-button routerLink=\"login\">LOGIN</button>\n    <button *ngIf=\"loggedIn == false\" mat-button routerLink=\"signup\">SIGNUP</button>\n    <mat-menu *ngIf=\"loggedIn\" #notifications=\"matMenu\">\n      <button mat-menu-item>notification 1</button>\n      <button mat-menu-item>notification 2</button>\n    </mat-menu>\n\n    <button *ngIf=\"loggedIn\" mat-icon-button [matMenuTriggerFor]=\"notifications\">\n      <mat-icon>notifications</mat-icon>\n    </button>\n  </mat-toolbar-row>\n</mat-toolbar>\n<mat-toolbar *ngIf=\"adminToolBar['allowed'] == true\" class=\"admin-toolbar\">\n  <i class=\"material-icons md-dark\">supervisor_account</i>\n  <button mat-button routerLink=\"events/event\"><mat-icon aria-label=\"Settings\">playlist_add</mat-icon> <span class=\"responsive_span_text\">New Event</span> </button>\n  <button mat-button routerLink=\"event-types\"><mat-icon aria-label=\"Settings\">table_chart</mat-icon> <span class=\"responsive_span_text\">Event Types</span> </button>\n  <button mat-button routerLink=\"event-venues\"><mat-icon aria-label=\"Settings\">movie_creation</mat-icon> <span class=\"responsive_span_text\">Event Venues</span></button>\n  <span class=\"admin-tollbar-spacer\"></span>\n  <mat-menu class=\"addon-tools\" #addon_tools=\"matMenu\">\n    <button mat-menu-item routerLink=\"\"><mat-icon aria-label=\"Settings\">find_replace</mat-icon> User Management</button>\n    <button mat-menu-item routerLink=\"\"><mat-icon aria-label=\"Settings\">cloud_download</mat-icon> Reports</button>\n  </mat-menu>\n\n  <button class=\"addon-tools\" mat-icon-button [matMenuTriggerFor]=\"addon_tools\">\n    <mat-icon>more_vert</mat-icon>\n  </button>\n</mat-toolbar>\n"
+module.exports = "<mat-toolbar class=\"header\" color=\"primary\">\n  <mat-toolbar-row>\n    <button mat-button routerLink=\"\">Eventico</button>\n    <button mat-icon-button routerLink=\"\"><mat-icon aria-label=\"home\">home</mat-icon></button>\n\n    <span class=\"tollbar-splitter\"></span>\n    <button *ngIf=\"loggedIn\" mat-icon-button ><mat-icon aria-label=\"Settings\">settings</mat-icon></button>\n    <button *ngIf=\"loggedIn\" mat-icon-button (click)=\"logout()\"><mat-icon aria-label=\"Settings\">exit_to_app</mat-icon></button>\n    <button *ngIf=\"loggedIn == false\" mat-button routerLink=\"login\">LOGIN</button>\n    <button *ngIf=\"loggedIn == false\" mat-button routerLink=\"signup\">SIGNUP</button>\n    <div *ngIf=\"loggedIn\">\n    <mat-menu #notifications=\"matMenu\" yPosition=\"below\" xPosition=\"before\">\n      <button mat-menu-item>notification 1</button>\n      <button mat-menu-item>notification 2</button>\n    </mat-menu>\n    <button mat-icon-button [matMenuTriggerFor]=\"notifications\" *ngIf=\"loggedIn\">\n      <mat-icon>notifications</mat-icon>\n    </button>\n    </div>\n\n\n  </mat-toolbar-row>\n</mat-toolbar>\n<mat-toolbar *ngIf=\"adminToolBar['allowed'] == true\" class=\"admin-toolbar\">\n  <i class=\"material-icons md-dark\">supervisor_account</i>\n  <button mat-button routerLink=\"events/event\"><mat-icon aria-label=\"Settings\">playlist_add</mat-icon> <span class=\"responsive_span_text\">New Event</span> </button>\n  <button mat-button routerLink=\"event-types\"><mat-icon aria-label=\"Settings\">table_chart</mat-icon> <span class=\"responsive_span_text\">Event Types</span> </button>\n  <button mat-button routerLink=\"event-venues\"><mat-icon aria-label=\"Settings\">movie_creation</mat-icon> <span class=\"responsive_span_text\">Event Venues</span></button>\n  <span class=\"admin-tollbar-spacer\"></span>\n  <mat-menu #addon_tools=\"matMenu\" class=\"addon-tools\" yPosition=\"below\" xPosition=\"before\">\n    <button mat-menu-item routerLink=\"\"><mat-icon aria-label=\"Settings\">find_replace</mat-icon> User Management</button>\n    <button mat-menu-item routerLink=\"\"><mat-icon aria-label=\"Settings\">cloud_download</mat-icon> Reports</button>\n  </mat-menu>\n\n  <button class=\"addon-tools\" mat-icon-button [matMenuTriggerFor]=\"addon_tools\">\n    <mat-icon>more_vert</mat-icon>\n  </button>\n</mat-toolbar>\n"
 
 /***/ }),
 
@@ -1867,6 +1916,7 @@ var HeaderComponent = /** @class */ (function () {
         this.userservice = userservice;
     }
     HeaderComponent.prototype.ngOnInit = function () {
+        this.userservice.updateProfile();
     };
     HeaderComponent.prototype.logout = function () {
         localStorage.removeItem('userToken');
@@ -2039,6 +2089,84 @@ var appRoutes = [
 
 /***/ }),
 
+/***/ "./src/app/shared/event-layout.model.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventLayout; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layout_model__ = __webpack_require__("./src/app/shared/layout.model.ts");
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+var EventLayout = /** @class */ (function (_super) {
+    __extends(EventLayout, _super);
+    function EventLayout(layout) {
+        var _this = _super.call(this) || this;
+        _this.import(layout);
+        return _this;
+    }
+    EventLayout.prototype.markUnavailable = function (mData) {
+        console.log(mData);
+        if (mData == null || mData.group_index == null || mData.row_index == null || mData.row_index < 0 || mData.group_index < 0 || mData.start_col_index == null || mData.start_col_index < 0 || mData.end_col_index == null || mData.end_col_index < 0) {
+            return { success: false, message: 'invalid group and rows are selected, please dont select 0th column or last column' };
+        }
+        var group = this.groups[mData.group_index];
+        if (group != null) {
+            var cols = group.rows[mData.row_index].cols;
+            for (var i = mData.start_col_index; i <= mData.end_col_index; i++) {
+                var col = cols[i];
+                if (col.type != 'path' && col.type != 'blank') {
+                    col.type = 'na';
+                    col.color = '#838486b';
+                    col.disabled = true;
+                    col.price = 0;
+                    col.pricing_color = '#bbbbbb';
+                }
+            }
+        }
+        this.sort();
+        return { success: true, message: 'Successfully Marked Unavailable' };
+    };
+    EventLayout.prototype.markPricing = function (mData) {
+        console.log(mData);
+        if (mData == null || mData.group_index == null || mData.row_index == null || mData.row_index < 0 || mData.group_index < 0 || mData.start_col_index == null || mData.start_col_index < 0 || mData.end_col_index == null || mData.end_col_index < 0) {
+            return { success: false, message: 'invalid group and rows are selected, please dont select 0th column or last column' };
+        }
+        if (mData.price == null || mData.price <= 0) {
+            return { success: false, message: 'please enter a valid pricing details, price value must be greater than 0' };
+        }
+        var group = this.groups[mData.group_index];
+        if (group != null) {
+            var cols = group.rows[mData.row_index].cols;
+            for (var i = mData.start_col_index; i <= mData.end_col_index; i++) {
+                var col = cols[i];
+                if (col.type == 'active') {
+                    col.price = mData.price;
+                    col.pricing_color = '#ffffff';
+                }
+            }
+        }
+        this.sort();
+        console.log(this.groups);
+        return { success: true, message: 'Successfully Marked Pricing' };
+    };
+    EventLayout.prototype.updateEventLayout = function () {
+    };
+    return EventLayout;
+}(__WEBPACK_IMPORTED_MODULE_0__layout_model__["a" /* Layout */]));
+
+
+
+/***/ }),
+
 /***/ "./src/app/shared/event-venue-layout.model.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2078,7 +2206,7 @@ var EventVenueLayout = /** @class */ (function (_super) {
             var row = { name: i + 1, cols: [], sequence: this.currentSequences[group.sequence].currentRowSequence };
             this.currentSequences[group.sequence].rows[row.sequence] = { currentColSequence: 1, next_col_index: 0 };
             for (var j = 0; j < gData.cols; j++) {
-                var col = { number: j + 1, sequence: this.currentSequences[group.sequence].rows[row.sequence].currentColSequence, path: false, blank: false, blocked: false, na: false, active: true };
+                var col = { number: j + 1, sequence: this.currentSequences[group.sequence].rows[row.sequence].currentColSequence, type: 'active', color: '#acb19b', icon: 'event_seat', disabled: false };
                 row.cols.push(col);
                 this.currentSequences[group.sequence].rows[row.sequence].currentColSequence = this.currentSequences[group.sequence].rows[row.sequence].currentColSequence + 1;
                 this.currentSequences[group.sequence].rows[row.sequence].next_col_index = this.currentSequences[group.sequence].rows[row.sequence].next_col_index + 1;
@@ -2109,7 +2237,7 @@ var EventVenueLayout = /** @class */ (function (_super) {
                     var currentCol = row.cols[col_index];
                     var seq = currentCol.sequence;
                     seq = seq + 0.1;
-                    row.cols.push({ number: 0, sequence: seq, path: true, blank: false, blocked: false, na: false, active: false });
+                    row.cols.push({ number: 0, sequence: seq, type: 'path', color: '#d1d2cf', icon: 'reorder', disabled: true });
                 }
             }
         }
@@ -2126,11 +2254,10 @@ var EventVenueLayout = /** @class */ (function (_super) {
             var cols = group.rows[mData.row_index].cols;
             for (var i = mData.start_col_index; i <= mData.end_col_index; i++) {
                 var col = cols[i];
-                if (col.path == false) {
-                    col.blank = true;
-                    col.blocked = false;
-                    col.na = false;
-                    col.active = false;
+                if (col.type != 'path') {
+                    col.type = 'blank';
+                    col.color = '#fafafa';
+                    col.disabled = true;
                 }
             }
             this.renumber(cols);

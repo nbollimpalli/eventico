@@ -18,30 +18,37 @@ export class NewEventVenueComponent implements OnInit {
   eventVenue : EventVenue;
   eventVenueLayout : EventVenueLayout;
   markEmptyControl: FormControl = new FormControl();
-
+  mode : string;
+  showOverlay: string;
   constructor(private eventVenueService : EventVenueService, private router : Router, public dialog: MatDialog, private route : ActivatedRoute)
   {
+    this.showOverlay = 'block';
     this.route.params.subscribe(params => this.setupEventVenue(params['id']));
   }
 
   setupEventVenue(id)
   {
-    if(id != null || id != '')
+    console.log(id);
+    if(id != null && id != '' && id != "undefined")
     {
+      this.mode = "update";
       this.eventVenueService.getEventVenue(id)
       .subscribe( (data) => {
-        debugger;
         var obj = JSON.parse(data.toString());
         this.eventVenue = this.eventVenueService.makeEventVenueObject(obj[0]);
         this.eventVenueLayout = this.eventVenue.eventVenueLayout;
         console.log(this.eventVenue);
+        this.showOverlay = 'none';
       }
       );
     }
     else
     {
+      this.mode = "new";
       this.eventVenue = new EventVenue({});
       this.eventVenueLayout = this.eventVenue.eventVenueLayout;
+              this.showOverlay = 'none';
+
     }
   }
 
@@ -227,8 +234,8 @@ export class NewEventVenueComponent implements OnInit {
   addGroupFormData =
   {
     group_name: '',
-    rows: -1,
-    cols: -1,
+    rows: null,
+    cols: null,
   };
 
   markEmptyFormData =

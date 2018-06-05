@@ -29,7 +29,7 @@ export class EventVenueLayout extends Layout {
         this.currentSequences[group.sequence].rows[row.sequence] = {currentColSequence: 1, next_col_index: 0};
         for(var j=0; j<gData.cols ; j++)
         {
-          var col = {number: j+1, sequence: this.currentSequences[group.sequence].rows[row.sequence].currentColSequence, path: false, blank: false, blocked: false, na: false, active: true };
+          var col = {number: j+1, sequence: this.currentSequences[group.sequence].rows[row.sequence].currentColSequence, type: 'active', color: '#acb19b', icon: 'event_seat', disabled: false };
           row.cols.push(col);
           this.currentSequences[group.sequence].rows[row.sequence].currentColSequence = this.currentSequences[group.sequence].rows[row.sequence].currentColSequence +1;
           this.currentSequences[group.sequence].rows[row.sequence].next_col_index = this.currentSequences[group.sequence].rows[row.sequence].next_col_index +1;
@@ -68,7 +68,7 @@ export class EventVenueLayout extends Layout {
           var currentCol = row.cols[col_index];
           var seq = currentCol.sequence;
           seq = seq + 0.1;
-          row.cols.push({number: 0 , sequence: seq, path: true, blank: false, blocked: false, na: false, active: false});
+          row.cols.push({number: 0 , sequence: seq, type: 'path', color: '#d1d2cf', icon: 'reorder', disabled: true});
         }
       }
     }
@@ -91,12 +91,11 @@ export class EventVenueLayout extends Layout {
       for(var i = mData.start_col_index; i <= mData.end_col_index; i++)
       {
         var col = cols[i];
-        if(col.path == false)
+        if(col.type != 'path')
         {
-          col.blank = true;
-          col.blocked = false;
-          col.na = false;
-          col.active = false;
+          col.type = 'blank';
+          col.color = '#fafafa';
+          col.disabled = true;
         }
       }
       this.renumber(cols);

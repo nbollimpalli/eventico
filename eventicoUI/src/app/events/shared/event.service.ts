@@ -9,22 +9,40 @@ import { Event } from './event.model';
 export class EventService {
 
   events: Event[] = [];
-  readonly rootUrl = "http://127.0.0.1:8000";
+  readonly rootUrl = "https://www.eventico.algovent.com";
 
   constructor(private http : HttpClient) { }
 
+  upsertEventVenue(upsertEventObj : Event)
+  {
+    if(upsertEventObj.Id == null || upsertEventObj.Id == ''|| upsertEventObj.Id == undefined )
+    {
+      return this.createEvent(upsertEventObj);
+    }
+    else
+    {
+      return this.updateEvent(upsertEventObj);
+    }
+  }
+
   createEvent(createEventObj : Event)
   {
-    const createJSON = createEventObj.getCreateJSON();
+    const createJSON = createEventObj.export();
     var reqHeaders = new HttpHeaders({'No-Auth' : 'True'});
     return this.http.post(this.rootUrl+'/event/create/', createJSON,{headers: reqHeaders});
   }
 
-  updateEventType(updateETObj : Event)
+  updateEvent(updateEventObj : Event)
   {
-    const updateJSON = updateETObj.getUpdateJSON();
+    const updateJSON = updateEventObj.export();
     var reqHeaders = new HttpHeaders({'No-Auth' : 'True'});
     return this.http.post(this.rootUrl+'/event/update/', updateJSON,{headers: reqHeaders});
+  }
+
+  getEvent(id)
+  {
+    var reqHeaders = new HttpHeaders({'No-Auth' : 'True'});
+    return this.http.get(this.rootUrl+'/event/',{params: {id: id}, headers: reqHeaders});
   }
 
   loadEvents()
@@ -55,6 +73,15 @@ export class EventService {
          this.events.push(event);
     }
     console.log(this.events);
+  }
+
+  makeEventObject(data) : Event
+  {
+     var id = data["pk"];
+     var EventJsonObject = data["fields"];
+     EventJsonObject["id"] = id;
+     var event = new Event(EventJsonObject);
+     return event;
   }
 
 }

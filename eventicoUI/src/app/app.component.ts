@@ -8,8 +8,9 @@ import { UserService } from './event-user/shared/user.service';
 })
 export class AppComponent {
   title = 'app';
-  constructor(private userservice : UserService){}
+  constructor(private userservice : UserService){
+        this.userservice.updateProfile();
+  }
   ngOnInit() {
-    this.userservice.updateProfile();
   }
 }

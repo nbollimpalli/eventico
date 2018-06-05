@@ -1,6 +1,7 @@
+<div  [style.display]="showOverlay" class="overlay"><mat-spinner style="margin: auto;"></mat-spinner></div>
 <mat-horizontal-stepper *ngIf="eventVenue != null">
   <mat-step label="Setup Event Venue">
-    <form class="new-event-venue-form" #eventVenueCreationForm="ngForm" (ngSubmit)="onSubmit(eventVenueCreationForm)">
+    <form class="new-event-venue-form" #eventVenueCreationForm="ngForm">
       <mat-card class="new-event-venue-card">
         <mat-card-content>
             <mat-form-field class="full-width">
@@ -22,13 +23,15 @@
           <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
         </mat-card-content>
       </mat-card>
-      <div>
-        <button mat-button type="submit" color="primary">CREATE</button>
-        <button mat-button matStepperNext>Next to Add Layout</button>
+      <div *ngIf="eventVenue.LayoutType == 'none'">
+        <button  mat-button type="submit" (click)="upsertEventVenue()">UPSERT</button>
+      </div>
+      <div *ngIf="mode == new || eventVenue.LayoutType == 'box'">
+        <button  mat-button matStepperNext >Next</button>
       </div>
     </form>
   </mat-step>
-  <mat-step label="Set Layout">
+  <mat-step label="Set Layout" *ngIf="eventVenue.LayoutType == 'box'">
     <mat-toolbar class="layout-create-toolbar">
       <mat-toolbar-row>
         <form class="new-event-venue-form" #addGroupForm="ngForm" (ngSubmit)="addGroup(addGroupForm)">
@@ -46,22 +49,18 @@
         <table *ngFor="let group of layout_groups">
           <tr *ngFor="let row of group.rows">
             <td class="row-name-col">
-              <button mat-icon-button>{{row.name}}</button>
+              <button class="seat-button" mat-icon-button>{{row.name}}</button>
             </td>
             <td *ngFor="let col of row.cols" class="seat-col">
-              <button *ngIf="col.blank" mat-icon-button disabled></button>
-              <button *ngIf="col.active" mat-icon-button><mat-icon aria-label="Event Seat">event_seat</mat-icon></button>
-              <button *ngIf="col.na" mat-icon-button disabled><mat-icon aria-label="Event Seat">event_seat</mat-icon></button>
-              <button *ngIf="col.blocked" mat-icon-button disabled><mat-icon aria-label="Event Seat">event_seat</mat-icon></button>
-              <button *ngIf="col.path" mat-icon-button><mat-icon aria-label="Event Seat">reorder</mat-icon></button>
+              <button [matTooltip]="col.number" class="seat-button" [disabled]="col.disabled"  mat-icon-button><mat-icon [style.color]="col.color" aria-label="Event Seat">{{ col.icon }}</mat-icon></button>
             </td>
           <tr>
           <tr *ngIf="group != null && group.rows != null && group.rows[0] != null">
             <td class="row-name-col">
-              <button mat-icon-button>seat</button>
+              <button class="seat-button" mat-icon-button>.</button>
             </td>
             <td *ngFor="let col of group.rows[0].cols; let m = index" class="seat-col">
-              <button mat-icon-button>{{ m }}</button>
+              <button class="seat-button" mat-icon-button>{{ m }}</button>
             </td>
           <tr>
         </table>
@@ -74,7 +73,7 @@
     </div>
   </mat-step>
 
-  <mat-step label="Mark Empty Space">
+  <mat-step label="Mark Empty Space" *ngIf="eventVenue.LayoutType == 'box'">
     <mat-toolbar class="layout-create-toolbar">
       <mat-toolbar-row>
         <form class="new-event-venue-form" #markEmptyForm="ngForm" (ngSubmit)="markEmpty(markEmptyForm)">
@@ -122,23 +121,18 @@
         <table *ngFor="let group of layout_groups">
           <tr *ngFor="let row of group.rows">
             <td class="row-name-col">
-              <button mat-icon-button>{{row.name}}</button>
+              <button class="seat-button" mat-icon-button>{{row.name}}</button>
             </td>
             <td *ngFor="let col of row.cols" class="seat-col">
-              <button *ngIf="col.blank" mat-icon-button disabled></button>
-              <button *ngIf="col.active" mat-icon-button><mat-icon aria-label="Event Seat">event_seat</mat-icon></button>
-              <button *ngIf="col.na" mat-icon-button disabled><mat-icon aria-label="Event Seat">event_seat</mat-icon></button>
-              <button *ngIf="col.blocked" mat-icon-button disabled><mat-icon aria-label="Event Seat">event_seat</mat-icon></button>
-              <button *ngIf="col.path" mat-icon-button><mat-icon aria-label="Event Seat">reorder</mat-icon></button>
-
+              <button [matTooltip]="col.number" class="seat-button" [disabled]="col.disabled"  mat-icon-button><mat-icon [style.color]="col.color" aria-label="Event Seat">{{ col.icon }}</mat-icon></button>
             </td>
           <tr>
           <tr *ngIf="group != null && group.rows != null && group.rows[0] != null">
             <td class="row-name-col">
-              <button mat-icon-button>seat</button>
+              <button class="seat-button" mat-icon-button>.</button>
             </td>
             <td *ngFor="let col of group.rows[0].cols; let m = index" class="seat-col">
-              <button mat-icon-button>{{ m }}</button>
+              <button class="seat-button" mat-icon-button>{{ m }}</button>
             </td>
           <tr>
         </table>
@@ -151,7 +145,7 @@
     </div>
   </mat-step>
 
-  <mat-step label="Set Path">
+  <mat-step label="Set Path" *ngIf="eventVenue.LayoutType == 'box'">
     <mat-toolbar class="layout-create-toolbar">
       <mat-toolbar-row>
         <form class="new-event-venue-form" #addPathForm="ngForm" (ngSubmit)="addPath(addPathForm)">
@@ -182,22 +176,18 @@
         <table *ngFor="let group of layout_groups">
           <tr *ngFor="let row of group.rows">
             <td class="row-name-col">
-              <button mat-icon-button>{{row.name}}</button>
+              <button class="seat-button" mat-icon-button>{{row.name}}</button>
             </td>
             <td *ngFor="let col of row.cols" class="seat-col">
-              <button *ngIf="col.blank" mat-icon-button disabled></button>
-              <button *ngIf="col.active" mat-icon-button><mat-icon aria-label="Event Seat">event_seat</mat-icon></button>
-              <button *ngIf="col.na" mat-icon-button disabled><mat-icon aria-label="Event Seat">event_seat</mat-icon></button>
-              <button *ngIf="col.blocked" mat-icon-button disabled><mat-icon aria-label="Event Seat">event_seat</mat-icon></button>
-              <button *ngIf="col.path" mat-icon-button><mat-icon aria-label="Event Seat">reorder</mat-icon></button>
+              <button [matTooltip]="col.number" class="seat-button" [disabled]="col.disabled"  mat-icon-button><mat-icon [style.color]="col.color" aria-label="Event Seat">{{ col.icon }}</mat-icon></button>
             </td>
           <tr>
           <tr *ngIf="group != null && group.rows != null && group.rows[0] != null">
             <td class="row-name-col">
-              <button mat-icon-button>seat</button>
+              <button class="seat-button" mat-icon-button>seat</button>
             </td>
             <td *ngFor="let col of group.rows[0].cols; let m = index" class="seat-col">
-              <button mat-icon-button>{{ m }}</button>
+              <button class="seat-button" mat-icon-button>{{ m }}</button>
             </td>
           <tr>
         </table>
@@ -210,20 +200,16 @@
     </div>
   </mat-step>
 
-  <mat-step label="Confirm Details">
+  <mat-step label="Confirm Details" *ngIf="eventVenue.LayoutType == 'box'">
     <mat-card class="layout-card scrollable-content">
       <mat-card-content>
         <table *ngFor="let group of layout_groups" disabled>
           <tr *ngFor="let row of group.rows">
             <td class="row-name-col">
-              <button mat-icon-button>{{row.name}}</button>
+              <button class="seat-button" mat-icon-button>{{row.name}}</button>
             </td>
             <td *ngFor="let col of row.cols" class="seat-col">
-              <button *ngIf="col.blank" mat-icon-button disabled>{{ col.number }}</button>
-              <button *ngIf="col.active" mat-icon-button><mat-icon aria-label="Event Seat">event_seat</mat-icon>{{ col.number }}</button>
-              <button *ngIf="col.na" mat-icon-button disabled><mat-icon aria-label="Event Seat">event_seat</mat-icon>{{ col.number }}</button>
-              <button *ngIf="col.blocked" mat-icon-button disabled><mat-icon aria-label="Event Seat">event_seat</mat-icon>{{ col.number }}</button>
-              <button *ngIf="col.path" mat-icon-button><mat-icon aria-label="Event Seat">reorder</mat-icon>{{ col.number }}</button>
+              <button [matTooltip]="col.number" class="seat-button" [disabled]="col.disabled"  mat-icon-button><mat-icon [style.color]="col.color" aria-label="Event Seat">{{ col.icon }}</mat-icon></button>
             </td>
           <tr>
         </table>
@@ -231,7 +217,7 @@
       </mat-card-content>
     </mat-card>
     <div>
-      <button mat-button (click)="upsertEventVenue()">Create Event Venue</button>
+      <button mat-button (click)="upsertEventVenue()">UPSERT</button>
     </div>
   </mat-step>
 </mat-horizontal-stepper>

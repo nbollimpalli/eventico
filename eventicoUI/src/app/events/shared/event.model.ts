@@ -1,34 +1,44 @@
+import { EventLayout } from '../../shared/event-layout.model'
+
 export class Event {
   Id: string;
   Name: string;
   Desc: string;
-  IsLayoutBased: Boolean;
+  LayoutType: string;
+  DefaultPrice: number;
+  EventTypeId: number;
+  EventVenueId: number;
+  eventLayout: EventLayout;
 
   constructor(eventJsonObject)
+  {
+    this.import(eventJsonObject);
+  }
+
+  import(eventJsonObject)
   {
     this.Id = eventJsonObject["id"];
     this.Name = eventJsonObject["name"];
     this.Desc = eventJsonObject["desc"];
-    this.IsLayoutBased = eventJsonObject["is_layout_based"];
+    this.LayoutType = eventJsonObject["layout_type"];
+    this.DefaultPrice = eventJsonObject["default_price"];
+    this.EventTypeId = eventJsonObject["event_type_id"];
+    this.EventVenueId = eventJsonObject["event_venue_id"];
+    this.eventLayout = new EventLayout(eventJsonObject["layout"]);
   }
 
-  getCreateJSON()
+  export()
   {
-    var createJSON = {
-      "name" : this.Name,
-      "desc" : this.Desc
-    }
-    return createJSON;
-  }
-
-  getUpdateJSON()
-  {
-    var updateJSON = {
+    var exportJSON = {
       "id" : this.Id,
       "name" : this.Name,
-      "desc" : this.Desc
+      "desc" : this.Desc,
+      "layout_type" : this.LayoutType,
+      "default_price" : this.DefaultPrice,
+      "event_type_id" : this.EventTypeId,
+      "event_venue_id" : this.EventVenueId
     }
-    return updateJSON;
+    return exportJSON;
   }
 
 }

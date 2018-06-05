@@ -1,6 +1,7 @@
 from django.shortcuts import render_to_response
 from rest_framework.decorators import *
 from django.core import serializers
+import copy
 
 from eventico import settings
 from .models import Event, EventType, EventVenue, EventPrice
@@ -88,4 +89,44 @@ def create_event_price(request):
     serializer.is_valid(raise_exception=True)
     serializer.save()
     return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def update_event_type(request):
+    event_type = request.data
+    serializer = EventTypeSerializer(data=event_type)
+    serializer.is_valid(raise_exception=True)
+    serializer.save()
+    return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def update_event(request):
+    event = request.data
+    serializer = EventSerializer(data=event)
+    serializer.is_valid(raise_exception=True)
+    serializer.save()
+    return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def update_event_venue(request):
+    event_venue_json = copy.deepcopy(request.data)
+    event_venue_json.pop('id', None)
+    evId = request.data['id'];
+    event_venue = EventVenue.objects.get(id=evId)
+    serializer = EventVenueSerializer(instance=event_venue, data=event_venue_json)
+    serializer.is_valid(raise_exception=True)
+    serializer.save()
+    return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
+
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def update_event_price(request):
+    event_price = request.data
+    serializer = EventPriceSerializer(data=event_price)
+    serializer.is_valid(raise_exception=True)
+    serializer.save()
+    return Response(serializer.data, status=status.HTTP_201_CREATED)
+
 

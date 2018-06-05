@@ -1,56 +1,124 @@
+<div  class="overlay" [style.display]="showOverlay"> <mat-spinner display='block'></mat-spinner> </div>
 <mat-horizontal-stepper>
   <mat-step label="Setup Event Info">
     <mat-card class="new-event-card">
-      <form class="new-event-form" #eventCreationForm="ngForm" (ngSubmit)="onSubmit(eventCreationForm)">
+      <form class="new-event-form" #eventCreationForm="ngForm" >
       <mat-card-content>
           <mat-form-field class="full-width">
             <input matInput placeholder="Name" #Name="ngModel" [(ngModel)]="event.Name" name="Name" required>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <input matInput type="number" placeholder="Default Price" #Name="ngModel" [(ngModel)]="event.DefaultPrice" name="DefaultPrice" required>
           </mat-form-field>
             <mat-form-field class="full-width">
             <textarea matInput placeholder="Description" #Desc="ngModel" [(ngModel)]="event.Desc" name="Description" required></textarea>
           </mat-form-field>
           <mat-form-field class="half-width">
-          <mat-select placeholder="Select EventType">
+          <mat-select placeholder="Select EventType" #EventType="ngModel" [(ngModel)]="event.EventTypeId" name="EventType">
               <mat-option *ngFor="let eventType of eventTypes" value="{{eventType.Id}}">{{eventType.Name}}</mat-option>
             </mat-select>
           </mat-form-field>
           <mat-form-field class="half-width">
-            <mat-select placeholder="Select Event venue">
-              <mat-option *ngFor="let eventVenue of eventVenues" value="{{eventVenue.Id}}">{{eventVenue.Name}}</mat-option>
+            <mat-select placeholder="Select Event venue" #EventVenue="ngModel" [(ngModel)]="event.EventVenueId" (change)="updateVenueDetails()" name="EventVenue" >
+              <mat-option *ngFor="let eventVenue of eventVenues" value="{{eventVenue.Id}}" >{{eventVenue.Name}}</mat-option>
             </mat-select>
           </mat-form-field>
-          <input type="file" id="myFile">
-          <mat-checkbox  [(ngModel)]="event.IsLayoutBased" [ngModelOptions]="{standalone: true}">Is Layout Based</mat-checkbox>
-        <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+          <mat-form-field>
+            <mat-select  #LayoutType placeholder="Layout Type" #LayoutType="ngModel" [(ngModel)]="event.LayoutType" name="LayoutType" disabled>
+              <mat-option value="none">
+                NONE
+              </mat-option>
+              <mat-option value="box">
+                BOX
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
       </mat-card-content>
-        <mat-card-content *ngIf="event.IsLayoutBased == true">
-          Screen Here
-        </mat-card-content>
       </form>
     </mat-card>
-    <div>
-      <button mat-button type="submit" color="primary">CREATE</button>
-      <button mat-button matStepperNext>Next</button>
+    <div *ngIf="event.LayoutType == 'none'">
+      <button  mat-button type="submit" (click)="upsertEvent()">UPSERT</button>
+    </div>
+    <div *ngIf="mode == new || event.LayoutType == 'box'">
+      <button  mat-button matStepperNext >Next</button>
     </div>
   </mat-step>
-  <mat-step label="Edit Layout">
-    <table *ngFor="let group of layout.groups">
-      <tr *ngFor="let row of group.rows">
-        <td >
-          <button mat-icon-button>{{row.name}}</button>
-        </td>
-        <td *ngFor="let col of row.cols" >
-          <button *ngIf="col.number != 0" mat-icon-button disabled="{{col.disabled == true}}"><mat-icon aria-label="Event Seat">event_seat</mat-icon></button>
-          <button *ngIf="col.number == 0" mat-icon-button disabled></button>
-        </td>
-      <tr>
-    </table>
+
+  <mat-step label="Mark Unavailability" *ngIf="event.LayoutType == 'box'">
+    <mat-toolbar class="layout-create-toolbar">
+      <mat-toolbar-row>
+        <form class="new-event-form" #markNAForm="ngForm" (ngSubmit)="markNA(markNAForm)">
+
+          <mat-form-field>
+            <mat-select placeholder="Select Group" #GroupSelect="ngModel" [(ngModel)]="markNAFormData.group_index" name="GroupSelect">
+              <mat-option *ngFor="let group of layout_groups;let i = index" [value]="i">
+                {{ group.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field *ngIf="markNAFormData.group_index != -1">
+            <mat-select  #RowSelect placeholder="Select Row" [(ngModel)]="markNAFormData.row_index" name="RowSelect">
+              <mat-option *ngFor="let row of layout_groups[markNAFormData.group_index].rows ;let j = index" [value]="j">
+                {{ row.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field *ngIf="markNAFormData.row_index != -1">
+            <mat-select  #StartColSelect placeholder="Select Start Column" [(ngModel)]="markNAFormData.start_col_index" name="StartColSelect">
+              <mat-option *ngFor="let col of layout_groups[markNAFormData.group_index].rows[markNAFormData.row_index].cols ;let k = index" [value]="k">
+                {{ k }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field *ngIf="markNAFormData.row_index != -1">
+            <mat-select  #EndColSelect placeholder="Select End Column" [(ngModel)]="markNAFormData.end_col_index" name="EndColSelect">
+              <mat-option *ngFor="let col of layout_groups[markNAFormData.group_index].rows[markNAFormData.row_index].cols;let l = index" [value]="l">
+                {{ l }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <span class="tollbar-splitter"></span>
+          <button mat-button type="submit" color="primary" >Mark Unavailable</button>
+          <button mat-button >Reset Layout</button>
+        </form>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-card class="layout-card scrollable-content">
+      <mat-card-content>
+        <table *ngFor="let group of layout_groups">
+          <tr *ngFor="let row of group.rows">
+            <td class="row-name-col">
+              <button class="seat-button" mat-icon-button>{{row.name}}</button>
+            </td>
+            <td *ngFor="let col of row.cols" class="seat-col">
+              <button [matTooltip]="col.number" class="seat-button" [disabled]="col.disabled"  mat-icon-button><mat-icon [style.color]="col.color" aria-label="Event Seat">{{ col.icon }}</mat-icon></button>
+            </td>
+          <tr>
+          <tr *ngIf="group != null && group.rows != null && group.rows[0] != null">
+            <td class="row-name-col">
+              <button class="seat-button" mat-icon-button>.</button>
+            </td>
+            <td *ngFor="let col of group.rows[0].cols; let m = index" class="seat-col">
+              <button class="seat-button" mat-icon-button>{{ m }}</button>
+            </td>
+          <tr>
+        </table>
+        <div class="screen-div">SCREEN HERE</div>
+      </mat-card-content>
+    </mat-card>
     <div>
       <button mat-button matStepperPrevious>Back</button>
       <button mat-button matStepperNext>Next</button>
     </div>
   </mat-step>
-  <mat-step label="Done">
+
+
+
+  <mat-step label="Confirm Details">
     Content 3
     <div>
       <button mat-button matStepperPrevious>Back</button>

@@ -7,7 +7,7 @@ import { User } from './user.model';
 
 @Injectable()
 export class UserService {
-  readonly rootUrl = "http://127.0.0.1:8000";
+  readonly rootUrl = "https://www.eventico.algovent.com";
   user : User;
 
 
@@ -53,6 +53,7 @@ export class UserService {
 
   updateProfile()
   {
+    this.setGuestProfile();
     if(localStorage.getItem('userToken') != null)
     {
       this.fetchProfile().subscribe( (data) => {
@@ -67,10 +68,6 @@ export class UserService {
         }
       }
       );
-    }
-    else
-    {
-      this.setGuestProfile();
     }
   }
 

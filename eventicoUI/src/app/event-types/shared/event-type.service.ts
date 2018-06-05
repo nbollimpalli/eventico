@@ -9,7 +9,7 @@ import { EventType } from './event-type.model';
 export class EventTypeService {
 
   eventTypes: EventType[] = [];
-  readonly rootUrl = "http://127.0.0.1:8000";
+  readonly rootUrl = "https://www.eventico.algovent.com";
 
   constructor(private http : HttpClient) { }
 

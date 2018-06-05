@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
   constructor(private router : Router, private userservice : UserService ) { }
 
   ngOnInit() {
+    this.userservice.updateProfile();
   }
 
   logout() {

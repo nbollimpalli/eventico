@@ -12,6 +12,7 @@ import { AdminauthGuard } from './auth/adminauth.guard';
 import { SuperadminauthGuard } from './auth/superadminauth.guard';
 import { HTTP_INTERCEPTORS } from '@angular/common/http'
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { appRoutes } from './routes';
@@ -79,6 +80,10 @@ import { FormDialogComponent } from './form-dialog/form-dialog.component';
     provide : HTTP_INTERCEPTORS,
     useClass : AuthInterceptor,
     multi : true
+  },
+  {
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
   }
   ],
   bootstrap: [AppComponent]
