@@ -612,7 +612,7 @@ var EventTypeService = /** @class */ (function () {
     function EventTypeService(http) {
         this.http = http;
         this.eventTypes = [];
-        this.rootUrl = "http://127.0.0.1:8000";
+        this.rootUrl = "https://www.eventico.algovent.com";
     }
     EventTypeService.prototype.createEventType = function (createETObj) {
         var createJSON = createETObj.getCreateJSON();
@@ -872,7 +872,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var UserService = /** @class */ (function () {
     function UserService(http) {
         this.http = http;
-        this.rootUrl = "http://127.0.0.1:8000";
+        this.rootUrl = "https://www.eventico.algovent.com";
         this.user = new __WEBPACK_IMPORTED_MODULE_3__user_model__["a" /* User */]();
     }
     UserService.prototype.setGuestProfile = function () {
@@ -1307,7 +1307,7 @@ var EventVenueService = /** @class */ (function () {
     function EventVenueService(http) {
         this.http = http;
         this.eventVenues = [];
-        this.rootUrl = "http://127.0.0.1:8000";
+        this.rootUrl = "https://www.eventico.algovent.com";
     }
     EventVenueService.prototype.upsertEventVenue = function (upsertETObj) {
         if (upsertETObj.Id == null || upsertETObj.Id == '') {
@@ -1701,7 +1701,7 @@ var EventService = /** @class */ (function () {
     function EventService(http) {
         this.http = http;
         this.events = [];
-        this.rootUrl = "http://127.0.0.1:8000";
+        this.rootUrl = "https://www.eventico.algovent.com";
     }
     EventService.prototype.upsertEventVenue = function (upsertEventObj) {
         if (upsertEventObj.Id == null || upsertEventObj.Id == '' || upsertEventObj.Id == undefined) {
