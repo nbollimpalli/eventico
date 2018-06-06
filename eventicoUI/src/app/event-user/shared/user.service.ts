@@ -4,10 +4,11 @@ import { Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import { User } from './user.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class UserService {
-  readonly rootUrl = "https://www.eventico.algovent.com";
+  readonly rootUrl = environment.api;
   user : User;
 
 

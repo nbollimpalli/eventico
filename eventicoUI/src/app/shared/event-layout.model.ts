@@ -24,13 +24,10 @@ export class EventLayout  extends Layout{
       for(var i = mData.start_col_index; i <= mData.end_col_index; i++)
       {
         var col = cols[i];
-        if(col.type != 'path' && col.type != 'blank')
+        if(col.type == 'active')
         {
           col.type = 'na';
-          col.color = '#838486b';
-          col.disabled = true;
-          col.price = 0;
-          col.pricing_color = '#bbbbbb';
+          this.priceMap[col.price].count--;
         }
       }
     }
@@ -45,9 +42,9 @@ export class EventLayout  extends Layout{
     {
        return {success: false, message: 'invalid group and rows are selected, please dont select 0th column or last column'};
     }
-    if(mData.price == null || mData.price <= 0)
+    if(mData.price_index == null)
     {
-       return {success: false, message: 'please enter a valid pricing details, price value must be greater than 0'};
+       return {success: false, message: 'please select a valid pricing details'};
     }
     var group = this.groups[mData.group_index];
     if(group != null)
@@ -58,16 +55,39 @@ export class EventLayout  extends Layout{
         var col = cols[i];
         if(col.type == 'active')
         {
-          col.price = mData.price;
-          col.pricing_color = '#ffffff';
-
+          this.priceMap[col.price].count--;
+          col.price = this.priceList[mData.price_index].name;
+          this.priceMap[col.price].count++;
         }
       }
     }
-    this.sort();
     console.log(this.groups);
     return {success: true, message: 'Successfully Marked Pricing'};
   }
+
+  addPricing(pData)
+  {
+    if(pData.label == null || pData.label == "" || pData.value == null || pData.desc == null || pData.desc == "")
+    {
+      return {success: false, message: 'invalid info provided, please make sure all the data is filled before adding new price'};
+    }
+    this.priceList.push(
+    {
+      value: pData.value,
+      desc: pData.desc,
+      color: '#acb19b',
+      label: pData.label,
+      status: 'active',
+      name: pData.desc.slice(0,-1).replace(/\s/g, ""),
+      count: 0,
+    }
+    );
+    this.updatePricingMap();
+    return {success: true, message: 'Successfully added new Pricing'};
+
+  }
+
+
 
   updateEventLayout(){
 

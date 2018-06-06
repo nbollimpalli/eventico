@@ -20,8 +20,11 @@ export class NewEventComponent implements OnInit {
   showOverlay : string;
   mode : string;
   eventLayout : EventLayout;
+  color : string;
+  defaultPrice : Object;
   constructor(private eventService : EventService, private router : Router, private eventTypeService : EventTypeService, private eventVenueService : EventVenueService, private route : ActivatedRoute)
   {
+    this.color = '#ffffff';
     this.mode = "new";
     this.showOverlay = 'none';
     this.route.params.subscribe(params => this.setupEvent(params['id']));
@@ -46,6 +49,7 @@ export class NewEventComponent implements OnInit {
         this.event = this.eventService.makeEventObject(obj[0]);
         this.eventLayout = this.event.eventLayout;
         this.showOverlay = 'none';
+        this.defaultPrice = this.eventLayout.getDefaultPrice();
       }
       );
     }
@@ -55,6 +59,7 @@ export class NewEventComponent implements OnInit {
       this.event = new Event({});
       this.eventLayout = this.event.eventLayout;
       this.showOverlay = 'none';
+      this.defaultPrice = this.eventLayout.getDefaultPrice();
 
     }
   }
@@ -103,10 +108,10 @@ export class NewEventComponent implements OnInit {
     }
   }
 
-  updatePrice(form : NgForm) : void
+  addPricing(form : NgForm) : void
   {
-    console.log(this.pricingFormData);
-    var response = this.eventLayout.markPricing(this.pricingFormData);
+    console.log(this.addPricingFormData);
+    var response = this.eventLayout.addPricing(this.addPricingFormData);
     if(response.success)
     {
     }
@@ -114,18 +119,44 @@ export class NewEventComponent implements OnInit {
     {
       alert(response.message);
     }
-    this.resetPricingForm(form);
+    this.resetAddPricingForm(form);
   }
 
-  resetPricingForm(form? : NgForm)
+  resetAddPricingForm(form? : NgForm)
   {
     if(form != null)
     {
       form.reset();
-      this.pricingFormData.group_index = -1;
-      this.pricingFormData.row_index = -1;
-      this.pricingFormData.start_col_index = -1;
-      this.pricingFormData.end_col_index = -1;
+      this.addPricingFormData.value = "";
+      this.addPricingFormData.desc = "";
+      this.addPricingFormData.label = "";
+    }
+  }
+
+  markPricing(form : NgForm) : void
+  {
+    console.log(this.markPricingFormData);
+    var response = this.eventLayout.markPricing(this.markPricingFormData);
+    if(response.success)
+    {
+    }
+    else
+    {
+      alert(response.message);
+    }
+    this.resetMarkPricingForm(form);
+  }
+
+  resetMarkPricingForm(form? : NgForm)
+  {
+    if(form != null)
+    {
+      form.reset();
+      this.markPricingFormData.group_index = -1;
+      this.markPricingFormData.row_index = -1;
+      this.markPricingFormData.start_col_index = -1;
+      this.markPricingFormData.end_col_index = -1;
+      this.markPricingFormData.price_index = -1;
     }
   }
 
@@ -164,13 +195,21 @@ export class NewEventComponent implements OnInit {
     end_col_index: -1,
   };
 
-  pricingFormData =
+  markPricingFormData =
   {
     group_index: -1,
     row_index: -1,
     start_col_index: -1,
     end_col_index: -1,
+    price_index: -1,
   };
+
+  addPricingFormData =
+  {
+    label:"",
+    value:"",
+    desc:""
+  }
 
   get layout_groups(){
     return this.eventLayout.groups;

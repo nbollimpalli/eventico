@@ -44,6 +44,11 @@ body
 {
 }
 
+.tollbar-splitter
+{
+  flex: 1 1 auto;
+}
+
 mat-form-field.mat-form-field {
   font-size: 14px;
 }

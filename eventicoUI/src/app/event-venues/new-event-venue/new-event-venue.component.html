@@ -52,7 +52,8 @@
               <button class="seat-button" mat-icon-button>{{row.name}}</button>
             </td>
             <td *ngFor="let col of row.cols" class="seat-col">
-              <button [matTooltip]="col.number" class="seat-button" [disabled]="col.disabled"  mat-icon-button><mat-icon [style.color]="col.color" aria-label="Event Seat">{{ col.icon }}</mat-icon></button>
+              <button *ngIf="col.type != 'active'" [matTooltip]="col.number" class="seat-button" disabled  mat-icon-button><mat-icon [style.color]="eventVenueLayout.typeColors[col.type]" aria-label="Event Seat">{{ eventVenueLayout.typeIcons[col.type] }}</mat-icon></button>
+              <button *ngIf="col.type == 'active'" [matTooltip]="'seat : '+col.number+' ,cost : '+eventVenueLayout.priceMap[col.price].value" class="seat-button" mat-icon-button><mat-icon [style.color]="eventVenueLayout.priceMap[col.price].color" aria-label="Event Seat">{{ eventVenueLayout.typeIcons[col.type] }}</mat-icon></button>
             </td>
           <tr>
           <tr *ngIf="group != null && group.rows != null && group.rows[0] != null">
@@ -124,7 +125,8 @@
               <button class="seat-button" mat-icon-button>{{row.name}}</button>
             </td>
             <td *ngFor="let col of row.cols" class="seat-col">
-              <button [matTooltip]="col.number" class="seat-button" [disabled]="col.disabled"  mat-icon-button><mat-icon [style.color]="col.color" aria-label="Event Seat">{{ col.icon }}</mat-icon></button>
+              <button *ngIf="col.type != 'active'" [matTooltip]="col.number" class="seat-button" disabled  mat-icon-button><mat-icon [style.color]="eventVenueLayout.typeColors[col.type]" aria-label="Event Seat">{{ eventVenueLayout.typeIcons[col.type] }}</mat-icon></button>
+              <button *ngIf="col.type == 'active'" [matTooltip]="'seat : '+col.number+' ,cost : '+eventVenueLayout.priceMap[col.price].value" class="seat-button" mat-icon-button><mat-icon [style.color]="eventVenueLayout.priceMap[col.price].color" aria-label="Event Seat">{{ eventVenueLayout.typeIcons[col.type] }}</mat-icon></button>
             </td>
           <tr>
           <tr *ngIf="group != null && group.rows != null && group.rows[0] != null">
@@ -179,7 +181,8 @@
               <button class="seat-button" mat-icon-button>{{row.name}}</button>
             </td>
             <td *ngFor="let col of row.cols" class="seat-col">
-              <button [matTooltip]="col.number" class="seat-button" [disabled]="col.disabled"  mat-icon-button><mat-icon [style.color]="col.color" aria-label="Event Seat">{{ col.icon }}</mat-icon></button>
+              <button *ngIf="col.type != 'active'" [matTooltip]="col.number" class="seat-button" disabled  mat-icon-button><mat-icon [style.color]="eventVenueLayout.typeColors[col.type]" aria-label="Event Seat">{{ eventVenueLayout.typeIcons[col.type] }}</mat-icon></button>
+              <button *ngIf="col.type == 'active'" [matTooltip]="'seat : '+col.number+' ,cost : '+eventVenueLayout.priceMap[col.price].value" class="seat-button" mat-icon-button><mat-icon [style.color]="eventVenueLayout.priceMap[col.price].color" aria-label="Event Seat">{{ eventVenueLayout.typeIcons[col.type] }}</mat-icon></button>
             </td>
           <tr>
           <tr *ngIf="group != null && group.rows != null && group.rows[0] != null">
@@ -209,7 +212,8 @@
               <button class="seat-button" mat-icon-button>{{row.name}}</button>
             </td>
             <td *ngFor="let col of row.cols" class="seat-col">
-              <button [matTooltip]="col.number" class="seat-button" [disabled]="col.disabled"  mat-icon-button><mat-icon [style.color]="col.color" aria-label="Event Seat">{{ col.icon }}</mat-icon></button>
+              <button *ngIf="col.type != 'active'" [matTooltip]="col.number" class="seat-button" disabled  mat-icon-button><mat-icon [style.color]="eventVenueLayout.typeColors[col.type]" aria-label="Event Seat">{{ eventVenueLayout.typeIcons[col.type] }}</mat-icon></button>
+              <button *ngIf="col.type == 'active'" [matTooltip]="'seat : '+col.number+' ,cost : '+eventVenueLayout.priceMap[col.price].value" class="seat-button" mat-icon-button><mat-icon [style.color]="eventVenueLayout.priceMap[col.price].color" aria-label="Event Seat">{{ eventVenueLayout.typeIcons[col.type] }}</mat-icon></button>
             </td>
           <tr>
         </table>

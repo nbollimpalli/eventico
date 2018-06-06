@@ -8,7 +8,13 @@
             <input matInput placeholder="Name" #Name="ngModel" [(ngModel)]="event.Name" name="Name" required>
           </mat-form-field>
           <mat-form-field class="full-width">
-            <input matInput type="number" placeholder="Default Price" #Name="ngModel" [(ngModel)]="event.DefaultPrice" name="DefaultPrice" required>
+            <input matInput type="number" placeholder="Default Price" #Name="ngModel" [(ngModel)]="defaultPrice.value" name="DefaultPrice" required>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="Default Price Label" #Name="ngModel" [(ngModel)]="defaultPrice.label" name="DefaultPriceLabel" required>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <input matInput type="text" placeholder="Default Price Description" #Name="ngModel" [(ngModel)]="defaultPrice.desc" name="DefaultPriceDesc" required>
           </mat-form-field>
             <mat-form-field class="full-width">
             <textarea matInput placeholder="Description" #Desc="ngModel" [(ngModel)]="event.Desc" name="Description" required></textarea>
@@ -80,27 +86,30 @@
               </mat-option>
             </mat-select>
           </mat-form-field>
-
-          <span class="tollbar-splitter"></span>
-          <button mat-button type="submit" color="primary" >Mark Unavailable</button>
-          <button mat-button >Reset Layout</button>
+          <button mat-button type="submit" color="primary" >Mark N/A</button>
         </form>
+        <span class="tollbar-splitter"></span>
+
+        <button  mat-button [(colorPicker)]="eventLayout.typeColors.path" [cpPosition]="'left'">Path Color</button>
+        <button  mat-button [(colorPicker)]="eventLayout.typeColors.na" [cpPosition]="'left'">N/A Color</button>
+
       </mat-toolbar-row>
     </mat-toolbar>
     <mat-card class="layout-card scrollable-content">
       <mat-card-content>
         <table *ngFor="let group of layout_groups">
+          <mat-divider></mat-divider>
           <tr *ngFor="let row of group.rows">
             <td class="row-name-col">
               <button class="seat-button" mat-icon-button>{{row.name}}</button>
             </td>
             <td *ngFor="let col of row.cols" class="seat-col">
-              <button [matTooltip]="col.number" class="seat-button" [disabled]="col.disabled"  mat-icon-button><mat-icon [style.color]="col.color" aria-label="Event Seat">{{ col.icon }}</mat-icon></button>
+              <button [matTooltip]="col.number" class="seat-button" [disabled]="eventLayout.typeActionDisabled[col.type]"  mat-icon-button><mat-icon [style.color]="eventLayout.typeColors[col.type]" aria-label="Event Seat">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>
             </td>
           <tr>
           <tr *ngIf="group != null && group.rows != null && group.rows[0] != null">
             <td class="row-name-col">
-              <button class="seat-button" mat-icon-button>.</button>
+              <button class="seat-button" mat-icon-button>{{ group.name }}</button>
             </td>
             <td *ngFor="let col of group.rows[0].cols; let m = index" class="seat-col">
               <button class="seat-button" mat-icon-button>{{ m }}</button>
@@ -116,10 +125,142 @@
     </div>
   </mat-step>
 
+  <mat-step label="Setup Pricing">
+    <mat-toolbar class="layout-create-toolbar">
+      <mat-toolbar-row>
+        <form class="new-event-form" #addPricingForm="ngForm" (ngSubmit)="addPricing(addPricingForm)">
 
+          <mat-form-field primary>
+            <input matInput  type="text" placeholder="Label" #Label="ngModel" [(ngModel)]="addPricingFormData.label" name="Label" >
+          </mat-form-field>
+          <mat-form-field primary>
+            <input matInput type="number" placeholder="Value" #Value="ngModel" [(ngModel)]="addPricingFormData.value" name="Value" >
+          </mat-form-field>
+          <mat-form-field primary>
+            <input matInput type="text" placeholder="Description" #Desc="ngModel" [(ngModel)]="addPricingFormData.desc" name="Desc" >
+          </mat-form-field>
+          <button mat-button type="submit" color="primary" >Add</button>
+        </form>
+        <span class="tollbar-splitter"></span>
+
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <mat-list>
+      <mat-list-item *ngFor="let price of eventLayout.priceList">
+        <mat-icon class="pricing_color_icon" matListIcon [(colorPicker)]="price.color" [style.color]="price.color">event_seat</mat-icon>
+        <h3 matLine> {{ price.label }} </h3>
+        <p matLine>
+          <span> {{ price.value }} </span>
+          <span class="demo-2"> -- {{ price.desc }} </span>
+        </p>
+
+        <button *ngIf="price.name != 'default'" mat-icon-button><mat-icon>delete</mat-icon></button>
+      </mat-list-item>
+    </mat-list>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </div>
+  </mat-step>
+
+  <mat-step label="Mark Pricing" *ngIf="event.LayoutType == 'box'">
+    <mat-toolbar class="layout-create-toolbar">
+      <mat-toolbar-row>
+        <form class="new-event-form" #markPricingForm="ngForm" (ngSubmit)="markPricing(markPricingForm)">
+
+          <mat-form-field>
+            <mat-select placeholder="Select Price" #GroupSelect="ngModel" [(ngModel)]="markPricingFormData.price_index" name="PriceSelect">
+              <mat-option *ngFor="let price of eventLayout.priceList;let i = index" [value]="i">
+                {{ price.label }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-select placeholder="Select Group" #GroupSelect="ngModel" [(ngModel)]="markPricingFormData.group_index" name="GroupSelect">
+              <mat-option *ngFor="let group of layout_groups;let i = index" [value]="i">
+                {{ group.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field *ngIf="markPricingFormData.group_index != -1">
+            <mat-select  #RowSelect placeholder="Select Row" [(ngModel)]="markPricingFormData.row_index" name="RowSelect">
+              <mat-option *ngFor="let row of layout_groups[markPricingFormData.group_index].rows ;let j = index" [value]="j">
+                {{ row.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field *ngIf="markPricingFormData.row_index != -1">
+            <mat-select  #StartColSelect placeholder="Select Start Column" [(ngModel)]="markPricingFormData.start_col_index" name="StartColSelect">
+              <mat-option *ngFor="let col of layout_groups[markPricingFormData.group_index].rows[markPricingFormData.row_index].cols ;let k = index" [value]="k">
+                {{ k }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field *ngIf="markPricingFormData.row_index != -1">
+            <mat-select  #EndColSelect placeholder="Select End Column" [(ngModel)]="markPricingFormData.end_col_index" name="EndColSelect">
+              <mat-option *ngFor="let col of layout_groups[markPricingFormData.group_index].rows[markPricingFormData.row_index].cols;let l = index" [value]="l">
+                {{ l }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-button type="submit" color="primary" >Mark Pricing</button>
+        </form>
+        <span class="tollbar-splitter"></span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-card class="layout-card scrollable-content">
+      <mat-card-content>
+        <table *ngFor="let group of layout_groups">
+          <mat-divider></mat-divider>
+          <tr *ngFor="let row of group.rows">
+            <td class="row-name-col">
+              <button class="seat-button" mat-icon-button>{{row.name}}</button>
+            </td>
+            <td *ngFor="let col of row.cols" class="seat-col">
+              <button *ngIf="col.type != 'active'" [matTooltip]="col.number" class="seat-button" disabled  mat-icon-button><mat-icon [style.color]="eventLayout.typeColors[col.type]" aria-label="Event Seat">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>
+              <button *ngIf="col.type == 'active'" [matTooltip]="'seat : '+col.number+' ,cost : '+eventLayout.priceMap[col.price].value" class="seat-button" mat-icon-button><mat-icon [style.color]="eventLayout.priceMap[col.price].color" aria-label="Event Seat">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>
+            </td>
+          <tr>
+          <tr *ngIf="group != null && group.rows != null && group.rows[0] != null">
+            <td class="row-name-col">
+              <button class="seat-button" mat-icon-button>{{ group.name }}</button>
+            </td>
+            <td *ngFor="let col of group.rows[0].cols; let m = index" class="seat-col">
+              <button class="seat-button" mat-icon-button>{{ m }}</button>
+            </td>
+          <tr>
+        </table>
+        <div class="screen-div">SCREEN HERE</div>
+      </mat-card-content>
+    </mat-card>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </div>
+  </mat-step>
 
   <mat-step label="Confirm Details">
-    Content 3
+    <mat-card class="layout-card scrollable-content">
+      <mat-card-content>
+        <table *ngFor="let group of layout_groups" disabled>
+          <tr *ngFor="let row of group.rows">
+            <td class="row-name-col">
+              <button class="seat-button" mat-icon-button>{{row.name}}</button>
+            </td>
+            <td *ngFor="let col of row.cols" class="seat-col">
+              <button *ngIf="col.type != 'active'" [matTooltip]="col.number" class="seat-button" disabled  mat-icon-button><mat-icon [style.color]="eventLayout.typeColors[col.type]" aria-label="Event Seat">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>
+              <button *ngIf="col.type == 'active'" [matTooltip]="'seat : '+col.number+' ,cost : '+eventLayout.priceMap[col.price].value" class="seat-button" mat-icon-button><mat-icon [style.color]="eventLayout.priceMap[col.price].color" aria-label="Event Seat">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>
+            </td>
+          <tr>
+        </table>
+        <div class="screen-div">SCREEN HERE</div>
+      </mat-card-content>
+    </mat-card>
     <div>
       <button mat-button matStepperPrevious>Back</button>
     </div>

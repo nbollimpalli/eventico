@@ -1,8 +1,24 @@
 export class Layout {
   currentSequences = { currentGroupSequence: 1, next_group_index: 0};
   groups = [];
+  typeColors = { active: '#acb19b', na: '#d1d2cf', path: '#acb19b', blank: '#00000000' };
+  typeIcons = { active: 'event_seat', na: 'event_seat', path: 'reorder', blank: 'event_seat' };
+  typeActionDisabled = { active: 'false', na: 'true', path: 'true', blank: 'true' };
+  priceList = [
+    {
+      value: 0,
+      desc: 'Basic price',
+      color: '#acb19b',
+      label: 'Basic',
+      status: 'active',
+      name: 'default',
+      count: 0
+    }
+  ];
+  priceMap = {};
 
   constructor(){
+    this.updatePricingMap();
   }
 
   getLayout()
@@ -56,7 +72,7 @@ export class Layout {
       for(var i = 0; i<cols.length; i++)
       {
         var col = cols[i];
-        if(col.blank == true || col.path == true)
+        if(col.type == "blank" || col.type == "path")
         {
           col.number = 0;
         }
@@ -83,5 +99,26 @@ export class Layout {
   {
     var layout = { currentSequences: this.currentSequences, groups: this.groups  };
     return layout;
+  }
+
+  getDefaultPrice()
+  {
+    for(var i=0 ; i < this.priceList.length ; i++)
+    {
+      var price = this.priceList[i];
+      if(price.name == "default")
+      {
+        return price;
+      }
+    }
+  }
+
+  updatePricingMap()
+  {
+    for(var i=0 ; i < this.priceList.length ; i++)
+    {
+      var price = this.priceList[i];
+      this.priceMap[price.name] = price;
+    }
   }
 }

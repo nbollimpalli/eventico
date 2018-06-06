@@ -20,3 +20,15 @@
   flex: 1 1 auto;
   text-align: center;
 }
+
+.layout-content
+{
+  align: center;
+}
+
+table { margin: auto; }
+
+.pricing_color_icon
+{
+  cursor: pointer;
+}

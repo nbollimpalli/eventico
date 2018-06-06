@@ -23,13 +23,15 @@ export class EventVenueLayout extends Layout {
       }
       var group = {name: gData.group_name, rows: [], sequence: this.currentSequences.currentGroupSequence}
       this.currentSequences[group.sequence] = { currentRowSequence: 1, rows: {}, next_row_index: 0 };
+      var defaultPrice = this.getDefaultPrice();
+      defaultPrice.count = gData.rows * gData.cols;
       for(var i=0; i<gData.rows ; i++)
       {
         var row = {name: i+1, cols: [], sequence: this.currentSequences[group.sequence].currentRowSequence};
         this.currentSequences[group.sequence].rows[row.sequence] = {currentColSequence: 1, next_col_index: 0};
         for(var j=0; j<gData.cols ; j++)
         {
-          var col = {number: j+1, sequence: this.currentSequences[group.sequence].rows[row.sequence].currentColSequence, type: 'active', color: '#acb19b', icon: 'event_seat', disabled: false };
+          var col = {number: j+1, sequence: this.currentSequences[group.sequence].rows[row.sequence].currentColSequence, type: 'active', price: 'default' };
           row.cols.push(col);
           this.currentSequences[group.sequence].rows[row.sequence].currentColSequence = this.currentSequences[group.sequence].rows[row.sequence].currentColSequence +1;
           this.currentSequences[group.sequence].rows[row.sequence].next_col_index = this.currentSequences[group.sequence].rows[row.sequence].next_col_index +1;
@@ -55,6 +57,7 @@ export class EventVenueLayout extends Layout {
     }
     var group_index = pData.group_index;
     var col_index = pData.col_index;
+    var defaultPrice = this.getDefaultPrice();
 
     var group = this.groups[group_index];
     if(group != null)
@@ -68,7 +71,7 @@ export class EventVenueLayout extends Layout {
           var currentCol = row.cols[col_index];
           var seq = currentCol.sequence;
           seq = seq + 0.1;
-          row.cols.push({number: 0 , sequence: seq, type: 'path', color: '#d1d2cf', icon: 'reorder', disabled: true});
+          row.cols.push({number: 0 , sequence: seq, type: 'path'});
         }
       }
     }
@@ -83,7 +86,7 @@ export class EventVenueLayout extends Layout {
     {
        return {success: false, message: 'invalid group and rows are selected, please dont select 0th column or last column'};
     }
-
+    var defaultPrice = this.getDefaultPrice();
     var group = this.groups[mData.group_index];
     if(group != null)
     {
@@ -94,8 +97,7 @@ export class EventVenueLayout extends Layout {
         if(col.type != 'path')
         {
           col.type = 'blank';
-          col.color = '#fafafa';
-          col.disabled = true;
+          defaultPrice.count--;
         }
       }
       this.renumber(cols);

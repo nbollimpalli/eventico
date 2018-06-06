@@ -4,12 +4,13 @@ import { Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import { EventVenue } from './event-venue.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class EventVenueService {
 
   eventVenues: EventVenue[] = [];
-  readonly rootUrl = "https://www.eventico.algovent.com";
+  readonly rootUrl = environment.api;
 
   constructor(private http : HttpClient) { }
 
