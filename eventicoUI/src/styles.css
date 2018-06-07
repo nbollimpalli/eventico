@@ -81,3 +81,13 @@ td {
     z-index: 999; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
 }
+
+.full-width
+{
+  width : 100%;
+}
+
+.half-width
+{
+  width : 50%;
+}

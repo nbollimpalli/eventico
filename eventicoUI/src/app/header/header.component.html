@@ -1,20 +1,19 @@
-<mat-toolbar class="header" color="primary">
-  <mat-toolbar-row>
-    <button mat-button routerLink="">Eventico</button>
-    <button mat-icon-button routerLink=""><mat-icon aria-label="home">home</mat-icon></button>
+<mat-toolbar class="header" [style.background-color]="'#e5e5e8'">
+  <mat-toolbar-row >
+    <img class="logo" src="https://s3.ap-south-1.amazonaws.com/algoventimagestore/TOTT_Logo_New.png" alt="talk-of-the-town">
 
     <span class="tollbar-splitter"></span>
-    <button *ngIf="loggedIn" mat-icon-button ><mat-icon aria-label="Settings">settings</mat-icon></button>
-    <button *ngIf="loggedIn" mat-icon-button (click)="logout()"><mat-icon aria-label="Settings">exit_to_app</mat-icon></button>
-    <button *ngIf="loggedIn == false" mat-button routerLink="login">LOGIN</button>
-    <button *ngIf="loggedIn == false" mat-button routerLink="signup">SIGNUP</button>
+    <button *ngIf="loggedIn" mat-icon-button ><mat-icon aria-label="Settings" [style.color]="'#000'">settings</mat-icon></button>
+    <button *ngIf="loggedIn" mat-icon-button (click)="logout()"><mat-icon [style.color]="'#000'" aria-label="Settings">exit_to_app</mat-icon></button>
+    <button *ngIf="loggedIn == false" mat-button routerLink="login" [style.color]="'#000'">LOGIN</button>
+    <button *ngIf="loggedIn == false" mat-button routerLink="signup" [style.color]="'#000'">SIGNUP</button>
     <div *ngIf="loggedIn">
     <mat-menu #notifications="matMenu" yPosition="below" xPosition="before">
       <button mat-menu-item>notification 1</button>
       <button mat-menu-item>notification 2</button>
     </mat-menu>
     <button mat-icon-button [matMenuTriggerFor]="notifications" *ngIf="loggedIn">
-      <mat-icon>notifications</mat-icon>
+      <mat-icon [style.color]="'#000'">notifications</mat-icon>
     </button>
     </div>
 

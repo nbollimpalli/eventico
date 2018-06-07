@@ -14,6 +14,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http'
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ColorPickerModule } from 'ngx-color-picker';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { AppComponent } from './app.component';
 import { appRoutes } from './routes';
@@ -69,6 +70,7 @@ import { FormDialogComponent } from './form-dialog/form-dialog.component';
     MaterialModule,
     ReactiveFormsModule,
     ColorPickerModule,
+    FlexLayoutModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true} // <-- debugging purposes only
