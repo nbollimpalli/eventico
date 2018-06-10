@@ -7,7 +7,7 @@ import {UserService } from '../event-user/shared/user.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  imageUrlArray = ['https://s3.ap-south-1.amazonaws.com/algoventimagestore/TOTT_Logo_New.png'];
   constructor(private router : Router, private userservice : UserService ) { }
 
   ngOnInit() {

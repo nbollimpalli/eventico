@@ -1,18 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Response } from '@angular/http';
-import { Observable } from 'rxjs';
-import 'rxjs/add/operator/map';
 import { Event } from './event.model';
-import { environment } from '../../../environments/environment';
+import { RestService } from '../../shared-services/rest.service';
 
 @Injectable()
 export class EventService {
 
   events: Event[] = [];
-  readonly rootUrl = environment.api;
 
-  constructor(private http : HttpClient) { }
+  constructor(private restService : RestService) { }
 
   upsertEventVenue(upsertEventObj : Event)
   {
@@ -29,21 +24,26 @@ export class EventService {
   createEvent(createEventObj : Event)
   {
     const createJSON = createEventObj.export();
-    var reqHeaders = new HttpHeaders({'No-Auth' : 'True'});
-    return this.http.post(this.rootUrl+'/event/create/', createJSON,{headers: reqHeaders});
+    return this.restService.post( 'CREATE_EVENT', true, null, createJSON );
+
   }
 
   updateEvent(updateEventObj : Event)
   {
     const updateJSON = updateEventObj.export();
-    var reqHeaders = new HttpHeaders({'No-Auth' : 'True'});
-    return this.http.post(this.rootUrl+'/event/update/', updateJSON,{headers: reqHeaders});
+    return this.restService.post( 'UPDATE_EVENT', true, null, updateJSON );
+
+  }
+
+  updateEventLayout( event : Event )
+  {
+    //event.eventlayout;
   }
 
   getEvent(id)
   {
-    var reqHeaders = new HttpHeaders({'No-Auth' : 'True'});
-    return this.http.get(this.rootUrl+'/event/',{params: {id: id}, headers: reqHeaders});
+    var params = {};
+    return this.restService.get('GET_EVENT', true, null, params);
   }
 
   loadEvents()
@@ -57,8 +57,8 @@ export class EventService {
 
   fetchEvents()
   {
-    var actionUrl = '/events/';
-    return this.http.get(this.rootUrl+actionUrl);
+    var params = {};
+    return this.restService.get('GET_EVENTS', true, null, params);
   }
 
   syncUIEvents(data)

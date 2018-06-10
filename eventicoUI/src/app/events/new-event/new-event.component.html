@@ -1,4 +1,4 @@
-<div class="indicator">
+<div class="indicator" [style.disply]="showOverlay">
   <svg width="16px" height="12px">
     <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
     <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
@@ -13,13 +13,13 @@
             <input matInput placeholder="Name" #Name="ngModel" [(ngModel)]="event.Name" name="Name" required>
           </mat-form-field>
           <mat-form-field class="full-width">
-            <input matInput type="number" placeholder="Default Price" #Name="ngModel" [(ngModel)]="defaultPrice.value" name="DefaultPrice" required>
+            <input matInput type="number" placeholder="Default Price" #Name="ngModel" [(ngModel)]="defaultPrice['value']" name="DefaultPrice" required>
           </mat-form-field>
           <mat-form-field class="full-width">
-            <input matInput type="text" placeholder="Default Price Label" #Name="ngModel" [(ngModel)]="defaultPrice.label" name="DefaultPriceLabel" required>
+            <input matInput type="text" placeholder="Default Price Label" #Name="ngModel" [(ngModel)]="defaultPrice['label']" name="DefaultPriceLabel" required>
           </mat-form-field>
           <mat-form-field class="full-width">
-            <input matInput type="text" placeholder="Default Price Description" #Name="ngModel" [(ngModel)]="defaultPrice.desc" name="DefaultPriceDesc" required>
+            <input matInput type="text" placeholder="Default Price Description" #Name="ngModel" [(ngModel)]="defaultPrice['desc']" name="DefaultPriceDesc" required>
           </mat-form-field>
             <mat-form-field class="full-width">
             <textarea matInput placeholder="Description" #Desc="ngModel" [(ngModel)]="event.Desc" name="Description" required></textarea>
@@ -47,12 +47,28 @@
       </mat-card-content>
       </form>
     </mat-card>
-    <div *ngIf="event.LayoutType == 'none'">
+    <div>
       <button  mat-button type="submit" (click)="upsertEvent()">UPSERT</button>
     </div>
-    <div *ngIf="mode == new || event.LayoutType == 'box'">
+    <div *ngIf="event['Id'] != null && event['Id'] != undefined">
       <button  mat-button matStepperNext >Next</button>
     </div>
+  </mat-step>
+
+  <mat-step label="Setup Banners">
+    <mat-card>
+      <mat-card-content>
+        <img [src]="this.event.images['banner'].url" onerror="this.src='https://algovent-s3-static.s3.amazonaws.com/eventico/media/default_bannger.jpg'">
+      </mat-card-content>
+      <mat-divider></mat-divider>
+      <mat-card-actions>
+        <input type="file"  *ngIf="this.event.images['banner'].url == ''" (change)="handleFileInput($event.target.files)">
+        <button mat-button  *ngIf="this.event.images['banner'].url != ''" color="warning"> REMOVE</button>
+      </mat-card-actions>
+    </mat-card>
+  <div>
+    <button  mat-button matStepperNext >Next</button>
+  </div>
   </mat-step>
 
   <mat-step label="Mark Unavailability" *ngIf="event.LayoutType == 'box'">

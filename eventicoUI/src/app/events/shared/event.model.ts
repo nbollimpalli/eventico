@@ -9,6 +9,11 @@ export class Event {
   EventTypeId: number;
   EventVenueId: number;
   eventLayout: EventLayout;
+  images = {
+    banner: {url: '', id: ''},
+    mini_banner: {url: '', id: ''},
+    thumb_nail: {url: '', id: ''},
+  }
 
   constructor(eventJsonObject)
   {
@@ -39,6 +44,26 @@ export class Event {
       "event_venue_id" : this.EventVenueId
     }
     return exportJSON;
+  }
+
+  import_images(imageJSON)
+  {
+    if( imageJSON != null )
+    {
+      for(var key in imageJSON)
+      {
+        if(this.images[key])
+        {
+          this.images[key].url = imageJSON[key].url;
+          this.images[key].id = imageJSON[key].id;
+        }
+      }
+    }
+  }
+
+  export_images()
+  {
+    return this.images;
   }
 
 }

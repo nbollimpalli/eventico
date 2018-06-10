@@ -3,7 +3,7 @@ import {FormControl} from '@angular/forms';
 import { Event } from './shared/event.model';
 import { EventService } from './shared/event.service';
 import { ObservableMedia } from '@angular/flex-layout';
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/takeWhile";
 import "rxjs/add/operator/startWith";
@@ -29,7 +29,7 @@ export class EventsComponent implements OnInit {
       ["sm", 2],
       ["md", 2],
       ["lg", 3],
-      ["xl", 4]
+      ["xl", 3]
     ]);
     let start: number;
     grid.forEach((cols, mqAlias) => {

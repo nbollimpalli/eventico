@@ -1,7 +1,8 @@
 .event-card {
-  max-width: 250px;
+  max-width: 350px;
   max-height: 300px;
   border-radius: 8px;
+  background: #F2F2F2;
 }
 
 .events-filter-toolbar
@@ -19,6 +20,10 @@
   height: 30px;
 }
 
+mat-card-tile{
+  min-width: 250px;
+  min-height: 400px;
+}
 .events-container
 {
   width: 80%;
@@ -33,6 +38,7 @@
 .card-image
 {
   margin-bottom: 0px;
+  max-height: 150px;
 }
 
 .toolbar-splitter
@@ -40,66 +46,43 @@
   flex: 1 1 auto;
 }
 
+.event_name_location{
+  width: 70%;
+	float: left;
+	padding: 8px 0px 10px 0px;
+
+}
+
 @media only screen and (max-width: 1105px) {
    .event_name_location{
-   	width: 65%;
+   	width: 70%;
    }
 }
 
 
 @media only screen and (max-width: 1020px) {
-   .single_event_box{
-   	width: 47%;
+  .event_name_location{
+   	width: 70%;
    }
 }
 @media only screen and (max-width: 685px) {
-   .single_event_box{
-   	width: 45%;
+  .event_name_location{
+   	width: 60%;
    }
 }
 @media only screen and (max-width: 560px) {
-   .single_event_box{
-   	width: 100%;
+  .event_name_location{
+   	width: 60%;
    }
 }
 
-/* Event area style start from here */
-.event{
-	background: #F2F2F2;
-	padding: 8px;
-}
-
-.event:after{
-	display: block;
-	content: '';
-	clear: both;
-}
-
-.single_event_box{
-	width: 23%;
-	float: left;
-	background:#FFFFFF;
-	margin-left: 20px;
-	padding-bottom: 30px;
-	margin-top: 20px
-}
-.single_event_box img{
-	width: 100%;
-	height: 215px;
-	cursor: pointer;
-}
 
 .event_date_month{
 	padding: 8px 0px 0px 25px;
 	width: 20%;
 	float: left;
 }
-.event_name_location{
-	width: 70%;
-	float: left;
-	padding: 8px 0px 50px 0px;
 
-}
 .event_date_month{
 	text-transform: uppercase;
 	position: relative;
@@ -118,15 +101,8 @@ p.event_date{
 	font-weight: 500;
 }
 
-
-.event_name_location h4, .event_name_location a, .event_name_location p{
-
-	margin: 0px;
-}
-.event_name{
-	font-size: 14px;
-	font-weight: 500;
-	color: #333;
+p.event_name{
+  margin-top: 0px;
 }
 
 .event_date_month:after{
@@ -153,51 +129,7 @@ a.event_location:hover{
 	font-size: 10px;
 	color: #999;
 }
-.tags_and_tickets .tags {
-    width: 40%;
-    float:  left;
-}
 
-.ticket {
-    width: 58%;
-    float:  left;
-}
-
-.tags_and_tickets {
-    width: 100%;
-    padding: 20px 5px 20px 15px;
-    position: relative;
-}
-
-.tags span {
-    width: auto;
-    background: #f4f4f4;
-    text-transform:  uppercase;
-    padding: 3px 8px;
-    font-size:  10px;
-    color:  #999999;
-    margin-top: 7px;
-    display:  inline-block;
-    border-radius: 3px;
-}
-
-.ticket a {
-    font-size:  11px;
-    text-transform:  uppercase;
-    color:  #fff;
-    background:  #D65D5D;
-    display:  block;
-    text-align:  center;
-    width: 80%;
-    text-decoration:  none;
-    padding: 10px 0px;
-    font-weight: 600;
-    margin-top: 20px;
-    transition: .3s;
-}
-.ticket a:hover{
-	background: #b03135;
-}
 .date_name_location{
 	position: relative;
 }

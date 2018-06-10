@@ -41,8 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
-    'events'
+    'events',
+    'storages',
+    'file_manager',
 ]
+
+
 
 JWT_AUTH = {
 
@@ -164,3 +168,19 @@ SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 STATICFILES_DIRS = (
   os.path.join(SITE_ROOT, 'static/'),
 )
+
+#s3 config
+AWS_ACCESS_KEY_ID = 'AKIAJWCHVIBT5GRCCZZQ'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'algovent-s3-static'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_LOCATION = 'static'
+
+#STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+DEFAULT_FILE_STORAGE = 'eventico.storage_backends.MediaStorage'
+#s3 config

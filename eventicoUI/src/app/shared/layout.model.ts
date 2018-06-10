@@ -4,6 +4,7 @@ export class Layout {
   typeColors = { active: '#acb19b', na: '#d1d2cf', path: '#acb19b', blank: '#00000000' };
   typeIcons = { active: 'event_seat', na: 'event_seat', path: 'reorder', blank: 'event_seat' };
   typeActionDisabled = { active: 'false', na: 'true', path: 'true', blank: 'true' };
+
   priceList = [
     {
       value: 0,

@@ -93,23 +93,27 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_ngx_color_picker__ = __webpack_require__("./node_modules/ngx-color-picker/dist/ngx-color-picker.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_flex_layout__ = __webpack_require__("./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__routes__ = __webpack_require__("./src/app/routes.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__event_user_shared_user_service__ = __webpack_require__("./src/app/event-user/shared/user.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__events_shared_event_service__ = __webpack_require__("./src/app/events/shared/event.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__event_types_shared_event_type_service__ = __webpack_require__("./src/app/event-types/shared/event-type.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__event_venues_shared_event_venue_service__ = __webpack_require__("./src/app/event-venues/shared/event-venue.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__event_user_register_register_component__ = __webpack_require__("./src/app/event-user/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__event_user_login_login_component__ = __webpack_require__("./src/app/event-user/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__header_header_component__ = __webpack_require__("./src/app/header/header.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__footer_footer_component__ = __webpack_require__("./src/app/footer/footer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__events_events_component__ = __webpack_require__("./src/app/events/events.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__events_new_event_new_event_component__ = __webpack_require__("./src/app/events/new-event/new-event.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__event_types_event_types_component__ = __webpack_require__("./src/app/event-types/event-types.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__event_types_new_event_type_new_event_type_component__ = __webpack_require__("./src/app/event-types/new-event-type/new-event-type.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__event_venues_event_venues_component__ = __webpack_require__("./src/app/event-venues/event-venues.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__event_venues_new_event_venue_new_event_venue_component__ = __webpack_require__("./src/app/event-venues/new-event-venue/new-event-venue.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__form_dialog_form_dialog_component__ = __webpack_require__("./src/app/form-dialog/form-dialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_ng_simple_slideshow__ = __webpack_require__("./node_modules/ng-simple-slideshow/ng-simple-slideshow.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__routes__ = __webpack_require__("./src/app/routes.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__event_user_shared_user_service__ = __webpack_require__("./src/app/event-user/shared/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__events_shared_event_service__ = __webpack_require__("./src/app/events/shared/event.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__event_types_shared_event_type_service__ = __webpack_require__("./src/app/event-types/shared/event-type.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__event_venues_shared_event_venue_service__ = __webpack_require__("./src/app/event-venues/shared/event-venue.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__shared_services_file_manager_service__ = __webpack_require__("./src/app/shared-services/file-manager.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__shared_services_api_factory_service__ = __webpack_require__("./src/app/shared-services/api-factory.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__shared_services_rest_service__ = __webpack_require__("./src/app/shared-services/rest.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__event_user_register_register_component__ = __webpack_require__("./src/app/event-user/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__event_user_login_login_component__ = __webpack_require__("./src/app/event-user/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__header_header_component__ = __webpack_require__("./src/app/header/header.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__footer_footer_component__ = __webpack_require__("./src/app/footer/footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__events_events_component__ = __webpack_require__("./src/app/events/events.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__events_new_event_new_event_component__ = __webpack_require__("./src/app/events/new-event/new-event.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__event_types_event_types_component__ = __webpack_require__("./src/app/event-types/event-types.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__event_types_new_event_type_new_event_type_component__ = __webpack_require__("./src/app/event-types/new-event-type/new-event-type.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__event_venues_event_venues_component__ = __webpack_require__("./src/app/event-venues/event-venues.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__event_venues_new_event_venue_new_event_venue_component__ = __webpack_require__("./src/app/event-venues/new-event-venue/new-event-venue.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__form_dialog_form_dialog_component__ = __webpack_require__("./src/app/form-dialog/form-dialog.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -139,7 +143,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 //import { EventPriceService } from './event-prices/shared/event-type.service';
+
+
+
 
 
 //import { UpdateProfileComponent } from './event-user/login/login.component';
@@ -159,18 +167,18 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["K" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_16__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_22__event_user_register_register_component__["a" /* RegisterComponent */],
-                __WEBPACK_IMPORTED_MODULE_24__header_header_component__["a" /* HeaderComponent */],
-                __WEBPACK_IMPORTED_MODULE_25__footer_footer_component__["a" /* FooterComponent */],
-                __WEBPACK_IMPORTED_MODULE_26__events_events_component__["a" /* EventsComponent */],
-                __WEBPACK_IMPORTED_MODULE_23__event_user_login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_27__events_new_event_new_event_component__["a" /* NewEventComponent */],
-                __WEBPACK_IMPORTED_MODULE_28__event_types_event_types_component__["a" /* EventTypesComponent */],
-                __WEBPACK_IMPORTED_MODULE_29__event_types_new_event_type_new_event_type_component__["a" /* NewEventTypeComponent */],
-                __WEBPACK_IMPORTED_MODULE_30__event_venues_event_venues_component__["a" /* EventVenuesComponent */],
-                __WEBPACK_IMPORTED_MODULE_31__event_venues_new_event_venue_new_event_venue_component__["a" /* NewEventVenueComponent */],
-                __WEBPACK_IMPORTED_MODULE_32__form_dialog_form_dialog_component__["a" /* FormDialogComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_26__event_user_register_register_component__["a" /* RegisterComponent */],
+                __WEBPACK_IMPORTED_MODULE_28__header_header_component__["a" /* HeaderComponent */],
+                __WEBPACK_IMPORTED_MODULE_29__footer_footer_component__["a" /* FooterComponent */],
+                __WEBPACK_IMPORTED_MODULE_30__events_events_component__["a" /* EventsComponent */],
+                __WEBPACK_IMPORTED_MODULE_27__event_user_login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_31__events_new_event_new_event_component__["a" /* NewEventComponent */],
+                __WEBPACK_IMPORTED_MODULE_32__event_types_event_types_component__["a" /* EventTypesComponent */],
+                __WEBPACK_IMPORTED_MODULE_33__event_types_new_event_type_new_event_type_component__["a" /* NewEventTypeComponent */],
+                __WEBPACK_IMPORTED_MODULE_34__event_venues_event_venues_component__["a" /* EventVenuesComponent */],
+                __WEBPACK_IMPORTED_MODULE_35__event_venues_new_event_venue_new_event_venue_component__["a" /* NewEventVenueComponent */],
+                __WEBPACK_IMPORTED_MODULE_36__form_dialog_form_dialog_component__["a" /* FormDialogComponent */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -182,13 +190,14 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* ReactiveFormsModule */],
                 __WEBPACK_IMPORTED_MODULE_14_ngx_color_picker__["a" /* ColorPickerModule */],
                 __WEBPACK_IMPORTED_MODULE_15__angular_flex_layout__["a" /* FlexLayoutModule */],
-                __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_17__routes__["a" /* appRoutes */], { enableTracing: true } // <-- debugging purposes only
+                __WEBPACK_IMPORTED_MODULE_16_ng_simple_slideshow__["a" /* SlideshowModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_18__routes__["a" /* appRoutes */], { enableTracing: true } // <-- debugging purposes only
                 ),
             ],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_32__form_dialog_form_dialog_component__["a" /* FormDialogComponent */],
+                __WEBPACK_IMPORTED_MODULE_36__form_dialog_form_dialog_component__["a" /* FormDialogComponent */],
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_21__event_venues_shared_event_venue_service__["a" /* EventVenueService */], __WEBPACK_IMPORTED_MODULE_20__event_types_shared_event_type_service__["a" /* EventTypeService */], __WEBPACK_IMPORTED_MODULE_19__events_shared_event_service__["a" /* EventService */], __WEBPACK_IMPORTED_MODULE_18__event_user_shared_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_8__auth_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_9__auth_antiauth_guard__["a" /* AntiauthGuard */], __WEBPACK_IMPORTED_MODULE_10__auth_adminauth_guard__["a" /* AdminauthGuard */], __WEBPACK_IMPORTED_MODULE_11__auth_superadminauth_guard__["a" /* SuperadminauthGuard */],
+            providers: [__WEBPACK_IMPORTED_MODULE_25__shared_services_rest_service__["a" /* RestService */], __WEBPACK_IMPORTED_MODULE_24__shared_services_api_factory_service__["a" /* ApiFactoryService */], __WEBPACK_IMPORTED_MODULE_23__shared_services_file_manager_service__["a" /* FileManagerService */], __WEBPACK_IMPORTED_MODULE_22__event_venues_shared_event_venue_service__["a" /* EventVenueService */], __WEBPACK_IMPORTED_MODULE_21__event_types_shared_event_type_service__["a" /* EventTypeService */], __WEBPACK_IMPORTED_MODULE_20__events_shared_event_service__["a" /* EventService */], __WEBPACK_IMPORTED_MODULE_19__event_user_shared_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_8__auth_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_9__auth_antiauth_guard__["a" /* AntiauthGuard */], __WEBPACK_IMPORTED_MODULE_10__auth_adminauth_guard__["a" /* AdminauthGuard */], __WEBPACK_IMPORTED_MODULE_11__auth_superadminauth_guard__["a" /* SuperadminauthGuard */],
                 {
                     provide: __WEBPACK_IMPORTED_MODULE_6__angular_common_http__["a" /* HTTP_INTERCEPTORS */],
                     useClass: __WEBPACK_IMPORTED_MODULE_12__auth_auth_interceptor__["a" /* AuthInterceptor */],
@@ -199,7 +208,7 @@ var AppModule = /** @class */ (function () {
                     useClass: __WEBPACK_IMPORTED_MODULE_13__angular_common__["d" /* HashLocationStrategy */]
                 }
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_16__app_component__["a" /* AppComponent */]]
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_17__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -598,10 +607,8 @@ var EventType = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventTypeService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__event_type_model__ = __webpack_require__("./src/app/event-types/shared/event-type.model.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__event_type_model__ = __webpack_require__("./src/app/event-types/shared/event-type.model.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_rest_service__ = __webpack_require__("./src/app/shared-services/rest.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -614,23 +621,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
 var EventTypeService = /** @class */ (function () {
-    function EventTypeService(http) {
-        this.http = http;
+    function EventTypeService(restService) {
+        this.restService = restService;
         this.eventTypes = [];
-        this.rootUrl = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].api;
     }
     EventTypeService.prototype.createEventType = function (createETObj) {
         var createJSON = createETObj.getCreateJSON();
-        var reqHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({ 'No-Auth': 'True' });
-        return this.http.post(this.rootUrl + '/eventtype/create/', createJSON, { headers: reqHeaders });
+        return this.restService.post('CREATE_EVENT_TYPE', true, null, createJSON);
     };
     EventTypeService.prototype.updateEventType = function (updateETObj) {
         var updateJSON = updateETObj.getUpdateJSON();
-        var reqHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({ 'No-Auth': 'True' });
-        return this.http.post(this.rootUrl + '/eventtype/update/', updateJSON, { headers: reqHeaders });
+        return this.restService.post('UPDATE_EVENT_TYPE', true, null, updateJSON);
     };
     EventTypeService.prototype.loadEventTypes = function () {
         var _this = this;
@@ -640,8 +642,8 @@ var EventTypeService = /** @class */ (function () {
         });
     };
     EventTypeService.prototype.fetchEventTypes = function () {
-        var actionUrl = '/eventtypes/';
-        return this.http.get(this.rootUrl + actionUrl);
+        var params = {};
+        return this.restService.get('EVENT_TYPES', true, null, params);
     };
     EventTypeService.prototype.syncUIEventTypes = function (data) {
         console.log('sync data ::');
@@ -651,14 +653,14 @@ var EventTypeService = /** @class */ (function () {
             var id = eventTypeList[i]["pk"];
             var eventTypeJsonObject = eventTypeList[i]["fields"];
             eventTypeJsonObject["id"] = id;
-            var eventType = new __WEBPACK_IMPORTED_MODULE_3__event_type_model__["a" /* EventType */](eventTypeJsonObject);
+            var eventType = new __WEBPACK_IMPORTED_MODULE_1__event_type_model__["a" /* EventType */](eventTypeJsonObject);
             this.eventTypes.push(eventType);
         }
         console.log(this.eventTypes);
     };
     EventTypeService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__shared_services_rest_service__["a" /* RestService */]])
     ], EventTypeService);
     return EventTypeService;
 }());
@@ -861,10 +863,8 @@ var User = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__user_model__ = __webpack_require__("./src/app/event-user/shared/user.model.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__user_model__ = __webpack_require__("./src/app/event-user/shared/user.model.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_rest_service__ = __webpack_require__("./src/app/shared-services/rest.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -877,13 +877,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
 var UserService = /** @class */ (function () {
-    function UserService(http) {
-        this.http = http;
-        this.rootUrl = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].api;
-        this.user = new __WEBPACK_IMPORTED_MODULE_3__user_model__["a" /* User */]();
+    function UserService(restService) {
+        this.restService = restService;
+        this.user = new __WEBPACK_IMPORTED_MODULE_1__user_model__["a" /* User */]();
     }
     UserService.prototype.setGuestProfile = function () {
         this.user.LoggedIn = false;
@@ -904,16 +901,14 @@ var UserService = /** @class */ (function () {
             first_name: user.FirstName,
             last_name: user.LastName
         };
-        var reqHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({ 'No-Auth': 'True' });
-        return this.http.post(this.rootUrl + '/users/create/', body, { headers: reqHeaders });
+        return this.restService.post('REGISTER_USER', true, null, body);
     };
     UserService.prototype.loginUser = function (user) {
         var body = {
             email: user.Email,
             password: user.Password
         };
-        var reqHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({ 'No-Auth': 'True' });
-        return this.http.post(this.rootUrl + '/users/api-token-auth/', body, { headers: reqHeaders });
+        return this.restService.post('LOGIN_USER', true, null, body);
     };
     UserService.prototype.updateProfile = function () {
         var _this = this;
@@ -933,12 +928,12 @@ var UserService = /** @class */ (function () {
         }
     };
     UserService.prototype.fetchProfile = function () {
-        var actionUrl = '/users/profile';
-        return this.http.get(this.rootUrl + actionUrl);
+        var params = {};
+        return this.restService.get('FETCH_ROLE_PROFILE', false, null, params);
     };
     UserService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__shared_services_rest_service__["a" /* RestService */]])
     ], UserService);
     return UserService;
 }());
@@ -1297,10 +1292,8 @@ var EventVenue = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventVenueService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__event_venue_model__ = __webpack_require__("./src/app/event-venues/shared/event-venue.model.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__event_venue_model__ = __webpack_require__("./src/app/event-venues/shared/event-venue.model.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_rest_service__ = __webpack_require__("./src/app/shared-services/rest.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1313,13 +1306,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
 var EventVenueService = /** @class */ (function () {
-    function EventVenueService(http) {
-        this.http = http;
+    function EventVenueService(restService) {
+        this.restService = restService;
         this.eventVenues = [];
-        this.rootUrl = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].api;
     }
     EventVenueService.prototype.upsertEventVenue = function (upsertETObj) {
         if (upsertETObj.Id == null || upsertETObj.Id == '') {
@@ -1330,18 +1320,16 @@ var EventVenueService = /** @class */ (function () {
         }
     };
     EventVenueService.prototype.getEventVenue = function (id) {
-        var reqHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({ 'No-Auth': 'True' });
-        return this.http.get(this.rootUrl + '/eventvenue/', { params: { id: id }, headers: reqHeaders });
+        var params = { id: id };
+        return this.restService.get('GET_EVENT_VENUE', true, null, params);
     };
     EventVenueService.prototype.createEventVenue = function (createETObj) {
         var createJSON = createETObj.getCreateJSON();
-        var reqHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({ 'No-Auth': 'True' });
-        return this.http.post(this.rootUrl + '/eventvenue/create/', createJSON, { headers: reqHeaders });
+        return this.restService.post('CREATE_EVENT_VENUE', true, null, createJSON);
     };
     EventVenueService.prototype.updateEventVenue = function (updateETObj) {
         var updateJSON = updateETObj.getUpdateJSON();
-        var reqHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({ 'No-Auth': 'True' });
-        return this.http.post(this.rootUrl + '/eventvenue/update/', updateJSON, { headers: reqHeaders });
+        return this.restService.post('UPDATE_EVENT_VENUE', true, null, updateJSON);
     };
     EventVenueService.prototype.loadEventVenues = function () {
         var _this = this;
@@ -1351,8 +1339,8 @@ var EventVenueService = /** @class */ (function () {
         });
     };
     EventVenueService.prototype.fetchEventVenues = function () {
-        var actionUrl = '/eventvenues/';
-        return this.http.get(this.rootUrl + actionUrl);
+        var params = {};
+        return this.restService.get('GET_EVENT_VENUES', true, null, params);
     };
     EventVenueService.prototype.syncUIEventVenues = function (data) {
         console.log('sync data ::');
@@ -1368,12 +1356,12 @@ var EventVenueService = /** @class */ (function () {
         var id = data["pk"];
         var EventVenueJsonObject = data["fields"];
         EventVenueJsonObject["id"] = id;
-        var eventVenue = new __WEBPACK_IMPORTED_MODULE_3__event_venue_model__["a" /* EventVenue */](EventVenueJsonObject);
+        var eventVenue = new __WEBPACK_IMPORTED_MODULE_1__event_venue_model__["a" /* EventVenue */](EventVenueJsonObject);
         return eventVenue;
     };
     EventVenueService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__shared_services_rest_service__["a" /* RestService */]])
     ], EventVenueService);
     return EventVenueService;
 }());
@@ -1385,14 +1373,14 @@ var EventVenueService = /** @class */ (function () {
 /***/ "./src/app/events/events.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ".event-card {\n  max-width: 250px;\n  max-height: 300px;\n  border-radius: 8px;\n}\n\n.events-filter-toolbar\n{\n  max-width: 80%;\n  position: relative;\n  margin: auto;\n  top:30px;\n\tbottom: 30px;\n\tleft: 0;\n\tright: 0;\n\tborder-radius: 14px;\n}\n\n.spacer{\n  height: 30px;\n}\n\n.events-container\n{\n  width: 80%;\n  position: relative;\n  margin: auto;\n  top:15px;\n\tbottom: 0;\n\tleft: 0;\n\tright: 0;\n}\n\n.card-image\n{\n  margin-bottom: 0px;\n}\n\n.toolbar-splitter\n{\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 auto;\n          flex: 1 1 auto;\n}\n\n@media only screen and (max-width: 1105px) {\n   .event_name_location{\n   \twidth: 65%;\n   }\n}\n\n@media only screen and (max-width: 1020px) {\n   .single_event_box{\n   \twidth: 47%;\n   }\n}\n\n@media only screen and (max-width: 685px) {\n   .single_event_box{\n   \twidth: 45%;\n   }\n}\n\n@media only screen and (max-width: 560px) {\n   .single_event_box{\n   \twidth: 100%;\n   }\n}\n\n/* Event area style start from here */\n\n.event{\n\tbackground: #F2F2F2;\n\tpadding: 8px;\n}\n\n.event:after{\n\tdisplay: block;\n\tcontent: '';\n\tclear: both;\n}\n\n.single_event_box{\n\twidth: 23%;\n\tfloat: left;\n\tbackground:#FFFFFF;\n\tmargin-left: 20px;\n\tpadding-bottom: 30px;\n\tmargin-top: 20px\n}\n\n.single_event_box img{\n\twidth: 100%;\n\theight: 215px;\n\tcursor: pointer;\n}\n\n.event_date_month{\n\tpadding: 8px 0px 0px 25px;\n\twidth: 20%;\n\tfloat: left;\n}\n\n.event_name_location{\n\twidth: 70%;\n\tfloat: left;\n\tpadding: 8px 0px 50px 0px;\n\n}\n\n.event_date_month{\n\ttext-transform: uppercase;\n\tposition: relative;\n}\n\n.event_month{\n\tcolor: #E08284;\n}\n\n.event_date_month p{\n\tmargin: 0px;\n\tfont-size: 10px\n}\n\np.event_date{\n\tfont-size: 16px;\n\tfont-weight: 500;\n}\n\n.event_name_location h4, .event_name_location a, .event_name_location p{\n\n\tmargin: 0px;\n}\n\n.event_name{\n\tfont-size: 14px;\n\tfont-weight: 500;\n\tcolor: #333;\n}\n\n.event_date_month:after{\n\tposition: absolute;\n    content: '';\n    height: 1px;\n    width: 52px;\n    -webkit-transform: rotate(90deg);\n            transform: rotate(90deg);\n    top: 33px;\n    right: -5px;\n\tbackground: #f1f1f1;\n}\n\na.event_location{\n\tfont-size: 12px;\n\tcolor: #999;\n\ttext-decoration: none\n}\n\na.event_location:hover{\n\ttext-decoration: underline;\n}\n\n.event_price{\n\tfont-size: 10px;\n\tcolor: #999;\n}\n\n.tags_and_tickets .tags {\n    width: 40%;\n    float:  left;\n}\n\n.ticket {\n    width: 58%;\n    float:  left;\n}\n\n.tags_and_tickets {\n    width: 100%;\n    padding: 20px 5px 20px 15px;\n    position: relative;\n}\n\n.tags span {\n    width: auto;\n    background: #f4f4f4;\n    text-transform:  uppercase;\n    padding: 3px 8px;\n    font-size:  10px;\n    color:  #999999;\n    margin-top: 7px;\n    display:  inline-block;\n    border-radius: 3px;\n}\n\n.ticket a {\n    font-size:  11px;\n    text-transform:  uppercase;\n    color:  #fff;\n    background:  #D65D5D;\n    display:  block;\n    text-align:  center;\n    width: 80%;\n    text-decoration:  none;\n    padding: 10px 0px;\n    font-weight: 600;\n    margin-top: 20px;\n    -webkit-transition: .3s;\n    transition: .3s;\n}\n\n.ticket a:hover{\n\tbackground: #b03135;\n}\n\n.date_name_location{\n\tposition: relative;\n}\n\n.date_name_location:after{\n    position: absolute;\n    content: '';\n    width: 100%;\n    height: 1px;\n    background: #F1F1F2;\n    bottom: -120px;\n    left: 0px;\n}\n"
+module.exports = ".event-card {\n  max-width: 350px;\n  max-height: 300px;\n  border-radius: 8px;\n  background: #F2F2F2;\n}\n\n.events-filter-toolbar\n{\n  max-width: 80%;\n  position: relative;\n  margin: auto;\n  top:30px;\n\tbottom: 30px;\n\tleft: 0;\n\tright: 0;\n\tborder-radius: 14px;\n}\n\n.spacer{\n  height: 30px;\n}\n\nmat-card-tile{\n  min-width: 250px;\n  min-height: 400px;\n}\n\n.events-container\n{\n  width: 80%;\n  position: relative;\n  margin: auto;\n  top:15px;\n\tbottom: 0;\n\tleft: 0;\n\tright: 0;\n}\n\n.card-image\n{\n  margin-bottom: 0px;\n  max-height: 150px;\n}\n\n.toolbar-splitter\n{\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 auto;\n          flex: 1 1 auto;\n}\n\n.event_name_location{\n  width: 70%;\n\tfloat: left;\n\tpadding: 8px 0px 10px 0px;\n\n}\n\n@media only screen and (max-width: 1105px) {\n   .event_name_location{\n   \twidth: 70%;\n   }\n}\n\n@media only screen and (max-width: 1020px) {\n  .event_name_location{\n   \twidth: 70%;\n   }\n}\n\n@media only screen and (max-width: 685px) {\n  .event_name_location{\n   \twidth: 60%;\n   }\n}\n\n@media only screen and (max-width: 560px) {\n  .event_name_location{\n   \twidth: 60%;\n   }\n}\n\n.event_date_month{\n\tpadding: 8px 0px 0px 25px;\n\twidth: 20%;\n\tfloat: left;\n}\n\n.event_date_month{\n\ttext-transform: uppercase;\n\tposition: relative;\n}\n\n.event_month{\n\tcolor: #E08284;\n}\n\n.event_date_month p{\n\tmargin: 0px;\n\tfont-size: 10px\n}\n\np.event_date{\n\tfont-size: 16px;\n\tfont-weight: 500;\n}\n\np.event_name{\n  margin-top: 0px;\n}\n\n.event_date_month:after{\n\tposition: absolute;\n    content: '';\n    height: 1px;\n    width: 52px;\n    -webkit-transform: rotate(90deg);\n            transform: rotate(90deg);\n    top: 33px;\n    right: -5px;\n\tbackground: #f1f1f1;\n}\n\na.event_location{\n\tfont-size: 12px;\n\tcolor: #999;\n\ttext-decoration: none\n}\n\na.event_location:hover{\n\ttext-decoration: underline;\n}\n\n.event_price{\n\tfont-size: 10px;\n\tcolor: #999;\n}\n\n.date_name_location{\n\tposition: relative;\n}\n\n.date_name_location:after{\n    position: absolute;\n    content: '';\n    width: 100%;\n    height: 1px;\n    background: #F1F1F2;\n    bottom: -120px;\n    left: 0px;\n}\n"
 
 /***/ }),
 
 /***/ "./src/app/events/events.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar class=\"events-filter-toolbar\">\n  <mat-toolbar-row>\n    <mat-form-field class=\"half-width\">\n    <input type=\"text\"  placeholder=\"Search Events\" aria-label=\"Number\" matInput [formControl]=\"myControl\" [matAutocomplete]=\"auto\">\n    <mat-autocomplete #auto=\"matAutocomplete\">\n      <mat-option *ngFor=\"let option of options\" [value]=\"option\">\n        {{ option }}\n      </mat-option>\n    </mat-autocomplete>\n    </mat-form-field>\n\n    <span class=\"tollbar-splitter\"></span>\n        <mat-form-field>\n  <input matInput [matDatepicker]=\"picker\" placeholder=\"Choose a date\">\n  <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n  <mat-datepicker #picker></mat-datepicker>\n</mat-form-field>\n  </mat-toolbar-row>\n</mat-toolbar>\n<div class=\"spacer\"></div>\n<div class=\"events-container\">\n<mat-grid-list [cols]=\"cols | async\" gutterSize=\"8px\" [style.background-color]=\"'#f5f5f5'\">\n  <mat-grid-tile *ngFor=\"let x of [1,2,3,4,5,6,7,8,9,0,3,4,5,6,7,8]\">\n    <mat-card class=\"event-card\">\n      <img mat-card-image class=\"card-image\" src=\"https://material.angular.io/assets/img/examples/shiba2.jpg\" alt=\"Photo of a Shiba Inu\">\n    <mat-card-content>\n    <div class=\"event_desc\">\n        <div class=\"date_name_location\">\n          <div class=\"event_date_month\">\n            <p class=\"event_month\">jun</p>\n            <p class=\"event_date\">9</p>\n            <p class=\"event_day\">sat</p>\n          </div>\n          <div class=\"event_name_location\">\n            <h4 class=\"event_name\">Asha Bhosle Live with Javed Ali - Sound of Silence</h4>\n            <a href=\"#\" class=\"event_location\">Phoenix Market City: Whitefield</a>\n            <p class=\"event_price\" >Rs. 999 Onwards</p>\n          </div>\n        </div>\n      </div>\n      </mat-card-content>\n      <mat-card-actions>\n        <button mat-button color=\"#cc3333cc\" >Book</button>\n        <span class=\"toolbar-splitter\"></span>\n        <button mat-icon-button routerLink=\"\"><mat-icon aria-label=\"Settings\">share</mat-icon></button>\n        <button mat-icon-button routerLink=\"\"><mat-icon aria-label=\"Settings\">edit</mat-icon></button>\n      </mat-card-actions>\n    </mat-card>\n  </mat-grid-tile>\n</mat-grid-list>\n</div>\n"
+module.exports = "<mat-toolbar class=\"events-filter-toolbar\">\n  <mat-toolbar-row>\n    <mat-form-field class=\"half-width\">\n    <input type=\"text\"  placeholder=\"Search Events\" aria-label=\"Number\" matInput [formControl]=\"myControl\" [matAutocomplete]=\"auto\">\n    <mat-autocomplete #auto=\"matAutocomplete\">\n      <mat-option *ngFor=\"let option of options\" [value]=\"option\">\n        {{ option }}\n      </mat-option>\n    </mat-autocomplete>\n    </mat-form-field>\n\n    <span class=\"tollbar-splitter\"></span>\n        <mat-form-field>\n  <input matInput [matDatepicker]=\"picker\" placeholder=\"Choose a date\">\n  <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n  <mat-datepicker #picker></mat-datepicker>\n</mat-form-field>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<div class=\"spacer\"></div>\n<div class=\"events-container\">\n<mat-grid-list [cols]=\"cols | async\" gutterSize=\"15px\" >\n  <mat-grid-tile *ngFor=\"let x of [1,2,3,4,5,6,7,8,9,0,3,4,5,6,7,8]\">\n    <mat-card class=\"event-card\">\n      <img mat-card-image class=\"card-image\" src=\"https://algovent-s3-static.s3.amazonaws.com/eventico/media/event_bWDUlrT.jpg\" alt=\"Photo of a Shiba Inu\">\n    <mat-card-content>\n        <div class=\"date_name_location\">\n          <div class=\"event_date_month\">\n            <p class=\"event_month\">jun</p>\n            <p class=\"event_date\">9</p>\n            <p class=\"event_day\">sat</p>\n          </div>\n          <div class=\"event_name_location\">\n            <p class=\"event_name\">Asha Bhosle Live with Javed Ali - Sound of Silence</p>\n            <a href=\"#\" class=\"event_location\">Phoenix Market City: Whitefield</a>\n            <p class=\"event_price\" >Rs. 999 Onwards</p>\n          </div>\n        </div>\n      </mat-card-content>\n      <mat-card-actions>\n        <button mat-button color=\"#cc3333cc\" >Book</button>\n        <span class=\"toolbar-splitter\"></span>\n        <button mat-icon-button routerLink=\"\"><mat-icon aria-label=\"Settings\">share</mat-icon></button>\n        <button mat-icon-button routerLink=\"\"><mat-icon aria-label=\"Settings\">edit</mat-icon></button>\n      </mat-card-actions>\n    </mat-card>\n  </mat-grid-tile>\n</mat-grid-list>\n</div>\n"
 
 /***/ }),
 
@@ -1442,7 +1430,7 @@ var EventsComponent = /** @class */ (function () {
             ["sm", 2],
             ["md", 2],
             ["lg", 3],
-            ["xl", 4]
+            ["xl", 3]
         ]);
         var start;
         grid.forEach(function (cols, mqAlias) {
@@ -1490,7 +1478,7 @@ module.exports = ".new-event-card\n{\n   max-width: 30%;\n   margin: 100px auto;
 /***/ "./src/app/events/new-event/new-event.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div  class=\"overlay\" [style.display]=\"showOverlay\"> <mat-spinner display='block'></mat-spinner> </div>\n<mat-horizontal-stepper>\n  <mat-step label=\"Setup Event Info\">\n    <mat-card class=\"new-event-card\">\n      <form class=\"new-event-form\" #eventCreationForm=\"ngForm\" >\n      <mat-card-content>\n          <mat-form-field class=\"full-width\">\n            <input matInput placeholder=\"Name\" #Name=\"ngModel\" [(ngModel)]=\"event.Name\" name=\"Name\" required>\n          </mat-form-field>\n          <mat-form-field class=\"full-width\">\n            <input matInput type=\"number\" placeholder=\"Default Price\" #Name=\"ngModel\" [(ngModel)]=\"defaultPrice.value\" name=\"DefaultPrice\" required>\n          </mat-form-field>\n          <mat-form-field class=\"full-width\">\n            <input matInput type=\"text\" placeholder=\"Default Price Label\" #Name=\"ngModel\" [(ngModel)]=\"defaultPrice.label\" name=\"DefaultPriceLabel\" required>\n          </mat-form-field>\n          <mat-form-field class=\"full-width\">\n            <input matInput type=\"text\" placeholder=\"Default Price Description\" #Name=\"ngModel\" [(ngModel)]=\"defaultPrice.desc\" name=\"DefaultPriceDesc\" required>\n          </mat-form-field>\n            <mat-form-field class=\"full-width\">\n            <textarea matInput placeholder=\"Description\" #Desc=\"ngModel\" [(ngModel)]=\"event.Desc\" name=\"Description\" required></textarea>\n          </mat-form-field>\n          <mat-form-field class=\"half-width\">\n          <mat-select placeholder=\"Select EventType\" #EventType=\"ngModel\" [(ngModel)]=\"event.EventTypeId\" name=\"EventType\">\n              <mat-option *ngFor=\"let eventType of eventTypes\" value=\"{{eventType.Id}}\">{{eventType.Name}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field class=\"half-width\">\n            <mat-select placeholder=\"Select Event venue\" #EventVenue=\"ngModel\" [(ngModel)]=\"event.EventVenueId\" (change)=\"updateVenueDetails()\" name=\"EventVenue\" >\n              <mat-option *ngFor=\"let eventVenue of eventVenues\" value=\"{{eventVenue.Id}}\" >{{eventVenue.Name}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field>\n            <mat-select  #LayoutType placeholder=\"Layout Type\" #LayoutType=\"ngModel\" [(ngModel)]=\"event.LayoutType\" name=\"LayoutType\" disabled>\n              <mat-option value=\"none\">\n                NONE\n              </mat-option>\n              <mat-option value=\"box\">\n                BOX\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n      </mat-card-content>\n      </form>\n    </mat-card>\n    <div *ngIf=\"event.LayoutType == 'none'\">\n      <button  mat-button type=\"submit\" (click)=\"upsertEvent()\">UPSERT</button>\n    </div>\n    <div *ngIf=\"mode == new || event.LayoutType == 'box'\">\n      <button  mat-button matStepperNext >Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Mark Unavailability\" *ngIf=\"event.LayoutType == 'box'\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-form\" #markNAForm=\"ngForm\" (ngSubmit)=\"markNA(markNAForm)\">\n\n          <mat-form-field>\n            <mat-select placeholder=\"Select Group\" #GroupSelect=\"ngModel\" [(ngModel)]=\"markNAFormData.group_index\" name=\"GroupSelect\">\n              <mat-option *ngFor=\"let group of layout_groups;let i = index\" [value]=\"i\">\n                {{ group.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markNAFormData.group_index != -1\">\n            <mat-select  #RowSelect placeholder=\"Select Row\" [(ngModel)]=\"markNAFormData.row_index\" name=\"RowSelect\">\n              <mat-option *ngFor=\"let row of layout_groups[markNAFormData.group_index].rows ;let j = index\" [value]=\"j\">\n                {{ row.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markNAFormData.row_index != -1\">\n            <mat-select  #StartColSelect placeholder=\"Select Start Column\" [(ngModel)]=\"markNAFormData.start_col_index\" name=\"StartColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markNAFormData.group_index].rows[markNAFormData.row_index].cols ;let k = index\" [value]=\"k\">\n                {{ k }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markNAFormData.row_index != -1\">\n            <mat-select  #EndColSelect placeholder=\"Select End Column\" [(ngModel)]=\"markNAFormData.end_col_index\" name=\"EndColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markNAFormData.group_index].rows[markNAFormData.row_index].cols;let l = index\" [value]=\"l\">\n                {{ l }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n          <button mat-button type=\"submit\" color=\"primary\" >Mark N/A</button>\n        </form>\n        <span class=\"tollbar-splitter\"></span>\n\n        <button  mat-button [(colorPicker)]=\"eventLayout.typeColors.path\" [cpPosition]=\"'left'\">Path Color</button>\n        <button  mat-button [(colorPicker)]=\"eventLayout.typeColors.na\" [cpPosition]=\"'left'\">N/A Color</button>\n\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\">\n          <mat-divider></mat-divider>\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button [matTooltip]=\"col.number\" class=\"seat-button\" [disabled]=\"eventLayout.typeActionDisabled[col.type]\"  mat-icon-button><mat-icon [style.color]=\"eventLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n          <tr *ngIf=\"group != null && group.rows != null && group.rows[0] != null\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ group.name }}</button>\n            </td>\n            <td *ngFor=\"let col of group.rows[0].cols; let m = index\" class=\"seat-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ m }}</button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Setup Pricing\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-form\" #addPricingForm=\"ngForm\" (ngSubmit)=\"addPricing(addPricingForm)\">\n\n          <mat-form-field primary>\n            <input matInput  type=\"text\" placeholder=\"Label\" #Label=\"ngModel\" [(ngModel)]=\"addPricingFormData.label\" name=\"Label\" >\n          </mat-form-field>\n          <mat-form-field primary>\n            <input matInput type=\"number\" placeholder=\"Value\" #Value=\"ngModel\" [(ngModel)]=\"addPricingFormData.value\" name=\"Value\" >\n          </mat-form-field>\n          <mat-form-field primary>\n            <input matInput type=\"text\" placeholder=\"Description\" #Desc=\"ngModel\" [(ngModel)]=\"addPricingFormData.desc\" name=\"Desc\" >\n          </mat-form-field>\n          <button mat-button type=\"submit\" color=\"primary\" >Add</button>\n        </form>\n        <span class=\"tollbar-splitter\"></span>\n\n      </mat-toolbar-row>\n    </mat-toolbar>\n\n    <mat-list>\n      <mat-list-item *ngFor=\"let price of eventLayout.priceList\">\n        <mat-icon class=\"pricing_color_icon\" matListIcon [(colorPicker)]=\"price.color\" [style.color]=\"price.color\">event_seat</mat-icon>\n        <h3 matLine> {{ price.label }} </h3>\n        <p matLine>\n          <span> {{ price.value }} </span>\n          <span class=\"demo-2\"> -- {{ price.desc }} </span>\n        </p>\n\n        <button *ngIf=\"price.name != 'default'\" mat-icon-button><mat-icon>delete</mat-icon></button>\n      </mat-list-item>\n    </mat-list>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Mark Pricing\" *ngIf=\"event.LayoutType == 'box'\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-form\" #markPricingForm=\"ngForm\" (ngSubmit)=\"markPricing(markPricingForm)\">\n\n          <mat-form-field>\n            <mat-select placeholder=\"Select Price\" #GroupSelect=\"ngModel\" [(ngModel)]=\"markPricingFormData.price_index\" name=\"PriceSelect\">\n              <mat-option *ngFor=\"let price of eventLayout.priceList;let i = index\" [value]=\"i\">\n                {{ price.label }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field>\n            <mat-select placeholder=\"Select Group\" #GroupSelect=\"ngModel\" [(ngModel)]=\"markPricingFormData.group_index\" name=\"GroupSelect\">\n              <mat-option *ngFor=\"let group of layout_groups;let i = index\" [value]=\"i\">\n                {{ group.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markPricingFormData.group_index != -1\">\n            <mat-select  #RowSelect placeholder=\"Select Row\" [(ngModel)]=\"markPricingFormData.row_index\" name=\"RowSelect\">\n              <mat-option *ngFor=\"let row of layout_groups[markPricingFormData.group_index].rows ;let j = index\" [value]=\"j\">\n                {{ row.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markPricingFormData.row_index != -1\">\n            <mat-select  #StartColSelect placeholder=\"Select Start Column\" [(ngModel)]=\"markPricingFormData.start_col_index\" name=\"StartColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markPricingFormData.group_index].rows[markPricingFormData.row_index].cols ;let k = index\" [value]=\"k\">\n                {{ k }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markPricingFormData.row_index != -1\">\n            <mat-select  #EndColSelect placeholder=\"Select End Column\" [(ngModel)]=\"markPricingFormData.end_col_index\" name=\"EndColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markPricingFormData.group_index].rows[markPricingFormData.row_index].cols;let l = index\" [value]=\"l\">\n                {{ l }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n          <button mat-button type=\"submit\" color=\"primary\" >Mark Pricing</button>\n        </form>\n        <span class=\"tollbar-splitter\"></span>\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\">\n          <mat-divider></mat-divider>\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.type != 'active'\" [matTooltip]=\"col.number\" class=\"seat-button\" disabled  mat-icon-button><mat-icon [style.color]=\"eventLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col.type == 'active'\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+eventLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"eventLayout.priceMap[col.price].color\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n          <tr *ngIf=\"group != null && group.rows != null && group.rows[0] != null\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ group.name }}</button>\n            </td>\n            <td *ngFor=\"let col of group.rows[0].cols; let m = index\" class=\"seat-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ m }}</button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Confirm Details\">\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\" disabled>\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.type != 'active'\" [matTooltip]=\"col.number\" class=\"seat-button\" disabled  mat-icon-button><mat-icon [style.color]=\"eventLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col.type == 'active'\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+eventLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"eventLayout.priceMap[col.price].color\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n    </div>\n  </mat-step>\n</mat-horizontal-stepper>\n"
+module.exports = "<div class=\"indicator\" [style.disply]=\"showOverlay\">\n  <svg width=\"16px\" height=\"12px\">\n    <polyline id=\"back\" points=\"1 6 4 6 6 11 10 1 12 6 15 6\"></polyline>\n    <polyline id=\"front\" points=\"1 6 4 6 6 11 10 1 12 6 15 6\"></polyline>\n  </svg>\n</div>\n<mat-horizontal-stepper>\n  <mat-step label=\"Setup Event Info\">\n    <mat-card class=\"new-event-card\">\n      <form class=\"new-event-form\" #eventCreationForm=\"ngForm\" >\n      <mat-card-content>\n          <mat-form-field class=\"full-width\">\n            <input matInput placeholder=\"Name\" #Name=\"ngModel\" [(ngModel)]=\"event.Name\" name=\"Name\" required>\n          </mat-form-field>\n          <mat-form-field class=\"full-width\">\n            <input matInput type=\"number\" placeholder=\"Default Price\" #Name=\"ngModel\" [(ngModel)]=\"defaultPrice.value\" name=\"DefaultPrice\" required>\n          </mat-form-field>\n          <mat-form-field class=\"full-width\">\n            <input matInput type=\"text\" placeholder=\"Default Price Label\" #Name=\"ngModel\" [(ngModel)]=\"defaultPrice.label\" name=\"DefaultPriceLabel\" required>\n          </mat-form-field>\n          <mat-form-field class=\"full-width\">\n            <input matInput type=\"text\" placeholder=\"Default Price Description\" #Name=\"ngModel\" [(ngModel)]=\"defaultPrice.desc\" name=\"DefaultPriceDesc\" required>\n          </mat-form-field>\n            <mat-form-field class=\"full-width\">\n            <textarea matInput placeholder=\"Description\" #Desc=\"ngModel\" [(ngModel)]=\"event.Desc\" name=\"Description\" required></textarea>\n          </mat-form-field>\n          <mat-form-field class=\"half-width\">\n          <mat-select placeholder=\"Select EventType\" #EventType=\"ngModel\" [(ngModel)]=\"event.EventTypeId\" name=\"EventType\">\n              <mat-option *ngFor=\"let eventType of eventTypes\" value=\"{{eventType.Id}}\">{{eventType.Name}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field class=\"half-width\">\n            <mat-select placeholder=\"Select Event venue\" #EventVenue=\"ngModel\" [(ngModel)]=\"event.EventVenueId\" (change)=\"updateVenueDetails()\" name=\"EventVenue\" >\n              <mat-option *ngFor=\"let eventVenue of eventVenues\" value=\"{{eventVenue.Id}}\" >{{eventVenue.Name}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field>\n            <mat-select  #LayoutType placeholder=\"Layout Type\" #LayoutType=\"ngModel\" [(ngModel)]=\"event.LayoutType\" name=\"LayoutType\" disabled>\n              <mat-option value=\"none\">\n                NONE\n              </mat-option>\n              <mat-option value=\"box\">\n                BOX\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n      </mat-card-content>\n      </form>\n    </mat-card>\n    <div *ngIf=\"event.LayoutType == 'none'\">\n      <button  mat-button type=\"submit\" (click)=\"upsertEvent()\">UPSERT</button>\n    </div>\n    <div *ngIf=\"mode == new || event.LayoutType == 'box'\">\n      <button  mat-button matStepperNext >Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Setup Banners\">\n    <mat-card>\n      <mat-card-content>\n        <img [src]=\"this.event.images['banner'].url\" onerror=\"this.src='https://algovent-s3-static.s3.amazonaws.com/eventico/media/default_bannger.jpg'\">\n      </mat-card-content>\n      <mat-divider></mat-divider>\n      <mat-card-actions>\n        <input type=\"file\"  *ngIf=\"this.event.images['banner'].url == ''\" (change)=\"handleFileInput($event.target.files)\">\n        <button mat-button  *ngIf=\"this.event.images['banner'].url != ''\" color=\"warning\"> REMOVE</button>\n      </mat-card-actions>\n    </mat-card>\n  <div>\n    <button  mat-button matStepperNext >Next</button>\n  </div>\n  </mat-step>\n\n  <mat-step label=\"Mark Unavailability\" *ngIf=\"event.LayoutType == 'box'\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-form\" #markNAForm=\"ngForm\" (ngSubmit)=\"markNA(markNAForm)\">\n\n          <mat-form-field>\n            <mat-select placeholder=\"Select Group\" #GroupSelect=\"ngModel\" [(ngModel)]=\"markNAFormData.group_index\" name=\"GroupSelect\">\n              <mat-option *ngFor=\"let group of layout_groups;let i = index\" [value]=\"i\">\n                {{ group.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markNAFormData.group_index != -1\">\n            <mat-select  #RowSelect placeholder=\"Select Row\" [(ngModel)]=\"markNAFormData.row_index\" name=\"RowSelect\">\n              <mat-option *ngFor=\"let row of layout_groups[markNAFormData.group_index].rows ;let j = index\" [value]=\"j\">\n                {{ row.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markNAFormData.row_index != -1\">\n            <mat-select  #StartColSelect placeholder=\"Select Start Column\" [(ngModel)]=\"markNAFormData.start_col_index\" name=\"StartColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markNAFormData.group_index].rows[markNAFormData.row_index].cols ;let k = index\" [value]=\"k\">\n                {{ k }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markNAFormData.row_index != -1\">\n            <mat-select  #EndColSelect placeholder=\"Select End Column\" [(ngModel)]=\"markNAFormData.end_col_index\" name=\"EndColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markNAFormData.group_index].rows[markNAFormData.row_index].cols;let l = index\" [value]=\"l\">\n                {{ l }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n          <button mat-button type=\"submit\" color=\"primary\" >Mark N/A</button>\n        </form>\n        <span class=\"tollbar-splitter\"></span>\n\n        <button  mat-button [(colorPicker)]=\"eventLayout.typeColors.path\" [cpPosition]=\"'left'\">Path Color</button>\n        <button  mat-button [(colorPicker)]=\"eventLayout.typeColors.na\" [cpPosition]=\"'left'\">N/A Color</button>\n\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\">\n          <mat-divider></mat-divider>\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button [matTooltip]=\"col.number\" class=\"seat-button\" [disabled]=\"eventLayout.typeActionDisabled[col.type]\"  mat-icon-button><mat-icon [style.color]=\"eventLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n          <tr *ngIf=\"group != null && group.rows != null && group.rows[0] != null\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ group.name }}</button>\n            </td>\n            <td *ngFor=\"let col of group.rows[0].cols; let m = index\" class=\"seat-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ m }}</button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Setup Pricing\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-form\" #addPricingForm=\"ngForm\" (ngSubmit)=\"addPricing(addPricingForm)\">\n\n          <mat-form-field primary>\n            <input matInput  type=\"text\" placeholder=\"Label\" #Label=\"ngModel\" [(ngModel)]=\"addPricingFormData.label\" name=\"Label\" >\n          </mat-form-field>\n          <mat-form-field primary>\n            <input matInput type=\"number\" placeholder=\"Value\" #Value=\"ngModel\" [(ngModel)]=\"addPricingFormData.value\" name=\"Value\" >\n          </mat-form-field>\n          <mat-form-field primary>\n            <input matInput type=\"text\" placeholder=\"Description\" #Desc=\"ngModel\" [(ngModel)]=\"addPricingFormData.desc\" name=\"Desc\" >\n          </mat-form-field>\n          <button mat-button type=\"submit\" color=\"primary\" >Add</button>\n        </form>\n        <span class=\"tollbar-splitter\"></span>\n\n      </mat-toolbar-row>\n    </mat-toolbar>\n\n    <mat-list>\n      <mat-list-item *ngFor=\"let price of eventLayout.priceList\">\n        <mat-icon class=\"pricing_color_icon\" matListIcon [(colorPicker)]=\"price.color\" [style.color]=\"price.color\">event_seat</mat-icon>\n        <h3 matLine> {{ price.label }} </h3>\n        <p matLine>\n          <span> {{ price.value }} </span>\n          <span class=\"demo-2\"> -- {{ price.desc }} </span>\n        </p>\n\n        <button *ngIf=\"price.name != 'default'\" mat-icon-button><mat-icon>delete</mat-icon></button>\n      </mat-list-item>\n    </mat-list>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Mark Pricing\" *ngIf=\"event.LayoutType == 'box'\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-form\" #markPricingForm=\"ngForm\" (ngSubmit)=\"markPricing(markPricingForm)\">\n\n          <mat-form-field>\n            <mat-select placeholder=\"Select Price\" #GroupSelect=\"ngModel\" [(ngModel)]=\"markPricingFormData.price_index\" name=\"PriceSelect\">\n              <mat-option *ngFor=\"let price of eventLayout.priceList;let i = index\" [value]=\"i\">\n                {{ price.label }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field>\n            <mat-select placeholder=\"Select Group\" #GroupSelect=\"ngModel\" [(ngModel)]=\"markPricingFormData.group_index\" name=\"GroupSelect\">\n              <mat-option *ngFor=\"let group of layout_groups;let i = index\" [value]=\"i\">\n                {{ group.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markPricingFormData.group_index != -1\">\n            <mat-select  #RowSelect placeholder=\"Select Row\" [(ngModel)]=\"markPricingFormData.row_index\" name=\"RowSelect\">\n              <mat-option *ngFor=\"let row of layout_groups[markPricingFormData.group_index].rows ;let j = index\" [value]=\"j\">\n                {{ row.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markPricingFormData.row_index != -1\">\n            <mat-select  #StartColSelect placeholder=\"Select Start Column\" [(ngModel)]=\"markPricingFormData.start_col_index\" name=\"StartColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markPricingFormData.group_index].rows[markPricingFormData.row_index].cols ;let k = index\" [value]=\"k\">\n                {{ k }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markPricingFormData.row_index != -1\">\n            <mat-select  #EndColSelect placeholder=\"Select End Column\" [(ngModel)]=\"markPricingFormData.end_col_index\" name=\"EndColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markPricingFormData.group_index].rows[markPricingFormData.row_index].cols;let l = index\" [value]=\"l\">\n                {{ l }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n          <button mat-button type=\"submit\" color=\"primary\" >Mark Pricing</button>\n        </form>\n        <span class=\"tollbar-splitter\"></span>\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\">\n          <mat-divider></mat-divider>\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.type != 'active'\" [matTooltip]=\"col.number\" class=\"seat-button\" disabled  mat-icon-button><mat-icon [style.color]=\"eventLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col.type == 'active'\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+eventLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"eventLayout.priceMap[col.price].color\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n          <tr *ngIf=\"group != null && group.rows != null && group.rows[0] != null\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ group.name }}</button>\n            </td>\n            <td *ngFor=\"let col of group.rows[0].cols; let m = index\" class=\"seat-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ m }}</button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Confirm Details\">\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\" disabled>\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.type != 'active'\" [matTooltip]=\"col.number\" class=\"seat-button\" disabled  mat-icon-button><mat-icon [style.color]=\"eventLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col.type == 'active'\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+eventLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"eventLayout.priceMap[col.price].color\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n    </div>\n  </mat-step>\n</mat-horizontal-stepper>\n"
 
 /***/ }),
 
@@ -1505,6 +1493,7 @@ module.exports = "<div  class=\"overlay\" [style.display]=\"showOverlay\"> <mat-
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__event_venues_shared_event_venue_service__ = __webpack_require__("./src/app/event-venues/shared/event-venue.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_event_service__ = __webpack_require__("./src/app/events/shared/event.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_services_file_manager_service__ = __webpack_require__("./src/app/shared-services/file-manager.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1521,14 +1510,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var NewEventComponent = /** @class */ (function () {
-    function NewEventComponent(eventService, router, eventTypeService, eventVenueService, route) {
+    function NewEventComponent(eventService, router, eventTypeService, eventVenueService, route, fileManager) {
         var _this = this;
         this.eventService = eventService;
         this.router = router;
         this.eventTypeService = eventTypeService;
         this.eventVenueService = eventVenueService;
         this.route = route;
+        this.fileManager = fileManager;
+        this.banner = null;
         this.markNAFormData = {
             group_index: -1,
             row_index: -1,
@@ -1557,10 +1549,34 @@ var NewEventComponent = /** @class */ (function () {
         this.eventTypeService.loadEventTypes();
         this.eventVenueService.loadEventVenues();
     };
+    NewEventComponent.prototype.handleFileInput = function (files) {
+        console.log('file uploaded');
+        this.banner = files.item(0);
+        this.showOverlay = 'block';
+        this.updateEventBanner();
+    };
+    NewEventComponent.prototype.updateEventBanner = function () {
+        var _this = this;
+        if (this.event.Id != null && this.event.Id != undefined) {
+            var options = {
+                objectId: this.event.Id,
+                model: 'event',
+                app_label: 'events',
+            };
+            this.fileManager.upload(this.banner, options).subscribe(function (data) {
+                console.log(data);
+                _this.event.images['banner'].url = data["upload"];
+                _this.showOverlay = 'none';
+            }, function (error) {
+                console.log(error);
+            });
+        }
+        else {
+            alert('please create event before uloading the banner');
+        }
+    };
     NewEventComponent.prototype.setupEvent = function (id) {
         var _this = this;
-        console.log(id);
-        console.log('-------');
         if (id != null && id != '' && id != "undefined") {
             this.mode = "update";
             this.eventService.getEvent(id)
@@ -1695,7 +1711,7 @@ var NewEventComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/events/new-event/new-event.component.html"),
             styles: [__webpack_require__("./src/app/events/new-event/new-event.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__shared_event_service__["a" /* EventService */], __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_2__event_types_shared_event_type_service__["a" /* EventTypeService */], __WEBPACK_IMPORTED_MODULE_3__event_venues_shared_event_venue_service__["a" /* EventVenueService */], __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* ActivatedRoute */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__shared_event_service__["a" /* EventService */], __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* Router */], __WEBPACK_IMPORTED_MODULE_2__event_types_shared_event_type_service__["a" /* EventTypeService */], __WEBPACK_IMPORTED_MODULE_3__event_venues_shared_event_venue_service__["a" /* EventVenueService */], __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* ActivatedRoute */], __WEBPACK_IMPORTED_MODULE_6__shared_services_file_manager_service__["a" /* FileManagerService */]])
     ], NewEventComponent);
     return NewEventComponent;
 }());
@@ -1713,6 +1729,11 @@ var NewEventComponent = /** @class */ (function () {
 
 var Event = /** @class */ (function () {
     function Event(eventJsonObject) {
+        this.images = {
+            banner: { url: '', id: '' },
+            mini_banner: { url: '', id: '' },
+            thumb_nail: { url: '', id: '' },
+        };
         this.import(eventJsonObject);
     }
     Event.prototype.import = function (eventJsonObject) {
@@ -1737,6 +1758,19 @@ var Event = /** @class */ (function () {
         };
         return exportJSON;
     };
+    Event.prototype.import_images = function (imageJSON) {
+        if (imageJSON != null) {
+            for (var key in imageJSON) {
+                if (this.images[key]) {
+                    this.images[key].url = imageJSON[key].url;
+                    this.images[key].id = imageJSON[key].id;
+                }
+            }
+        }
+    };
+    Event.prototype.export_images = function () {
+        return this.images;
+    };
     return Event;
 }());
 
@@ -1750,10 +1784,8 @@ var Event = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__event_model__ = __webpack_require__("./src/app/events/shared/event.model.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__event_model__ = __webpack_require__("./src/app/events/shared/event.model.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_rest_service__ = __webpack_require__("./src/app/shared-services/rest.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1766,13 +1798,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
 var EventService = /** @class */ (function () {
-    function EventService(http) {
-        this.http = http;
+    function EventService(restService) {
+        this.restService = restService;
         this.events = [];
-        this.rootUrl = __WEBPACK_IMPORTED_MODULE_4__environments_environment__["a" /* environment */].api;
     }
     EventService.prototype.upsertEventVenue = function (upsertEventObj) {
         if (upsertEventObj.Id == null || upsertEventObj.Id == '' || upsertEventObj.Id == undefined) {
@@ -1784,17 +1813,18 @@ var EventService = /** @class */ (function () {
     };
     EventService.prototype.createEvent = function (createEventObj) {
         var createJSON = createEventObj.export();
-        var reqHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({ 'No-Auth': 'True' });
-        return this.http.post(this.rootUrl + '/event/create/', createJSON, { headers: reqHeaders });
+        return this.restService.post('CREATE_EVENT', true, null, createJSON);
     };
     EventService.prototype.updateEvent = function (updateEventObj) {
         var updateJSON = updateEventObj.export();
-        var reqHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({ 'No-Auth': 'True' });
-        return this.http.post(this.rootUrl + '/event/update/', updateJSON, { headers: reqHeaders });
+        return this.restService.post('UPDATE_EVENT', true, null, updateJSON);
+    };
+    EventService.prototype.updateEventLayout = function (event) {
+        //event.eventlayout;
     };
     EventService.prototype.getEvent = function (id) {
-        var reqHeaders = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({ 'No-Auth': 'True' });
-        return this.http.get(this.rootUrl + '/event/', { params: { id: id }, headers: reqHeaders });
+        var params = {};
+        return this.restService.get('GET_EVENT', true, null, params);
     };
     EventService.prototype.loadEvents = function () {
         var _this = this;
@@ -1804,8 +1834,8 @@ var EventService = /** @class */ (function () {
         });
     };
     EventService.prototype.fetchEvents = function () {
-        var actionUrl = '/events/';
-        return this.http.get(this.rootUrl + actionUrl);
+        var params = {};
+        return this.restService.get('GET_EVENTS', true, null, params);
     };
     EventService.prototype.syncUIEvents = function (data) {
         console.log('sync data ::');
@@ -1815,7 +1845,7 @@ var EventService = /** @class */ (function () {
             var id = eventList[i]["pk"];
             var eventJsonObject = eventList[i]["fields"];
             eventJsonObject["id"] = id;
-            var event = new __WEBPACK_IMPORTED_MODULE_3__event_model__["a" /* Event */](eventJsonObject);
+            var event = new __WEBPACK_IMPORTED_MODULE_1__event_model__["a" /* Event */](eventJsonObject);
             this.events.push(event);
         }
         console.log(this.events);
@@ -1824,12 +1854,12 @@ var EventService = /** @class */ (function () {
         var id = data["pk"];
         var EventJsonObject = data["fields"];
         EventJsonObject["id"] = id;
-        var event = new __WEBPACK_IMPORTED_MODULE_3__event_model__["a" /* Event */](EventJsonObject);
+        var event = new __WEBPACK_IMPORTED_MODULE_1__event_model__["a" /* Event */](EventJsonObject);
         return event;
     };
     EventService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__shared_services_rest_service__["a" /* RestService */]])
     ], EventService);
     return EventService;
 }());
@@ -1957,7 +1987,7 @@ module.exports = ".toolbar-splitter\n{\n  -webkit-box-flex: 1;\n      -ms-flex: 
 /***/ "./src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar class=\"header\" [style.background-color]=\"'#e5e5e8'\">\n  <mat-toolbar-row >\n    <img class=\"logo\" src=\"https://s3.ap-south-1.amazonaws.com/algoventimagestore/TOTT_Logo_New.png\" alt=\"talk-of-the-town\">\n\n    <span class=\"tollbar-splitter\"></span>\n    <button *ngIf=\"loggedIn\" mat-icon-button ><mat-icon aria-label=\"Settings\" [style.color]=\"'#000'\">settings</mat-icon></button>\n    <button *ngIf=\"loggedIn\" mat-icon-button (click)=\"logout()\"><mat-icon [style.color]=\"'#000'\" aria-label=\"Settings\">exit_to_app</mat-icon></button>\n    <button *ngIf=\"loggedIn == false\" mat-button routerLink=\"login\" [style.color]=\"'#000'\">LOGIN</button>\n    <button *ngIf=\"loggedIn == false\" mat-button routerLink=\"signup\" [style.color]=\"'#000'\">SIGNUP</button>\n    <div *ngIf=\"loggedIn\">\n    <mat-menu #notifications=\"matMenu\" yPosition=\"below\" xPosition=\"before\">\n      <button mat-menu-item>notification 1</button>\n      <button mat-menu-item>notification 2</button>\n    </mat-menu>\n    <button mat-icon-button [matMenuTriggerFor]=\"notifications\" *ngIf=\"loggedIn\">\n      <mat-icon [style.color]=\"'#000'\">notifications</mat-icon>\n    </button>\n    </div>\n\n\n  </mat-toolbar-row>\n</mat-toolbar>\n<mat-toolbar *ngIf=\"adminToolBar['allowed'] == true\" class=\"admin-toolbar\">\n  <i class=\"material-icons md-dark\">supervisor_account</i>\n  <button mat-button routerLink=\"events/event\"><mat-icon aria-label=\"Settings\">playlist_add</mat-icon> <span class=\"responsive_span_text\">New Event</span> </button>\n  <button mat-button routerLink=\"event-types\"><mat-icon aria-label=\"Settings\">table_chart</mat-icon> <span class=\"responsive_span_text\">Event Types</span> </button>\n  <button mat-button routerLink=\"event-venues\"><mat-icon aria-label=\"Settings\">movie_creation</mat-icon> <span class=\"responsive_span_text\">Event Venues</span></button>\n  <span class=\"admin-tollbar-spacer\"></span>\n  <mat-menu #addon_tools=\"matMenu\" class=\"addon-tools\" yPosition=\"below\" xPosition=\"before\">\n    <button mat-menu-item routerLink=\"\"><mat-icon aria-label=\"Settings\">find_replace</mat-icon> User Management</button>\n    <button mat-menu-item routerLink=\"\"><mat-icon aria-label=\"Settings\">cloud_download</mat-icon> Reports</button>\n  </mat-menu>\n\n  <button class=\"addon-tools\" mat-icon-button [matMenuTriggerFor]=\"addon_tools\">\n    <mat-icon>more_vert</mat-icon>\n  </button>\n</mat-toolbar>\n"
+module.exports = "<mat-toolbar class=\"header navbar-static-top\" [style.background-color]=\"'#e5e5e8'\">\n  <mat-toolbar-row >\n    <a href=\"\" routerLink=\"\"><img class=\"logo\" src=\"https://algovent-s3-static.s3.amazonaws.com/eventico/media/TOTT_Logo_New.png\" alt=\"talk-of-the-town\"></a>\n\n    <span class=\"tollbar-splitter\"></span>\n    <button *ngIf=\"loggedIn\" mat-icon-button ><mat-icon aria-label=\"Settings\" [style.color]=\"'#000'\">settings</mat-icon></button>\n    <button *ngIf=\"loggedIn\" mat-icon-button (click)=\"logout()\"><mat-icon [style.color]=\"'#000'\" aria-label=\"Settings\">exit_to_app</mat-icon></button>\n    <button *ngIf=\"loggedIn == false\" mat-button routerLink=\"login\" [style.color]=\"'#000'\">LOGIN</button>\n    <button *ngIf=\"loggedIn == false\" mat-button routerLink=\"signup\" [style.color]=\"'#000'\">SIGNUP</button>\n    <div *ngIf=\"loggedIn\">\n    <mat-menu #notifications=\"matMenu\" yPosition=\"below\" xPosition=\"before\">\n      <button mat-menu-item>notification 1</button>\n      <button mat-menu-item>notification 2</button>\n    </mat-menu>\n    <button mat-icon-button [matMenuTriggerFor]=\"notifications\" *ngIf=\"loggedIn\">\n      <mat-icon [style.color]=\"'#000'\">notifications</mat-icon>\n    </button>\n    </div>\n\n\n  </mat-toolbar-row>\n</mat-toolbar>\n<mat-toolbar *ngIf=\"adminToolBar['allowed'] == true\" class=\"admin-toolbar\">\n  <i class=\"material-icons md-dark\">supervisor_account</i>\n  <button mat-button routerLink=\"events/event\"><mat-icon aria-label=\"Settings\">playlist_add</mat-icon> <span class=\"responsive_span_text\">New Event</span> </button>\n  <button mat-button routerLink=\"event-types\"><mat-icon aria-label=\"Settings\">table_chart</mat-icon> <span class=\"responsive_span_text\">Event Types</span> </button>\n  <button mat-button routerLink=\"event-venues\"><mat-icon aria-label=\"Settings\">movie_creation</mat-icon> <span class=\"responsive_span_text\">Event Venues</span></button>\n  <span class=\"admin-tollbar-spacer\"></span>\n  <mat-menu #addon_tools=\"matMenu\" class=\"addon-tools\" yPosition=\"below\" xPosition=\"before\">\n    <button mat-menu-item routerLink=\"\"><mat-icon aria-label=\"Settings\">find_replace</mat-icon> User Management</button>\n    <button mat-menu-item routerLink=\"\"><mat-icon aria-label=\"Settings\">cloud_download</mat-icon> Reports</button>\n  </mat-menu>\n\n  <button class=\"addon-tools\" mat-icon-button [matMenuTriggerFor]=\"addon_tools\">\n    <mat-icon>more_vert</mat-icon>\n  </button>\n</mat-toolbar>\n"
 
 /***/ }),
 
@@ -1985,6 +2015,7 @@ var HeaderComponent = /** @class */ (function () {
     function HeaderComponent(router, userservice) {
         this.router = router;
         this.userservice = userservice;
+        this.imageUrlArray = ['https://s3.ap-south-1.amazonaws.com/algoventimagestore/TOTT_Logo_New.png'];
     }
     HeaderComponent.prototype.ngOnInit = function () {
         this.userservice.updateProfile();
@@ -2156,6 +2187,179 @@ var appRoutes = [
     { path: 'event-venues/event-venue', component: __WEBPACK_IMPORTED_MODULE_9__event_venues_new_event_venue_new_event_venue_component__["a" /* NewEventVenueComponent */] },
     { path: '**', component: __WEBPACK_IMPORTED_MODULE_4__events_events_component__["a" /* EventsComponent */] }
 ];
+
+
+/***/ }),
+
+/***/ "./src/app/shared-services/api-factory.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ApiFactoryService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__environments_environment__ = __webpack_require__("./src/environments/environment.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ApiFactoryService = /** @class */ (function () {
+    function ApiFactoryService() {
+        this.rootUrl = __WEBPACK_IMPORTED_MODULE_1__environments_environment__["a" /* environment */].api;
+        this.api_map = new Map();
+        this.load_apis();
+    }
+    ApiFactoryService.prototype.load_apis = function () {
+        //event user services
+        this.api_map.set('LOGIN_USER', '/users/api-token-auth/');
+        this.api_map.set('REGISTER_USER', '/users/create/');
+        this.api_map.set('FETCH_ROLE_PROFILE', '/users/profile');
+        //file manager services
+        this.api_map.set('UPLOAD_FILE', '/file/upload/');
+        this.api_map.set('DELETE_FILE', '/file/delete/');
+        //event services
+        this.api_map.set('CREATE_EVENT', '/event/create/');
+        this.api_map.set('UPDATE_EVENT', '/event/update/');
+        this.api_map.set('DELETE_EVENT', '/event/delete/');
+        this.api_map.set('GET_EVENT', '/event/');
+        this.api_map.set('GET_EVENTS', '/events/');
+        //event venue services
+        this.api_map.set('CREATE_EVENT_VENUE', '/eventvenue/create/');
+        this.api_map.set('UPDATE_EVENT_VENUE', '/eventvenue/update/');
+        this.api_map.set('DELETE_EVENT_VENUE', '/eventvenue/delete/');
+        this.api_map.set('GET_EVENT_VENUE', '/eventvenue/');
+        this.api_map.set('GET_EVENT_VENUES', '/eventvenues/');
+        //event type services
+        this.api_map.set('CREATE_EVENT_TYPE', '/eventtype/create/');
+        this.api_map.set('UPDATE_EVENT_TYPE', '/eventtype/update/');
+        this.api_map.set('DELETE_EVENT_TYPE', '/eventtype/delete/');
+        this.api_map.set('GET_EVENT_TYPE', '/eventtype/');
+        this.api_map.set('GET_EVENT_TYPES', '/eventtypes/');
+    };
+    ApiFactoryService.prototype.getApi = function (api_name) {
+        var api = this.api_map.get(api_name);
+        if (api == null) {
+            api = '';
+        }
+        else {
+            api = this.rootUrl + this.api_map.get(api_name);
+        }
+        return api;
+    };
+    ApiFactoryService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], ApiFactoryService);
+    return ApiFactoryService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared-services/file-manager.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileManagerService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rest_service__ = __webpack_require__("./src/app/shared-services/rest.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var FileManagerService = /** @class */ (function () {
+    function FileManagerService(restService) {
+        this.restService = restService;
+    }
+    FileManagerService.prototype.upload = function (fileToUpload, options) {
+        var formData = new FormData();
+        formData.append('upload', fileToUpload, fileToUpload.name);
+        for (var key in options.keys()) {
+            formData.append(key, options[key], key);
+        }
+        return this.restService.post('UPLOAD_FILE', false, null, formData);
+    };
+    FileManagerService.prototype.delete_file = function (key) {
+    };
+    FileManagerService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__rest_service__["a" /* RestService */]])
+    ], FileManagerService);
+    return FileManagerService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared-services/rest.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__api_factory_service__ = __webpack_require__("./src/app/shared-services/api-factory.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var RestService = /** @class */ (function () {
+    function RestService(http, apiFactory) {
+        this.http = http;
+        this.apiFactory = apiFactory;
+    }
+    RestService.prototype.get = function (api_name, bypass_auth, headers, params) {
+        var get_headers;
+        if (bypass_auth == true) {
+            get_headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({ 'No-Auth': 'True' });
+        }
+        else {
+            get_headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({});
+        }
+        return this.http.get(this.apiFactory.getApi(api_name), { params: params, headers: get_headers });
+    };
+    RestService.prototype.post = function (api_name, bypass_auth, headers, body) {
+        var post_headers;
+        if (bypass_auth == true) {
+            post_headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({ 'No-Auth': 'True' });
+        }
+        else {
+            post_headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({});
+        }
+        return this.http.post(this.apiFactory.getApi(api_name), body, { headers: post_headers });
+    };
+    RestService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_3__api_factory_service__["a" /* ApiFactoryService */]])
+    ], RestService);
+    return RestService;
+}());
+
 
 
 /***/ }),
@@ -2473,9 +2677,13 @@ var Layout = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+// The file contents for the current environment will overwrite these during build.
+// The build system defaults to the dev environment which uses `environment.ts`, but if you do
+// `ng build --env=prod` then `environment.prod.ts` will be used instead.
+// The list of which env maps to which file can be found in `.angular-cli.json`.
 var environment = {
-    production: true,
-    api: 'https://www.eventico.algovent.com',
+    production: false,
+    api: 'http://127.0.0.1:8000',
 };
 
 

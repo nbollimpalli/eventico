@@ -1,18 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Response } from '@angular/http';
-import { Observable } from 'rxjs';
-import 'rxjs/add/operator/map';
 import { EventVenue } from './event-venue.model';
-import { environment } from '../../../environments/environment';
+import { RestService } from '../../shared-services/rest.service';
 
 @Injectable()
 export class EventVenueService {
 
   eventVenues: EventVenue[] = [];
-  readonly rootUrl = environment.api;
 
-  constructor(private http : HttpClient) { }
+  constructor(private restService : RestService) { }
 
   upsertEventVenue(upsertETObj : EventVenue)
   {
@@ -28,22 +23,20 @@ export class EventVenueService {
 
   getEventVenue(id)
   {
-    var reqHeaders = new HttpHeaders({'No-Auth' : 'True'});
-    return this.http.get(this.rootUrl+'/eventvenue/',{params: {id: id}, headers: reqHeaders});
+    var params =  {id: id};
+    return this.restService.get('GET_EVENT_VENUE', true, null, params);
   }
 
   createEventVenue(createETObj : EventVenue)
   {
     const createJSON = createETObj.getCreateJSON();
-    var reqHeaders = new HttpHeaders({'No-Auth' : 'True'});
-    return this.http.post(this.rootUrl+'/eventvenue/create/', createJSON,{headers: reqHeaders});
+    return this.restService.post( 'CREATE_EVENT_VENUE', true, null, createJSON );
   }
 
   updateEventVenue(updateETObj : EventVenue)
   {
     const updateJSON = updateETObj.getUpdateJSON();
-    var reqHeaders = new HttpHeaders({'No-Auth' : 'True'});
-    return this.http.post(this.rootUrl+'/eventvenue/update/', updateJSON,{headers: reqHeaders});
+    return this.restService.post( 'UPDATE_EVENT_VENUE', true, null, updateJSON );
   }
 
   loadEventVenues()
@@ -57,8 +50,8 @@ export class EventVenueService {
 
   fetchEventVenues()
   {
-    var actionUrl = '/eventvenues/';
-    return this.http.get(this.rootUrl+actionUrl);
+    var params = {};
+    return this.restService.get('GET_EVENT_VENUES', true, null, params);
   }
 
   syncUIEventVenues(data)

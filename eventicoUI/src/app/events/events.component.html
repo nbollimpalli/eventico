@@ -17,14 +17,14 @@
 </mat-form-field>
   </mat-toolbar-row>
 </mat-toolbar>
+
 <div class="spacer"></div>
 <div class="events-container">
-<mat-grid-list [cols]="cols | async" gutterSize="8px" [style.background-color]="'#f5f5f5'">
+<mat-grid-list [cols]="cols | async" gutterSize="15px" >
   <mat-grid-tile *ngFor="let x of [1,2,3,4,5,6,7,8,9,0,3,4,5,6,7,8]">
     <mat-card class="event-card">
-      <img mat-card-image class="card-image" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+      <img mat-card-image class="card-image" src="https://algovent-s3-static.s3.amazonaws.com/eventico/media/event_bWDUlrT.jpg" alt="Photo of a Shiba Inu">
     <mat-card-content>
-    <div class="event_desc">
         <div class="date_name_location">
           <div class="event_date_month">
             <p class="event_month">jun</p>
@@ -32,12 +32,11 @@
             <p class="event_day">sat</p>
           </div>
           <div class="event_name_location">
-            <h4 class="event_name">Asha Bhosle Live with Javed Ali - Sound of Silence</h4>
+            <p class="event_name">Asha Bhosle Live with Javed Ali - Sound of Silence</p>
             <a href="#" class="event_location">Phoenix Market City: Whitefield</a>
             <p class="event_price" >Rs. 999 Onwards</p>
           </div>
         </div>
-      </div>
       </mat-card-content>
       <mat-card-actions>
         <button mat-button color="#cc3333cc" >Book</button>

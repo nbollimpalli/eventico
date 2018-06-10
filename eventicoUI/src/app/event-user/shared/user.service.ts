@@ -1,18 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Response } from '@angular/http';
-import { Observable } from 'rxjs';
-import 'rxjs/add/operator/map';
 import { User } from './user.model';
-import { environment } from '../../../environments/environment';
+import { RestService } from '../../shared-services/rest.service';
 
 @Injectable()
 export class UserService {
-  readonly rootUrl = environment.api;
   user : User;
 
 
-  constructor(private http : HttpClient) {
+  constructor(private restService : RestService) {
     this.user = new User();
   }
 
@@ -38,8 +33,7 @@ export class UserService {
       first_name : user.FirstName,
       last_name : user.LastName
     }
-    var reqHeaders = new HttpHeaders({'No-Auth' : 'True'});
-    return this.http.post(this.rootUrl+'/users/create/', body,{headers: reqHeaders});
+    return this.restService.post( 'REGISTER_USER', true, null, body );
   }
 
   loginUser(user : User)
@@ -48,8 +42,8 @@ export class UserService {
       email : user.Email,
       password : user.Password
     }
-    var reqHeaders = new HttpHeaders({'No-Auth' : 'True'});
-    return this.http.post(this.rootUrl+'/users/api-token-auth/', body, {headers : reqHeaders});
+    return this.restService.post( 'LOGIN_USER', true, null, body );
+
   }
 
   updateProfile()
@@ -74,8 +68,8 @@ export class UserService {
 
   fetchProfile()
   {
-    var actionUrl = '/users/profile';
-    return this.http.get(this.rootUrl+actionUrl);
+    var params = {};
+    return this.restService.get('FETCH_ROLE_PROFILE', false, null, params);
   }
 
 }

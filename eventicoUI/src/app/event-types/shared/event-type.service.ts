@@ -1,31 +1,24 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Response } from '@angular/http';
-import { Observable } from 'rxjs';
-import 'rxjs/add/operator/map';
 import { EventType } from './event-type.model';
-import { environment } from '../../../environments/environment';
+import { RestService } from '../../shared-services/rest.service';
 
 @Injectable()
 export class EventTypeService {
 
   eventTypes: EventType[] = [];
-  readonly rootUrl = environment.api;
 
-  constructor(private http : HttpClient) { }
+  constructor(private restService : RestService) { }
 
   createEventType(createETObj : EventType)
   {
     const createJSON = createETObj.getCreateJSON();
-    var reqHeaders = new HttpHeaders({'No-Auth' : 'True'});
-    return this.http.post(this.rootUrl+'/eventtype/create/', createJSON,{headers: reqHeaders});
+    return this.restService.post( 'CREATE_EVENT_TYPE', true, null, createJSON );
   }
 
   updateEventType(updateETObj : EventType)
   {
     const updateJSON = updateETObj.getUpdateJSON();
-    var reqHeaders = new HttpHeaders({'No-Auth' : 'True'});
-    return this.http.post(this.rootUrl+'/eventtype/update/', updateJSON,{headers: reqHeaders});
+    return this.restService.post( 'UPDATE_EVENT_TYPE', true, null, updateJSON );
   }
 
   loadEventTypes()
@@ -39,8 +32,8 @@ export class EventTypeService {
 
   fetchEventTypes()
   {
-    var actionUrl = '/eventtypes/';
-    return this.http.get(this.rootUrl+actionUrl);
+    var params = {};
+    return this.restService.get('GET_EVENT_TYPES', true, null, params);
   }
 
   syncUIEventTypes(data)

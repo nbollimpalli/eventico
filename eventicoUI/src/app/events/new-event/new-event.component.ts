@@ -9,6 +9,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { EventLayout } from '../../shared/event-layout.model';
+import { FileManagerService } from '../../shared-services/file-manager.service';
 
 @Component({
   selector: 'app-new-event',
@@ -22,7 +23,8 @@ export class NewEventComponent implements OnInit {
   eventLayout : EventLayout;
   color : string;
   defaultPrice : Object;
-  constructor(private eventService : EventService, private router : Router, private eventTypeService : EventTypeService, private eventVenueService : EventVenueService, private route : ActivatedRoute)
+  banner: File = null;
+  constructor(private eventService : EventService, private router : Router, private eventTypeService : EventTypeService, private eventVenueService : EventVenueService, private route : ActivatedRoute, private fileManager : FileManagerService)
   {
     this.color = '#ffffff';
     this.mode = "new";
@@ -36,10 +38,40 @@ export class NewEventComponent implements OnInit {
     this.eventVenueService.loadEventVenues();
   }
 
+  handleFileInput(files: FileList) {
+    console.log('file uploaded');
+
+    this.banner = files.item(0);
+    this.showOverlay = 'block';
+    this.updateEventBanner()
+  }
+
+  updateEventBanner()
+  {
+    if(this.event.Id != null && this.event.Id != undefined)
+    {
+      var options = {
+        objectId: this.event.Id,
+        model: 'event',
+        app_label: 'events',
+      }
+      this.fileManager.upload(this.banner, options).subscribe(data => {
+          console.log(data);
+          this.event.images['banner'].url = data["upload"];
+          this.showOverlay = 'none';
+        }, error => {
+          console.log(error);
+        });
+    }
+    else
+    {
+      alert('please create event before uloading the banner');
+    }
+
+  }
+
   setupEvent(id)
   {
-    console.log(id);
-    console.log('-------');
     if(id != null && id != '' && id != "undefined")
     {
       this.mode = "update";
@@ -62,6 +94,11 @@ export class NewEventComponent implements OnInit {
       this.defaultPrice = this.eventLayout.getDefaultPrice();
 
     }
+  }
+
+  upsertEvent()
+  {
+
   }
 
   updateVenueDetails()

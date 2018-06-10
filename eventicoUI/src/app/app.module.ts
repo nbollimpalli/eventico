@@ -15,6 +15,7 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { SlideshowModule} from 'ng-simple-slideshow';
 
 import { AppComponent } from './app.component';
 import { appRoutes } from './routes';
@@ -24,13 +25,15 @@ import { EventService } from './events/shared/event.service';
 import { EventTypeService } from './event-types/shared/event-type.service';
 import { EventVenueService } from './event-venues/shared/event-venue.service';
 //import { EventPriceService } from './event-prices/shared/event-type.service';
-
-
+import { FileManagerService } from './shared-services/file-manager.service';
+import { ApiFactoryService } from './shared-services/api-factory.service';
+import { RestService } from './shared-services/rest.service'
 
 import { RegisterComponent } from './event-user/register/register.component';
 import { LoginComponent } from './event-user/login/login.component';
-//import { UpdateProfileComponent } from './event-user/login/login.component';
-//import { SettingsComponent } from './event-user/login/login.component';
+//import { UpdateProfileComponent } from './event-user/settings/settings.component';
+import { SettingsComponent } from './event-user/settings/settings.component';
+import { EventUserComponent } from './event-user/event-user.component';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -60,6 +63,8 @@ import { FormDialogComponent } from './form-dialog/form-dialog.component';
     EventVenuesComponent,
     NewEventVenueComponent,
     FormDialogComponent,
+    SettingsComponent,
+    EventUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +76,7 @@ import { FormDialogComponent } from './form-dialog/form-dialog.component';
     ReactiveFormsModule,
     ColorPickerModule,
     FlexLayoutModule,
+    SlideshowModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true} // <-- debugging purposes only
@@ -79,7 +85,7 @@ import { FormDialogComponent } from './form-dialog/form-dialog.component';
   entryComponents: [
     FormDialogComponent,
   ],
-  providers: [EventVenueService, EventTypeService, EventService, UserService, AuthGuard, AntiauthGuard, AdminauthGuard, SuperadminauthGuard,
+  providers: [RestService, ApiFactoryService, FileManagerService, EventVenueService, EventTypeService, EventService, UserService, AuthGuard, AntiauthGuard, AdminauthGuard, SuperadminauthGuard,
   {
     provide : HTTP_INTERCEPTORS,
     useClass : AuthInterceptor,
