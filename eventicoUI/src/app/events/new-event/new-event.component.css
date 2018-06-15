@@ -4,6 +4,35 @@
    margin: 100px auto;
 }
 
+@media only screen and (max-width: 1105px) {
+   .new-event-card
+    {
+       max-width: 40%;
+       margin: 100px auto;
+    }
+}
+
+
+@media only screen and (max-width: 1020px) {
+  .new-event-card
+  {
+     max-width: 50%;
+     margin: 100px auto;
+  }
+}
+@media only screen and (max-width: 685px) {
+  .new-event-card
+  {
+     max-width: 70%;
+     margin: 100px auto;
+  }
+}
+@media only screen and (max-width: 560px) {
+  .event_name_location{
+   	width: 100%;
+   }
+}
+
 .full-width
 {
   width : 100%;
@@ -14,6 +43,30 @@
   width : 50%;
 }
 
+.forty-width
+{
+  width : 40%;
+}
+
+.thirty-width
+{
+  width : 30%;
+}
+
+.twenty-width
+{
+  width : 20%;
+}
+
+.ten-width
+{
+  width : 10%;
+}
+
+.fivepx-margin-right
+{
+  margin-right: 5px;
+}
 
 .new-event-card-title
 {

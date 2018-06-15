@@ -155,42 +155,20 @@ export class NewEventVenueComponent implements OnInit {
   {
     this.eventVenueService.upsertEventVenue(this.eventVenue)
     .subscribe( (data) => {
+      this.eventVenue.Id = data['id'];
+    }
+    );
+  }
+
+  upsertLayout()
+  {
+    this.eventVenueService.upsertVenueLayout(this.eventVenue)
+    .subscribe( (data) => {
+      this.eventVenue.eventVenueLayout.Id = data['id'];
       this.router.navigate(['']);
     }
     );
   }
-//  openAddGroupDialog(): void {
-//    let dialogRef = this.dialog.open(FormDialogComponent, {
-//      width: '40%',
-//      data: this.addNewGroupDialogData
-//    });
-//
-//    dialogRef.afterClosed().subscribe(result => {
-//      console.log('The dialog was closed');
-//    });
-//  }
-//
-//  openAddMarkEmptyDialog(): void {
-//    let dialogRef = this.dialog.open(FormDialogComponent, {
-//      width: '40%',
-//      data: this.markEmptyDialogData
-//    });
-//
-//    dialogRef.afterClosed().subscribe(result => {
-//      console.log('The dialog was closed');
-//    });
-//  }
-//
-//  openAddPathDialog(): void {
-//    let dialogRef = this.dialog.open(FormDialogComponent, {
-//      width: '40%',
-//      data: this.addPathDialogData
-//    });
-//
-//    dialogRef.afterClosed().subscribe(result => {
-//      console.log('The dialog was closed');
-//    });
-//  }
 
   get layout_groups(){
     return this.eventVenueLayout.groups;

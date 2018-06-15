@@ -16,4 +16,5 @@ urlpatterns = [
     url(r'^eventvenues/$', views.get_event_venues),
     url(r'^eventpricelist/$', views.get_event_pricelists),
     url(r'^eventvenue/$', views.get_event_venue),
+    url(r'^layout/upsert/$', views.upsert_layout),
 ]

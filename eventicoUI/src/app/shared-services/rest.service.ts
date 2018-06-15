@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { Response } from '@angular/http';
 import { Observable } from 'rxjs';
 
@@ -35,6 +35,10 @@ export class RestService {
     {
       post_headers = new HttpHeaders({});
     }
+//    const req = new HttpRequest('POST', this.apiFactory.getApi(api_name), body, {
+//        headers: post_headers
+//      });
+//    return this.http.request(req);
     return this.http.post(this.apiFactory.getApi(api_name), body,{headers: post_headers});
   }
 

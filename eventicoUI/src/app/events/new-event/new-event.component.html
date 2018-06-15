@@ -7,11 +7,56 @@
 <mat-horizontal-stepper>
   <mat-step label="Setup Event Info">
     <mat-card class="new-event-card">
+      <mat-card-title ><i class="material-icons">today</i></mat-card-title>
       <form class="new-event-form" #eventCreationForm="ngForm" >
       <mat-card-content>
           <mat-form-field class="full-width">
             <input matInput placeholder="Name" #Name="ngModel" [(ngModel)]="event.Name" name="Name" required>
           </mat-form-field>
+          <mat-form-field class="forty-width fivepx-margin-right">
+            <input matInput [min]="minDate" [matDatepicker]="startdate" placeholder="Start Date" [(value)] = "event['times']['start']['date']" disabled required>
+            <mat-datepicker-toggle matSuffix [for]="startdate"></mat-datepicker-toggle>
+            <mat-datepicker disabled="false" touchUi="true" #startdate></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field class="ten-width fivepx-margin-right">
+            <mat-select placeholder="HH" [value]="event['times']['start']['hh']" name="shh" required>
+              <mat-option *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12]" [value]="i">{{i}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="ten-width fivepx-margin-right">
+            <mat-select placeholder="MM" [value]="event['times']['start']['mm']" name="smm" required>
+              <mat-option *ngFor="let i of [0,1,2,3,4,5,6,7,8,9,10,11,12]" [value]="i * 5">{{i*5}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="ten-width fivepx-margin-right">
+            <mat-select placeholder="" [value]="event['times']['end']['period']" name="sAMPM">
+              <mat-option selected value="am">AM</mat-option>
+              <mat-option selected value="pm">PM</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="forty-width fivepx-margin-right">
+            <input matInput [min]="event['times']['start']['date']" [matDatepicker]="enddate" placeholder="End Date" [(value)] = "event['times']['end']['date']" required disabled>
+            <mat-datepicker-toggle matSuffix [for]="enddate"></mat-datepicker-toggle>
+            <mat-datepicker disabled="false" touchUi="true" #enddate></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field class="ten-width fivepx-margin-right">
+            <mat-select placeholder="HH" [(value)]="event['times']['end']['hh']" name="ehh" required>
+              <mat-option *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12]" [value]="i">{{i}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="ten-width fivepx-margin-right">
+            <mat-select placeholder="MM" [(value)]="event['times']['end']['mm']" name="emm" required>
+              <mat-option *ngFor="let i of [0,1,2,3,4,5,6,7,8,9,10,11,12]" [value]="i * 5">{{i*5}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="ten-width fivepx-margin-right">
+            <mat-select placeholder="" [(value)]="event['times']['end']['period']" name="eAMPM" required>
+              <mat-option selected value="am">AM</mat-option>
+              <mat-option selected value="pm">PM</mat-option>
+            </mat-select>
+          </mat-form-field>
+
           <mat-form-field class="full-width">
             <input matInput type="number" placeholder="Default Price" #Name="ngModel" [(ngModel)]="defaultPrice['value']" name="DefaultPrice" required>
           </mat-form-field>
@@ -25,12 +70,12 @@
             <textarea matInput placeholder="Description" #Desc="ngModel" [(ngModel)]="event.Desc" name="Description" required></textarea>
           </mat-form-field>
           <mat-form-field class="half-width">
-          <mat-select placeholder="Select EventType" #EventType="ngModel" [(ngModel)]="event.EventTypeId" name="EventType">
+          <mat-select placeholder="Select EventType" [(value)]="event.EventTypeId" name="EventType">
               <mat-option *ngFor="let eventType of eventTypes" value="{{eventType.Id}}">{{eventType.Name}}</mat-option>
             </mat-select>
           </mat-form-field>
           <mat-form-field class="half-width">
-            <mat-select placeholder="Select Event venue" #EventVenue="ngModel" [(ngModel)]="event.EventVenueId" (change)="updateVenueDetails()" name="EventVenue" >
+            <mat-select placeholder="Select Event venue" [(value)]="event.EventVenueId" (change)="updateVenueDetails()" name="EventVenue" >
               <mat-option *ngFor="let eventVenue of eventVenues" value="{{eventVenue.Id}}" >{{eventVenue.Name}}</mat-option>
             </mat-select>
           </mat-form-field>
@@ -62,7 +107,7 @@
       </mat-card-content>
       <mat-divider></mat-divider>
       <mat-card-actions>
-        <input type="file"  *ngIf="this.event.images['banner'].url == ''" (change)="handleFileInput($event.target.files)">
+        <input type="file"   (change)="handleFileInput($event.target.files)">
         <button mat-button  *ngIf="this.event.images['banner'].url != ''" color="warning"> REMOVE</button>
       </mat-card-actions>
     </mat-card>

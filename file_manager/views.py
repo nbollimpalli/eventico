@@ -14,14 +14,16 @@ class FileView(APIView):
   #@api_view(['POST'])
   #@permission_classes([AllowAny])
   def post(self, request, *args, **kwargs):
-    objId = request.data['object_id']
+    objId = request.data['objectId']
     model = request.data['model']
     app_label = request.data['app_label']
     contentType = ContentType.objects.get(app_label=app_label, model=model)
     kclass = contentType.model_class()
     kclass_instance = kclass.objects.get(id=objId)
-    file_serializer_input = { 'upload' : request.data['upload'],'file_type' : request.data['file_type'], 'content_object': kclass_instance }
+    file_serializer_input = { 'upload' : request.data['upload'],'file_type' : request.data['file_type'], 'content_object' : kclass_instance }
     file_serializer = FileSerializer(data=file_serializer_input)
+    import code;
+    # code.interact(local=dict(globals(), **locals()))
     if file_serializer.is_valid():
       file_serializer.save()
       return Response(file_serializer.data, status=status.HTTP_201_CREATED)

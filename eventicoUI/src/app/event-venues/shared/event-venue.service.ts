@@ -39,6 +39,15 @@ export class EventVenueService {
     return this.restService.post( 'UPDATE_EVENT_VENUE', true, null, updateJSON );
   }
 
+  upsertVenueLayout(eventVenue : EventVenue)
+  {
+    var upsertJSON = eventVenue.eventVenueLayout.export();
+    upsertJSON['object_id'] = eventVenue.Id;
+    upsertJSON['model'] = 'eventvenue';
+    upsertJSON['app_label'] = 'events';
+    return this.restService.post('UPSERT_LAYOUT', true, null, upsertJSON);
+  }
+
   loadEventVenues()
   {
     this.eventVenues = [];

@@ -3,7 +3,6 @@ export class EventVenue {
   Id: string;
   Name: String;
   Desc: string;
-  LayoutType: string;
   eventVenueLayout: EventVenueLayout;
 
   constructor(eventVenueJsonObject)
@@ -11,7 +10,6 @@ export class EventVenue {
     this.Id = eventVenueJsonObject["id"];
     this.Name = eventVenueJsonObject["name"];
     this.Desc = eventVenueJsonObject["desc"];
-    this.LayoutType = eventVenueJsonObject["layout_type"];
     this.eventVenueLayout = new EventVenueLayout(eventVenueJsonObject["layout"]);
   }
 
@@ -19,9 +17,7 @@ export class EventVenue {
   {
     var createJSON = {
       "name" : this.Name,
-      "desc" : this.Desc,
-      "layout_type" : this.LayoutType,
-      "layout" : this.eventVenueLayout.export(),
+      "desc" : this.Desc
     }
     return createJSON;
   }

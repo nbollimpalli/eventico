@@ -4,7 +4,8 @@ export class Layout {
   typeColors = { active: '#acb19b', na: '#d1d2cf', path: '#acb19b', blank: '#00000000' };
   typeIcons = { active: 'event_seat', na: 'event_seat', path: 'reorder', blank: 'event_seat' };
   typeActionDisabled = { active: 'false', na: 'true', path: 'true', blank: 'true' };
-
+  layout_type = 'none';
+  Id : number;
   priceList = [
     {
       value: 0,
@@ -91,14 +92,30 @@ export class Layout {
   {
     if(layout != null)
     {
-      this.currentSequences = layout["currentSequences"];
-      this.groups = layout["groups"];
+      var inp_layout = layout['layout'];
+      this.currentSequences = inp_layout["currentSequences"];
+      this.groups = inp_layout["groups"];
+      this.typeIcons = inp_layout["typeIcons"];
+      this.typeActionDisabled = inp_layout["typeActionDisabled"];
+      this.typeColors = inp_layout["typeColors"];
+      this.layout_type = inp_layout["layout_type"];
+      this.Id = inp_layout["id"];
     }
   }
 
   export()
   {
-    var layout = { currentSequences: this.currentSequences, groups: this.groups  };
+    var layout = { layout:
+                    {
+                      currentSequences: this.currentSequences,
+                      groups: this.groups,
+                      typeIcons: this.typeIcons,
+                      typeActionDisabled: this.typeActionDisabled,
+                      typeColors: this.typeColors,
+                    },
+                    layout_type: this.layout_type,
+                    id: this.Id
+                 }
     return layout;
   }
 

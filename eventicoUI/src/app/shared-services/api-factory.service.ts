@@ -42,6 +42,9 @@ export class ApiFactoryService {
     this.api_map.set('DELETE_EVENT_TYPE', '/eventtype/delete/');
     this.api_map.set('GET_EVENT_TYPE', '/eventtype/');
     this.api_map.set('GET_EVENT_TYPES', '/eventtypes/');
+
+    //layout
+    this.api_map.set('UPSERT_LAYOUT', '/layout/upsert/');
   }
 
   getApi(api_name) : string

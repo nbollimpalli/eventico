@@ -24,12 +24,17 @@ export class NewEventComponent implements OnInit {
   color : string;
   defaultPrice : Object;
   banner: File = null;
+  enddatetime: boolean;
+  minDate : Date;
+  endMinDate : Date;
   constructor(private eventService : EventService, private router : Router, private eventTypeService : EventTypeService, private eventVenueService : EventVenueService, private route : ActivatedRoute, private fileManager : FileManagerService)
   {
     this.color = '#ffffff';
     this.mode = "new";
     this.showOverlay = 'none';
+    this.enddatetime = true;
     this.route.params.subscribe(params => this.setupEvent(params['id']));
+    this.minDate = new Date();
   }
 
   ngOnInit() {
@@ -54,6 +59,7 @@ export class NewEventComponent implements OnInit {
         objectId: this.event.Id,
         model: 'event',
         app_label: 'events',
+        file_type: 'event_banner',
       }
       this.fileManager.upload(this.banner, options).subscribe(data => {
           console.log(data);
@@ -99,6 +105,39 @@ export class NewEventComponent implements OnInit {
   upsertEvent()
   {
 
+    if(this.event == null)
+    {
+      alert('Invalid Event');
+    }
+    else if(this.event.Name == null || this.event.Name == undefined || this.event.Name == '')
+    {
+      alert('Event name cannot be empty');
+    }
+    else if(this.defaultPrice['value'] == null || this.defaultPrice['value'] == undefined || this.defaultPrice['value'] <= 0)
+    {
+      alert('default price of the event must greater than 0');
+    }
+    else if(this.defaultPrice['label'] == null || this.defaultPrice['label'] == undefined || this.defaultPrice['label'] == '')
+    {
+      alert('Label of the default price cannot be empty');
+    }
+    else if(this.event.Desc == null || this.event.Desc == undefined || this.event.Desc == '')
+    {
+      alert('Event description cannot be empty');
+    }
+    else if(this.event.EventTypeId == null || this.event.EventTypeId == undefined)
+    {
+      alert('Event type cannot be empty');
+    }
+    else if(this.event.EventVenueId == null || this.event.EventVenueId == undefined)
+    {
+      alert('Event Venue cannot be empty');
+    }
+    this.eventService.upsertEvent(this.event)
+    .subscribe( (data) => {
+       this.event.Id = data['id'];
+     }
+    );
   }
 
   updateVenueDetails()
@@ -111,7 +150,7 @@ export class NewEventComponent implements OnInit {
         var obj = JSON.parse(data.toString());
         var eventVenue = this.eventVenueService.makeEventVenueObject(obj[0]);
         this.eventLayout.import(eventVenue.eventVenueLayout.export());
-        this.event.LayoutType = eventVenue.LayoutType;
+        this.event.LayoutType = eventVenue.eventVenueLayout.layout_type;
         this.showOverlay = 'none';
         console.log(this.eventLayout);
       }

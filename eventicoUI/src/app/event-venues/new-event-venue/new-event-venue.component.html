@@ -17,28 +17,16 @@
             <mat-form-field class="full-width">
               <textarea matInput placeholder="Description" #Desc="ngModel" [(ngModel)]="eventVenue.Desc" name="Description" required></textarea>
             </mat-form-field>
-            <mat-form-field>
-            <mat-select  #LayoutType placeholder="Layout Type" [(ngModel)]="eventVenue.LayoutType" name="LayoutType">
-              <mat-option value="none">
-                NONE
-              </mat-option>
-              <mat-option value="box">
-                BOX
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
           <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
         </mat-card-content>
       </mat-card>
-      <div *ngIf="eventVenue.LayoutType == 'none'">
+      <div>
         <button  mat-button type="submit" (click)="upsertEventVenue()">UPSERT</button>
-      </div>
-      <div *ngIf="mode == new || eventVenue.LayoutType == 'box'">
-        <button  mat-button matStepperNext >Next</button>
+        <button  *ngIf="eventVenue.Id != null || eventVenue.Id != undefined" mat-button matStepperNext >Next</button>
       </div>
     </form>
   </mat-step>
-  <mat-step label="Set Layout" *ngIf="eventVenue.LayoutType == 'box'">
+  <mat-step label="Set Layout">
     <mat-toolbar class="layout-create-toolbar">
       <mat-toolbar-row>
         <form class="new-event-venue-form" #addGroupForm="ngForm" (ngSubmit)="addGroup(addGroupForm)">
@@ -47,11 +35,20 @@
           <input mat-input type="number" #cols="ngModel" [(ngModel)]="addGroupFormData.cols" placeholder="Cols" name="cols" >
           <span class="tollbar-splitter"></span>
           <button mat-button type="submit" color="primary" >Add Group</button>
-          <button mat-button >Reset Layout</button>
         </form>
+        <mat-form-field>
+            <mat-select  #LayoutType placeholder="Layout Type" [(ngModel)]="eventVenue.eventVenueLayout.layout_type" name="LayoutType">
+              <mat-option value="none">
+                NONE
+              </mat-option>
+              <mat-option value="box">
+                BOX
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
       </mat-toolbar-row>
     </mat-toolbar>
-    <mat-card class="layout-card scrollable-content">
+    <mat-card  *ngIf="eventVenue.eventVenueLayout.layout_type == 'box'" class="layout-card scrollable-content">
       <mat-card-content>
         <table *ngFor="let group of layout_groups">
           <tr *ngFor="let row of group.rows">
@@ -75,13 +72,17 @@
         <div class="screen-div">SCREEN HERE</div>
       </mat-card-content>
     </mat-card>
-    <div>
+    <div *ngIf="eventVenue.eventVenueLayout.layout_type == 'box'">
       <button mat-button matStepperPrevious>Back</button>
       <button mat-button matStepperNext>Next</button>
     </div>
+    <div *ngIf="eventVenue.eventVenueLayout.layout_type == 'none'">
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="upsertLayout()">UPSERT LAYOUT</button>
+    </div>
   </mat-step>
 
-  <mat-step label="Mark Empty Space" *ngIf="eventVenue.LayoutType == 'box'">
+  <mat-step label="Mark Empty Space" *ngIf="eventVenue.eventVenueLayout.layout_type == 'box'">
     <mat-toolbar class="layout-create-toolbar">
       <mat-toolbar-row>
         <form class="new-event-venue-form" #markEmptyForm="ngForm" (ngSubmit)="markEmpty(markEmptyForm)">
@@ -154,7 +155,7 @@
     </div>
   </mat-step>
 
-  <mat-step label="Set Path" *ngIf="eventVenue.LayoutType == 'box'">
+  <mat-step label="Set Path" *ngIf="eventVenue.eventVenueLayout.layout_type == 'box'">
     <mat-toolbar class="layout-create-toolbar">
       <mat-toolbar-row>
         <form class="new-event-venue-form" #addPathForm="ngForm" (ngSubmit)="addPath(addPathForm)">
@@ -210,7 +211,7 @@
     </div>
   </mat-step>
 
-  <mat-step label="Confirm Details" *ngIf="eventVenue.LayoutType == 'box'">
+  <mat-step label="Confirm Details" *ngIf="eventVenue.eventVenueLayout.layout_type == 'box'">
     <mat-card class="layout-card scrollable-content">
       <mat-card-content>
         <table *ngFor="let group of layout_groups" disabled>
@@ -228,7 +229,7 @@
       </mat-card-content>
     </mat-card>
     <div>
-      <button mat-button (click)="upsertEventVenue()">UPSERT</button>
+      <button mat-button (click)="upsertLayout()">UPSERT LAYOUT</button>
     </div>
   </mat-step>
 </mat-horizontal-stepper>

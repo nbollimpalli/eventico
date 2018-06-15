@@ -8,11 +8,14 @@ export class FileManagerService {
 
   upload(fileToUpload: File, options) {
     const formData: FormData = new FormData();
-    formData.append('upload', fileToUpload, fileToUpload.name);
-    for(var key in options.keys())
-    {
-      formData.append(key, options[key], key);
-    }
+
+      formData.append('upload', fileToUpload, fileToUpload.name);
+      if (options) {
+        for(let key in options){
+          formData.append(key, options[key])
+        }
+      }
+      debugger;
     return this.restService.post( 'UPLOAD_FILE', false, null, formData );
   }
 

@@ -28,6 +28,7 @@ import { EventVenueService } from './event-venues/shared/event-venue.service';
 import { FileManagerService } from './shared-services/file-manager.service';
 import { ApiFactoryService } from './shared-services/api-factory.service';
 import { RestService } from './shared-services/rest.service'
+import { DatetimeService } from './shared-services/datetime.service';
 
 import { RegisterComponent } from './event-user/register/register.component';
 import { LoginComponent } from './event-user/login/login.component';
@@ -85,7 +86,7 @@ import { FormDialogComponent } from './form-dialog/form-dialog.component';
   entryComponents: [
     FormDialogComponent,
   ],
-  providers: [RestService, ApiFactoryService, FileManagerService, EventVenueService, EventTypeService, EventService, UserService, AuthGuard, AntiauthGuard, AdminauthGuard, SuperadminauthGuard,
+  providers: [DatetimeService, RestService, ApiFactoryService, FileManagerService, EventVenueService, EventTypeService, EventService, UserService, AuthGuard, AntiauthGuard, AdminauthGuard, SuperadminauthGuard,
   {
     provide : HTTP_INTERCEPTORS,
     useClass : AuthInterceptor,
@@ -94,7 +95,7 @@ import { FormDialogComponent } from './form-dialog/form-dialog.component';
   {
     provide: LocationStrategy,
     useClass: HashLocationStrategy
-  }
+  },
   ],
   bootstrap: [AppComponent]
 })

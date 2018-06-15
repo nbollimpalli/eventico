@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Event } from './event.model';
 import { RestService } from '../../shared-services/rest.service';
+import { DatetimeService } from '../../shared-services/datetime.service'
 
 @Injectable()
 export class EventService {
 
   events: Event[] = [];
 
-  constructor(private restService : RestService) { }
+  constructor(private restService : RestService, private dtService : DatetimeService) { }
 
-  upsertEventVenue(upsertEventObj : Event)
+  upsertEvent(upsertEventObj : Event)
   {
     if(upsertEventObj.Id == null || upsertEventObj.Id == ''|| upsertEventObj.Id == undefined )
     {
@@ -84,5 +85,30 @@ export class EventService {
      var event = new Event(EventJsonObject);
      return event;
   }
+
+//  update_times(type, date, hour, mins, period)
+//  {
+//    if(type == null || date == null || hour == null || mins == null || period == null)
+//    {
+//      return {success: false, message: 'Invalid date time entered'};
+//    }
+//    else
+//    {
+//      if(type == 'start')
+//      {
+//        var dt = times['start'];
+//        //first validate if the date is correct or not
+//
+//      }
+//      else if(type == 'end')
+//      {
+//
+//      }
+//      else
+//      {
+//        return {success: false, message: 'Invalid date type'};
+//      }
+//    }
+//  }
 
 }
