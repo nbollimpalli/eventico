@@ -13,7 +13,7 @@
     <mat-form-field>
       <input matInput [matDatepicker]="picker" placeholder="Choose a date">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
+      <mat-datepicker touchUi #picker></mat-datepicker>
     </mat-form-field>
   </mat-toolbar-row>
 </mat-toolbar>
@@ -21,18 +21,18 @@
 <div class="spacer"></div>
 <div class="events-container">
 <mat-grid-list [cols]="cols | async" gutterSize="15px" >
-  <mat-grid-tile *ngFor="let x of [1,2,3,4,5,6,7,8,9,0,3,4,5,6,7,8]">
+  <mat-grid-tile *ngFor="let event of events">
     <mat-card class="event-card">
-      <img mat-card-image class="card-image" src="https://algovent-s3-static.s3.amazonaws.com/eventico/media/event_bWDUlrT.jpg" alt="Photo of a Shiba Inu">
+      <img mat-card-image class="card-image" [src]="event.images['banner'].url" onerror="this.src='https://algovent-s3-static.s3.amazonaws.com/eventico/media/event_bWDUlrT.jpg'" alt="Photo of a Shiba Inu">
     <mat-card-content>
         <div class="date_name_location">
           <div class="event_date_month">
-            <p class="event_month">jun</p>
-            <p class="event_date">9</p>
-            <p class="event_day">sat</p>
+            <p class="event_month">{{event['times']['start']['month']}}</p>
+            <p class="event_date">{{event['times']['start']['day_num']}}</p>
+            <p class="event_day">{{event['times']['start']['day']}}</p>
           </div>
           <div class="event_name_location">
-            <p class="event_name">Asha Bhosle Live with Javed Ali - Sound of Silence</p>
+            <p class="event_name">{{event.Name}}</p>
             <a href="#" class="event_location">Phoenix Market City: Whitefield</a>
             <p class="event_price" >Rs. 999 Onwards</p>
           </div>
@@ -42,7 +42,7 @@
         <button mat-button color="#cc3333cc" >Book</button>
         <span class="toolbar-splitter"></span>
         <button mat-icon-button routerLink=""><mat-icon aria-label="Settings">share</mat-icon></button>
-        <button mat-icon-button routerLink=""><mat-icon aria-label="Settings">edit</mat-icon></button>
+        <button mat-icon-button [routerLink]="['events/event',{id: event.Id }]"><mat-icon aria-label="Edit">edit</mat-icon></button>
       </mat-card-actions>
     </mat-card>
   </mat-grid-tile>

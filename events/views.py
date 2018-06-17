@@ -14,6 +14,7 @@ from rest_framework import status
 from events.serializers import EventSerializer, EventTypeSerializer, EventPriceSerializer, EventVenueSerializer, LayoutSerializer
 from django.http import JsonResponse
 from rest_framework_jwt.settings import api_settings
+from events.services.layout_service import LayoutService
 jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
 jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
 
@@ -31,7 +32,7 @@ def get_event_types(request):
 @permission_classes([AllowAny])
 def get_events(request):
     events = Event.objects.all();
-    events = serializers.serialize("json", events)
+    events = EventSerializer(events, many=True).data
     return JsonResponse(events, status=status.HTTP_200_OK, safe=False)
 
 @api_view(['GET'])
@@ -43,11 +44,30 @@ def get_event_venues(request):
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
+def get_event(request):
+    eId = request.GET['id'];
+    event_object = Event.objects.get(id=eId)
+    layouts = event_object.layouts.all()
+    layout = None
+    if(layouts.count() > 0):
+        layout = layouts[0]
+    layoutSerializer = LayoutSerializer(instance=layout)
+    eventSerializer = EventSerializer(instance=event_object)
+    response = { 'event' : eventSerializer.data, 'layout' : {}}
+    if (layout):
+        response['layout'] = layoutSerializer.data
+    return  JsonResponse(response, status=status.HTTP_200_OK, safe=False)
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
 def get_event_venue(request):
     evId = request.GET['id'];
     event_venue_object = EventVenue.objects.get(id=evId)
-    event_venue_object = serializers.serialize("json", [event_venue_object])
-    return  JsonResponse(event_venue_object, status=status.HTTP_200_OK, safe=False)
+    layout = event_venue_object.layouts.all()[0]
+    layoutSerializer = LayoutSerializer(instance=layout)
+    eventVenueSerializer = EventVenueSerializer(instance=event_venue_object)
+    response = { 'event_venue' : eventVenueSerializer.data, 'layout' : layoutSerializer.data }
+    return  JsonResponse(response, status=status.HTTP_200_OK, safe=False)
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
@@ -111,12 +131,41 @@ def update_event_type(request):
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
-def update_event(request):
+def upsert_event(request):
     event = request.data
-    serializer = EventSerializer(data=event)
-    serializer.is_valid(raise_exception=True)
-    serializer.save()
-    return Response(serializer.data, status=status.HTTP_201_CREATED)
+    default_price = event.get('default_price')
+    times = event.get('times')
+    start_datetime = times.get('start')
+    end_datetime = times.get('end')
+    start_datetime = start_datetime.get('date').split('T')[0] + ' ' + str(start_datetime.get('hh')) + ':' + str(
+        start_datetime.get('mm')) + start_datetime.get('period')
+    end_datetime = end_datetime.get('date').split('T')[0] + ' ' + str(end_datetime.get('hh')) + ':' + str(
+        end_datetime.get('mm')) + end_datetime.get('period')
+    event['start_datetime'] = datetime.datetime.strptime(start_datetime, '%Y-%m-%d %I:%M%p')
+    event['end_datetime'] = datetime.datetime.strptime(end_datetime, '%Y-%m-%d %I:%M%p')
+    layout = LayoutService.get_layout({'model' : 'eventvenue', 'object_id' : event['event_venue']})
+    if(layout):
+        mode = 'new'
+        if ("id" in request.data):
+            eId = request.data['id'];
+            event_object = Event.objects.get(id=eId)
+            serializer = EventSerializer(instance=event_object, data=event)
+            mode = 'edit'
+        else:
+            serializer = EventSerializer(data=event)
+
+        if serializer.is_valid():
+            serializer.save()
+            if(mode == 'new'):
+                LayoutService.copy_layout(layout, serializer.instance)
+            layout = LayoutService.get_layout({'model': 'event', 'object_id': serializer.instance.id})
+            LayoutService.update_default_price(layout, default_price)
+            layout_serializer = LayoutSerializer(instance=layout)
+            return Response({'event' : serializer.data, 'layout' : layout_serializer.data}, status=status.HTTP_201_CREATED)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    else:
+        return Response({'messages' : 'No layout found for the event venue'}, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
@@ -142,22 +191,20 @@ def update_event_price(request):
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def upsert_layout(request):
-    objId = request.data['objectId']
+    objId = request.data['object_id']
     model = request.data['model']
     app_label = request.data['app_label']
     contentType = ContentType.objects.get(app_label=app_label, model=model)
     kclass = contentType.model_class()
     kclass_instance = kclass.objects.get(id=objId)
     layout_input = request.data
-    layout_input = {'layout': layout_input['layout'], 'layout_type' : layout_input['layout_type'], 'content_object' : kclass_instance }
+    layout_input = {'layout': layout_input['layout'], 'layout_type' : layout_input['layout_type'], 'content_object' : kclass_instance, 'content_type': contentType.id, 'object_id': int(objId) }
     if("id" in request.data):
         lId = request.data['id'];
         layout_object = Layout.objects.get(id=lId)
-        layout_serializer = EventVenueSerializer(instance=layout_object, data=layout_input)
+        layout_serializer = LayoutSerializer(instance=layout_object, data=layout_input)
     else:
         layout_serializer = LayoutSerializer(data=layout_input)
-    # import code;
-    # code.interact(local=dict(globals(), **locals()))
 
     if layout_serializer.is_valid():
         layout_serializer.save()

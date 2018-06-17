@@ -12,28 +12,8 @@ export class EventService {
 
   upsertEvent(upsertEventObj : Event)
   {
-    if(upsertEventObj.Id == null || upsertEventObj.Id == ''|| upsertEventObj.Id == undefined )
-    {
-      return this.createEvent(upsertEventObj);
-    }
-    else
-    {
-      return this.updateEvent(upsertEventObj);
-    }
-  }
-
-  createEvent(createEventObj : Event)
-  {
-    const createJSON = createEventObj.export();
-    return this.restService.post( 'CREATE_EVENT', true, null, createJSON );
-
-  }
-
-  updateEvent(updateEventObj : Event)
-  {
-    const updateJSON = updateEventObj.export();
-    return this.restService.post( 'UPDATE_EVENT', true, null, updateJSON );
-
+    const upsertJSON = upsertEventObj.export();
+    return this.restService.post( 'UPSERT_EVENT', true, null, upsertJSON );
   }
 
   updateEventLayout( event : Event )
@@ -43,7 +23,7 @@ export class EventService {
 
   getEvent(id)
   {
-    var params = {};
+    var params = {'id' : id};
     return this.restService.get('GET_EVENT', true, null, params);
   }
 
@@ -66,49 +46,28 @@ export class EventService {
   {
     console.log('sync data ::');
     console.log(data);
-    var eventList = JSON.parse(data);
-    for (let i = 0; i < eventList.length; i++) {
-         var id = eventList[i]["pk"];
-         var eventJsonObject = eventList[i]["fields"];
-         eventJsonObject["id"] = id;
-         var event = new Event(eventJsonObject);
+    for (let i = 0; i < data.length; i++) {
+         var event = new Event(data[i], 'list');
          this.events.push(event);
     }
     console.log(this.events);
   }
 
-  makeEventObject(data) : Event
+  updateEventInfo(data, event : Event)
   {
-     var id = data["pk"];
-     var EventJsonObject = data["fields"];
-     EventJsonObject["id"] = id;
-     var event = new Event(EventJsonObject);
-     return event;
+    event.mode = 'edit';
+    var event_info = data['event'];
+    event_info['layout'] = data['layout'];
+    event.import(event_info);
   }
 
-//  update_times(type, date, hour, mins, period)
-//  {
-//    if(type == null || date == null || hour == null || mins == null || period == null)
-//    {
-//      return {success: false, message: 'Invalid date time entered'};
-//    }
-//    else
-//    {
-//      if(type == 'start')
-//      {
-//        var dt = times['start'];
-//        //first validate if the date is correct or not
-//
-//      }
-//      else if(type == 'end')
-//      {
-//
-//      }
-//      else
-//      {
-//        return {success: false, message: 'Invalid date type'};
-//      }
-//    }
-//  }
+  upsertEventLayout(event : Event)
+  {
+    var upsertJSON = event.eventLayout.export();
+    upsertJSON['object_id'] = event.Id;
+    upsertJSON['model'] = 'event';
+    upsertJSON['app_label'] = 'events';
+    return this.restService.post('UPSERT_LAYOUT', true, null, upsertJSON);
+  }
 
 }

@@ -3,8 +3,8 @@ import { Layout } from './layout.model';
 export class EventVenueLayout extends Layout {
 
 
-  constructor(layout){
-    super();
+  constructor(layout, mode){
+    super(mode);
     if(layout != null)
     {
       this.import(layout);

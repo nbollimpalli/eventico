@@ -31,11 +31,12 @@ export class NewEventVenueComponent implements OnInit {
     console.log(id);
     if(id != null && id != '' && id != "undefined")
     {
-      this.mode = "update";
+      this.mode = "edit";
       this.eventVenueService.getEventVenue(id)
       .subscribe( (data) => {
-        var obj = JSON.parse(data.toString());
-        this.eventVenue = this.eventVenueService.makeEventVenueObject(obj[0]);
+        var ev = data['event_venue'];
+        ev["layout"] = data["layout"];
+        this.eventVenue = new EventVenue(ev, this.mode);
         this.eventVenueLayout = this.eventVenue.eventVenueLayout;
         console.log(this.eventVenue);
         this.showOverlay = 'none';
@@ -45,9 +46,9 @@ export class NewEventVenueComponent implements OnInit {
     else
     {
       this.mode = "new";
-      this.eventVenue = new EventVenue({});
+      this.eventVenue = new EventVenue({}, this.mode);
       this.eventVenueLayout = this.eventVenue.eventVenueLayout;
-              this.showOverlay = 'none';
+      this.showOverlay = 'none';
 
     }
   }
@@ -60,7 +61,6 @@ export class NewEventVenueComponent implements OnInit {
     if(form != null)
     {
       form.reset();
-      this.eventVenue = new EventVenue({});
     }
   }
 

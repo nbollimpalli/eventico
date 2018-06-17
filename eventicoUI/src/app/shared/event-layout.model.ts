@@ -2,9 +2,9 @@ import { Layout } from './layout.model';
 
 export class EventLayout  extends Layout{
   mode: string;//supports event_venue, event, booking modes
-  constructor(layout)
+  constructor(layout, mode)
   {
-    super();
+    super(mode);
     this.import(layout);
   }
 

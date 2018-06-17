@@ -14,7 +14,7 @@
             <input matInput placeholder="Name" #Name="ngModel" [(ngModel)]="event.Name" name="Name" required>
           </mat-form-field>
           <mat-form-field class="forty-width fivepx-margin-right">
-            <input matInput [min]="minDate" [matDatepicker]="startdate" placeholder="Start Date" [(value)] = "event['times']['start']['date']" disabled required>
+            <input matInput [min]="minDate" [matDatepicker]="startdate" placeholder="Start Date" [(value)] = "event.times['start']['date']" disabled required>
             <mat-datepicker-toggle matSuffix [for]="startdate"></mat-datepicker-toggle>
             <mat-datepicker disabled="false" touchUi="true" #startdate></mat-datepicker>
           </mat-form-field>
@@ -30,8 +30,8 @@
           </mat-form-field>
           <mat-form-field class="ten-width fivepx-margin-right">
             <mat-select placeholder="" [value]="event['times']['end']['period']" name="sAMPM">
-              <mat-option selected value="am">AM</mat-option>
-              <mat-option selected value="pm">PM</mat-option>
+              <mat-option selected value="AM">AM</mat-option>
+              <mat-option selected value="PM">PM</mat-option>
             </mat-select>
           </mat-form-field>
 
@@ -52,8 +52,8 @@
           </mat-form-field>
           <mat-form-field class="ten-width fivepx-margin-right">
             <mat-select placeholder="" [(value)]="event['times']['end']['period']" name="eAMPM" required>
-              <mat-option selected value="am">AM</mat-option>
-              <mat-option selected value="pm">PM</mat-option>
+              <mat-option selected value="AM">AM</mat-option>
+              <mat-option selected value="PM">PM</mat-option>
             </mat-select>
           </mat-form-field>
 
@@ -70,7 +70,7 @@
             <textarea matInput placeholder="Description" #Desc="ngModel" [(ngModel)]="event.Desc" name="Description" required></textarea>
           </mat-form-field>
           <mat-form-field class="half-width">
-          <mat-select placeholder="Select EventType" [(value)]="event.EventTypeId" name="EventType">
+          <mat-select  placeholder="Select EventType" [(value)]="event.EventTypeId"  name="EventType">
               <mat-option *ngFor="let eventType of eventTypes" value="{{eventType.Id}}">{{eventType.Name}}</mat-option>
             </mat-select>
           </mat-form-field>
@@ -79,28 +79,16 @@
               <mat-option *ngFor="let eventVenue of eventVenues" value="{{eventVenue.Id}}" >{{eventVenue.Name}}</mat-option>
             </mat-select>
           </mat-form-field>
-          <mat-form-field>
-            <mat-select  #LayoutType placeholder="Layout Type" #LayoutType="ngModel" [(ngModel)]="event.LayoutType" name="LayoutType" disabled>
-              <mat-option value="none">
-                NONE
-              </mat-option>
-              <mat-option value="box">
-                BOX
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
       </mat-card-content>
       </form>
     </mat-card>
     <div>
       <button  mat-button type="submit" (click)="upsertEvent()">UPSERT</button>
-    </div>
-    <div *ngIf="event['Id'] != null && event['Id'] != undefined">
-      <button  mat-button matStepperNext >Next</button>
+      <button  *ngIf="event['Id'] != null && event['Id'] != undefined" mat-button matStepperNext >NEXT</button>
     </div>
   </mat-step>
 
-  <mat-step label="Setup Banners">
+  <mat-step label="Setup Banners" *ngIf="event.Id != null">
     <mat-card>
       <mat-card-content>
         <img [src]="this.event.images['banner'].url" onerror="this.src='https://algovent-s3-static.s3.amazonaws.com/eventico/media/default_bannger.jpg'">
@@ -112,11 +100,12 @@
       </mat-card-actions>
     </mat-card>
   <div>
-    <button  mat-button matStepperNext >Next</button>
+    <button  mat-button matStepperPrevious>BACK</button>
+    <button  mat-button matStepperNext >NEXT</button>
   </div>
   </mat-step>
 
-  <mat-step label="Mark Unavailability" *ngIf="event.LayoutType == 'box'">
+  <mat-step label="Mark Unavailability" *ngIf="event.LayoutType == 'box' && event.Id != null">
     <mat-toolbar class="layout-create-toolbar">
       <mat-toolbar-row>
         <form class="new-event-form" #markNAForm="ngForm" (ngSubmit)="markNA(markNAForm)">
@@ -191,7 +180,7 @@
     </div>
   </mat-step>
 
-  <mat-step label="Setup Pricing">
+  <mat-step label="Setup Pricing" *ngIf="event.Id != null">
     <mat-toolbar class="layout-create-toolbar">
       <mat-toolbar-row>
         <form class="new-event-form" #addPricingForm="ngForm" (ngSubmit)="addPricing(addPricingForm)">
@@ -230,7 +219,7 @@
     </div>
   </mat-step>
 
-  <mat-step label="Mark Pricing" *ngIf="event.LayoutType == 'box'">
+  <mat-step label="Mark Pricing" *ngIf="eventLayout.layout_type == 'box' && event.Id != null">
     <mat-toolbar class="layout-create-toolbar">
       <mat-toolbar-row>
         <form class="new-event-form" #markPricingForm="ngForm" (ngSubmit)="markPricing(markPricingForm)">
@@ -238,7 +227,7 @@
           <mat-form-field>
             <mat-select placeholder="Select Price" #GroupSelect="ngModel" [(ngModel)]="markPricingFormData.price_index" name="PriceSelect">
               <mat-option *ngFor="let price of eventLayout.priceList;let i = index" [value]="i">
-                {{ price.label }}
+                {{ price['label'] }}
               </mat-option>
             </mat-select>
           </mat-form-field>
@@ -310,7 +299,7 @@
     </div>
   </mat-step>
 
-  <mat-step label="Confirm Details">
+  <mat-step label="Confirm Details" *ngIf="event.Id != null">
     <mat-card class="layout-card scrollable-content">
       <mat-card-content>
         <table *ngFor="let group of layout_groups" disabled>
@@ -328,6 +317,7 @@
       </mat-card-content>
     </mat-card>
     <div>
+      <button mat-button (click)="upsertLayout()">UPSERT LAYOUT</button>
       <button mat-button matStepperPrevious>Back</button>
     </div>
   </mat-step>

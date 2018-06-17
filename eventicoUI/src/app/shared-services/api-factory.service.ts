@@ -24,7 +24,7 @@ export class ApiFactoryService {
 
     //event services
     this.api_map.set('CREATE_EVENT', '/event/create/');
-    this.api_map.set('UPDATE_EVENT', '/event/update/');
+    this.api_map.set('UPSERT_EVENT', '/event/upsert/');
     this.api_map.set('DELETE_EVENT', '/event/delete/');
     this.api_map.set('GET_EVENT', '/event/');
     this.api_map.set('GET_EVENTS', '/events/');

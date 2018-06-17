@@ -184,3 +184,11 @@ AWS_LOCATION = 'static'
 
 DEFAULT_FILE_STORAGE = 'eventico.storage_backends.MediaStorage'
 #s3 config
+
+#email
+
+EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_HOST_USER = 'naveen@algovent.com'
+EMAIL_HOST_PASSWORD = 'chinnu@8M'
+EMAIL_PORT = '587'
+EMAIL_USE_TLS ='true'

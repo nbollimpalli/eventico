@@ -68,19 +68,22 @@ export class EventVenueService {
     console.log('sync data ::');
     console.log(data);
     var EventVenueList = JSON.parse(data);
+    var mode = 'list';
     for (let i = 0; i < EventVenueList.length; i++) {
-         var eventVenue = this.makeEventVenueObject(EventVenueList[i]);
+         var eventVenue = this.makeEventVenueObject(EventVenueList[i], mode);
          this.eventVenues.push(eventVenue);
     }
     console.log(this.eventVenues);
   }
 
-  makeEventVenueObject(data) : EventVenue
+
+
+  makeEventVenueObject(data, mode) : EventVenue
   {
      var id = data["pk"];
      var EventVenueJsonObject = data["fields"];
      EventVenueJsonObject["id"] = id;
-     var eventVenue = new EventVenue(EventVenueJsonObject);
+     var eventVenue = new EventVenue(EventVenueJsonObject, mode);
      return eventVenue;
   }
 

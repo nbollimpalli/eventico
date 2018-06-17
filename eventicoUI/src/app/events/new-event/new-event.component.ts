@@ -39,8 +39,7 @@ export class NewEventComponent implements OnInit {
 
   ngOnInit() {
     this.resetForm();
-    this.eventTypeService.loadEventTypes();
-    this.eventVenueService.loadEventVenues();
+
   }
 
   handleFileInput(files: FileList) {
@@ -78,27 +77,29 @@ export class NewEventComponent implements OnInit {
 
   setupEvent(id)
   {
+    this.eventTypeService.loadEventTypes();
+    this.eventVenueService.loadEventVenues();
+
+    this.mode = "new";
+    this.event = new Event({}, this.mode);
+    this.eventLayout = this.event.eventLayout;
+    this.defaultPrice = this.eventLayout.getDefaultPrice();
+
     if(id != null && id != '' && id != "undefined")
     {
       this.mode = "update";
       this.eventService.getEvent(id)
       .subscribe( (data) => {
-        var obj = JSON.parse(data.toString());
-        this.event = this.eventService.makeEventObject(obj[0]);
-        this.eventLayout = this.event.eventLayout;
+        this.mode = 'edit';
+        this.eventService.updateEventInfo(data, this.event);
         this.showOverlay = 'none';
-        this.defaultPrice = this.eventLayout.getDefaultPrice();
+        console.log(this.event);
       }
       );
     }
     else
     {
-      this.mode = "new";
-      this.event = new Event({});
-      this.eventLayout = this.event.eventLayout;
       this.showOverlay = 'none';
-      this.defaultPrice = this.eventLayout.getDefaultPrice();
-
     }
   }
 
@@ -135,28 +136,40 @@ export class NewEventComponent implements OnInit {
     }
     this.eventService.upsertEvent(this.event)
     .subscribe( (data) => {
-       this.event.Id = data['id'];
+       var event_info = data['event'];
+       event_info['layout'] = data['layout'];
+       this.event.mode = 'edit';
+       this.event.import(event_info);
      }
     );
   }
 
-  updateVenueDetails()
+  upsertLayout()
   {
-    if(this.event.EventVenueId != null)
-    {
-      this.showOverlay = 'block';
-      this.eventVenueService.getEventVenue(this.event.EventVenueId)
-      .subscribe( (data) => {
-        var obj = JSON.parse(data.toString());
-        var eventVenue = this.eventVenueService.makeEventVenueObject(obj[0]);
-        this.eventLayout.import(eventVenue.eventVenueLayout.export());
-        this.event.LayoutType = eventVenue.eventVenueLayout.layout_type;
-        this.showOverlay = 'none';
-        console.log(this.eventLayout);
-      }
-      );
+    this.eventService.upsertEventLayout(this.event)
+    .subscribe( (data) => {
+      this.router.navigate(['']);
     }
+    );
   }
+
+//  updateVenueDetails()
+//  {
+//    if(this.event.EventVenueId != null)
+//    {
+//      this.showOverlay = 'block';
+//      this.eventVenueService.getEventVenue(this.event.EventVenueId)
+//      .subscribe( (data) => {
+//        var obj = JSON.parse(data.toString());
+//        var eventVenue = this.eventVenueService.makeEventVenueObject(obj[0]);
+//        this.eventLayout.import(eventVenue.eventVenueLayout.export());
+//        this.event.LayoutType = eventVenue.eventVenueLayout.layout_type;
+//        this.showOverlay = 'none';
+//        console.log(this.eventLayout);
+//      }
+//      );
+//    }
+//  }
 
   markNA(form : NgForm) : void
   {
@@ -240,19 +253,8 @@ export class NewEventComponent implements OnInit {
     if(form != null)
     {
       form.reset();
-      this.event = new Event({});
+      this.event = new Event({}, 'new');
     }
-  }
-
-  onSubmit(form : NgForm) {
-    this.showOverlay = 'block';
-    this.eventService.createEvent(this.event)
-    .subscribe( (data) => {
-      this.showOverlay = 'none';
-      this.resetForm(form);
-      this.router.navigate(['']);
-    }
-    );
   }
 
   get eventTypes() : Object{

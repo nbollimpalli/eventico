@@ -3,6 +3,7 @@ from django.contrib.postgres.fields import JSONField
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericRelation
+from file_manager.models import File
 
 class Layout(models.Model):
     layout_type = models.CharField(max_length=255, default='none')
@@ -35,6 +36,13 @@ class Event(models.Model):
     status = models.CharField(max_length=255, default='pending')
     created_on = models.DateTimeField(auto_now_add=True)
     layouts = GenericRelation(Layout)
+    images = GenericRelation(File)
+
+    @property
+    def times(self):
+        start = { 'date' : self.start_datetime.isoformat(), 'hh' : int(self.start_datetime.strftime('%I')), 'mm' : int(self.start_datetime.strftime('%M')), 'period' : self.start_datetime.strftime('%p'), 'month': self.start_datetime.strftime('%b'), 'day': self.start_datetime.strftime('%a'), 'day_num': self.start_datetime.strftime('%d') }
+        end = {'date': self.end_datetime.isoformat(), 'hh': int(self.end_datetime.strftime('%I')), 'mm': int(self.end_datetime.strftime('%M')), 'period': self.end_datetime.strftime('%p'), 'month': self.end_datetime.strftime('%b'), 'day': self.end_datetime.strftime('%a'), 'day_num': self.end_datetime.strftime('%d')}
+        return { 'start' : start, 'end' : end }
 
 class EventPrice(models.Model):
     name = models.CharField(max_length=255)

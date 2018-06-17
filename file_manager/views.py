@@ -20,10 +20,8 @@ class FileView(APIView):
     contentType = ContentType.objects.get(app_label=app_label, model=model)
     kclass = contentType.model_class()
     kclass_instance = kclass.objects.get(id=objId)
-    file_serializer_input = { 'upload' : request.data['upload'],'file_type' : request.data['file_type'], 'content_object' : kclass_instance }
+    file_serializer_input = { 'upload' : request.data['upload'],'file_type' : request.data['file_type'], 'content_type' : contentType.id, 'object_id' : int(objId) }
     file_serializer = FileSerializer(data=file_serializer_input)
-    import code;
-    # code.interact(local=dict(globals(), **locals()))
     if file_serializer.is_valid():
       file_serializer.save()
       return Response(file_serializer.data, status=status.HTTP_201_CREATED)

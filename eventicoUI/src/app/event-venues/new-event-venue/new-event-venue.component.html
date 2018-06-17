@@ -26,7 +26,7 @@
       </div>
     </form>
   </mat-step>
-  <mat-step label="Set Layout">
+  <mat-step label="Set Layout" *ngIf="eventVenue.Id != null">
     <mat-toolbar class="layout-create-toolbar">
       <mat-toolbar-row>
         <form class="new-event-venue-form" #addGroupForm="ngForm" (ngSubmit)="addGroup(addGroupForm)">
@@ -82,7 +82,7 @@
     </div>
   </mat-step>
 
-  <mat-step label="Mark Empty Space" *ngIf="eventVenue.eventVenueLayout.layout_type == 'box'">
+  <mat-step label="Mark Empty Space" *ngIf="eventVenue.eventVenueLayout.layout_type == 'box' && eventVenue.Id != null">
     <mat-toolbar class="layout-create-toolbar">
       <mat-toolbar-row>
         <form class="new-event-venue-form" #markEmptyForm="ngForm" (ngSubmit)="markEmpty(markEmptyForm)">
@@ -155,7 +155,7 @@
     </div>
   </mat-step>
 
-  <mat-step label="Set Path" *ngIf="eventVenue.eventVenueLayout.layout_type == 'box'">
+  <mat-step label="Set Path" *ngIf="eventVenue.eventVenueLayout.layout_type == 'box' && eventVenue.Id != null">
     <mat-toolbar class="layout-create-toolbar">
       <mat-toolbar-row>
         <form class="new-event-venue-form" #addPathForm="ngForm" (ngSubmit)="addPath(addPathForm)">
@@ -211,7 +211,7 @@
     </div>
   </mat-step>
 
-  <mat-step label="Confirm Details" *ngIf="eventVenue.eventVenueLayout.layout_type == 'box'">
+  <mat-step label="Confirm Details" *ngIf="eventVenue.eventVenueLayout.layout_type == 'box' && eventVenue.Id != null">
     <mat-card class="layout-card scrollable-content">
       <mat-card-content>
         <table *ngFor="let group of layout_groups" disabled>
@@ -230,6 +230,7 @@
     </mat-card>
     <div>
       <button mat-button (click)="upsertLayout()">UPSERT LAYOUT</button>
+      <button mat-button matStepperPrevious>Back</button>
     </div>
   </mat-step>
 </mat-horizontal-stepper>

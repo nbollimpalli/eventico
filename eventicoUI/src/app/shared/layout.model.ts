@@ -6,6 +6,7 @@ export class Layout {
   typeActionDisabled = { active: 'false', na: 'true', path: 'true', blank: 'true' };
   layout_type = 'none';
   Id : number;
+  mode : string;
   priceList = [
     {
       value: 0,
@@ -19,7 +20,8 @@ export class Layout {
   ];
   priceMap = {};
 
-  constructor(){
+  constructor(mode){
+    this.mode = mode;
     this.updatePricingMap();
   }
 
@@ -90,7 +92,7 @@ export class Layout {
 
   import(layout)
   {
-    if(layout != null)
+    if(layout != null && this.mode == 'edit')
     {
       var inp_layout = layout['layout'];
       this.currentSequences = inp_layout["currentSequences"];
@@ -98,10 +100,40 @@ export class Layout {
       this.typeIcons = inp_layout["typeIcons"];
       this.typeActionDisabled = inp_layout["typeActionDisabled"];
       this.typeColors = inp_layout["typeColors"];
-      this.layout_type = inp_layout["layout_type"];
-      this.Id = inp_layout["id"];
+      this.layout_type = layout["layout_type"];
+      this.importPriceList(inp_layout["priceList"]);
+      this.Id = layout["id"];
+      this.updatePricingMap();
     }
   }
+
+  importPriceList(inpPriceList)
+  {
+    if(inpPriceList != null)
+    {
+      for(var i = 0; i<inpPriceList.length; i++)
+      {
+        var p = inpPriceList[i];
+        if(p['name'] == "default")
+        {
+          var defPrice = this.priceMap['default'];
+          defPrice['value'] = p['value'];
+          defPrice['desc'] = p['desc'];
+          defPrice['color'] = p['color'];
+          defPrice['label'] = p['label'];
+          defPrice['status'] = p['status'];
+          defPrice['name'] = p['name'];
+          defPrice['count'] = p['count'];
+        }
+        else
+        {
+          this.priceList.push(p);
+        }
+      }
+      this.updatePricingMap();
+    }
+  }
+
 
   export()
   {
@@ -112,6 +144,7 @@ export class Layout {
                       typeIcons: this.typeIcons,
                       typeActionDisabled: this.typeActionDisabled,
                       typeColors: this.typeColors,
+                      priceList: this.priceList,
                     },
                     layout_type: this.layout_type,
                     id: this.Id
