@@ -1,12 +1,14 @@
 export class Layout {
   currentSequences = { currentGroupSequence: 1, next_group_index: 0};
   groups = [];
-  typeColors = { active: '#acb19b', na: '#d1d2cf', path: '#acb19b', blank: '#00000000' };
+  typeColors = { active: '#acb19b', na: '#d1d2cf', path: '#acb19b', blank: '#00000000' , selected: '#d1d2cf', blocked: '#d1d2cf'};
   typeIcons = { active: 'event_seat', na: 'event_seat', path: 'reorder', blank: 'event_seat' };
   typeActionDisabled = { active: 'false', na: 'true', path: 'true', blank: 'true' };
   layout_type = 'none';
   Id : number;
   mode : string;
+  lid_col_map = {};
+
   priceList = [
     {
       value: 0,
@@ -92,7 +94,7 @@ export class Layout {
 
   import(layout)
   {
-    if(layout != null && this.mode == 'edit')
+    if(layout != null && this.mode == 'edit' && Object.keys(layout).length > 0)
     {
       var inp_layout = layout['layout'];
       this.currentSequences = inp_layout["currentSequences"];
@@ -104,6 +106,7 @@ export class Layout {
       this.importPriceList(inp_layout["priceList"]);
       this.Id = layout["id"];
       this.updatePricingMap();
+      this.generateLidColMap();
     }
   }
 
@@ -170,6 +173,21 @@ export class Layout {
     {
       var price = this.priceList[i];
       this.priceMap[price.name] = price;
+    }
+  }
+
+  generateLidColMap()
+  {
+    for(var i = 0; i<this.groups.length; i++)
+    {
+      for(var j = 0; j<this.groups[i].rows.length; j++)
+      {
+          for(var k = 0; k<this.groups[i].rows[j].cols.length; k++)
+          {
+              var col = this.groups[i].rows[j].cols[k];
+              this.lid_col_map[col.lid] = col;
+          }
+      }
     }
   }
 }

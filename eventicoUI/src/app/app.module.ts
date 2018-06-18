@@ -29,6 +29,7 @@ import { FileManagerService } from './shared-services/file-manager.service';
 import { ApiFactoryService } from './shared-services/api-factory.service';
 import { RestService } from './shared-services/rest.service'
 import { DatetimeService } from './shared-services/datetime.service';
+import { BookingService } from './bookings/shared/booking.service';
 
 import { RegisterComponent } from './event-user/register/register.component';
 import { LoginComponent } from './event-user/login/login.component';
@@ -48,6 +49,9 @@ import { NewEventTypeComponent } from './event-types/new-event-type/new-event-ty
 import { EventVenuesComponent } from './event-venues/event-venues.component';
 import { NewEventVenueComponent } from './event-venues/new-event-venue/new-event-venue.component';
 
+import { BookingsComponent } from './bookings/bookings.component';
+import { BookingComponent } from './bookings/booking/booking.component';
+
 import { FormDialogComponent } from './form-dialog/form-dialog.component';
 
 @NgModule({
@@ -66,6 +70,8 @@ import { FormDialogComponent } from './form-dialog/form-dialog.component';
     FormDialogComponent,
     SettingsComponent,
     EventUserComponent,
+    BookingsComponent,
+    BookingComponent,
   ],
   imports: [
     BrowserModule,
@@ -86,7 +92,7 @@ import { FormDialogComponent } from './form-dialog/form-dialog.component';
   entryComponents: [
     FormDialogComponent,
   ],
-  providers: [DatetimeService, RestService, ApiFactoryService, FileManagerService, EventVenueService, EventTypeService, EventService, UserService, AuthGuard, AntiauthGuard, AdminauthGuard, SuperadminauthGuard,
+  providers: [BookingService, DatetimeService, RestService, ApiFactoryService, FileManagerService, EventVenueService, EventTypeService, EventService, UserService, AuthGuard, AntiauthGuard, AdminauthGuard, SuperadminauthGuard,
   {
     provide : HTTP_INTERCEPTORS,
     useClass : AuthInterceptor,

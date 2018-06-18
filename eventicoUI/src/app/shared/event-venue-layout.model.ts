@@ -31,7 +31,9 @@ export class EventVenueLayout extends Layout {
         this.currentSequences[group.sequence].rows[row.sequence] = {currentColSequence: 1, next_col_index: 0};
         for(var j=0; j<gData.cols ; j++)
         {
-          var col = {number: j+1, sequence: this.currentSequences[group.sequence].rows[row.sequence].currentColSequence, type: 'active', price: 'default' };
+          var col_seq = this.currentSequences[group.sequence].rows[row.sequence].currentColSequence;
+          var lid = String(group.sequence) + '_' + String(row.sequence) + '_' +String(col_seq);
+          var col = {number: j+1, sequence: col_seq, type: 'active', price: 'default', lid: lid};
           row.cols.push(col);
           this.currentSequences[group.sequence].rows[row.sequence].currentColSequence = this.currentSequences[group.sequence].rows[row.sequence].currentColSequence +1;
           this.currentSequences[group.sequence].rows[row.sequence].next_col_index = this.currentSequences[group.sequence].rows[row.sequence].next_col_index +1;

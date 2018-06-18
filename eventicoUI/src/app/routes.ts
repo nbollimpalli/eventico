@@ -19,6 +19,9 @@ import { NewEventTypeComponent } from './event-types/new-event-type/new-event-ty
 import { EventVenuesComponent } from './event-venues/event-venues.component';
 import { NewEventVenueComponent } from './event-venues/new-event-venue/new-event-venue.component';
 
+import { BookingsComponent } from './bookings/bookings.component';
+import { BookingComponent } from './bookings/booking/booking.component';
+
 export const appRoutes: Routes = [
   { path: '', component: EventsComponent , pathMatch: 'full'},
   { path: 'signup', component: RegisterComponent, canActivate: [AntiauthGuard] },
@@ -28,5 +31,7 @@ export const appRoutes: Routes = [
   { path: 'event-types/event-type', component: NewEventTypeComponent},
   { path: 'event-venues', component: EventVenuesComponent},
   { path: 'event-venues/event-venue', component: NewEventVenueComponent},
+  { path: 'bookings', component: BookingsComponent},
+  { path: 'bookings/booking', component: BookingComponent},
   {path: '**', component: EventsComponent }
 ];

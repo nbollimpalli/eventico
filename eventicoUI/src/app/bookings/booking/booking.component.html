@@ -1,0 +1,64 @@
+<mat-card class="banner-card">
+  <img class="boking_banner responsive center" [src]="event.images['banner'].url" onerror="this.src='https://algovent-s3-static.s3.amazonaws.com/eventico/media/event_bWDUlrT.jpg'">
+</mat-card>
+<div id="wrapper">
+  <mat-card class="">
+    <mat-list>
+      <mat-list-item *ngFor="let price of bookingLayout.priceList">
+        <mat-icon class="pricing_color_icon" matListIcon [style.color]="price.color">event_seat</mat-icon>
+        <h3 matLine> {{ price.label }} </h3>
+        <p matLine>
+          <span> RS {{ price.value }} </span>
+          <span class="demo-2"> -- {{ price.desc }} </span>
+        </p>
+        <mat-divider></mat-divider>
+
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+  <mat-card  class="scrollable-content" style="flex-basis: 800px">
+    <mat-card-content >
+        <table *ngFor="let group of layout_groups" disabled>
+          <tr *ngFor="let row of group.rows">
+            <td *ngFor="let col of row.cols" class="seat-col">
+              <button *ngIf="col.type != 'active'" [matTooltip]="col.number" class="seat-button" disabled  mat-icon-button><mat-icon [style.color]="bookingLayout.typeColors[col.type]" aria-label="Event Seat">{{ bookingLayout.typeIcons[col.type] }}</mat-icon></button>
+              <button *ngIf="col['selected'] == true" (click)="bookingLayout.selectSeat(col)" [matTooltip]="'seat : '+col.number+' ,cost : '+bookingLayout.priceMap[col.price].value" class="seat-button" mat-icon-button><mat-icon [style.color]="bookingLayout.typeColors['na']" aria-label="Event Seat">{{ bookingLayout.typeIcons[col.type] }}</mat-icon></button>
+              <button *ngIf="col.type == 'active' && col['selected'] != true" (click)="bookingLayout.selectSeat(col)" [matTooltip]="'seat : '+col.number+' ,cost : '+bookingLayout.priceMap[col.price].value" class="seat-button" mat-icon-button><mat-icon [style.color]="bookingLayout.priceMap[col.price].color" aria-label="Event Seat">{{ bookingLayout.typeIcons[col.type] }}</mat-icon></button>
+            </td>
+          <tr>
+        </table>
+
+      </mat-card-content>
+  </mat-card>
+  <mat-card class="" >
+    <mat-list>
+      <mat-list-item *ngFor="let summary_unit of bookingLayout.selection_info['selection_summary']">
+        <mat-icon class="pricing_color_icon" matListIcon [style.color]="bookingLayout.priceMap[summary_unit.price].color">event_seat</mat-icon>
+        <h3 matLine> {{ bookingLayout.priceMap[summary_unit.price].label }} </h3>
+        <p matLine>
+          <span> RS {{ bookingLayout.priceMap[summary_unit.price].value }} </span>
+          <span class="demo-2"> x {{ summary_unit.qty }} </span>
+        </p>
+        <button mat-icon-button (click)="bookingLayout.removeSelection(summary_unit)"><mat-icon>delete_outline</mat-icon></button>
+        <mat-divider></mat-divider>
+
+      </mat-list-item>
+
+      <mat-list-item>
+        <mat-icon class="pricing_color_icon" matListIcon >payment</mat-icon>
+        <h2 matLine> Total </h2>
+        <button mat-icon-button>RS. {{ bookingLayout.selection_info['total'] }}</button>
+      </mat-list-item>
+    </mat-list>
+    <mat-divider></mat-divider>
+
+    <mat-card-actions>
+      <button mat-button disabled>PAY</button>
+      <button mat-button (click)="skipAndBook()">SKIP PAY & BOOK</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<div class="spacer"></div>
+<div class="screen-container">
+  <div style="text-align: center" class="screen-div">SCREEN HERE</div>
+</div>

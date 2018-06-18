@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'events',
     'storages',
     'file_manager',
+    'bookings',
 ]
 
 

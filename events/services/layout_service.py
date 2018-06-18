@@ -66,3 +66,19 @@ class LayoutService():
             return True
         else:
             return False
+
+    def block_seats(layout, lids):
+        layout_json = layout.layout
+        groups = layout_json['groups']
+        for group in groups:
+            for row in group['rows']:
+                for col in row['cols']:
+                    if(col['type'] == 'active' and col['lid'] in lids):
+                        col['type'] = 'na'
+
+        layoutSerializer = LayoutSerializer(instance=layout, data={'layout': layout_json})
+        if layoutSerializer.is_valid():
+            layoutSerializer.save()
+            return True
+        else:
+            return False

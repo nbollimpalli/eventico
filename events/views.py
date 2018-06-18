@@ -63,10 +63,15 @@ def get_event(request):
 def get_event_venue(request):
     evId = request.GET['id'];
     event_venue_object = EventVenue.objects.get(id=evId)
-    layout = event_venue_object.layouts.all()[0]
-    layoutSerializer = LayoutSerializer(instance=layout)
+    layouts = event_venue_object.layouts.all()
+    layout = {}
+    if(layouts):
+        layout = layouts[0]
+        layoutSerializer = LayoutSerializer(instance=layout)
+        layout = layoutSerializer.data
+
     eventVenueSerializer = EventVenueSerializer(instance=event_venue_object)
-    response = { 'event_venue' : eventVenueSerializer.data, 'layout' : layoutSerializer.data }
+    response = { 'event_venue' : eventVenueSerializer.data, 'layout' :  layout}
     return  JsonResponse(response, status=status.HTTP_200_OK, safe=False)
 
 @api_view(['GET'])

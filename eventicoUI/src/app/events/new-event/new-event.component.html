@@ -75,7 +75,7 @@
             </mat-select>
           </mat-form-field>
           <mat-form-field class="half-width">
-            <mat-select placeholder="Select Event venue" [(value)]="event.EventVenueId" (change)="updateVenueDetails()" name="EventVenue" >
+            <mat-select placeholder="Select Event venue" [(value)]="event.EventVenueId"  name="EventVenue" >
               <mat-option *ngFor="let eventVenue of eventVenues" value="{{eventVenue.Id}}" >{{eventVenue.Name}}</mat-option>
             </mat-select>
           </mat-form-field>

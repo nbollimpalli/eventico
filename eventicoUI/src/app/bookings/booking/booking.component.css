@@ -1,0 +1,50 @@
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.banner-card {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background: #d7dac99e;
+  max-height: 350px;
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+#wrapper{
+    display:-webkit-flex;
+    -webkit-justify-content:center;
+
+    display:flex;
+    justify-content:center;
+
+}
+
+.screen-container
+{
+    display:-webkit-flex;
+    -webkit-justify-content:center;
+
+    display:flex;
+    justify-content:center;
+
+    text-align: center;
+    font-size: 12px;
+}
+
+#wrapper mat-card{
+    -webkit-flex:1;
+    flex:1;
+}
+
+table { margin: auto; }
+
+.boking_banner
+{
+  max-height: 20%;
+}

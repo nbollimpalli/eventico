@@ -45,6 +45,9 @@ export class ApiFactoryService {
 
     //layout
     this.api_map.set('UPSERT_LAYOUT', '/layout/upsert/');
+
+    //booking service
+    this.api_map.set('SKIP_AND_BOOK', '/bookings/skip-and-book/')
   }
 
   getApi(api_name) : string

@@ -128,19 +128,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_services_api_factory_service__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./shared-services/api-factory.service */ "./src/app/shared-services/api-factory.service.ts");
 /* harmony import */ var _shared_services_rest_service__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./shared-services/rest.service */ "./src/app/shared-services/rest.service.ts");
 /* harmony import */ var _shared_services_datetime_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./shared-services/datetime.service */ "./src/app/shared-services/datetime.service.ts");
-/* harmony import */ var _event_user_register_register_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./event-user/register/register.component */ "./src/app/event-user/register/register.component.ts");
-/* harmony import */ var _event_user_login_login_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./event-user/login/login.component */ "./src/app/event-user/login/login.component.ts");
-/* harmony import */ var _event_user_settings_settings_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./event-user/settings/settings.component */ "./src/app/event-user/settings/settings.component.ts");
-/* harmony import */ var _event_user_event_user_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./event-user/event-user.component */ "./src/app/event-user/event-user.component.ts");
-/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
-/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
-/* harmony import */ var _events_events_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./events/events.component */ "./src/app/events/events.component.ts");
-/* harmony import */ var _events_new_event_new_event_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./events/new-event/new-event.component */ "./src/app/events/new-event/new-event.component.ts");
-/* harmony import */ var _event_types_event_types_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./event-types/event-types.component */ "./src/app/event-types/event-types.component.ts");
-/* harmony import */ var _event_types_new_event_type_new_event_type_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./event-types/new-event-type/new-event-type.component */ "./src/app/event-types/new-event-type/new-event-type.component.ts");
-/* harmony import */ var _event_venues_event_venues_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./event-venues/event-venues.component */ "./src/app/event-venues/event-venues.component.ts");
-/* harmony import */ var _event_venues_new_event_venue_new_event_venue_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./event-venues/new-event-venue/new-event-venue.component */ "./src/app/event-venues/new-event-venue/new-event-venue.component.ts");
-/* harmony import */ var _form_dialog_form_dialog_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./form-dialog/form-dialog.component */ "./src/app/form-dialog/form-dialog.component.ts");
+/* harmony import */ var _bookings_shared_booking_service__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./bookings/shared/booking.service */ "./src/app/bookings/shared/booking.service.ts");
+/* harmony import */ var _event_user_register_register_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./event-user/register/register.component */ "./src/app/event-user/register/register.component.ts");
+/* harmony import */ var _event_user_login_login_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./event-user/login/login.component */ "./src/app/event-user/login/login.component.ts");
+/* harmony import */ var _event_user_settings_settings_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./event-user/settings/settings.component */ "./src/app/event-user/settings/settings.component.ts");
+/* harmony import */ var _event_user_event_user_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./event-user/event-user.component */ "./src/app/event-user/event-user.component.ts");
+/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
+/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
+/* harmony import */ var _events_events_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./events/events.component */ "./src/app/events/events.component.ts");
+/* harmony import */ var _events_new_event_new_event_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./events/new-event/new-event.component */ "./src/app/events/new-event/new-event.component.ts");
+/* harmony import */ var _event_types_event_types_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./event-types/event-types.component */ "./src/app/event-types/event-types.component.ts");
+/* harmony import */ var _event_types_new_event_type_new_event_type_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./event-types/new-event-type/new-event-type.component */ "./src/app/event-types/new-event-type/new-event-type.component.ts");
+/* harmony import */ var _event_venues_event_venues_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./event-venues/event-venues.component */ "./src/app/event-venues/event-venues.component.ts");
+/* harmony import */ var _event_venues_new_event_venue_new_event_venue_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./event-venues/new-event-venue/new-event-venue.component */ "./src/app/event-venues/new-event-venue/new-event-venue.component.ts");
+/* harmony import */ var _bookings_bookings_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./bookings/bookings.component */ "./src/app/bookings/bookings.component.ts");
+/* harmony import */ var _bookings_booking_booking_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./bookings/booking/booking.component */ "./src/app/bookings/booking/booking.component.ts");
+/* harmony import */ var _form_dialog_form_dialog_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./form-dialog/form-dialog.component */ "./src/app/form-dialog/form-dialog.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -178,7 +181,10 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 //import { UpdateProfileComponent } from './event-user/settings/settings.component';
+
+
 
 
 
@@ -197,19 +203,21 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_17__["AppComponent"],
-                _event_user_register_register_component__WEBPACK_IMPORTED_MODULE_27__["RegisterComponent"],
-                _header_header_component__WEBPACK_IMPORTED_MODULE_31__["HeaderComponent"],
-                _footer_footer_component__WEBPACK_IMPORTED_MODULE_32__["FooterComponent"],
-                _events_events_component__WEBPACK_IMPORTED_MODULE_33__["EventsComponent"],
-                _event_user_login_login_component__WEBPACK_IMPORTED_MODULE_28__["LoginComponent"],
-                _events_new_event_new_event_component__WEBPACK_IMPORTED_MODULE_34__["NewEventComponent"],
-                _event_types_event_types_component__WEBPACK_IMPORTED_MODULE_35__["EventTypesComponent"],
-                _event_types_new_event_type_new_event_type_component__WEBPACK_IMPORTED_MODULE_36__["NewEventTypeComponent"],
-                _event_venues_event_venues_component__WEBPACK_IMPORTED_MODULE_37__["EventVenuesComponent"],
-                _event_venues_new_event_venue_new_event_venue_component__WEBPACK_IMPORTED_MODULE_38__["NewEventVenueComponent"],
-                _form_dialog_form_dialog_component__WEBPACK_IMPORTED_MODULE_39__["FormDialogComponent"],
-                _event_user_settings_settings_component__WEBPACK_IMPORTED_MODULE_29__["SettingsComponent"],
-                _event_user_event_user_component__WEBPACK_IMPORTED_MODULE_30__["EventUserComponent"],
+                _event_user_register_register_component__WEBPACK_IMPORTED_MODULE_28__["RegisterComponent"],
+                _header_header_component__WEBPACK_IMPORTED_MODULE_32__["HeaderComponent"],
+                _footer_footer_component__WEBPACK_IMPORTED_MODULE_33__["FooterComponent"],
+                _events_events_component__WEBPACK_IMPORTED_MODULE_34__["EventsComponent"],
+                _event_user_login_login_component__WEBPACK_IMPORTED_MODULE_29__["LoginComponent"],
+                _events_new_event_new_event_component__WEBPACK_IMPORTED_MODULE_35__["NewEventComponent"],
+                _event_types_event_types_component__WEBPACK_IMPORTED_MODULE_36__["EventTypesComponent"],
+                _event_types_new_event_type_new_event_type_component__WEBPACK_IMPORTED_MODULE_37__["NewEventTypeComponent"],
+                _event_venues_event_venues_component__WEBPACK_IMPORTED_MODULE_38__["EventVenuesComponent"],
+                _event_venues_new_event_venue_new_event_venue_component__WEBPACK_IMPORTED_MODULE_39__["NewEventVenueComponent"],
+                _form_dialog_form_dialog_component__WEBPACK_IMPORTED_MODULE_42__["FormDialogComponent"],
+                _event_user_settings_settings_component__WEBPACK_IMPORTED_MODULE_30__["SettingsComponent"],
+                _event_user_event_user_component__WEBPACK_IMPORTED_MODULE_31__["EventUserComponent"],
+                _bookings_bookings_component__WEBPACK_IMPORTED_MODULE_40__["BookingsComponent"],
+                _bookings_booking_booking_component__WEBPACK_IMPORTED_MODULE_41__["BookingComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -226,9 +234,9 @@ var AppModule = /** @class */ (function () {
                 ),
             ],
             entryComponents: [
-                _form_dialog_form_dialog_component__WEBPACK_IMPORTED_MODULE_39__["FormDialogComponent"],
+                _form_dialog_form_dialog_component__WEBPACK_IMPORTED_MODULE_42__["FormDialogComponent"],
             ],
-            providers: [_shared_services_datetime_service__WEBPACK_IMPORTED_MODULE_26__["DatetimeService"], _shared_services_rest_service__WEBPACK_IMPORTED_MODULE_25__["RestService"], _shared_services_api_factory_service__WEBPACK_IMPORTED_MODULE_24__["ApiFactoryService"], _shared_services_file_manager_service__WEBPACK_IMPORTED_MODULE_23__["FileManagerService"], _event_venues_shared_event_venue_service__WEBPACK_IMPORTED_MODULE_22__["EventVenueService"], _event_types_shared_event_type_service__WEBPACK_IMPORTED_MODULE_21__["EventTypeService"], _events_shared_event_service__WEBPACK_IMPORTED_MODULE_20__["EventService"], _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_19__["UserService"], _auth_auth_guard__WEBPACK_IMPORTED_MODULE_8__["AuthGuard"], _auth_antiauth_guard__WEBPACK_IMPORTED_MODULE_9__["AntiauthGuard"], _auth_adminauth_guard__WEBPACK_IMPORTED_MODULE_10__["AdminauthGuard"], _auth_superadminauth_guard__WEBPACK_IMPORTED_MODULE_11__["SuperadminauthGuard"],
+            providers: [_bookings_shared_booking_service__WEBPACK_IMPORTED_MODULE_27__["BookingService"], _shared_services_datetime_service__WEBPACK_IMPORTED_MODULE_26__["DatetimeService"], _shared_services_rest_service__WEBPACK_IMPORTED_MODULE_25__["RestService"], _shared_services_api_factory_service__WEBPACK_IMPORTED_MODULE_24__["ApiFactoryService"], _shared_services_file_manager_service__WEBPACK_IMPORTED_MODULE_23__["FileManagerService"], _event_venues_shared_event_venue_service__WEBPACK_IMPORTED_MODULE_22__["EventVenueService"], _event_types_shared_event_type_service__WEBPACK_IMPORTED_MODULE_21__["EventTypeService"], _events_shared_event_service__WEBPACK_IMPORTED_MODULE_20__["EventService"], _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_19__["UserService"], _auth_auth_guard__WEBPACK_IMPORTED_MODULE_8__["AuthGuard"], _auth_antiauth_guard__WEBPACK_IMPORTED_MODULE_9__["AntiauthGuard"], _auth_adminauth_guard__WEBPACK_IMPORTED_MODULE_10__["AdminauthGuard"], _auth_superadminauth_guard__WEBPACK_IMPORTED_MODULE_11__["SuperadminauthGuard"],
                 {
                     provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HTTP_INTERCEPTORS"],
                     useClass: _auth_auth_interceptor__WEBPACK_IMPORTED_MODULE_12__["AuthInterceptor"],
@@ -483,6 +491,291 @@ var SuperadminauthGuard = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], SuperadminauthGuard);
     return SuperadminauthGuard;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/bookings/booking/booking.component.css":
+/*!********************************************************!*\
+  !*** ./src/app/bookings/booking/booking.component.css ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".center {\n    display: block;\n    margin-left: auto;\n    margin-right: auto;\n}\n\n.banner-card {\n  padding-top: 0px;\n  padding-bottom: 0px;\n  background: #d7dac99e;\n  max-height: 350px;\n}\n\n*{\n    margin:0;\n    padding:0;\n}\n\n#wrapper{\n    display:-webkit-flex;\n    -webkit-justify-content:center;\n\n    display:flex;\n    justify-content:center;\n\n}\n\n.screen-container\n{\n    display:-webkit-flex;\n    -webkit-justify-content:center;\n\n    display:flex;\n    justify-content:center;\n\n    text-align: center;\n    font-size: 12px;\n}\n\n#wrapper mat-card{\n    flex:1;\n}\n\ntable { margin: auto; }\n\n.boking_banner\n{\n  max-height: 20%;\n}\n"
+
+/***/ }),
+
+/***/ "./src/app/bookings/booking/booking.component.html":
+/*!*********************************************************!*\
+  !*** ./src/app/bookings/booking/booking.component.html ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<mat-card class=\"banner-card\">\n  <img class=\"boking_banner responsive center\" [src]=\"event.images['banner'].url\" onerror=\"this.src='https://algovent-s3-static.s3.amazonaws.com/eventico/media/event_bWDUlrT.jpg'\">\n</mat-card>\n<div id=\"wrapper\">\n  <mat-card class=\"\">\n    <mat-list>\n      <mat-list-item *ngFor=\"let price of bookingLayout.priceList\">\n        <mat-icon class=\"pricing_color_icon\" matListIcon [style.color]=\"price.color\">event_seat</mat-icon>\n        <h3 matLine> {{ price.label }} </h3>\n        <p matLine>\n          <span> RS {{ price.value }} </span>\n          <span class=\"demo-2\"> -- {{ price.desc }} </span>\n        </p>\n        <mat-divider></mat-divider>\n\n      </mat-list-item>\n    </mat-list>\n  </mat-card>\n  <mat-card  class=\"scrollable-content\" style=\"flex-basis: 800px\">\n    <mat-card-content >\n        <table *ngFor=\"let group of layout_groups\" disabled>\n          <tr *ngFor=\"let row of group.rows\">\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.type != 'active'\" [matTooltip]=\"col.number\" class=\"seat-button\" disabled  mat-icon-button><mat-icon [style.color]=\"bookingLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ bookingLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col['selected'] == true\" (click)=\"bookingLayout.selectSeat(col)\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+bookingLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"bookingLayout.typeColors['na']\" aria-label=\"Event Seat\">{{ bookingLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col.type == 'active' && col['selected'] != true\" (click)=\"bookingLayout.selectSeat(col)\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+bookingLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"bookingLayout.priceMap[col.price].color\" aria-label=\"Event Seat\">{{ bookingLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n        </table>\n\n      </mat-card-content>\n  </mat-card>\n  <mat-card class=\"\" >\n    <mat-list>\n      <mat-list-item *ngFor=\"let summary_unit of bookingLayout.selection_info['selection_summary']\">\n        <mat-icon class=\"pricing_color_icon\" matListIcon [style.color]=\"bookingLayout.priceMap[summary_unit.price].color\">event_seat</mat-icon>\n        <h3 matLine> {{ bookingLayout.priceMap[summary_unit.price].label }} </h3>\n        <p matLine>\n          <span> RS {{ bookingLayout.priceMap[summary_unit.price].value }} </span>\n          <span class=\"demo-2\"> x {{ summary_unit.qty }} </span>\n        </p>\n        <button mat-icon-button (click)=\"bookingLayout.removeSelection(summary_unit)\"><mat-icon>delete_outline</mat-icon></button>\n        <mat-divider></mat-divider>\n\n      </mat-list-item>\n\n      <mat-list-item>\n        <mat-icon class=\"pricing_color_icon\" matListIcon >payment</mat-icon>\n        <h2 matLine> Total </h2>\n        <button mat-icon-button>RS. {{ bookingLayout.selection_info['total'] }}</button>\n      </mat-list-item>\n    </mat-list>\n    <mat-divider></mat-divider>\n\n    <mat-card-actions>\n      <button mat-button disabled>PAY</button>\n      <button mat-button (click)=\"skipAndBook()\">SKIP PAY & BOOK</button>\n    </mat-card-actions>\n  </mat-card>\n</div>\n<div class=\"spacer\"></div>\n<div class=\"screen-container\">\n  <div style=\"text-align: center\" class=\"screen-div\">SCREEN HERE</div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/bookings/booking/booking.component.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/bookings/booking/booking.component.ts ***!
+  \*******************************************************/
+/*! exports provided: BookingComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookingComponent", function() { return BookingComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _shared_booking_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/booking.model */ "./src/app/bookings/shared/booking.model.ts");
+/* harmony import */ var _shared_booking_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/booking.service */ "./src/app/bookings/shared/booking.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _events_shared_event_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../events/shared/event.service */ "./src/app/events/shared/event.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var BookingComponent = /** @class */ (function () {
+    function BookingComponent(bookingService, eventService, router, route) {
+        var _this = this;
+        this.bookingService = bookingService;
+        this.eventService = eventService;
+        this.router = router;
+        this.route = route;
+        this.route.params.subscribe(function (params) { return _this.setupBooking(params['event_id'], params['id']); });
+    }
+    BookingComponent.prototype.ngOnInit = function () {
+    };
+    BookingComponent.prototype.setupBooking = function (event_id, booking_id) {
+        if (booking_id) {
+            this.mode = 'edit';
+        }
+        else {
+            this.mode = 'new';
+            this.setupNewBooking(event_id);
+        }
+    };
+    BookingComponent.prototype.setupNewBooking = function (event_id) {
+        var _this = this;
+        this.booking = new _shared_booking_model__WEBPACK_IMPORTED_MODULE_1__["Booking"](this.mode);
+        this.bookingLayout = this.booking.bookingLayout;
+        this.event = this.booking.event;
+        if (event_id != null && event_id != "undefined") {
+            this.eventService.getEvent(event_id)
+                .subscribe(function (data) {
+                _this.booking.import(data);
+            });
+        }
+    };
+    BookingComponent.prototype.skipAndBook = function () {
+        var _this = this;
+        this.bookingService.skipAndBook(this.booking)
+            .subscribe(function (data) {
+            alert('booking made success');
+            _this.router.navigate(['']);
+        });
+    };
+    Object.defineProperty(BookingComponent.prototype, "layout_groups", {
+        get: function () {
+            return this.bookingLayout.groups;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    BookingComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-booking',
+            template: __webpack_require__(/*! ./booking.component.html */ "./src/app/bookings/booking/booking.component.html"),
+            styles: [__webpack_require__(/*! ./booking.component.css */ "./src/app/bookings/booking/booking.component.css")]
+        }),
+        __metadata("design:paramtypes", [_shared_booking_service__WEBPACK_IMPORTED_MODULE_2__["BookingService"], _events_shared_event_service__WEBPACK_IMPORTED_MODULE_4__["EventService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]])
+    ], BookingComponent);
+    return BookingComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/bookings/bookings.component.css":
+/*!*************************************************!*\
+  !*** ./src/app/bookings/bookings.component.css ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/bookings/bookings.component.html":
+/*!**************************************************!*\
+  !*** ./src/app/bookings/bookings.component.html ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  bookings works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/bookings/bookings.component.ts":
+/*!************************************************!*\
+  !*** ./src/app/bookings/bookings.component.ts ***!
+  \************************************************/
+/*! exports provided: BookingsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookingsComponent", function() { return BookingsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var BookingsComponent = /** @class */ (function () {
+    function BookingsComponent() {
+    }
+    BookingsComponent.prototype.ngOnInit = function () {
+    };
+    BookingsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-bookings',
+            template: __webpack_require__(/*! ./bookings.component.html */ "./src/app/bookings/bookings.component.html"),
+            styles: [__webpack_require__(/*! ./bookings.component.css */ "./src/app/bookings/bookings.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], BookingsComponent);
+    return BookingsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/bookings/shared/booking.model.ts":
+/*!**************************************************!*\
+  !*** ./src/app/bookings/shared/booking.model.ts ***!
+  \**************************************************/
+/*! exports provided: Booking */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Booking", function() { return Booking; });
+/* harmony import */ var _shared_booking_layout_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/booking-layout.model */ "./src/app/shared/booking-layout.model.ts");
+/* harmony import */ var _events_shared_event_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../events/shared/event.model */ "./src/app/events/shared/event.model.ts");
+
+
+var Booking = /** @class */ (function () {
+    function Booking(mode) {
+        this.mode = mode;
+        this.event_mode = 'list';
+        this.layout_mode = 'new';
+        this.event = new _events_shared_event_model__WEBPACK_IMPORTED_MODULE_1__["Event"]({}, this.event_mode);
+        this.bookingLayout = new _shared_booking_layout_model__WEBPACK_IMPORTED_MODULE_0__["BookingLayout"]({}, this.layout_mode);
+    }
+    Booking.prototype.import = function (bookingJsonObject) {
+        if (this.mode == 'new') {
+            this.layout_mode = 'edit';
+            this.bookingLayout.mode = this.layout_mode;
+            this.bookingLayout.import(bookingJsonObject['layout']);
+            this.event.import(bookingJsonObject['event']);
+        }
+        else if (this.mode == 'edit') {
+            this.bookingLayout.mode = 'edit';
+            //import data to event in list mode
+            //import layout to booking in edit mode
+            this.Id = bookingJsonObject["id"];
+            this.Uid = bookingJsonObject["uid"];
+        }
+        else if (this.mode == 'list') {
+            this.Id = bookingJsonObject["id"];
+            this.Uid = bookingJsonObject["uid"];
+        }
+        else if (this.mode == 'view') {
+            this.Id = bookingJsonObject["id"];
+            this.Uid = bookingJsonObject["uid"];
+        }
+    };
+    Booking.prototype.export = function () {
+        var exportJSON = {
+            "id": this.Id,
+            "uid": this.Uid,
+            "event_id": this.event.Id,
+            'selection_info': this.bookingLayout.selection_info,
+        };
+        return exportJSON;
+    };
+    return Booking;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/bookings/shared/booking.service.ts":
+/*!****************************************************!*\
+  !*** ./src/app/bookings/shared/booking.service.ts ***!
+  \****************************************************/
+/*! exports provided: BookingService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookingService", function() { return BookingService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _events_shared_event_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../events/shared/event.service */ "./src/app/events/shared/event.service.ts");
+/* harmony import */ var _shared_services_rest_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../shared-services/rest.service */ "./src/app/shared-services/rest.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var BookingService = /** @class */ (function () {
+    function BookingService(restService, eventService) {
+        this.restService = restService;
+        this.eventService = eventService;
+    }
+    BookingService.prototype.skipAndBook = function (booking) {
+        var skipAndBookJSON = booking.export();
+        return this.restService.post('SKIP_AND_BOOK', true, null, skipAndBookJSON);
+    };
+    BookingService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_shared_services_rest_service__WEBPACK_IMPORTED_MODULE_2__["RestService"], _events_shared_event_service__WEBPACK_IMPORTED_MODULE_1__["EventService"]])
+    ], BookingService);
+    return BookingService;
 }());
 
 
@@ -1660,7 +1953,7 @@ module.exports = ".event-card {\n  max-width: 350px;\n  max-height: 300px;\n  bo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar class=\"events-filter-toolbar\">\n  <mat-toolbar-row>\n    <mat-form-field class=\"half-width\">\n    <input type=\"text\"  placeholder=\"Search Events\" aria-label=\"Number\" matInput [formControl]=\"myControl\" [matAutocomplete]=\"auto\">\n    <mat-autocomplete #auto=\"matAutocomplete\">\n      <mat-option *ngFor=\"let option of options\" [value]=\"option\">\n        {{ option }}\n      </mat-option>\n    </mat-autocomplete>\n    </mat-form-field>\n\n    <span class=\"tollbar-splitter\"></span>\n    <mat-form-field>\n      <input matInput [matDatepicker]=\"picker\" placeholder=\"Choose a date\">\n      <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n      <mat-datepicker touchUi #picker></mat-datepicker>\n    </mat-form-field>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<div class=\"spacer\"></div>\n<div class=\"events-container\">\n<mat-grid-list [cols]=\"cols | async\" gutterSize=\"15px\" >\n  <mat-grid-tile *ngFor=\"let event of events\">\n    <mat-card class=\"event-card\">\n      <img mat-card-image class=\"card-image\" [src]=\"event.images['banner'].url\" onerror=\"this.src='https://algovent-s3-static.s3.amazonaws.com/eventico/media/event_bWDUlrT.jpg'\" alt=\"Photo of a Shiba Inu\">\n    <mat-card-content>\n        <div class=\"date_name_location\">\n          <div class=\"event_date_month\">\n            <p class=\"event_month\">{{event['times']['start']['month']}}</p>\n            <p class=\"event_date\">{{event['times']['start']['day_num']}}</p>\n            <p class=\"event_day\">{{event['times']['start']['day']}}</p>\n          </div>\n          <div class=\"event_name_location\">\n            <p class=\"event_name\">{{event.Name}}</p>\n            <a href=\"#\" class=\"event_location\">Phoenix Market City: Whitefield</a>\n            <p class=\"event_price\" >Rs. 999 Onwards</p>\n          </div>\n        </div>\n      </mat-card-content>\n      <mat-card-actions>\n        <button mat-button color=\"#cc3333cc\" >Book</button>\n        <span class=\"toolbar-splitter\"></span>\n        <button mat-icon-button routerLink=\"\"><mat-icon aria-label=\"Settings\">share</mat-icon></button>\n        <button mat-icon-button [routerLink]=\"['events/event',{id: event.Id }]\"><mat-icon aria-label=\"Edit\">edit</mat-icon></button>\n      </mat-card-actions>\n    </mat-card>\n  </mat-grid-tile>\n</mat-grid-list>\n</div>\n"
+module.exports = "<mat-toolbar class=\"events-filter-toolbar\">\n  <mat-toolbar-row>\n    <mat-form-field class=\"half-width\">\n    <input type=\"text\"  placeholder=\"Search Events\" aria-label=\"Number\" matInput [formControl]=\"myControl\" [matAutocomplete]=\"auto\">\n    <mat-autocomplete #auto=\"matAutocomplete\">\n      <mat-option *ngFor=\"let option of options\" [value]=\"option\">\n        {{ option }}\n      </mat-option>\n    </mat-autocomplete>\n    </mat-form-field>\n\n    <span class=\"tollbar-splitter\"></span>\n    <mat-form-field>\n      <input matInput [matDatepicker]=\"picker\" placeholder=\"Choose a date\">\n      <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n      <mat-datepicker touchUi #picker></mat-datepicker>\n    </mat-form-field>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<div class=\"spacer\"></div>\n<div class=\"events-container\">\n<mat-grid-list [cols]=\"cols | async\" gutterSize=\"15px\" >\n  <mat-grid-tile *ngFor=\"let event of events\">\n    <mat-card class=\"event-card\">\n      <img mat-card-image class=\"card-image\" [src]=\"event.images['banner'].url\" onerror=\"this.src='https://algovent-s3-static.s3.amazonaws.com/eventico/media/event_bWDUlrT.jpg'\" alt=\"Photo of a Shiba Inu\">\n    <mat-card-content>\n        <div class=\"date_name_location\">\n          <div class=\"event_date_month\">\n            <p class=\"event_month\">{{event['times']['start']['month']}}</p>\n            <p class=\"event_date\">{{event['times']['start']['day_num']}}</p>\n            <p class=\"event_day\">{{event['times']['start']['day']}}</p>\n          </div>\n          <div class=\"event_name_location\">\n            <p class=\"event_name\">{{event.Name}}</p>\n            <a href=\"#\" class=\"event_location\">Phoenix Market City: Whitefield</a>\n            <p class=\"event_price\" >Rs. 999 Onwards</p>\n          </div>\n        </div>\n      </mat-card-content>\n      <mat-card-actions>\n        <button mat-button [routerLink]=\"['bookings/booking',{event_id: event.Id}]\" color=\"#cc3333cc\" >Book</button>\n        <span class=\"toolbar-splitter\"></span>\n        <button mat-icon-button routerLink=\"\"><mat-icon aria-label=\"Settings\">share</mat-icon></button>\n        <button mat-icon-button [routerLink]=\"['events/event',{id: event.Id }]\"><mat-icon aria-label=\"Edit\">edit</mat-icon></button>\n      </mat-card-actions>\n    </mat-card>\n  </mat-grid-tile>\n</mat-grid-list>\n</div>\n"
 
 /***/ }),
 
@@ -1772,7 +2065,7 @@ module.exports = ".new-event-card\n{\n   max-width: 30%;\n   margin: 100px auto;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"indicator\" [style.disply]=\"showOverlay\">\n  <svg width=\"16px\" height=\"12px\">\n    <polyline id=\"back\" points=\"1 6 4 6 6 11 10 1 12 6 15 6\"></polyline>\n    <polyline id=\"front\" points=\"1 6 4 6 6 11 10 1 12 6 15 6\"></polyline>\n  </svg>\n</div>\n<mat-horizontal-stepper>\n  <mat-step label=\"Setup Event Info\">\n    <mat-card class=\"new-event-card\">\n      <mat-card-title ><i class=\"material-icons\">today</i></mat-card-title>\n      <form class=\"new-event-form\" #eventCreationForm=\"ngForm\" >\n      <mat-card-content>\n          <mat-form-field class=\"full-width\">\n            <input matInput placeholder=\"Name\" #Name=\"ngModel\" [(ngModel)]=\"event.Name\" name=\"Name\" required>\n          </mat-form-field>\n          <mat-form-field class=\"forty-width fivepx-margin-right\">\n            <input matInput [min]=\"minDate\" [matDatepicker]=\"startdate\" placeholder=\"Start Date\" [(value)] = \"event.times['start']['date']\" disabled required>\n            <mat-datepicker-toggle matSuffix [for]=\"startdate\"></mat-datepicker-toggle>\n            <mat-datepicker disabled=\"false\" touchUi=\"true\" #startdate></mat-datepicker>\n          </mat-form-field>\n          <mat-form-field class=\"ten-width fivepx-margin-right\">\n            <mat-select placeholder=\"HH\" [value]=\"event['times']['start']['hh']\" name=\"shh\" required>\n              <mat-option *ngFor=\"let i of [1,2,3,4,5,6,7,8,9,10,11,12]\" [value]=\"i\">{{i}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field class=\"ten-width fivepx-margin-right\">\n            <mat-select placeholder=\"MM\" [value]=\"event['times']['start']['mm']\" name=\"smm\" required>\n              <mat-option *ngFor=\"let i of [0,1,2,3,4,5,6,7,8,9,10,11,12]\" [value]=\"i * 5\">{{i*5}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field class=\"ten-width fivepx-margin-right\">\n            <mat-select placeholder=\"\" [value]=\"event['times']['end']['period']\" name=\"sAMPM\">\n              <mat-option selected value=\"AM\">AM</mat-option>\n              <mat-option selected value=\"PM\">PM</mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field class=\"forty-width fivepx-margin-right\">\n            <input matInput [min]=\"event['times']['start']['date']\" [matDatepicker]=\"enddate\" placeholder=\"End Date\" [(value)] = \"event['times']['end']['date']\" required disabled>\n            <mat-datepicker-toggle matSuffix [for]=\"enddate\"></mat-datepicker-toggle>\n            <mat-datepicker disabled=\"false\" touchUi=\"true\" #enddate></mat-datepicker>\n          </mat-form-field>\n          <mat-form-field class=\"ten-width fivepx-margin-right\">\n            <mat-select placeholder=\"HH\" [(value)]=\"event['times']['end']['hh']\" name=\"ehh\" required>\n              <mat-option *ngFor=\"let i of [1,2,3,4,5,6,7,8,9,10,11,12]\" [value]=\"i\">{{i}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field class=\"ten-width fivepx-margin-right\">\n            <mat-select placeholder=\"MM\" [(value)]=\"event['times']['end']['mm']\" name=\"emm\" required>\n              <mat-option *ngFor=\"let i of [0,1,2,3,4,5,6,7,8,9,10,11,12]\" [value]=\"i * 5\">{{i*5}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field class=\"ten-width fivepx-margin-right\">\n            <mat-select placeholder=\"\" [(value)]=\"event['times']['end']['period']\" name=\"eAMPM\" required>\n              <mat-option selected value=\"AM\">AM</mat-option>\n              <mat-option selected value=\"PM\">PM</mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field class=\"full-width\">\n            <input matInput type=\"number\" placeholder=\"Default Price\" #Name=\"ngModel\" [(ngModel)]=\"defaultPrice['value']\" name=\"DefaultPrice\" required>\n          </mat-form-field>\n          <mat-form-field class=\"full-width\">\n            <input matInput type=\"text\" placeholder=\"Default Price Label\" #Name=\"ngModel\" [(ngModel)]=\"defaultPrice['label']\" name=\"DefaultPriceLabel\" required>\n          </mat-form-field>\n          <mat-form-field class=\"full-width\">\n            <input matInput type=\"text\" placeholder=\"Default Price Description\" #Name=\"ngModel\" [(ngModel)]=\"defaultPrice['desc']\" name=\"DefaultPriceDesc\" required>\n          </mat-form-field>\n            <mat-form-field class=\"full-width\">\n            <textarea matInput placeholder=\"Description\" #Desc=\"ngModel\" [(ngModel)]=\"event.Desc\" name=\"Description\" required></textarea>\n          </mat-form-field>\n          <mat-form-field class=\"half-width\">\n          <mat-select  placeholder=\"Select EventType\" [(value)]=\"event.EventTypeId\"  name=\"EventType\">\n              <mat-option *ngFor=\"let eventType of eventTypes\" value=\"{{eventType.Id}}\">{{eventType.Name}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field class=\"half-width\">\n            <mat-select placeholder=\"Select Event venue\" [(value)]=\"event.EventVenueId\" (change)=\"updateVenueDetails()\" name=\"EventVenue\" >\n              <mat-option *ngFor=\"let eventVenue of eventVenues\" value=\"{{eventVenue.Id}}\" >{{eventVenue.Name}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n      </mat-card-content>\n      </form>\n    </mat-card>\n    <div>\n      <button  mat-button type=\"submit\" (click)=\"upsertEvent()\">UPSERT</button>\n      <button  *ngIf=\"event['Id'] != null && event['Id'] != undefined\" mat-button matStepperNext >NEXT</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Setup Banners\" *ngIf=\"event.Id != null\">\n    <mat-card>\n      <mat-card-content>\n        <img [src]=\"this.event.images['banner'].url\" onerror=\"this.src='https://algovent-s3-static.s3.amazonaws.com/eventico/media/default_bannger.jpg'\">\n      </mat-card-content>\n      <mat-divider></mat-divider>\n      <mat-card-actions>\n        <input type=\"file\"   (change)=\"handleFileInput($event.target.files)\">\n        <button mat-button  *ngIf=\"this.event.images['banner'].url != ''\" color=\"warning\"> REMOVE</button>\n      </mat-card-actions>\n    </mat-card>\n  <div>\n    <button  mat-button matStepperPrevious>BACK</button>\n    <button  mat-button matStepperNext >NEXT</button>\n  </div>\n  </mat-step>\n\n  <mat-step label=\"Mark Unavailability\" *ngIf=\"event.LayoutType == 'box' && event.Id != null\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-form\" #markNAForm=\"ngForm\" (ngSubmit)=\"markNA(markNAForm)\">\n\n          <mat-form-field>\n            <mat-select placeholder=\"Select Group\" #GroupSelect=\"ngModel\" [(ngModel)]=\"markNAFormData.group_index\" name=\"GroupSelect\">\n              <mat-option *ngFor=\"let group of layout_groups;let i = index\" [value]=\"i\">\n                {{ group.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markNAFormData.group_index != -1\">\n            <mat-select  #RowSelect placeholder=\"Select Row\" [(ngModel)]=\"markNAFormData.row_index\" name=\"RowSelect\">\n              <mat-option *ngFor=\"let row of layout_groups[markNAFormData.group_index].rows ;let j = index\" [value]=\"j\">\n                {{ row.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markNAFormData.row_index != -1\">\n            <mat-select  #StartColSelect placeholder=\"Select Start Column\" [(ngModel)]=\"markNAFormData.start_col_index\" name=\"StartColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markNAFormData.group_index].rows[markNAFormData.row_index].cols ;let k = index\" [value]=\"k\">\n                {{ k }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markNAFormData.row_index != -1\">\n            <mat-select  #EndColSelect placeholder=\"Select End Column\" [(ngModel)]=\"markNAFormData.end_col_index\" name=\"EndColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markNAFormData.group_index].rows[markNAFormData.row_index].cols;let l = index\" [value]=\"l\">\n                {{ l }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n          <button mat-button type=\"submit\" color=\"primary\" >Mark N/A</button>\n        </form>\n        <span class=\"tollbar-splitter\"></span>\n\n        <button  mat-button [(colorPicker)]=\"eventLayout.typeColors.path\" [cpPosition]=\"'left'\">Path Color</button>\n        <button  mat-button [(colorPicker)]=\"eventLayout.typeColors.na\" [cpPosition]=\"'left'\">N/A Color</button>\n\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\">\n          <mat-divider></mat-divider>\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button [matTooltip]=\"col.number\" class=\"seat-button\" [disabled]=\"eventLayout.typeActionDisabled[col.type]\"  mat-icon-button><mat-icon [style.color]=\"eventLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n          <tr *ngIf=\"group != null && group.rows != null && group.rows[0] != null\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ group.name }}</button>\n            </td>\n            <td *ngFor=\"let col of group.rows[0].cols; let m = index\" class=\"seat-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ m }}</button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Setup Pricing\" *ngIf=\"event.Id != null\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-form\" #addPricingForm=\"ngForm\" (ngSubmit)=\"addPricing(addPricingForm)\">\n\n          <mat-form-field primary>\n            <input matInput  type=\"text\" placeholder=\"Label\" #Label=\"ngModel\" [(ngModel)]=\"addPricingFormData.label\" name=\"Label\" >\n          </mat-form-field>\n          <mat-form-field primary>\n            <input matInput type=\"number\" placeholder=\"Value\" #Value=\"ngModel\" [(ngModel)]=\"addPricingFormData.value\" name=\"Value\" >\n          </mat-form-field>\n          <mat-form-field primary>\n            <input matInput type=\"text\" placeholder=\"Description\" #Desc=\"ngModel\" [(ngModel)]=\"addPricingFormData.desc\" name=\"Desc\" >\n          </mat-form-field>\n          <button mat-button type=\"submit\" color=\"primary\" >Add</button>\n        </form>\n        <span class=\"tollbar-splitter\"></span>\n\n      </mat-toolbar-row>\n    </mat-toolbar>\n\n    <mat-list>\n      <mat-list-item *ngFor=\"let price of eventLayout.priceList\">\n        <mat-icon class=\"pricing_color_icon\" matListIcon [(colorPicker)]=\"price.color\" [style.color]=\"price.color\">event_seat</mat-icon>\n        <h3 matLine> {{ price.label }} </h3>\n        <p matLine>\n          <span> {{ price.value }} </span>\n          <span class=\"demo-2\"> -- {{ price.desc }} </span>\n        </p>\n\n        <button *ngIf=\"price.name != 'default'\" mat-icon-button><mat-icon>delete</mat-icon></button>\n      </mat-list-item>\n    </mat-list>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Mark Pricing\" *ngIf=\"eventLayout.layout_type == 'box' && event.Id != null\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-form\" #markPricingForm=\"ngForm\" (ngSubmit)=\"markPricing(markPricingForm)\">\n\n          <mat-form-field>\n            <mat-select placeholder=\"Select Price\" #GroupSelect=\"ngModel\" [(ngModel)]=\"markPricingFormData.price_index\" name=\"PriceSelect\">\n              <mat-option *ngFor=\"let price of eventLayout.priceList;let i = index\" [value]=\"i\">\n                {{ price['label'] }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field>\n            <mat-select placeholder=\"Select Group\" #GroupSelect=\"ngModel\" [(ngModel)]=\"markPricingFormData.group_index\" name=\"GroupSelect\">\n              <mat-option *ngFor=\"let group of layout_groups;let i = index\" [value]=\"i\">\n                {{ group.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markPricingFormData.group_index != -1\">\n            <mat-select  #RowSelect placeholder=\"Select Row\" [(ngModel)]=\"markPricingFormData.row_index\" name=\"RowSelect\">\n              <mat-option *ngFor=\"let row of layout_groups[markPricingFormData.group_index].rows ;let j = index\" [value]=\"j\">\n                {{ row.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markPricingFormData.row_index != -1\">\n            <mat-select  #StartColSelect placeholder=\"Select Start Column\" [(ngModel)]=\"markPricingFormData.start_col_index\" name=\"StartColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markPricingFormData.group_index].rows[markPricingFormData.row_index].cols ;let k = index\" [value]=\"k\">\n                {{ k }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markPricingFormData.row_index != -1\">\n            <mat-select  #EndColSelect placeholder=\"Select End Column\" [(ngModel)]=\"markPricingFormData.end_col_index\" name=\"EndColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markPricingFormData.group_index].rows[markPricingFormData.row_index].cols;let l = index\" [value]=\"l\">\n                {{ l }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n          <button mat-button type=\"submit\" color=\"primary\" >Mark Pricing</button>\n        </form>\n        <span class=\"tollbar-splitter\"></span>\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\">\n          <mat-divider></mat-divider>\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.type != 'active'\" [matTooltip]=\"col.number\" class=\"seat-button\" disabled  mat-icon-button><mat-icon [style.color]=\"eventLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col.type == 'active'\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+eventLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"eventLayout.priceMap[col.price].color\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n          <tr *ngIf=\"group != null && group.rows != null && group.rows[0] != null\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ group.name }}</button>\n            </td>\n            <td *ngFor=\"let col of group.rows[0].cols; let m = index\" class=\"seat-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ m }}</button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Confirm Details\" *ngIf=\"event.Id != null\">\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\" disabled>\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.type != 'active'\" [matTooltip]=\"col.number\" class=\"seat-button\" disabled  mat-icon-button><mat-icon [style.color]=\"eventLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col.type == 'active'\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+eventLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"eventLayout.priceMap[col.price].color\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button (click)=\"upsertLayout()\">UPSERT LAYOUT</button>\n      <button mat-button matStepperPrevious>Back</button>\n    </div>\n  </mat-step>\n</mat-horizontal-stepper>\n"
+module.exports = "<div class=\"indicator\" [style.disply]=\"showOverlay\">\n  <svg width=\"16px\" height=\"12px\">\n    <polyline id=\"back\" points=\"1 6 4 6 6 11 10 1 12 6 15 6\"></polyline>\n    <polyline id=\"front\" points=\"1 6 4 6 6 11 10 1 12 6 15 6\"></polyline>\n  </svg>\n</div>\n<mat-horizontal-stepper>\n  <mat-step label=\"Setup Event Info\">\n    <mat-card class=\"new-event-card\">\n      <mat-card-title ><i class=\"material-icons\">today</i></mat-card-title>\n      <form class=\"new-event-form\" #eventCreationForm=\"ngForm\" >\n      <mat-card-content>\n          <mat-form-field class=\"full-width\">\n            <input matInput placeholder=\"Name\" #Name=\"ngModel\" [(ngModel)]=\"event.Name\" name=\"Name\" required>\n          </mat-form-field>\n          <mat-form-field class=\"forty-width fivepx-margin-right\">\n            <input matInput [min]=\"minDate\" [matDatepicker]=\"startdate\" placeholder=\"Start Date\" [(value)] = \"event.times['start']['date']\" disabled required>\n            <mat-datepicker-toggle matSuffix [for]=\"startdate\"></mat-datepicker-toggle>\n            <mat-datepicker disabled=\"false\" touchUi=\"true\" #startdate></mat-datepicker>\n          </mat-form-field>\n          <mat-form-field class=\"ten-width fivepx-margin-right\">\n            <mat-select placeholder=\"HH\" [value]=\"event['times']['start']['hh']\" name=\"shh\" required>\n              <mat-option *ngFor=\"let i of [1,2,3,4,5,6,7,8,9,10,11,12]\" [value]=\"i\">{{i}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field class=\"ten-width fivepx-margin-right\">\n            <mat-select placeholder=\"MM\" [value]=\"event['times']['start']['mm']\" name=\"smm\" required>\n              <mat-option *ngFor=\"let i of [0,1,2,3,4,5,6,7,8,9,10,11,12]\" [value]=\"i * 5\">{{i*5}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field class=\"ten-width fivepx-margin-right\">\n            <mat-select placeholder=\"\" [value]=\"event['times']['end']['period']\" name=\"sAMPM\">\n              <mat-option selected value=\"AM\">AM</mat-option>\n              <mat-option selected value=\"PM\">PM</mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field class=\"forty-width fivepx-margin-right\">\n            <input matInput [min]=\"event['times']['start']['date']\" [matDatepicker]=\"enddate\" placeholder=\"End Date\" [(value)] = \"event['times']['end']['date']\" required disabled>\n            <mat-datepicker-toggle matSuffix [for]=\"enddate\"></mat-datepicker-toggle>\n            <mat-datepicker disabled=\"false\" touchUi=\"true\" #enddate></mat-datepicker>\n          </mat-form-field>\n          <mat-form-field class=\"ten-width fivepx-margin-right\">\n            <mat-select placeholder=\"HH\" [(value)]=\"event['times']['end']['hh']\" name=\"ehh\" required>\n              <mat-option *ngFor=\"let i of [1,2,3,4,5,6,7,8,9,10,11,12]\" [value]=\"i\">{{i}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field class=\"ten-width fivepx-margin-right\">\n            <mat-select placeholder=\"MM\" [(value)]=\"event['times']['end']['mm']\" name=\"emm\" required>\n              <mat-option *ngFor=\"let i of [0,1,2,3,4,5,6,7,8,9,10,11,12]\" [value]=\"i * 5\">{{i*5}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field class=\"ten-width fivepx-margin-right\">\n            <mat-select placeholder=\"\" [(value)]=\"event['times']['end']['period']\" name=\"eAMPM\" required>\n              <mat-option selected value=\"AM\">AM</mat-option>\n              <mat-option selected value=\"PM\">PM</mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field class=\"full-width\">\n            <input matInput type=\"number\" placeholder=\"Default Price\" #Name=\"ngModel\" [(ngModel)]=\"defaultPrice['value']\" name=\"DefaultPrice\" required>\n          </mat-form-field>\n          <mat-form-field class=\"full-width\">\n            <input matInput type=\"text\" placeholder=\"Default Price Label\" #Name=\"ngModel\" [(ngModel)]=\"defaultPrice['label']\" name=\"DefaultPriceLabel\" required>\n          </mat-form-field>\n          <mat-form-field class=\"full-width\">\n            <input matInput type=\"text\" placeholder=\"Default Price Description\" #Name=\"ngModel\" [(ngModel)]=\"defaultPrice['desc']\" name=\"DefaultPriceDesc\" required>\n          </mat-form-field>\n            <mat-form-field class=\"full-width\">\n            <textarea matInput placeholder=\"Description\" #Desc=\"ngModel\" [(ngModel)]=\"event.Desc\" name=\"Description\" required></textarea>\n          </mat-form-field>\n          <mat-form-field class=\"half-width\">\n          <mat-select  placeholder=\"Select EventType\" [(value)]=\"event.EventTypeId\"  name=\"EventType\">\n              <mat-option *ngFor=\"let eventType of eventTypes\" value=\"{{eventType.Id}}\">{{eventType.Name}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field class=\"half-width\">\n            <mat-select placeholder=\"Select Event venue\" [(value)]=\"event.EventVenueId\"  name=\"EventVenue\" >\n              <mat-option *ngFor=\"let eventVenue of eventVenues\" value=\"{{eventVenue.Id}}\" >{{eventVenue.Name}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n      </mat-card-content>\n      </form>\n    </mat-card>\n    <div>\n      <button  mat-button type=\"submit\" (click)=\"upsertEvent()\">UPSERT</button>\n      <button  *ngIf=\"event['Id'] != null && event['Id'] != undefined\" mat-button matStepperNext >NEXT</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Setup Banners\" *ngIf=\"event.Id != null\">\n    <mat-card>\n      <mat-card-content>\n        <img [src]=\"this.event.images['banner'].url\" onerror=\"this.src='https://algovent-s3-static.s3.amazonaws.com/eventico/media/default_bannger.jpg'\">\n      </mat-card-content>\n      <mat-divider></mat-divider>\n      <mat-card-actions>\n        <input type=\"file\"   (change)=\"handleFileInput($event.target.files)\">\n        <button mat-button  *ngIf=\"this.event.images['banner'].url != ''\" color=\"warning\"> REMOVE</button>\n      </mat-card-actions>\n    </mat-card>\n  <div>\n    <button  mat-button matStepperPrevious>BACK</button>\n    <button  mat-button matStepperNext >NEXT</button>\n  </div>\n  </mat-step>\n\n  <mat-step label=\"Mark Unavailability\" *ngIf=\"event.LayoutType == 'box' && event.Id != null\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-form\" #markNAForm=\"ngForm\" (ngSubmit)=\"markNA(markNAForm)\">\n\n          <mat-form-field>\n            <mat-select placeholder=\"Select Group\" #GroupSelect=\"ngModel\" [(ngModel)]=\"markNAFormData.group_index\" name=\"GroupSelect\">\n              <mat-option *ngFor=\"let group of layout_groups;let i = index\" [value]=\"i\">\n                {{ group.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markNAFormData.group_index != -1\">\n            <mat-select  #RowSelect placeholder=\"Select Row\" [(ngModel)]=\"markNAFormData.row_index\" name=\"RowSelect\">\n              <mat-option *ngFor=\"let row of layout_groups[markNAFormData.group_index].rows ;let j = index\" [value]=\"j\">\n                {{ row.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markNAFormData.row_index != -1\">\n            <mat-select  #StartColSelect placeholder=\"Select Start Column\" [(ngModel)]=\"markNAFormData.start_col_index\" name=\"StartColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markNAFormData.group_index].rows[markNAFormData.row_index].cols ;let k = index\" [value]=\"k\">\n                {{ k }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markNAFormData.row_index != -1\">\n            <mat-select  #EndColSelect placeholder=\"Select End Column\" [(ngModel)]=\"markNAFormData.end_col_index\" name=\"EndColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markNAFormData.group_index].rows[markNAFormData.row_index].cols;let l = index\" [value]=\"l\">\n                {{ l }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n          <button mat-button type=\"submit\" color=\"primary\" >Mark N/A</button>\n        </form>\n        <span class=\"tollbar-splitter\"></span>\n\n        <button  mat-button [(colorPicker)]=\"eventLayout.typeColors.path\" [cpPosition]=\"'left'\">Path Color</button>\n        <button  mat-button [(colorPicker)]=\"eventLayout.typeColors.na\" [cpPosition]=\"'left'\">N/A Color</button>\n\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\">\n          <mat-divider></mat-divider>\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button [matTooltip]=\"col.number\" class=\"seat-button\" [disabled]=\"eventLayout.typeActionDisabled[col.type]\"  mat-icon-button><mat-icon [style.color]=\"eventLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n          <tr *ngIf=\"group != null && group.rows != null && group.rows[0] != null\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ group.name }}</button>\n            </td>\n            <td *ngFor=\"let col of group.rows[0].cols; let m = index\" class=\"seat-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ m }}</button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Setup Pricing\" *ngIf=\"event.Id != null\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-form\" #addPricingForm=\"ngForm\" (ngSubmit)=\"addPricing(addPricingForm)\">\n\n          <mat-form-field primary>\n            <input matInput  type=\"text\" placeholder=\"Label\" #Label=\"ngModel\" [(ngModel)]=\"addPricingFormData.label\" name=\"Label\" >\n          </mat-form-field>\n          <mat-form-field primary>\n            <input matInput type=\"number\" placeholder=\"Value\" #Value=\"ngModel\" [(ngModel)]=\"addPricingFormData.value\" name=\"Value\" >\n          </mat-form-field>\n          <mat-form-field primary>\n            <input matInput type=\"text\" placeholder=\"Description\" #Desc=\"ngModel\" [(ngModel)]=\"addPricingFormData.desc\" name=\"Desc\" >\n          </mat-form-field>\n          <button mat-button type=\"submit\" color=\"primary\" >Add</button>\n        </form>\n        <span class=\"tollbar-splitter\"></span>\n\n      </mat-toolbar-row>\n    </mat-toolbar>\n\n    <mat-list>\n      <mat-list-item *ngFor=\"let price of eventLayout.priceList\">\n        <mat-icon class=\"pricing_color_icon\" matListIcon [(colorPicker)]=\"price.color\" [style.color]=\"price.color\">event_seat</mat-icon>\n        <h3 matLine> {{ price.label }} </h3>\n        <p matLine>\n          <span> {{ price.value }} </span>\n          <span class=\"demo-2\"> -- {{ price.desc }} </span>\n        </p>\n\n        <button *ngIf=\"price.name != 'default'\" mat-icon-button><mat-icon>delete</mat-icon></button>\n      </mat-list-item>\n    </mat-list>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Mark Pricing\" *ngIf=\"eventLayout.layout_type == 'box' && event.Id != null\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-form\" #markPricingForm=\"ngForm\" (ngSubmit)=\"markPricing(markPricingForm)\">\n\n          <mat-form-field>\n            <mat-select placeholder=\"Select Price\" #GroupSelect=\"ngModel\" [(ngModel)]=\"markPricingFormData.price_index\" name=\"PriceSelect\">\n              <mat-option *ngFor=\"let price of eventLayout.priceList;let i = index\" [value]=\"i\">\n                {{ price['label'] }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field>\n            <mat-select placeholder=\"Select Group\" #GroupSelect=\"ngModel\" [(ngModel)]=\"markPricingFormData.group_index\" name=\"GroupSelect\">\n              <mat-option *ngFor=\"let group of layout_groups;let i = index\" [value]=\"i\">\n                {{ group.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markPricingFormData.group_index != -1\">\n            <mat-select  #RowSelect placeholder=\"Select Row\" [(ngModel)]=\"markPricingFormData.row_index\" name=\"RowSelect\">\n              <mat-option *ngFor=\"let row of layout_groups[markPricingFormData.group_index].rows ;let j = index\" [value]=\"j\">\n                {{ row.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markPricingFormData.row_index != -1\">\n            <mat-select  #StartColSelect placeholder=\"Select Start Column\" [(ngModel)]=\"markPricingFormData.start_col_index\" name=\"StartColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markPricingFormData.group_index].rows[markPricingFormData.row_index].cols ;let k = index\" [value]=\"k\">\n                {{ k }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markPricingFormData.row_index != -1\">\n            <mat-select  #EndColSelect placeholder=\"Select End Column\" [(ngModel)]=\"markPricingFormData.end_col_index\" name=\"EndColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markPricingFormData.group_index].rows[markPricingFormData.row_index].cols;let l = index\" [value]=\"l\">\n                {{ l }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n          <button mat-button type=\"submit\" color=\"primary\" >Mark Pricing</button>\n        </form>\n        <span class=\"tollbar-splitter\"></span>\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\">\n          <mat-divider></mat-divider>\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.type != 'active'\" [matTooltip]=\"col.number\" class=\"seat-button\" disabled  mat-icon-button><mat-icon [style.color]=\"eventLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col.type == 'active'\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+eventLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"eventLayout.priceMap[col.price].color\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n          <tr *ngIf=\"group != null && group.rows != null && group.rows[0] != null\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ group.name }}</button>\n            </td>\n            <td *ngFor=\"let col of group.rows[0].cols; let m = index\" class=\"seat-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ m }}</button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Confirm Details\" *ngIf=\"event.Id != null\">\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\" disabled>\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.type != 'active'\" [matTooltip]=\"col.number\" class=\"seat-button\" disabled  mat-icon-button><mat-icon [style.color]=\"eventLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col.type == 'active'\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+eventLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"eventLayout.priceMap[col.price].color\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button (click)=\"upsertLayout()\">UPSERT LAYOUT</button>\n      <button mat-button matStepperPrevious>Back</button>\n    </div>\n  </mat-step>\n</mat-horizontal-stepper>\n"
 
 /***/ }),
 
@@ -2587,6 +2880,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _event_types_new_event_type_new_event_type_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./event-types/new-event-type/new-event-type.component */ "./src/app/event-types/new-event-type/new-event-type.component.ts");
 /* harmony import */ var _event_venues_event_venues_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./event-venues/event-venues.component */ "./src/app/event-venues/event-venues.component.ts");
 /* harmony import */ var _event_venues_new_event_venue_new_event_venue_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./event-venues/new-event-venue/new-event-venue.component */ "./src/app/event-venues/new-event-venue/new-event-venue.component.ts");
+/* harmony import */ var _bookings_bookings_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./bookings/bookings.component */ "./src/app/bookings/bookings.component.ts");
+/* harmony import */ var _bookings_booking_booking_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./bookings/booking/booking.component */ "./src/app/bookings/booking/booking.component.ts");
+
+
 
 
 
@@ -2606,6 +2903,8 @@ var appRoutes = [
     { path: 'event-types/event-type', component: _event_types_new_event_type_new_event_type_component__WEBPACK_IMPORTED_MODULE_7__["NewEventTypeComponent"] },
     { path: 'event-venues', component: _event_venues_event_venues_component__WEBPACK_IMPORTED_MODULE_8__["EventVenuesComponent"] },
     { path: 'event-venues/event-venue', component: _event_venues_new_event_venue_new_event_venue_component__WEBPACK_IMPORTED_MODULE_9__["NewEventVenueComponent"] },
+    { path: 'bookings', component: _bookings_bookings_component__WEBPACK_IMPORTED_MODULE_10__["BookingsComponent"] },
+    { path: 'bookings/booking', component: _bookings_booking_booking_component__WEBPACK_IMPORTED_MODULE_11__["BookingComponent"] },
     { path: '**', component: _events_events_component__WEBPACK_IMPORTED_MODULE_4__["EventsComponent"] }
 ];
 
@@ -2669,6 +2968,8 @@ var ApiFactoryService = /** @class */ (function () {
         this.api_map.set('GET_EVENT_TYPES', '/eventtypes/');
         //layout
         this.api_map.set('UPSERT_LAYOUT', '/layout/upsert/');
+        //booking service
+        this.api_map.set('SKIP_AND_BOOK', '/bookings/skip-and-book/');
     };
     ApiFactoryService.prototype.getApi = function (api_name) {
         var api = this.api_map.get(api_name);
@@ -2844,6 +3145,110 @@ var RestService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/shared/booking-layout.model.ts":
+/*!************************************************!*\
+  !*** ./src/app/shared/booking-layout.model.ts ***!
+  \************************************************/
+/*! exports provided: BookingLayout */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookingLayout", function() { return BookingLayout; });
+/* harmony import */ var _layout_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./layout.model */ "./src/app/shared/layout.model.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+var BookingLayout = /** @class */ (function (_super) {
+    __extends(BookingLayout, _super);
+    function BookingLayout(layout, mode) {
+        var _this = _super.call(this, mode) || this;
+        _this.selection_info = {
+            total: 0,
+            qty: 0,
+            selection_summary: [],
+            summary_map: {},
+            selected_seats: {},
+        };
+        _this.import(layout);
+        return _this;
+    }
+    BookingLayout.prototype.pollAndUpdate = function () {
+    };
+    BookingLayout.prototype.updateEventLayout = function () {
+    };
+    BookingLayout.prototype.selectSeat = function (seat) {
+        console.log(seat);
+        var summary = this.selection_info['selection_summary'];
+        var summary_map = this.selection_info['summary_map'];
+        var selection = seat['selected'];
+        if (selection != true) {
+            seat['selected'] = true;
+            var price_val = this.priceMap[seat.price].value;
+            var summary_unit = summary_map[seat.price];
+            this.selection_info.selected_seats[seat.lid] = seat;
+            if (summary_unit) {
+                summary_unit['qty'] = summary_unit['qty'] + 1;
+                summary_unit['sub_total'] = summary_unit['sub_total'] + price_val;
+            }
+            else {
+                summary_unit = { qty: 1, price: seat.price, sub_total: price_val };
+                summary_map[seat.price] = summary_unit;
+                summary.push(summary_unit);
+            }
+            this.selection_info['total'] = this.selection_info['total'] + price_val;
+            this.selection_info['qty'] = this.selection_info['qty'] + 1;
+        }
+        else {
+            seat['selected'] = false;
+            var price_val = this.priceMap[seat.price].value;
+            var summary_unit = summary_map[seat.price];
+            if (summary_unit) {
+                summary_unit['qty'] = summary_unit['qty'] - 1;
+                summary_unit['sub_total'] = summary_unit['sub_total'] - price_val;
+                this.selection_info['total'] = this.selection_info['total'] - price_val;
+                this.selection_info['qty'] = this.selection_info['qty'] - 1;
+                delete this.selection_info.selected_seats[seat.lid];
+            }
+        }
+    };
+    BookingLayout.prototype.removeSelection = function (summary_unit) {
+        var seat_price = summary_unit.price;
+        for (var key in this.selection_info.selected_seats) {
+            var seat = this.selection_info.selected_seats[key];
+            if (seat.price == seat_price) {
+                seat['selected'] = false;
+                delete this.selection_info.selected_seats[seat.lid];
+            }
+        }
+        this.selection_info['total'] = this.selection_info['total'] - summary_unit['sub_total'];
+        this.selection_info['qty'] = this.selection_info['qty'] - summary_unit['qty'];
+        this.resetSummaryUnit(summary_unit);
+    };
+    BookingLayout.prototype.resetSummaryUnit = function (summary_unit) {
+        summary_unit['qty'] = 0;
+        summary_unit['sub_total'] = 0;
+    };
+    BookingLayout.prototype.export_selected_seats = function () {
+        return this.selection_info.selected_seats;
+    };
+    BookingLayout.prototype.getBlockedSeats = function () {
+    };
+    return BookingLayout;
+}(_layout_model__WEBPACK_IMPORTED_MODULE_0__["Layout"]));
+
+
+
+/***/ }),
+
 /***/ "./src/app/shared/event-layout.model.ts":
 /*!**********************************************!*\
   !*** ./src/app/shared/event-layout.model.ts ***!
@@ -2986,7 +3391,9 @@ var EventVenueLayout = /** @class */ (function (_super) {
             var row = { name: i + 1, cols: [], sequence: this.currentSequences[group.sequence].currentRowSequence };
             this.currentSequences[group.sequence].rows[row.sequence] = { currentColSequence: 1, next_col_index: 0 };
             for (var j = 0; j < gData.cols; j++) {
-                var col = { number: j + 1, sequence: this.currentSequences[group.sequence].rows[row.sequence].currentColSequence, type: 'active', price: 'default' };
+                var col_seq = this.currentSequences[group.sequence].rows[row.sequence].currentColSequence;
+                var lid = String(group.sequence) + '_' + String(row.sequence) + '_' + String(col_seq);
+                var col = { number: j + 1, sequence: col_seq, type: 'active', price: 'default', lid: lid };
                 row.cols.push(col);
                 this.currentSequences[group.sequence].rows[row.sequence].currentColSequence = this.currentSequences[group.sequence].rows[row.sequence].currentColSequence + 1;
                 this.currentSequences[group.sequence].rows[row.sequence].next_col_index = this.currentSequences[group.sequence].rows[row.sequence].next_col_index + 1;
@@ -3074,10 +3481,11 @@ var Layout = /** @class */ (function () {
     function Layout(mode) {
         this.currentSequences = { currentGroupSequence: 1, next_group_index: 0 };
         this.groups = [];
-        this.typeColors = { active: '#acb19b', na: '#d1d2cf', path: '#acb19b', blank: '#00000000' };
+        this.typeColors = { active: '#acb19b', na: '#d1d2cf', path: '#acb19b', blank: '#00000000', selected: '#d1d2cf', blocked: '#d1d2cf' };
         this.typeIcons = { active: 'event_seat', na: 'event_seat', path: 'reorder', blank: 'event_seat' };
         this.typeActionDisabled = { active: 'false', na: 'true', path: 'true', blank: 'true' };
         this.layout_type = 'none';
+        this.lid_col_map = {};
         this.priceList = [
             {
                 value: 0,
@@ -3139,7 +3547,7 @@ var Layout = /** @class */ (function () {
         }
     };
     Layout.prototype.import = function (layout) {
-        if (layout != null && this.mode == 'edit') {
+        if (layout != null && this.mode == 'edit' && Object.keys(layout).length > 0) {
             var inp_layout = layout['layout'];
             this.currentSequences = inp_layout["currentSequences"];
             this.groups = inp_layout["groups"];
@@ -3150,6 +3558,7 @@ var Layout = /** @class */ (function () {
             this.importPriceList(inp_layout["priceList"]);
             this.Id = layout["id"];
             this.updatePricingMap();
+            this.generateLidColMap();
         }
     };
     Layout.prototype.importPriceList = function (inpPriceList) {
@@ -3201,6 +3610,16 @@ var Layout = /** @class */ (function () {
             this.priceMap[price.name] = price;
         }
     };
+    Layout.prototype.generateLidColMap = function () {
+        for (var i = 0; i < this.groups.length; i++) {
+            for (var j = 0; j < this.groups[i].rows.length; j++) {
+                for (var k = 0; k < this.groups[i].rows[j].cols.length; k++) {
+                    var col = this.groups[i].rows[j].cols[k];
+                    this.lid_col_map[col.lid] = col;
+                }
+            }
+        }
+    };
     return Layout;
 }());
 
@@ -3224,7 +3643,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 var environment = {
     production: false,
-    api: 'http://127.0.0.1:8000',
+    api: 'https://www.eventico.algovent.com',
 };
 
 
