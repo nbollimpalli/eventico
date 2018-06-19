@@ -45,14 +45,8 @@ INSTALLED_APPS = [
     'storages',
     'file_manager',
     'bookings',
-    'django_seo_js',
 ]
 
-
-MIDDLEWARE_CLASSES = (
-    'django_seo_js.middleware.EscapedFragmentMiddleware',  # If you're using #!
-    'django_seo_js.middleware.UserAgentMiddleware',  # If you want to detect by user agent
-)
 
 
 JWT_AUTH = {
@@ -199,16 +193,3 @@ EMAIL_HOST_USER = 'naveen@algovent.com'
 EMAIL_HOST_PASSWORD = 'chinnu@8M'
 EMAIL_PORT = '587'
 EMAIL_USE_TLS ='true'
-
-
-SEO_JS_PRERENDER_TOKEN = "123456789abcdefghijkl"
-
-SEO_JS_USER_AGENTS = [
-    "Googlebot",
-    "Yahoo",
-    "bingbot",
-    "Badiu",
-    "Ask Jeeves",
-    "facebookexternalhit/",
-    "Facebot",
-]
