@@ -17,9 +17,14 @@ from rest_framework_jwt.settings import api_settings
 from events.services.layout_service import LayoutService
 jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
 jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
+import os
 
 def index(request):
-    return render_to_response('index.html')
+    js_path = "eventico/static/js"  # insert the path to your directory
+    css_path = "eventico/static/css"  # insert the path to your directory
+    js_list = os.listdir(js_path)
+    css_list = os.listdir(css_path)
+    return render_to_response('index.html', {'js_list': js_list, 'css_list' : css_list})
 
 @api_view(['GET'])
 @permission_classes([AllowAny])

@@ -6,50 +6,62 @@ module.exports = function(grunt) {
     watch: {
       css: {
         files: [
-          '**/*.sass',
-          '**/*.scss'
+          'src/app/**/*.css'
         ],
-        tasks: ['compass', 'copy']
-      },
-      js: {
-        files: [
-          'assets/js/*.js',
-          'Gruntfile.js'
-        ],
-        tasks: ['jshint', 'copy']
-      }
-    },
-    compass: {
-      dist: {
         options: {
-          sassDir: 'assets/sass',
-          cssDir: 'assets/css',
-          outputStyle: 'compressed'
-        }
+          debounceDelay: 10000,
+        },
+        tasks: ['exec', 'clean', 'copy']
+      },
+      ts: {
+        files: [
+          'src/app/**/*.ts'
+        ],
+        options: {
+          debounceDelay: 10000,
+        },
+        tasks: ['exec', 'clean', 'copy']
+      },
+      templates: {
+        files: [
+          'src/app/**/*.html'
+        ],
+        options: {
+          debounceDelay: 10000,
+        },
+        tasks: ['exec', 'clean', 'copy']
       }
     },
-    jshint: {
+    clean: {
+      build: ['../eventico/static/js/*', '../eventico/static/css/*'],
+      release: ['../eventico/static/js/*', '../eventico/static/js/*'],
       options: {
-        jshintrc: '.jshintrc'
-      },
-      all: ['Gruntfile.js', 'assets/js/*.js']
+        'force': true
+      }
     },
     copy: {
       main: {
         files: [
-          {expand: true, src: ['dist/*js'], dest: '../eventico/static/', filter: 'isFile', flatten: true},
-          {expand: true, src: ['dist/*map'], dest: '../eventico/static/', filter: 'isFile', flatten: true},
-          {expand: true, src: ['dist/*js'], dest: '../static/', filter: 'isFile', flatten: true},
-          {expand: true, src: ['dist/*map'], dest: '../static/', filter: 'isFile', flatten: true},
+
+          {expand: true, src: ['dist/*js'], dest: '../eventico/static/js/', filter: 'isFile', flatten: true},
+          {expand: true, src: ['dist/*js'], dest: '../static/js/', filter: 'isFile', flatten: true},
+          {expand: true, src: ['dist/*css'], dest: '../eventico/static/css/', filter: 'isFile', flatten: true},
+          {expand: true, src: ['dist/*css'], dest: '../static/css/', filter: 'isFile', flatten: true},
+          {expand: true, src: ['dist/*ico'], dest: '../eventico/static/', filter: 'isFile', flatten: true},
+          {expand: true, src: ['dist/*ico'], dest: '../static/', filter: 'isFile', flatten: true},
         ],
       },
-    }
+    },
+    exec: {
+      //build: 'ng build',
+      build: 'ng build --prod --configuration=production'
+    },
   });
 
   // Load the Grunt plugins.
-  grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-exec');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-copy');
   // Register the default tasks.
   grunt.registerTask('default', ['watch']);
