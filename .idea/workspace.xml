@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4aa6be1b-e7e7-4311-ab0f-471f7feaa3e5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/Gruntfile.js" afterPath="$PROJECT_DIR$/eventicoUI/Gruntfile.js" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/bookings/bookings.component.ts" afterPath="$PROJECT_DIR$/eventicoUI/src/app/bookings/bookings.component.ts" />
-      <change beforePath="$PROJECT_DIR$/static/js/main.cafb4a35f97c746ba917.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/js/main.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/js/polyfills.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/js/runtime.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/js/scripts.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/js/styles.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/js/vendor.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/main.cafb4a35f97c746ba917.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/polyfills.940400eaaf3650744685.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/runtime.a66f828dca56eeb90e02.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/scripts.f8d693d866da2a0693e5.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/styles.0d178babc2a1788a6365.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/vendor.b3a17632460d5c5017b1.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/app.module.ts" afterPath="$PROJECT_DIR$/eventicoUI/src/app/app.module.ts" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,7 +23,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/app.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eventicoUI/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="752">
@@ -188,7 +183,6 @@
         <option value="$PROJECT_DIR$/users/models.py" />
         <option value="$PROJECT_DIR$/users/views.py" />
         <option value="$PROJECT_DIR$/bookings/models.py" />
-        <option value="$PROJECT_DIR$/eventicoUI/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/eventicoUI/src/app/shared-services/seo.service.ts" />
         <option value="$PROJECT_DIR$/eventicoUI/src/app/bookings/booking/booking.component.ts" />
         <option value="$PROJECT_DIR$/eventicoUI/angular.json" />
@@ -202,6 +196,7 @@
         <option value="$PROJECT_DIR$/eventicoUI/src/environments/environment.prod.ts" />
         <option value="$PROJECT_DIR$/eventicoUI/Gruntfile.js" />
         <option value="$PROJECT_DIR$/eventicoUI/src/app/bookings/bookings.component.ts" />
+        <option value="$PROJECT_DIR$/eventicoUI/src/app/app.module.ts" />
       </list>
     </option>
   </component>
@@ -238,13 +233,26 @@
             <path>
               <item name="eventico" type="b2602c69:ProjectViewProjectNode" />
               <item name="eventico" type="462c0819:PsiDirectoryNode" />
-              <item name="eventico" type="462c0819:PsiDirectoryNode" />
+              <item name="eventicoUI" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="eventico" type="b2602c69:ProjectViewProjectNode" />
               <item name="eventico" type="462c0819:PsiDirectoryNode" />
+              <item name="eventicoUI" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eventico" type="b2602c69:ProjectViewProjectNode" />
               <item name="eventico" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="eventicoUI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eventico" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eventico" type="462c0819:PsiDirectoryNode" />
+              <item name="eventicoUI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="eventico" type="b2602c69:ProjectViewProjectNode" />
@@ -313,8 +321,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="0" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291262" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291262" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -538,14 +547,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="95" column="25" lean-forward="false" selection-start-line="95" selection-start-column="25" selection-end-line="95" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/shared-services/seo.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -765,6 +766,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="752">
           <caret line="54" column="8" lean-forward="false" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
           <folding />
         </state>
       </provider>
