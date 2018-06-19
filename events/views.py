@@ -17,6 +17,7 @@ from rest_framework_jwt.settings import api_settings
 from events.services.layout_service import LayoutService
 jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
 jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
+from metadata_service.metadata_service import *
 import os
 
 def index(request):
@@ -25,7 +26,8 @@ def index(request):
     js_list = os.listdir(js_path)
     css_list = os.listdir(css_path)
     user_agent = request.META['HTTP_USER_AGENT']
-    return render_to_response('index.html', {'js_list': js_list, 'css_list' : css_list})
+    metadata_details = MetadataService(EVENT_METADATA, {})
+    return render_to_response('index.html', {'js_list': js_list, 'css_list' : css_list, 'metadata_details': metadata_details})
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
