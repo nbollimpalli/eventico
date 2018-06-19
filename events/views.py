@@ -24,6 +24,7 @@ def index(request):
     css_path = "eventico/static/css"  # insert the path to your directory
     js_list = os.listdir(js_path)
     css_list = os.listdir(css_path)
+    user_agent = request.META['HTTP_USER_AGENT']
     return render_to_response('index.html', {'js_list': js_list, 'css_list' : css_list})
 
 @api_view(['GET'])
