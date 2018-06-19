@@ -39,7 +39,7 @@
         </div>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button [routerLink]="['bookings/booking?mid=EVENT_METADATA',{event_id: event.Id}]" color="#cc3333cc" >Book</button>
+        <button mat-button [routerLink]="['bookings/booking',{event_id: event.Id}]" color="#cc3333cc" >Book</button>
         <span class="toolbar-splitter"></span>
         <button mat-icon-button routerLink=""><mat-icon aria-label="Settings">share</mat-icon></button>
         <button mat-icon-button [routerLink]="['events/event',{id: event.Id }]"><mat-icon aria-label="Edit">edit</mat-icon></button>

@@ -5,6 +5,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    url(r'^meta/$', views.metadata_loader),
     url(r'^eventvenue/create/$', views.create_event_venue),
     url(r'^eventvenue/update/$', views.update_event_venue),
     url(r'^eventprice/create/$', views.create_event_price),
