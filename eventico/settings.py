@@ -203,12 +203,12 @@ EMAIL_USE_TLS ='true'
 
 SEO_JS_PRERENDER_TOKEN = "123456789abcdefghijkl"
 
-# SEO_JS_USER_AGENTS = [
-#     "Googlebot",
-#     "Yahoo",
-#     "bingbot",
-#     "Badiu",
-#     "Ask Jeeves",
-#     "facebookexternalhit/",
-#     "Facebot",
-# ]
+SEO_JS_USER_AGENTS = [
+    "Googlebot",
+    "Yahoo",
+    "bingbot",
+    "Badiu",
+    "Ask Jeeves",
+    "facebookexternalhit/",
+    "Facebot",
+]

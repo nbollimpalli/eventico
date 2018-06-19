@@ -56,7 +56,7 @@ export class BookingComponent implements OnInit {
       );
     }
   }
-  
+
   skipAndBook()
   {
     this.bookingService.skipAndBook(this.booking)
