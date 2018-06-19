@@ -21,6 +21,7 @@ export class BookingComponent implements OnInit {
   bookingLayout : BookingLayout;
   constructor(private bookingService : BookingService, private eventService : EventService, private router : Router, private route : ActivatedRoute, public snackBar: MatSnackBar, private seo: SeoService)
   {
+    this.updateMetaData();
     this.route.params.subscribe(params => this.setupBooking(params['event_id'], params['id']));
   }
 
@@ -50,7 +51,7 @@ export class BookingComponent implements OnInit {
       this.eventService.getEvent(event_id)
       .subscribe( (data) => {
         this.booking.import(data);
-        this.updateMetaData();
+        //this.updateMetaData();
       }
       );
     }
@@ -82,9 +83,9 @@ export class BookingComponent implements OnInit {
   updateMetaData()
   {
     var config = {
-      title : this.event.Name,
-      desc : this.event.Desc,
-      image_url : this.event.images['banner'].url,
+      title : 'Geethanjali',//this.event.Name,
+      desc : 'desc',//this.event.Desc,
+      image_url : 'https://algovent-s3-static.s3.amazonaws.com/eventico/media/Code_data_P0UNmn7.jpg'//this.event.images['banner'].url,
     }
     this.seo.generateTags(config);
   }
