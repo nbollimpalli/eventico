@@ -27,7 +27,8 @@ def index(request):
     css_list = os.listdir(css_path)
     user_agent = request.META['HTTP_USER_AGENT']
     metadata_details = MetadataService(EVENT_METADATA, {})
-    return render_to_response('index.html', {'js_list': js_list, 'css_list' : css_list, 'metadata_details': metadata_details})
+    metadata_details = metadata_details.fetch_metadata_details()
+    return render_to_response('index.html', {'js_list': js_list, 'css_list' : css_list, 'title' : metadata_details['title'], 'image_url':metadata_details['image_url'], 'desc':metadata_details['desc']})
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
