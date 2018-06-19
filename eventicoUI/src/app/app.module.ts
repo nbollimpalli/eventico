@@ -1,4 +1,4 @@
-import 'zone.js';
+import 'zone.js/dist/zone';  // Included with Angular CLI.
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
