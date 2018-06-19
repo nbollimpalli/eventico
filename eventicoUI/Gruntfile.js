@@ -33,8 +33,8 @@ module.exports = function(grunt) {
       }
     },
     clean: {
-      build: ['../eventico/static/js/*', '../eventico/static/css/*'],
-      release: ['../eventico/static/js/*', '../eventico/static/js/*'],
+      build: ['../eventico/static/js/*', '../eventico/static/css/*', '../static/js/*', '../static/css/*'],
+      release: ['../eventico/static/js/*', '../eventico/static/js/*', '../static/js/*', '../static/css/*'],
       options: {
         'force': true
       }
@@ -42,7 +42,6 @@ module.exports = function(grunt) {
     copy: {
       main: {
         files: [
-
           {expand: true, src: ['dist/*js'], dest: '../eventico/static/js/', filter: 'isFile', flatten: true},
           {expand: true, src: ['dist/*js'], dest: '../static/js/', filter: 'isFile', flatten: true},
           {expand: true, src: ['dist/*css'], dest: '../eventico/static/css/', filter: 'isFile', flatten: true},
