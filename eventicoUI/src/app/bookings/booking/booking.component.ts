@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { EventService } from '../../events/shared/event.service';
 import { BookingLayout } from '../../shared/booking-layout.model';
+import { MatSnackBar } from '@angular/material';
+import { SeoService } from '../../shared-services/seo.service';
 
 @Component({
   selector: 'app-booking',
@@ -17,7 +19,7 @@ export class BookingComponent implements OnInit {
   booking : Booking;
   event : Event;
   bookingLayout : BookingLayout;
-  constructor(private bookingService : BookingService, private eventService : EventService, private router : Router, private route : ActivatedRoute)
+  constructor(private bookingService : BookingService, private eventService : EventService, private router : Router, private route : ActivatedRoute, public snackBar: MatSnackBar, private seo: SeoService)
   {
     this.route.params.subscribe(params => this.setupBooking(params['event_id'], params['id']));
   }
@@ -48,6 +50,7 @@ export class BookingComponent implements OnInit {
       this.eventService.getEvent(event_id)
       .subscribe( (data) => {
         this.booking.import(data);
+        this.updateMetaData();
       }
       );
     }
@@ -57,8 +60,16 @@ export class BookingComponent implements OnInit {
   {
     this.bookingService.skipAndBook(this.booking)
     .subscribe( (data) => {
-      alert('booking made success');
-      this.router.navigate(['']);
+      var message = 'Booking Confirmed';
+      var action = '';
+      let booking_confirm_bar = this.snackBar.open(message, action, {
+        duration: 500,
+        verticalPosition : 'top',
+        horizontalPosition: 'right',
+      });
+      booking_confirm_bar.afterDismissed().subscribe(() => {
+        this.router.navigate(['']);
+      });
     }
     );
 
@@ -66,6 +77,16 @@ export class BookingComponent implements OnInit {
 
   get layout_groups(){
     return this.bookingLayout.groups;
+  }
+
+  updateMetaData()
+  {
+    var config = {
+      title : this.event.Name,
+      desc : this.event.Desc,
+      image_url : this.event.images['banner'].url,
+    }
+    this.seo.generateTags(config);
   }
 
 }

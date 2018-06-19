@@ -129,21 +129,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_services_rest_service__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./shared-services/rest.service */ "./src/app/shared-services/rest.service.ts");
 /* harmony import */ var _shared_services_datetime_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./shared-services/datetime.service */ "./src/app/shared-services/datetime.service.ts");
 /* harmony import */ var _bookings_shared_booking_service__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./bookings/shared/booking.service */ "./src/app/bookings/shared/booking.service.ts");
-/* harmony import */ var _event_user_register_register_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./event-user/register/register.component */ "./src/app/event-user/register/register.component.ts");
-/* harmony import */ var _event_user_login_login_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./event-user/login/login.component */ "./src/app/event-user/login/login.component.ts");
-/* harmony import */ var _event_user_settings_settings_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./event-user/settings/settings.component */ "./src/app/event-user/settings/settings.component.ts");
-/* harmony import */ var _event_user_event_user_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./event-user/event-user.component */ "./src/app/event-user/event-user.component.ts");
-/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
-/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
-/* harmony import */ var _events_events_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./events/events.component */ "./src/app/events/events.component.ts");
-/* harmony import */ var _events_new_event_new_event_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./events/new-event/new-event.component */ "./src/app/events/new-event/new-event.component.ts");
-/* harmony import */ var _event_types_event_types_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./event-types/event-types.component */ "./src/app/event-types/event-types.component.ts");
-/* harmony import */ var _event_types_new_event_type_new_event_type_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./event-types/new-event-type/new-event-type.component */ "./src/app/event-types/new-event-type/new-event-type.component.ts");
-/* harmony import */ var _event_venues_event_venues_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./event-venues/event-venues.component */ "./src/app/event-venues/event-venues.component.ts");
-/* harmony import */ var _event_venues_new_event_venue_new_event_venue_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./event-venues/new-event-venue/new-event-venue.component */ "./src/app/event-venues/new-event-venue/new-event-venue.component.ts");
-/* harmony import */ var _bookings_bookings_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./bookings/bookings.component */ "./src/app/bookings/bookings.component.ts");
-/* harmony import */ var _bookings_booking_booking_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./bookings/booking/booking.component */ "./src/app/bookings/booking/booking.component.ts");
-/* harmony import */ var _form_dialog_form_dialog_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./form-dialog/form-dialog.component */ "./src/app/form-dialog/form-dialog.component.ts");
+/* harmony import */ var _shared_services_seo_service__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./shared-services/seo.service */ "./src/app/shared-services/seo.service.ts");
+/* harmony import */ var _event_user_register_register_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./event-user/register/register.component */ "./src/app/event-user/register/register.component.ts");
+/* harmony import */ var _event_user_login_login_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./event-user/login/login.component */ "./src/app/event-user/login/login.component.ts");
+/* harmony import */ var _event_user_settings_settings_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./event-user/settings/settings.component */ "./src/app/event-user/settings/settings.component.ts");
+/* harmony import */ var _event_user_event_user_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./event-user/event-user.component */ "./src/app/event-user/event-user.component.ts");
+/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
+/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
+/* harmony import */ var _events_events_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./events/events.component */ "./src/app/events/events.component.ts");
+/* harmony import */ var _events_new_event_new_event_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./events/new-event/new-event.component */ "./src/app/events/new-event/new-event.component.ts");
+/* harmony import */ var _event_types_event_types_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./event-types/event-types.component */ "./src/app/event-types/event-types.component.ts");
+/* harmony import */ var _event_types_new_event_type_new_event_type_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./event-types/new-event-type/new-event-type.component */ "./src/app/event-types/new-event-type/new-event-type.component.ts");
+/* harmony import */ var _event_venues_event_venues_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./event-venues/event-venues.component */ "./src/app/event-venues/event-venues.component.ts");
+/* harmony import */ var _event_venues_new_event_venue_new_event_venue_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./event-venues/new-event-venue/new-event-venue.component */ "./src/app/event-venues/new-event-venue/new-event-venue.component.ts");
+/* harmony import */ var _bookings_bookings_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./bookings/bookings.component */ "./src/app/bookings/bookings.component.ts");
+/* harmony import */ var _bookings_booking_booking_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./bookings/booking/booking.component */ "./src/app/bookings/booking/booking.component.ts");
+/* harmony import */ var _form_dialog_form_dialog_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./form-dialog/form-dialog.component */ "./src/app/form-dialog/form-dialog.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -182,6 +183,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 //import { UpdateProfileComponent } from './event-user/settings/settings.component';
 
 
@@ -203,21 +205,21 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_17__["AppComponent"],
-                _event_user_register_register_component__WEBPACK_IMPORTED_MODULE_28__["RegisterComponent"],
-                _header_header_component__WEBPACK_IMPORTED_MODULE_32__["HeaderComponent"],
-                _footer_footer_component__WEBPACK_IMPORTED_MODULE_33__["FooterComponent"],
-                _events_events_component__WEBPACK_IMPORTED_MODULE_34__["EventsComponent"],
-                _event_user_login_login_component__WEBPACK_IMPORTED_MODULE_29__["LoginComponent"],
-                _events_new_event_new_event_component__WEBPACK_IMPORTED_MODULE_35__["NewEventComponent"],
-                _event_types_event_types_component__WEBPACK_IMPORTED_MODULE_36__["EventTypesComponent"],
-                _event_types_new_event_type_new_event_type_component__WEBPACK_IMPORTED_MODULE_37__["NewEventTypeComponent"],
-                _event_venues_event_venues_component__WEBPACK_IMPORTED_MODULE_38__["EventVenuesComponent"],
-                _event_venues_new_event_venue_new_event_venue_component__WEBPACK_IMPORTED_MODULE_39__["NewEventVenueComponent"],
-                _form_dialog_form_dialog_component__WEBPACK_IMPORTED_MODULE_42__["FormDialogComponent"],
-                _event_user_settings_settings_component__WEBPACK_IMPORTED_MODULE_30__["SettingsComponent"],
-                _event_user_event_user_component__WEBPACK_IMPORTED_MODULE_31__["EventUserComponent"],
-                _bookings_bookings_component__WEBPACK_IMPORTED_MODULE_40__["BookingsComponent"],
-                _bookings_booking_booking_component__WEBPACK_IMPORTED_MODULE_41__["BookingComponent"],
+                _event_user_register_register_component__WEBPACK_IMPORTED_MODULE_29__["RegisterComponent"],
+                _header_header_component__WEBPACK_IMPORTED_MODULE_33__["HeaderComponent"],
+                _footer_footer_component__WEBPACK_IMPORTED_MODULE_34__["FooterComponent"],
+                _events_events_component__WEBPACK_IMPORTED_MODULE_35__["EventsComponent"],
+                _event_user_login_login_component__WEBPACK_IMPORTED_MODULE_30__["LoginComponent"],
+                _events_new_event_new_event_component__WEBPACK_IMPORTED_MODULE_36__["NewEventComponent"],
+                _event_types_event_types_component__WEBPACK_IMPORTED_MODULE_37__["EventTypesComponent"],
+                _event_types_new_event_type_new_event_type_component__WEBPACK_IMPORTED_MODULE_38__["NewEventTypeComponent"],
+                _event_venues_event_venues_component__WEBPACK_IMPORTED_MODULE_39__["EventVenuesComponent"],
+                _event_venues_new_event_venue_new_event_venue_component__WEBPACK_IMPORTED_MODULE_40__["NewEventVenueComponent"],
+                _form_dialog_form_dialog_component__WEBPACK_IMPORTED_MODULE_43__["FormDialogComponent"],
+                _event_user_settings_settings_component__WEBPACK_IMPORTED_MODULE_31__["SettingsComponent"],
+                _event_user_event_user_component__WEBPACK_IMPORTED_MODULE_32__["EventUserComponent"],
+                _bookings_bookings_component__WEBPACK_IMPORTED_MODULE_41__["BookingsComponent"],
+                _bookings_booking_booking_component__WEBPACK_IMPORTED_MODULE_42__["BookingComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -234,9 +236,9 @@ var AppModule = /** @class */ (function () {
                 ),
             ],
             entryComponents: [
-                _form_dialog_form_dialog_component__WEBPACK_IMPORTED_MODULE_42__["FormDialogComponent"],
+                _form_dialog_form_dialog_component__WEBPACK_IMPORTED_MODULE_43__["FormDialogComponent"],
             ],
-            providers: [_bookings_shared_booking_service__WEBPACK_IMPORTED_MODULE_27__["BookingService"], _shared_services_datetime_service__WEBPACK_IMPORTED_MODULE_26__["DatetimeService"], _shared_services_rest_service__WEBPACK_IMPORTED_MODULE_25__["RestService"], _shared_services_api_factory_service__WEBPACK_IMPORTED_MODULE_24__["ApiFactoryService"], _shared_services_file_manager_service__WEBPACK_IMPORTED_MODULE_23__["FileManagerService"], _event_venues_shared_event_venue_service__WEBPACK_IMPORTED_MODULE_22__["EventVenueService"], _event_types_shared_event_type_service__WEBPACK_IMPORTED_MODULE_21__["EventTypeService"], _events_shared_event_service__WEBPACK_IMPORTED_MODULE_20__["EventService"], _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_19__["UserService"], _auth_auth_guard__WEBPACK_IMPORTED_MODULE_8__["AuthGuard"], _auth_antiauth_guard__WEBPACK_IMPORTED_MODULE_9__["AntiauthGuard"], _auth_adminauth_guard__WEBPACK_IMPORTED_MODULE_10__["AdminauthGuard"], _auth_superadminauth_guard__WEBPACK_IMPORTED_MODULE_11__["SuperadminauthGuard"],
+            providers: [_shared_services_seo_service__WEBPACK_IMPORTED_MODULE_28__["SeoService"], _bookings_shared_booking_service__WEBPACK_IMPORTED_MODULE_27__["BookingService"], _shared_services_datetime_service__WEBPACK_IMPORTED_MODULE_26__["DatetimeService"], _shared_services_rest_service__WEBPACK_IMPORTED_MODULE_25__["RestService"], _shared_services_api_factory_service__WEBPACK_IMPORTED_MODULE_24__["ApiFactoryService"], _shared_services_file_manager_service__WEBPACK_IMPORTED_MODULE_23__["FileManagerService"], _event_venues_shared_event_venue_service__WEBPACK_IMPORTED_MODULE_22__["EventVenueService"], _event_types_shared_event_type_service__WEBPACK_IMPORTED_MODULE_21__["EventTypeService"], _events_shared_event_service__WEBPACK_IMPORTED_MODULE_20__["EventService"], _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_19__["UserService"], _auth_auth_guard__WEBPACK_IMPORTED_MODULE_8__["AuthGuard"], _auth_antiauth_guard__WEBPACK_IMPORTED_MODULE_9__["AntiauthGuard"], _auth_adminauth_guard__WEBPACK_IMPORTED_MODULE_10__["AdminauthGuard"], _auth_superadminauth_guard__WEBPACK_IMPORTED_MODULE_11__["SuperadminauthGuard"],
                 {
                     provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HTTP_INTERCEPTORS"],
                     useClass: _auth_auth_interceptor__WEBPACK_IMPORTED_MODULE_12__["AuthInterceptor"],
@@ -534,6 +536,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_booking_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/booking.service */ "./src/app/bookings/shared/booking.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _events_shared_event_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../events/shared/event.service */ "./src/app/events/shared/event.service.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _shared_services_seo_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../shared-services/seo.service */ "./src/app/shared-services/seo.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -549,13 +553,17 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var BookingComponent = /** @class */ (function () {
-    function BookingComponent(bookingService, eventService, router, route) {
+    function BookingComponent(bookingService, eventService, router, route, snackBar, seo) {
         var _this = this;
         this.bookingService = bookingService;
         this.eventService = eventService;
         this.router = router;
         this.route = route;
+        this.snackBar = snackBar;
+        this.seo = seo;
         this.route.params.subscribe(function (params) { return _this.setupBooking(params['event_id'], params['id']); });
     }
     BookingComponent.prototype.ngOnInit = function () {
@@ -578,6 +586,7 @@ var BookingComponent = /** @class */ (function () {
             this.eventService.getEvent(event_id)
                 .subscribe(function (data) {
                 _this.booking.import(data);
+                _this.updateMetaData();
             });
         }
     };
@@ -585,8 +594,16 @@ var BookingComponent = /** @class */ (function () {
         var _this = this;
         this.bookingService.skipAndBook(this.booking)
             .subscribe(function (data) {
-            alert('booking made success');
-            _this.router.navigate(['']);
+            var message = 'Booking Confirmed';
+            var action = '';
+            var booking_confirm_bar = _this.snackBar.open(message, action, {
+                duration: 500,
+                verticalPosition: 'top',
+                horizontalPosition: 'right',
+            });
+            booking_confirm_bar.afterDismissed().subscribe(function () {
+                _this.router.navigate(['']);
+            });
         });
     };
     Object.defineProperty(BookingComponent.prototype, "layout_groups", {
@@ -596,13 +613,21 @@ var BookingComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    BookingComponent.prototype.updateMetaData = function () {
+        var config = {
+            title: this.event.Name,
+            desc: this.event.Desc,
+            image_url: this.event.images['banner'].url,
+        };
+        this.seo.generateTags(config);
+    };
     BookingComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-booking',
             template: __webpack_require__(/*! ./booking.component.html */ "./src/app/bookings/booking/booking.component.html"),
             styles: [__webpack_require__(/*! ./booking.component.css */ "./src/app/bookings/booking/booking.component.css")]
         }),
-        __metadata("design:paramtypes", [_shared_booking_service__WEBPACK_IMPORTED_MODULE_2__["BookingService"], _events_shared_event_service__WEBPACK_IMPORTED_MODULE_4__["EventService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]])
+        __metadata("design:paramtypes", [_shared_booking_service__WEBPACK_IMPORTED_MODULE_2__["BookingService"], _events_shared_event_service__WEBPACK_IMPORTED_MODULE_4__["EventService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatSnackBar"], _shared_services_seo_service__WEBPACK_IMPORTED_MODULE_6__["SeoService"]])
     ], BookingComponent);
     return BookingComponent;
 }());
@@ -2686,7 +2711,7 @@ module.exports = ".toolbar-splitter\n{\n  flex: 1 1 auto;\n}\n\n.logo\n{\n  max-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar class=\"header navbar-static-top\" [style.background-color]=\"'#e5e5e8'\">\n  <mat-toolbar-row >\n    <a href=\"\" routerLink=\"\"><img class=\"logo\" src=\"https://algovent-s3-static.s3.amazonaws.com/eventico/media/TOTT_Logo_New.png\" alt=\"talk-of-the-town\"></a>\n\n    <span class=\"tollbar-splitter\"></span>\n    <button *ngIf=\"loggedIn\" mat-icon-button ><mat-icon aria-label=\"Settings\" [style.color]=\"'#000'\">settings</mat-icon></button>\n    <button *ngIf=\"loggedIn\" mat-icon-button (click)=\"logout()\"><mat-icon [style.color]=\"'#000'\" aria-label=\"Settings\">exit_to_app</mat-icon></button>\n    <button *ngIf=\"loggedIn == false\" mat-button routerLink=\"login\" [style.color]=\"'#000'\">LOGIN</button>\n    <button *ngIf=\"loggedIn == false\" mat-button routerLink=\"signup\" [style.color]=\"'#000'\">SIGNUP</button>\n    <div *ngIf=\"loggedIn\">\n    <mat-menu #notifications=\"matMenu\" yPosition=\"below\" xPosition=\"before\">\n      <button mat-menu-item>notification 1</button>\n      <button mat-menu-item>notification 2</button>\n    </mat-menu>\n    <button mat-icon-button [matMenuTriggerFor]=\"notifications\" *ngIf=\"loggedIn\">\n      <mat-icon [style.color]=\"'#000'\">notifications</mat-icon>\n    </button>\n    </div>\n\n\n  </mat-toolbar-row>\n</mat-toolbar>\n<mat-toolbar *ngIf=\"adminToolBar['allowed'] == true\" class=\"admin-toolbar\">\n  <i class=\"material-icons md-dark\">supervisor_account</i>\n  <button mat-button routerLink=\"events/event\"><mat-icon aria-label=\"Settings\">playlist_add</mat-icon> <span class=\"responsive_span_text\">New Event</span> </button>\n  <button mat-button routerLink=\"event-types\"><mat-icon aria-label=\"Settings\">table_chart</mat-icon> <span class=\"responsive_span_text\">Event Types</span> </button>\n  <button mat-button routerLink=\"event-venues\"><mat-icon aria-label=\"Settings\">movie_creation</mat-icon> <span class=\"responsive_span_text\">Event Venues</span></button>\n  <span class=\"admin-tollbar-spacer\"></span>\n  <mat-menu #addon_tools=\"matMenu\" class=\"addon-tools\" yPosition=\"below\" xPosition=\"before\">\n    <button mat-menu-item routerLink=\"\"><mat-icon aria-label=\"Settings\">find_replace</mat-icon> User Management</button>\n    <button mat-menu-item routerLink=\"\"><mat-icon aria-label=\"Settings\">cloud_download</mat-icon> Reports</button>\n  </mat-menu>\n\n  <button class=\"addon-tools\" mat-icon-button [matMenuTriggerFor]=\"addon_tools\">\n    <mat-icon>more_vert</mat-icon>\n  </button>\n</mat-toolbar>\n"
+module.exports = "<mat-toolbar class=\"header navbar-static-top\" [style.background-color]=\"'#e5e5e8'\">\n  <mat-toolbar-row >\n    <a href=\"\" routerLink=\"\"><img class=\"logo\" src=\"https://algovent-s3-static.s3.amazonaws.com/eventico/media/TOTT_Logo_New.png\" alt=\"talk-of-the-town\"></a>\n\n    <span class=\"tollbar-splitter\"></span>\n    <button *ngIf=\"loggedIn == false\" mat-button routerLink=\"login\" [style.color]=\"'#000'\">LOGIN</button>\n    <button *ngIf=\"loggedIn == false\" mat-button routerLink=\"signup\" [style.color]=\"'#000'\">SIGNUP</button>\n    <div *ngIf=\"loggedIn\">\n    <mat-menu #notifications=\"matMenu\" yPosition=\"below\" xPosition=\"before\">\n      <button mat-menu-item><mat-icon [style.color]=\"'#000'\">history</mat-icon>bookings</button>\n      <button mat-menu-item><mat-icon [style.color]=\"'#000'\">settings</mat-icon>settings</button>\n      <button mat-menu-item (click)=\"logout()\"><mat-icon [style.color]=\"'#000'\">exit_to_app</mat-icon>logout</button>\n    </mat-menu>\n    <button mat-icon-button [matMenuTriggerFor]=\"notifications\" *ngIf=\"loggedIn\">\n      <mat-icon [style.color]=\"'#000'\">person</mat-icon>\n    </button>\n    </div>\n\n\n  </mat-toolbar-row>\n</mat-toolbar>\n<mat-toolbar *ngIf=\"adminToolBar['allowed'] == true\" class=\"admin-toolbar\">\n  <i class=\"material-icons md-dark\">supervisor_account</i>\n  <button mat-button routerLink=\"events/event\"><mat-icon aria-label=\"Settings\">playlist_add</mat-icon> <span class=\"responsive_span_text\">New Event</span> </button>\n  <button mat-button routerLink=\"event-types\"><mat-icon aria-label=\"Settings\">table_chart</mat-icon> <span class=\"responsive_span_text\">Event Types</span> </button>\n  <button mat-button routerLink=\"event-venues\"><mat-icon aria-label=\"Settings\">movie_creation</mat-icon> <span class=\"responsive_span_text\">Event Venues</span></button>\n  <span class=\"admin-tollbar-spacer\"></span>\n  <mat-menu #addon_tools=\"matMenu\" class=\"addon-tools\" yPosition=\"below\" xPosition=\"before\">\n    <button mat-menu-item routerLink=\"\"><mat-icon aria-label=\"Settings\">find_replace</mat-icon> User Management</button>\n    <button mat-menu-item routerLink=\"\"><mat-icon aria-label=\"Settings\">cloud_download</mat-icon> Reports</button>\n  </mat-menu>\n\n  <button class=\"addon-tools\" mat-icon-button [matMenuTriggerFor]=\"addon_tools\">\n    <mat-icon>more_vert</mat-icon>\n  </button>\n</mat-toolbar>\n"
 
 /***/ }),
 
@@ -3139,6 +3164,59 @@ var RestService = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], _api_factory_service__WEBPACK_IMPORTED_MODULE_2__["ApiFactoryService"]])
     ], RestService);
     return RestService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared-services/seo.service.ts":
+/*!************************************************!*\
+  !*** ./src/app/shared-services/seo.service.ts ***!
+  \************************************************/
+/*! exports provided: SeoService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SeoService", function() { return SeoService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var SeoService = /** @class */ (function () {
+    function SeoService(meta) {
+        this.meta = meta;
+    }
+    SeoService.prototype.generateTags = function (config) {
+        this.meta.addTag({ name: 'twitter:card', content: 'summary_large_image' });
+        this.meta.addTag({ name: 'twitter:site', content: '@alligatorio' });
+        this.meta.addTag({ name: 'twitter:title', content: config.title });
+        this.meta.addTag({ name: 'twitter:description', content: config.desc });
+        this.meta.addTag({ name: 'twitter:image', content: config.image_url });
+        this.meta.addTag({ name: 'og:title', content: config.title });
+        this.meta.addTag({ name: 'og:site_name', content: 'Algovent' });
+        this.meta.addTag({ name: 'og:description', content: config.desc });
+        this.meta.addTag({ name: 'og:type', content: 'article' });
+        this.meta.addTag({ name: 'og:image', content: config.image_url });
+        this.meta.addTag({ name: 'og:url', content: config.content_url });
+    };
+    SeoService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["Meta"]])
+    ], SeoService);
+    return SeoService;
 }());
 
 

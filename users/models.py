@@ -17,18 +17,18 @@ class UserManager(BaseUserManager):
             raise ValueError('The given email must be set')
         try:
             with transaction.atomic():
-                user = self.model(email=email, **extra_fields)
+                user = self.model(email=self.normalize_email(email), **extra_fields)
                 user.set_password(password)
                 user.save(using=self._db)
                 return user
         except:
-            raise
+            raise Exception
 
     def create_user(self, email, password=None, **extra_fields):
         return self._create_user(email, password, **extra_fields)
 
     def create_superuser(self, email, password, **extra_fields):
-        return self._create_user(email, password=password, **extra_fields)
+        return self._create_user(email, password, **extra_fields)
 
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=80, unique=True, blank=False)

@@ -30,6 +30,7 @@ import { ApiFactoryService } from './shared-services/api-factory.service';
 import { RestService } from './shared-services/rest.service'
 import { DatetimeService } from './shared-services/datetime.service';
 import { BookingService } from './bookings/shared/booking.service';
+import { SeoService } from './shared-services/seo.service'
 
 import { RegisterComponent } from './event-user/register/register.component';
 import { LoginComponent } from './event-user/login/login.component';
@@ -92,7 +93,7 @@ import { FormDialogComponent } from './form-dialog/form-dialog.component';
   entryComponents: [
     FormDialogComponent,
   ],
-  providers: [BookingService, DatetimeService, RestService, ApiFactoryService, FileManagerService, EventVenueService, EventTypeService, EventService, UserService, AuthGuard, AntiauthGuard, AdminauthGuard, SuperadminauthGuard,
+  providers: [SeoService, BookingService, DatetimeService, RestService, ApiFactoryService, FileManagerService, EventVenueService, EventTypeService, EventService, UserService, AuthGuard, AntiauthGuard, AdminauthGuard, SuperadminauthGuard,
   {
     provide : HTTP_INTERCEPTORS,
     useClass : AuthInterceptor,

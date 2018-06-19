@@ -35,6 +35,8 @@ class CreateUserAPIView(APIView):
         serializer = UserSerializer(data=user)
         serializer.is_valid(raise_exception=True)
         serializer.save()
+        serializer.instance.set_password(user['password'])
+        serializer.instance.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
