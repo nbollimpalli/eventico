@@ -53,7 +53,7 @@
     <mat-divider></mat-divider>
 
     <mat-card-actions>
-      <button mat-button disabled>PAY</button>
+      <button mat-button (click)="onNavigate()">PAY</button>
       <button mat-button (click)="skipAndBook()">SKIP PAY & BOOK</button>
     </mat-card-actions>
   </mat-card>

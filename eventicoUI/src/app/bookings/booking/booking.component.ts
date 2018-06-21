@@ -90,4 +90,9 @@ export class BookingComponent implements OnInit {
     this.seo.generateTags(config);
   }
 
+  onNavigate()
+  {
+    window.open('https://sandboxsecure.payu.in/_payment', '_blank');
+  }
+
 }

@@ -4,6 +4,11 @@ import { UserService } from '../shared/user.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import {
+    AuthService,
+    FacebookLoginProvider,
+    GoogleLoginProvider
+} from 'angular-6-social-login';
 
 @Component({
   selector: 'app-login',
@@ -17,9 +22,27 @@ export class LoginComponent implements OnInit {
   passwordPattern : string;
   emailPattern : string;
 
-  constructor(private userservice : UserService, private toastr : ToastrService, private router : Router) {
+  constructor(private userservice : UserService, private toastr : ToastrService, private router : Router, private socialAuthService: AuthService) {
     this.user = new User();
     this.passwordPattern = '^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$';
+  }
+
+  public socialSignIn(socialPlatform : string) {
+    let socialPlatformProvider;
+    if(socialPlatform == "facebook"){
+      socialPlatformProvider = FacebookLoginProvider.PROVIDER_ID;
+    }else if(socialPlatform == "google"){
+      socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
+    }
+
+    this.socialAuthService.signIn(socialPlatformProvider).then(
+      (userData) => {
+        console.log(socialPlatform+" sign in data : " , userData);
+        // Now sign-in with userData
+        // ...
+
+      }
+    );
   }
 
   ngOnInit() {

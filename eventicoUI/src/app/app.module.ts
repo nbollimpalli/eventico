@@ -17,9 +17,14 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { SlideshowModule} from 'ng-simple-slideshow';
-
 import { AppComponent } from './app.component';
 import { appRoutes } from './routes';
+import {
+    SocialLoginModule,
+    AuthServiceConfig,
+    GoogleLoginProvider,
+    FacebookLoginProvider,
+} from "angular-6-social-login";
 
 import { UserService } from './event-user/shared/user.service';
 import { EventService } from './events/shared/event.service';
@@ -31,10 +36,18 @@ import { ApiFactoryService } from './shared-services/api-factory.service';
 import { RestService } from './shared-services/rest.service'
 import { DatetimeService } from './shared-services/datetime.service';
 import { BookingService } from './bookings/shared/booking.service';
-import { SeoService } from './shared-services/seo.service'
+import { SeoService } from './shared-services/seo.service';
+import { ManageUserService } from './event-user/users/shared/manage-user.service';
+import { RoleService } from './event-user/users/roles/shared/role.service';
 
 import { RegisterComponent } from './event-user/register/register.component';
 import { LoginComponent } from './event-user/login/login.component';
+
+import { UsersComponent } from './event-user/users/users.component';
+import { UserComponent } from './event-user/users/user/user.component';
+import { RolesComponent } from './event-user/users/roles/roles.component';
+import { RoleComponent } from './event-user/users/roles/role/role.component';
+
 //import { UpdateProfileComponent } from './event-user/settings/settings.component';
 import { SettingsComponent } from './event-user/settings/settings.component';
 import { EventUserComponent } from './event-user/event-user.component';
@@ -54,7 +67,25 @@ import { NewEventVenueComponent } from './event-venues/new-event-venue/new-event
 import { BookingsComponent } from './bookings/bookings.component';
 import { BookingComponent } from './bookings/booking/booking.component';
 
-import { FormDialogComponent } from './form-dialog/form-dialog.component';
+import { SelectRoleDialog } from './event-user/users/users.component';
+import { UpdateRoleName } from './event-user/users/users.component';
+
+// Configs
+export function getAuthServiceConfigs() {
+  let config = new AuthServiceConfig(
+      [
+        {
+          id: FacebookLoginProvider.PROVIDER_ID,
+          provider: new FacebookLoginProvider("Your-Facebook-app-id")
+        },
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider("90679818586-qm4pcltmojh6g1gc7ib0al8cqlsif3sr.apps.googleusercontent.com")
+        }
+      ]
+  );
+  return config;
+}
 
 @NgModule({
   declarations: [
@@ -69,11 +100,16 @@ import { FormDialogComponent } from './form-dialog/form-dialog.component';
     NewEventTypeComponent,
     EventVenuesComponent,
     NewEventVenueComponent,
-    FormDialogComponent,
     SettingsComponent,
     EventUserComponent,
     BookingsComponent,
     BookingComponent,
+    UsersComponent,
+    UserComponent,
+    RolesComponent,
+    RoleComponent,
+    SelectRoleDialog,
+    UpdateRoleName,
   ],
   imports: [
     BrowserModule,
@@ -86,13 +122,15 @@ import { FormDialogComponent } from './form-dialog/form-dialog.component';
     ColorPickerModule,
     FlexLayoutModule,
     SlideshowModule,
+    SocialLoginModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true} // <-- debugging purposes only
     ),
   ],
   entryComponents: [
-    FormDialogComponent,
+    SelectRoleDialog,
+    UpdateRoleName,
   ],
   providers: [SeoService, BookingService, DatetimeService, RestService, ApiFactoryService, FileManagerService, EventVenueService, EventTypeService, EventService, UserService, AuthGuard, AntiauthGuard, AdminauthGuard, SuperadminauthGuard,
   {
@@ -103,6 +141,10 @@ import { FormDialogComponent } from './form-dialog/form-dialog.component';
   {
     provide: LocationStrategy,
     useClass: HashLocationStrategy
+  },
+  {
+    provide: AuthServiceConfig,
+    useFactory: getAuthServiceConfigs
   },
   ],
   bootstrap: [AppComponent]

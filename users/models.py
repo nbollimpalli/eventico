@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 from django.db import models
 from django.db import transaction
-
+from ecore.models import Role
 from django.contrib.auth.models import (
     AbstractBaseUser, PermissionsMixin, BaseUserManager
 )
@@ -35,7 +35,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=30, blank=True)
     last_name = models.CharField(max_length=30, blank=True)
     mobile = models.CharField(max_length=30, blank=True)
-
+    role = models.ForeignKey(Role, on_delete=models.DO_NOTHING, default=1)
+    status = models.CharField(max_length=255, default='pending')
     objects = UserManager()
 
     USERNAME_FIELD = 'email'

@@ -6,6 +6,10 @@ import { SuperadminauthGuard } from './auth/superadminauth.guard';
 
 import { RegisterComponent } from './event-user/register/register.component';
 import { LoginComponent } from './event-user/login/login.component';
+import { UsersComponent } from './event-user/users/users.component';
+import { UserComponent } from './event-user/users/user/user.component';
+import { RolesComponent } from './event-user/users/roles/roles.component';
+import { RoleComponent } from './event-user/users/roles/role/role.component';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -22,10 +26,16 @@ import { NewEventVenueComponent } from './event-venues/new-event-venue/new-event
 import { BookingsComponent } from './bookings/bookings.component';
 import { BookingComponent } from './bookings/booking/booking.component';
 
+
+
 export const appRoutes: Routes = [
   { path: '', component: EventsComponent , pathMatch: 'full'},
   { path: 'signup', component: RegisterComponent, canActivate: [AntiauthGuard] },
   { path: 'login', component: LoginComponent, canActivate: [AntiauthGuard] },
+  { path: 'users', component: UsersComponent},
+  { path: 'user', component: UserComponent},
+  { path: 'roles', component: RolesComponent},
+  { path: 'role', component: RoleComponent},
   { path: 'events/event', component: NewEventComponent, canActivate: [AuthGuard] },
   { path: 'event-types', component: EventTypesComponent},
   { path: 'event-types/event-type', component: NewEventTypeComponent},

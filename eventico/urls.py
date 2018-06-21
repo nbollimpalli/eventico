@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^users/', include(('users.urls', 'users'), namespace='users')),
     url(r'^file/', include(('file_manager.urls', 'file_manager'), namespace='file_manager')),
     url(r'^bookings/', include(('bookings.urls', 'bookings'), namespace='bookings')),
+    url(r'^ecore/', include(('ecore.urls', 'ecore'), namespace='ecore')),
 ]

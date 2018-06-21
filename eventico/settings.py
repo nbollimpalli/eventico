@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'storages',
     'file_manager',
     'bookings',
+    'ecore',
 ]
 
 

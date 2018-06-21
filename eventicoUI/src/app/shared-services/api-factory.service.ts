@@ -47,7 +47,12 @@ export class ApiFactoryService {
     this.api_map.set('UPSERT_LAYOUT', '/layout/upsert/');
 
     //booking service
-    this.api_map.set('SKIP_AND_BOOK', '/bookings/skip-and-book/')
+    this.api_map.set('SKIP_AND_BOOK', '/bookings/skip-and-book/');
+
+    //manage users apis
+    this.api_map.set('GET_USERS', '/users/fetch-users/');
+    this.api_map.set('UPDATE_MANAGE_USER', '/users/update-manage-user/');
+    this.api_map.set('UPSERT_ROLE', '/ecore/upsert-role/');
   }
 
   getApi(api_name) : string

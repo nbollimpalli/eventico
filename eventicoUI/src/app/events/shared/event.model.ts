@@ -9,6 +9,8 @@ export class Event {
   EventVenueId: string;
   eventLayout: EventLayout;
   mode : String;
+  facebook_share_url : string;
+  twitter_share_url : string;
   times = {
     start: {
         date: new Date(),
@@ -71,6 +73,7 @@ export class Event {
       {
         this.images['banner']['url'] = eventJsonObject['images'][0]['upload'];
         this.images['banner']['id'] = eventJsonObject['images'][0]['id'];
+//        "https://graph.facebook.com?id="++"&scrape=true")
       }
     }
   }

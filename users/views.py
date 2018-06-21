@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from rest_framework.decorators import *
-
+import copy
 from eventico import settings
 from .models import User
 # Create your views here.
@@ -18,7 +18,8 @@ from django.http import JsonResponse
 from rest_framework_jwt.settings import api_settings
 jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
 jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
-
+from ecore.models import Role, Permission, RolePermission
+from ecore.serializers import RoleSerializer, PermissionSerializer, RolePermissionSerializer
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def getUserNames(request):
@@ -81,3 +82,65 @@ def fetchDefaultProfile(request):
 def fetchProfile(request):
     res = {'AdminToolBar' : False}
     return  Response(res)
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def fetchUsers(request):
+    users = User.objects.all()
+    roles = Role.objects.all()
+    users = UserSerializer(users, many=True).data
+    roles = RoleSerializer(roles, many=True).data
+    permissions = Permission.objects.all()
+    role_permissions = RolePermission.objects.all()
+    permissions = PermissionSerializer(permissions, many=True).data
+    role_permissions = RolePermissionSerializer(role_permissions, many=True).data
+    # root => parent => leaf
+    rps = {}
+    for rp in role_permissions:
+        rps[str(str(rp['role'])+'_'+str(rp['permission']))] = True
+    for role in roles:
+        role['permissions'] = []
+        for permission in permissions:
+            pem_clone = copy.copy(permission)
+            if( str(role['id']) + '_' + str(permission['id'])):
+                pem_clone['enabled'] = True
+            else:
+                pem_clone['enabled'] = False
+            role['permissions'].append(pem_clone)
+        role['permissions'] = populate_hpems(role['permissions'])
+    res = {'users' : users, 'roles' : roles}
+    return  Response(res)
+
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def updateManageUsers(request):
+    manage_user_info = request.data
+    user_id = manage_user_info.get('id')
+    role_id = manage_user_info.get('role')
+    user = User.objects.get(id=user_id)
+    role = Role.objects.get(id = role_id)
+    user.role = role
+    user.save()
+    return  Response({'success' : True})
+
+
+def populate_hpems(permissions):
+    pem_map = {}
+    #assign id to pem map
+    for pem in permissions:
+        pem_map[pem['id']] = pem
+
+    for pem in permissions:
+        if(pem['parent_permission']):
+            childs = []
+            if(' childs' in pem_map[pem['parent_permission']]):
+                childs = pem_map[pem['parent_permission']]['childs']
+            else:
+                pem_map[pem['parent_permission']]['childs'] = childs
+            childs.append(pem)
+    root_pems = []
+    for pem in permissions:
+        if(pem['parent_permission'] == None and pem['root_permission'] == None):
+            root_pems.append(pem)
+    return root_pems
+

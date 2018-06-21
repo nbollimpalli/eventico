@@ -1,6 +1,6 @@
 from django.urls import path
 from django.conf.urls import url
-from .views import CreateUserAPIView, fetchDefaultProfile, fetchProfile, getUserNames
+from .views import *
 from . import views
 from rest_framework_jwt.views import obtain_jwt_token
 from rest_framework_jwt.views import refresh_jwt_token
@@ -15,4 +15,6 @@ urlpatterns = [
     url(r'^api-token-verify/', verify_jwt_token),
     url(r'^default-profile/', fetchDefaultProfile),
     url(r'^profile/', fetchProfile),
+    url(r'^fetch-users/', fetchUsers),
+    url(r'^update-manage-user/', updateManageUsers),
 ]

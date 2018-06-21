@@ -1,0 +1,88 @@
+<mat-tab-group>
+  <mat-tab label="Users">
+    <mat-paginator [length]="length"
+                [pageSize]="pageSize"
+                [pageSizeOptions]="pageSizeOptions"
+                (page)="pageEvent = $event">
+    </mat-paginator>
+    <mat-toolbar >
+      <mat-toolbar-row>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <mat-list>
+      <mat-list-item *ngFor="let user of users">
+        <mat-icon matListIcon>person</mat-icon>
+        <h3 matLine> {{ user.Name }} </h3>
+        <p matLine>
+          <span> {{ user.Email }} </span>
+          <span class="demo-2"> -- {{ user.Status }} </span>
+        </p>
+
+        <button matTooltip="Disable User" mat-icon-button><mat-icon>block</mat-icon></button>
+        <button matTooltip="Update User Role" (click)="selectRole(user)" mat-icon-button><mat-icon>edit</mat-icon></button>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+
+  </mat-tab>
+  <mat-tab label="Roles">
+    <mat-toolbar >
+      <mat-toolbar-row>
+        <button matTooltip="Go Back" (click)="goto_role_view()" mat-icon-button><mat-icon>accessibility</mat-icon></button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <mat-list>
+      <mat-list-item *ngFor="let role of roles">
+        <mat-icon matListIcon>accessibility</mat-icon>
+        <h3 matLine> {{ role.Name }} </h3>
+
+        <button matTooltip="Edit Permissions" (click)="goto_permission_view(role)" mat-icon-button><mat-icon>lock_open</mat-icon></button>
+        <button matTooltip="Update Role Name" (click)="updateRoleName(role)" mat-icon-button><mat-icon>edit</mat-icon></button>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+    <!--<mat-accordion *ngIf="update_permission_role != null && update_permission_role != undefined">-->
+      <!--<mat-expansion-panel *ngFor="let pem of user_permission_role.Permissions">-->
+        <!--<mat-expansion-panel-header>-->
+          <!--<mat-panel-title>-->
+            <!--{{ pem['display_name'] }}-->
+          <!--</mat-panel-title>-->
+          <!--<mat-panel-description>-->
+          <!--</mat-panel-description>-->
+        <!--</mat-expansion-panel-header>-->
+        <!--<mat-checkbox></mat-checkbox>-->
+
+        <!--<mat-accordion *ngIf="pem['childs']">-->
+        <!--<mat-expansion-panel *ngFor="let cpem of pem['childs']">-->
+          <!--<mat-expansion-panel-header>-->
+            <!--<mat-panel-title>-->
+              <!--{{ cpem['display_name'] }}-->
+            <!--</mat-panel-title>-->
+            <!--<mat-panel-description>-->
+            <!--</mat-panel-description>-->
+          <!--</mat-expansion-panel-header>-->
+          <!--<mat-checkbox></mat-checkbox>-->
+
+          <!--<mat-accordion *ngIf="cpem['childs']">-->
+            <!--<mat-expansion-panel *ngFor="let gpem of cpem['childs']">-->
+              <!--<mat-expansion-panel-header>-->
+                <!--<mat-panel-title>-->
+                  <!--{{ gpem['display_name'] }}-->
+                <!--</mat-panel-title>-->
+                <!--<mat-panel-description>-->
+                <!--</mat-panel-description>-->
+              <!--</mat-expansion-panel-header>-->
+              <!--<mat-checkbox></mat-checkbox>-->
+
+            <!--</mat-expansion-panel>-->
+          <!--</mat-accordion>-->
+
+        <!--</mat-expansion-panel>-->
+      <!--</mat-accordion>-->
+
+      <!--</mat-expansion-panel>-->
+    <!--</mat-accordion>-->
+  </mat-tab>
+</mat-tab-group>

@@ -24,7 +24,7 @@ export class EventsComponent implements OnInit {
 
   constructor(private eventService : EventService, private observableMedia: ObservableMedia) { }
 
-  ngOnInit() {
+  ngOnInit( ) {
     this.eventService.loadEvents();
     const grid = new Map([
       ["xs", 1],
