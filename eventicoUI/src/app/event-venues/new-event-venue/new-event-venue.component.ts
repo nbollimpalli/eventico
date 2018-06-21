@@ -5,7 +5,6 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EventVenueLayout } from '../../shared/event-venue-layout.model';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
-import { FormDialogComponent } from '../../form-dialog/form-dialog.component';
 import {FormControl} from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
