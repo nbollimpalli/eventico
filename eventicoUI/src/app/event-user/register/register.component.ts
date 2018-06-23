@@ -3,6 +3,11 @@ import { UserService } from '../shared/user.service';
 import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import {
+    AuthService,
+    FacebookLoginProvider,
+    GoogleLoginProvider
+} from 'angular-6-social-login';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +19,7 @@ export class RegisterComponent implements OnInit {
   user : User;
   passwordPattern : string;
   emailPattern : string;
-  constructor(private userservice : UserService, private toastr : ToastrService) {
+  constructor(private userservice : UserService, private toastr : ToastrService, private socialAuthService: AuthService) {
     this.user = new User();
     this.passwordPattern = '^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$';
   }
@@ -39,6 +44,26 @@ export class RegisterComponent implements OnInit {
       }
     }
   }
+
+  public socialSignIn(socialPlatform : string) {
+    let socialPlatformProvider;
+    if(socialPlatform == "facebook"){
+      socialPlatformProvider = FacebookLoginProvider.PROVIDER_ID;
+    }else if(socialPlatform == "google"){
+      socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
+    }
+
+
+    this.socialAuthService.signIn(socialPlatformProvider).then(
+      (userData) => {
+        console.log(socialPlatform+" sign in data : " , userData);
+        // Now sign-in with userData
+        // ...
+
+      }
+    );
+  }
+  
 
   onRegister(form : NgForm) {
     this.userservice.registerUser(form.value)

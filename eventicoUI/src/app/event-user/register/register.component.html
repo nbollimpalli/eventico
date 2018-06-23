@@ -1,27 +1,37 @@
 <mat-card class="register-card">
-  <mat-card-title class="register-title">SIGNUP</mat-card-title>
-  <form class="register-form" #userRegistrationForm="ngForm" (ngSubmit)="onRegister(userRegistrationForm)">
-  <mat-card-content>
-      <mat-form-field class="full-width">
-        <input matInput placeholder="Firstname" #FirstName="ngModel" [(ngModel)]="user.FirstName" name="FirstName" required>
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <input matInput placeholder="Lastname" #LastName="ngModel" [(ngModel)]="user.LastName" name="LastName" required>
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <input matInput type="email" placeholder="Email" #Email="ngModel" [(ngModel)]="user.Email" name="Email" required>
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <input matInput placeholder="Password" type="password" #Password="ngModel" [(ngModel)]="user.Password" name="Password" required>
-      </mat-form-field>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button type="submit" class="full-width" color="primary">REGISTER</button>
-  </mat-card-actions>
+  <div class="container">
+  <form #userRegistrationForm="ngForm" (ngSubmit)="onRegister(userRegistrationForm)">
+    <div class="row">
+      <h2 style="text-align:center"></h2>
+      <div class="vl">
+        <span class="vl-innertext">or</span>
+      </div>
+
+      <div class="col">
+        <a (click)="socialSignIn('facebook')" class="fb btn">
+          <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+        </a>
+        <a (click)="socialSignIn('google')" class="google btn"><i class="fa fa-google fa-fw">
+          </i> Login with Google+
+        </a>
+      </div>
+
+      <div class="col">
+        <div class="hide-md-lg">
+          <p>Or</p>
+        </div>
+
+        <input  type="email" placeholder="Email" #Email="ngModel" [(ngModel)]="user.Email" name="Email" required>
+        <input  placeholder="Mobile" #FirstName="ngModel" [(ngModel)]="user.Mobile" name="Mobile" required>
+        <input  placeholder="Firstname" #FirstName="ngModel" [(ngModel)]="user.FirstName" name="FirstName" required>
+        <input  placeholder="Lastname" #LastName="ngModel" [(ngModel)]="user.LastName" name="LastName" required>
+        <input  placeholder="Password" type="password" #Password="ngModel" [(ngModel)]="user.Password" name="Password" required>
+        <input type="submit" value="Sign Up">
+      </div>
+
+    </div>
   </form>
-  <mat-divider></mat-divider>
-  <mat-card-actions>
-    <button mat-button  color="primary"><i class="material-icons md-dark">book</i> Facebook</button>
-    <button mat-button  color="primary"><i class="material-icons md-dark">book</i> Google</button>
-  </mat-card-actions>
+</div>
 </mat-card>
+
+

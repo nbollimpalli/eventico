@@ -14,7 +14,7 @@
 	bottom: 30px;
 	left: 0;
 	right: 0;
-	border-radius: 14px;
+	border-radius: 6px;
 }
 .spacer{
   height: 30px;
@@ -142,3 +142,5 @@ a.event_location:hover{
     bottom: -120px;
     left: 0px;
 }
+
+
