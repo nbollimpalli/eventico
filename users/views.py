@@ -142,6 +142,7 @@ def verify_social_info(social_info):
     email = social_info['email'];
     url = None
     fields = {}
+    print(social_info)
     if (social_info['provider'] == 'facebook'):
         url = FACEBOOK_VALIDATE_URL
         fields['fields'] = 'email'

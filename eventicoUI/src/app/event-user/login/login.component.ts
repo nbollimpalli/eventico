@@ -75,7 +75,7 @@ export class LoginComponent implements OnInit {
     }
     );
   }
-  
+
   afterLogin(data)
   {
     localStorage.setItem('userToken', data['user']['token']);
