@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4aa6be1b-e7e7-4311-ab0f-471f7feaa3e5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/event-user/register/register.component.ts" afterPath="$PROJECT_DIR$/eventicoUI/src/app/event-user/register/register.component.ts" />
+      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/app.module.ts" afterPath="$PROJECT_DIR$/eventicoUI/src/app/app.module.ts" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,16 +13,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/event-user/login/login.component.html">
+      <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/app.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="42" column="11" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-              <folding>
-                <element signature="n#style#0;n#h2#0;n#div#0;n#form#0;n#div#0;n#mat-card#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#1;n#mat-card#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#1;n#div#0;n#div#1;n#mat-card#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="254">
+              <caret line="78" column="63" lean-forward="false" selection-start-line="78" selection-start-column="63" selection-end-line="78" selection-end-column="63" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -57,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="register.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/event-user/register/register.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="747">
-              <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+              <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -220,7 +216,6 @@
         <option value="$PROJECT_DIR$/eventicoUI/src/app/bookings/booking/booking.component.html" />
         <option value="$PROJECT_DIR$/eventicoUI/src/app/bookings/booking/booking.component.ts" />
         <option value="$PROJECT_DIR$/eventicoUI/src/app/event-venues/new-event-venue/new-event-venue.component.ts" />
-        <option value="$PROJECT_DIR$/eventicoUI/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/users/views.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/eventicoUI/src/app/event-user/login/login.component.css" />
@@ -233,6 +228,7 @@
         <option value="$PROJECT_DIR$/eventicoUI/src/app/events/events.component.css" />
         <option value="$PROJECT_DIR$/eventicoUI/Gruntfile.js" />
         <option value="$PROJECT_DIR$/eventicoUI/src/app/event-user/register/register.component.ts" />
+        <option value="$PROJECT_DIR$/eventicoUI/src/app/app.module.ts" />
       </list>
     </option>
   </component>
@@ -723,14 +719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="78" column="63" lean-forward="false" selection-start-line="78" selection-start-column="63" selection-end-line="78" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/users/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="654">
@@ -836,7 +824,15 @@
     <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/event-user/register/register.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="747">
-          <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="78" column="63" lean-forward="false" selection-start-line="78" selection-start-column="63" selection-end-line="78" selection-end-column="63" />
           <folding />
         </state>
       </provider>
