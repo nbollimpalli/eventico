@@ -128,7 +128,13 @@ def verify_social_info(social_info):
     rm = RestManager()
     valid = False
     email = social_info['email'];
-    res = rm.get({'fields' : 'email', 'access_token' : social_info['token']}, FACEBOOK_VALIDATE_URL)
+    url = None
+    if (social_info['provider'] == 'facebook'):
+        url = FACEBOOK_VALIDATE_URL
+    elif (social_info['provider'] == 'google'):
+        url = GOOGLE_VALIDATE_URL
+
+    res = rm.get({'fields' : 'email', 'access_token' : social_info['token']}, url)
     if(email == res['email']):
         valid = True
 
