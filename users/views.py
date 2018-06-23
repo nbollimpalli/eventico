@@ -98,36 +98,35 @@ def social_signon(request):
     try:
         social_info = request.data
         valid_info = verify_social_info(social_info)
-        resp.add_data('info', valid_info)
         email = social_info.get('email')
         if(valid_info):
-            # user = None
-            # if(User.objects.filter(email=email).exists()):
-            #     print('user already exists')
-            #     user = User.objects.get(email=email)
-            # else:
-            #     print('user doesnt exists , creating new user')
-            #     user = User()
-            #     user.name = social_info['name']
-            #     user.email = social_info['email']
-            #     user.set_unusable_password()
-            #
-            # user.status = 'active'
-            # if (social_info['provider'] == 'facebook'):
-            #     user.fb_verified = True
-            #     user.fb_pic = social_info['image']
-            # elif (social_info['provider'] == 'google'):
-            #     user.google_verified = True
-            #     user.google_pic = social_info['image']
-            # user.save()
-            # payload = jwt_payload_handler(user)
-            # token = jwt.encode(payload, settings.SECRET_KEY)
-            # user_details = {}
-            # user_details['name'] = user.name
-            # user_details['token'] = token
-            # user_logged_in.send(sender=user.__class__,
-            #                     request=request, user=user)
-            # resp.add_data('user', user_details)
+            user = None
+            if(User.objects.filter(email=email).exists()):
+                print('user already exists')
+                user = User.objects.get(email=email)
+            else:
+                print('user doesnt exists , creating new user')
+                user = User()
+                user.name = social_info['name']
+                user.email = social_info['email']
+                user.set_unusable_password()
+
+            user.status = 'active'
+            if (social_info['provider'] == 'facebook'):
+                user.fb_verified = True
+                user.fb_pic = social_info['image']
+            elif (social_info['provider'] == 'google'):
+                user.google_verified = True
+                user.google_pic = social_info['image']
+            user.save()
+            payload = jwt_payload_handler(user)
+            token = jwt.encode(payload, settings.SECRET_KEY)
+            user_details = {}
+            user_details['name'] = user.name
+            user_details['token'] = token
+            user_logged_in.send(sender=user.__class__,
+                                request=request, user=user)
+            resp.add_data('user', user_details)
             resp.add_json_messages(['user successfully logged in'])
         else:
             raise UserException('Invalid Token, Please try again later')
@@ -146,16 +145,16 @@ def verify_social_info(social_info):
     if (social_info['provider'] == 'facebook'):
         url = FACEBOOK_VALIDATE_URL
         fields['fields'] = 'email'
-        fields['token'] = social_info['token']
+        fields['access_token'] = social_info['token']
     elif (social_info['provider'] == 'google'):
         url = GOOGLE_VALIDATE_URL
         fields['id_token'] = social_info['idToken']
 
     res = rm.get(fields, url)
-    # if(email == res['email']):
-    #     valid = True
+    if(email == res['email']):
+        valid = True
 
-    return res
+    return valid
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
