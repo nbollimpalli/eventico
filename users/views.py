@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+from random import randint
 from ecore.rest_manager import RestManager
 from ecore.service_urls import FACEBOOK_VALIDATE_URL, GOOGLE_VALIDATE_URL
 from rest_framework.decorators import *
@@ -37,14 +38,22 @@ class CreateUserAPIView(APIView):
     def post(self, request):
         resp = JsonResponse()
         try:
+            #send otp
+            otp = randint(111111, 999999)
             user = request.data
             serializer = UserSerializer(data=user)
             serializer.is_valid(raise_exception=True)
             serializer.save()
             serializer.instance.set_password(user['password'])
+            serializer.instance.otp = otp
+            # serializer.instance.otp_created_at = ''
+            # serializer.instance.otp_expires_At = ''
+            # serializer.instance.otp_limit_start_time = ''
+            # serializer.instance.otp_limit_end_time = ''
+            # otp_sent = 1
             serializer.instance.save()
         except UserException as e:
-            resp.mark_failed([e.message])
+            resp.mark_failed([str(e)])
         except Exception as e:
             resp.mark_failed([JsonResponse.GENRIC_MESSAGE])
         return resp.export()
@@ -53,6 +62,7 @@ class CreateUserAPIView(APIView):
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def authenticate_user(request):
+    resp = JsonResponse()
     try:
         email = request.data['email']
         password = request.data['password']
@@ -67,7 +77,9 @@ def authenticate_user(request):
                 user_details['token'] = token
                 user_logged_in.send(sender=user.__class__,
                                     request=request, user=user)
-                return Response(user_details, status=status.HTTP_200_OK)
+                resp.add_data('user', user_details)
+                resp.add_json_messages(['user successfully logged in'])
+                return Response(resp.export(), status=status.HTTP_200_OK)
 
             except Exception as e:
                 raise e
@@ -114,7 +126,7 @@ def social_signon(request):
             user_details['token'] = token
             user_logged_in.send(sender=user.__class__,
                                 request=request, user=user)
-            resp.add_data('user_details', user_details)
+            resp.add_data('user', user_details)
             resp.add_json_messages(['user successfully logged in'])
         else:
             raise UserException('Invalid Token, Please try again later')

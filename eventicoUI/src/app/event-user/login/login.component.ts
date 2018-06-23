@@ -75,29 +75,10 @@ export class LoginComponent implements OnInit {
     }
     );
   }
-
-//  socialSignIn(form : NgForm) {
-//
-//    const d = {
-//        email: "naveenbollimpalli@gmail.com",
-//        id:"10211505693228599",
-//        image:"https://graph.facebook.com/10211505693228599/picture?type=normal",
-//        name:"Naveen Bollimpalli",
-//        provider:"facebook",
-//        token:"EAAdUZCbtchnwBAP378q0kZAo3m3Sk5xiHbEEdWpL1c8TfZA1gL8sCrZCU3ldCwnKPNXBSU4CTGkJCZBDWPZAs2zWMRugly5TJsiwwerKhTUGBwxWb9QNxz2vTD7IAvaEOdZCODQBGJAycLFeF0gRIZBZBKpEdrpTRcIFZABmXBj9oamdyb4kikX1mVyoR95rf3h4YFlZAHYyQ32XwZDZD"
-//      };
-//
-//    this.userservice.social_auth_login(d)
-//    .subscribe( (data) => {
-//        console.log(data)
-////      this.afterLogin(data)
-//    }
-//    );
-//  }
-
+  
   afterLogin(data)
   {
-    localStorage.setItem('userToken', data['token']);
+    localStorage.setItem('userToken', data['user']['token']);
     this.userservice.updateProfile();
     this.router.navigate(['']);
   }
