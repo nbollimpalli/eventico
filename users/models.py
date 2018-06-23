@@ -32,15 +32,25 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=80, unique=True, blank=False)
-    first_name = models.CharField(max_length=30, blank=True)
-    last_name = models.CharField(max_length=30, blank=True)
+    name = models.CharField(max_length=255, blank=True)
     mobile = models.CharField(max_length=30, blank=True)
     role = models.ForeignKey(Role, on_delete=models.DO_NOTHING, default=1)
     status = models.CharField(max_length=255, default='pending')
+    fb_pic = models.URLField(max_length=255, null=True)
+    google_pic = models.URLField(max_length=255, null=True)
+    user_pic = models.URLField(max_length=255, null=True)
+    fb_verified = models.BooleanField(default=False)
+    google_verified = models.BooleanField(default=False)
+    otp = models.CharField(max_length=10, null=True)
+    otp_created_at = models.DateTimeField(null=True)
+    otp_expires_at = models.DateTimeField(null=True)
+    otps_sent = models.IntegerField(default=0)
+    otp_limit_start_time = models.DateTimeField(null=True)
+    otp_limit_end_time = models.DateTimeField(null=True)
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['first_name', 'last_name']
+    REQUIRED_FIELDS = []
 
     def save(self, *args, **kwargs):
         super(User, self).save(*args, **kwargs)

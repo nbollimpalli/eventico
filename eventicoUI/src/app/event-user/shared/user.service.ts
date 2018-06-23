@@ -72,4 +72,9 @@ export class UserService {
     return this.restService.get('FETCH_ROLE_PROFILE', false, null, params);
   }
 
+  social_auth_login(data)
+  {
+    return this.restService.post('SOCIAL_SIGN_ON', true, null, data);
+  }
+
 }

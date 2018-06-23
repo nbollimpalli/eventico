@@ -17,6 +17,9 @@ export class ApiFactoryService {
     this.api_map.set('LOGIN_USER', '/users/api-token-auth/');
     this.api_map.set('REGISTER_USER', '/users/create/');
     this.api_map.set('FETCH_ROLE_PROFILE', '/users/profile');
+    this.api_map.set('SOCIAL_SIGN_ON', '/users/social-auth/');
+    this.api_map.set('FORGOT_PASSWORD', '/users/forgot-password/');
+    this.api_map.set('RESEND_OTP', '/users/resend-otp/');
 
     //file manager services
     this.api_map.set('UPLOAD_FILE', '/file/upload/');

@@ -35,13 +35,14 @@ export class LoginComponent implements OnInit {
       socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
     }
 
-
     this.socialAuthService.signIn(socialPlatformProvider).then(
       (userData) => {
         console.log(socialPlatform+" sign in data : " , userData);
-        // Now sign-in with userData
-        // ...
-
+        this.userservice.social_auth_login(userData)
+        .subscribe( (data) => {
+          this.afterLogin(data)
+        }
+        );
       }
     );
   }
@@ -70,12 +71,35 @@ export class LoginComponent implements OnInit {
   onLogin(form : NgForm) {
     this.userservice.loginUser(form.value)
     .subscribe( (data) => {
-      this.resetForm(form);
-      localStorage.setItem('userToken', data['token']);
-      this.userservice.updateProfile();
-      this.router.navigate(['']);
+      this.afterLogin(data)
     }
     );
+  }
+
+//  socialSignIn(form : NgForm) {
+//
+//    const d = {
+//        email: "naveenbollimpalli@gmail.com",
+//        id:"10211505693228599",
+//        image:"https://graph.facebook.com/10211505693228599/picture?type=normal",
+//        name:"Naveen Bollimpalli",
+//        provider:"facebook",
+//        token:"EAAdUZCbtchnwBAP378q0kZAo3m3Sk5xiHbEEdWpL1c8TfZA1gL8sCrZCU3ldCwnKPNXBSU4CTGkJCZBDWPZAs2zWMRugly5TJsiwwerKhTUGBwxWb9QNxz2vTD7IAvaEOdZCODQBGJAycLFeF0gRIZBZBKpEdrpTRcIFZABmXBj9oamdyb4kikX1mVyoR95rf3h4YFlZAHYyQ32XwZDZD"
+//      };
+//
+//    this.userservice.social_auth_login(d)
+//    .subscribe( (data) => {
+//        console.log(data)
+////      this.afterLogin(data)
+//    }
+//    );
+//  }
+
+  afterLogin(data)
+  {
+    localStorage.setItem('userToken', data['token']);
+    this.userservice.updateProfile();
+    this.router.navigate(['']);
   }
 
 }

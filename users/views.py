@@ -3,6 +3,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+from ecore.rest_manager import RestManager
+from ecore.service_urls import FACEBOOK_VALIDATE_URL, GOOGLE_VALIDATE_URL
 from rest_framework.decorators import *
 import copy
 from eventico import settings
@@ -20,6 +22,7 @@ jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
 jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
 from ecore.models import Role, Permission, RolePermission
 from ecore.serializers import RoleSerializer, PermissionSerializer, RolePermissionSerializer
+from ecore.json_response import JsonResponse
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def getUserNames(request):
@@ -32,13 +35,19 @@ class CreateUserAPIView(APIView):
     permission_classes = (AllowAny,)
 
     def post(self, request):
-        user = request.data
-        serializer = UserSerializer(data=user)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        serializer.instance.set_password(user['password'])
-        serializer.instance.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        resp = JsonResponse()
+        try:
+            user = request.data
+            serializer = UserSerializer(data=user)
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+            serializer.instance.set_password(user['password'])
+            serializer.instance.save()
+        except UserException as e:
+            resp.mark_failed([e.message])
+        except Exception as e:
+            resp.mark_failed([JsonResponse.GENRIC_MESSAGE])
+        return resp.export()
 
 
 @api_view(['POST'])
@@ -54,8 +63,7 @@ def authenticate_user(request):
                 payload = jwt_payload_handler(user)
                 token = jwt.encode(payload, settings.SECRET_KEY)
                 user_details = {}
-                user_details['name'] = "%s %s" % (
-                    user.first_name, user.last_name)
+                user_details['name'] = user.name
                 user_details['token'] = token
                 user_logged_in.send(sender=user.__class__,
                                     request=request, user=user)
@@ -70,6 +78,61 @@ def authenticate_user(request):
     except KeyError:
         res = {'error': 'please provide a email and a password'}
         return Response(res)
+
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def social_signon(request):
+    resp = JsonResponse()
+    try:
+        social_info = request.data
+        valid_info = verify_social_info(social_info)
+        email = social_info.get('email')
+        if(valid_info):
+            user = None
+            if(User.objects.filter(email=email).exists()):
+                print('user already exists')
+                user = User.objects.get(email=email)
+            else:
+                print('user doesnt exists , creating new user')
+                user = User()
+                user.name = social_info['name']
+                user.email = social_info['email']
+                user.set_unusable_password()
+
+            user.status = 'active'
+            if (social_info['provider'] == 'facebook'):
+                user.fb_verified = True
+                user.fb_pic = social_info['image']
+            elif (social_info['provider'] == 'google'):
+                user.google_verified = True
+                user.google_pic = social_info['image']
+            user.save()
+            payload = jwt_payload_handler(user)
+            token = jwt.encode(payload, settings.SECRET_KEY)
+            user_details = {}
+            user_details['name'] = user.name
+            user_details['token'] = token
+            user_logged_in.send(sender=user.__class__,
+                                request=request, user=user)
+            resp.add_data('user_details', user_details)
+            resp.add_json_messages(['user successfully logged in'])
+        else:
+            raise UserException('Invalid Token, Please try again later')
+    except Exception as e:
+        resp.mark_failed([str(e)])
+
+    return resp.export()
+
+
+def verify_social_info(social_info):
+    rm = RestManager()
+    valid = False
+    email = social_info['email'];
+    res = rm.get({'fields' : 'email', 'access_token' : social_info['token']}, FACEBOOK_VALIDATE_URL)
+    if(email == res['email']):
+        valid = True
+
+    return valid
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
@@ -123,7 +186,17 @@ def updateManageUsers(request):
     user.save()
     return  Response({'success' : True})
 
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def verify_user_via_email_otp():
+    resp = JsonResponse()
+    return resp
 
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def verify_user_via_email_otp():
+    resp = JsonResponse()
+    return resp
 
 def populate_hpems(permissions):
     pem_map = {}
@@ -145,3 +218,7 @@ def populate_hpems(permissions):
             root_pems.append(pem)
     return root_pems
 
+class UserException(Exception):
+    def __init__(self, message, errors):
+        super().__init__(message)
+        self.errors = errors
