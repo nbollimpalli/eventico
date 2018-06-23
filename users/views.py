@@ -152,8 +152,8 @@ def verify_social_info(social_info):
         fields['id_token'] = social_info['idToken']
 
     res = rm.get(fields, url)
-    if(email == res['email']):
-        valid = True
+    # if(email == res['email']):
+    #     valid = True
 
     return res
 
