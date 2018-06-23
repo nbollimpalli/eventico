@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4aa6be1b-e7e7-4311-ab0f-471f7feaa3e5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/eventico/static/css/styles.0d178babc2a1788a6365.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventico/static/js/main.ffa3070d8abd97d58b5e.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventico/static/js/polyfills.940400eaaf3650744685.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventico/static/js/runtime.a66f828dca56eeb90e02.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventico/static/js/scripts.f8d693d866da2a0693e5.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventico/static/js/vendor.e597cdec2050c4a21f8d.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/event-user/login/login.component.html" afterPath="$PROJECT_DIR$/eventicoUI/src/app/event-user/login/login.component.html" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/event-user/register/register.component.css" afterPath="$PROJECT_DIR$/eventicoUI/src/app/event-user/register/register.component.css" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/event-user/register/register.component.html" afterPath="$PROJECT_DIR$/eventicoUI/src/app/event-user/register/register.component.html" />
       <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/event-user/register/register.component.ts" afterPath="$PROJECT_DIR$/eventicoUI/src/app/event-user/register/register.component.ts" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/events/events.component.css" afterPath="$PROJECT_DIR$/eventicoUI/src/app/events/events.component.css" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/events/events.component.html" afterPath="$PROJECT_DIR$/eventicoUI/src/app/events/events.component.html" />
-      <change beforePath="$PROJECT_DIR$/static/css/styles.0d178babc2a1788a6365.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/js/main.ffa3070d8abd97d58b5e.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/js/polyfills.940400eaaf3650744685.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/js/runtime.a66f828dca56eeb90e02.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/js/scripts.f8d693d866da2a0693e5.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/js/vendor.e597cdec2050c4a21f8d.js" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -78,8 +60,8 @@
       <file leaf-file-name="register.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/event-user/register/register.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="972">
-              <caret line="65" column="2" lean-forward="false" selection-start-line="65" selection-start-column="2" selection-end-line="65" selection-end-column="2" />
+            <state relative-caret-position="747">
+              <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -853,8 +835,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/event-user/register/register.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="65" column="2" lean-forward="false" selection-start-line="65" selection-start-column="2" selection-end-line="65" selection-end-column="2" />
+        <state relative-caret-position="747">
+          <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -63,7 +63,6 @@ export class RegisterComponent implements OnInit {
       }
     );
   }
-  
 
   onRegister(form : NgForm) {
     this.userservice.registerUser(form.value)
