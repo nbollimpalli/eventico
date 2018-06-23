@@ -136,7 +136,7 @@ def verify_social_info(social_info):
         fields['token'] = social_info['token']
     elif (social_info['provider'] == 'google'):
         url = GOOGLE_VALIDATE_URL
-        fields['id_token'] = social_info['id_token']
+        fields['id_token'] = social_info['idToken']
 
     res = rm.get(fields, url)
     if(email == res['email']):
