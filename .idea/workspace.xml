@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4aa6be1b-e7e7-4311-ab0f-471f7feaa3e5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/ecore/rest_manager.py" afterPath="$PROJECT_DIR$/ecore/rest_manager.py" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/event-user/login/login.component.ts" afterPath="$PROJECT_DIR$/eventicoUI/src/app/event-user/login/login.component.ts" />
       <change beforePath="$PROJECT_DIR$/users/views.py" afterPath="$PROJECT_DIR$/users/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/users/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="144" column="0" lean-forward="false" selection-start-line="144" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+            <state relative-caret-position="432">
+              <caret line="152" column="0" lean-forward="true" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
               <folding>
                 <element signature="e#0#46#0" expanded="true" />
               </folding>
@@ -28,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rest_manager.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="rest_manager.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ecore/rest_manager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="26" lean-forward="false" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+            <state relative-caret-position="255">
+              <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -232,15 +230,14 @@
         <option value="$PROJECT_DIR$/ecore/service_urls.py" />
         <option value="$PROJECT_DIR$/eventicoUI/Gruntfile.js" />
         <option value="$PROJECT_DIR$/eventicoUI/src/app/event-user/login/login.component.ts" />
-        <option value="$PROJECT_DIR$/users/views.py" />
         <option value="$PROJECT_DIR$/ecore/rest_manager.py" />
+        <option value="$PROJECT_DIR$/users/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="y" value="53" />
-    <option name="width" value="1680" />
-    <option name="height" value="1027" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -270,73 +267,6 @@
               <item name="eventico" type="b2602c69:ProjectViewProjectNode" />
               <item name="eventico" type="462c0819:PsiDirectoryNode" />
               <item name="ecore" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eventico" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eventico" type="462c0819:PsiDirectoryNode" />
-              <item name="eventico" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eventico" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eventico" type="462c0819:PsiDirectoryNode" />
-              <item name="eventicoUI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eventico" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eventico" type="462c0819:PsiDirectoryNode" />
-              <item name="eventicoUI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eventico" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eventico" type="462c0819:PsiDirectoryNode" />
-              <item name="eventicoUI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eventico" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eventico" type="462c0819:PsiDirectoryNode" />
-              <item name="eventicoUI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="event-user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eventico" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eventico" type="462c0819:PsiDirectoryNode" />
-              <item name="eventicoUI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="event-user" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eventico" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eventico" type="462c0819:PsiDirectoryNode" />
-              <item name="eventicoUI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="event-user" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eventico" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eventico" type="462c0819:PsiDirectoryNode" />
-              <item name="eventicoUI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="shared-services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eventico" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eventico" type="462c0819:PsiDirectoryNode" />
-              <item name="events" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eventico" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eventico" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="eventico" type="b2602c69:ProjectViewProjectNode" />
@@ -849,22 +779,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/users/views.py">
+    <entry file="file://$PROJECT_DIR$/ecore/rest_manager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="144" column="0" lean-forward="false" selection-start-line="144" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
           <folding>
-            <element signature="e#0#46#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ecore/rest_manager.py">
+    <entry file="file://$PROJECT_DIR$/users/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="26" lean-forward="false" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        <state relative-caret-position="432">
+          <caret line="152" column="0" lean-forward="true" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#46#0" expanded="true" />
           </folding>
         </state>
       </provider>

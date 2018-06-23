@@ -12,11 +12,11 @@ class RestManager():
         if(request_data and url):
             response = self.http.request('GET', url, fields=request_data)
             print('----------')
-            print(response)
+            print(response.data)
             print('----------')
-            if(response.status == status.HTTP_200_OK):
-                response = json.loads(response.data.decode('utf-8'))
-            print(response)
+            # if(response.status == status.HTTP_200_OK):
+            response = json.loads(response.data.decode('utf-8'))
+
         return response
 
     def post(self):
