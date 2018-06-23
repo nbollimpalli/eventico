@@ -78,7 +78,7 @@ export class LoginComponent implements OnInit {
 
   afterLogin(data)
   {
-    localStorage.setItem('userToken', data['user']['token']);
+    localStorage.setItem('userToken', data['data']['user']['token']);
     this.userservice.updateProfile();
     this.router.navigate(['']);
   }
