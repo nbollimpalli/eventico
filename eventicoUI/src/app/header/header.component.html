@@ -4,7 +4,6 @@
 
     <span class="tollbar-splitter"></span>
     <button *ngIf="loggedIn == false" mat-button routerLink="login" [style.color]="'#000'">LOGIN</button>
-    <button *ngIf="loggedIn == false" mat-button routerLink="signup" [style.color]="'#000'">SIGNUP</button>
     <div *ngIf="loggedIn">
     <mat-menu #notifications="matMenu" yPosition="below" xPosition="before">
       <button mat-menu-item><mat-icon [style.color]="'#000'">history</mat-icon>bookings</button>
