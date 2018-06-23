@@ -52,8 +52,8 @@ module.exports = function(grunt) {
       },
     },
     exec: {
-      build: 'ng build',
-      //build: 'ng build --prod --configuration=production'
+      //build: 'ng build',
+      build: 'ng build --prod --configuration=production'
     },
   });
 
