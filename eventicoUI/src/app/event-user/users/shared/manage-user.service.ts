@@ -12,7 +12,7 @@ export class ManageUserService {
   fetchUsers()
   {
     var params = {};
-    return this.restService.get('GET_USERS', true, null, params);
+    return this.restService.get('GET_USERS', null, params);
   }
 
   updateManageUser(manageUser : ManageUser)
@@ -22,7 +22,7 @@ export class ManageUserService {
     {
       body = manageUser.export();
     }
-    return this.restService.post('UPDATE_MANAGE_USER', true, null, body);
+    return this.restService.post('UPDATE_MANAGE_USER', null, body);
   }
 
   upsertRole(role : Role)
@@ -32,6 +32,6 @@ export class ManageUserService {
     {
       body = role.export();
     }
-    return this.restService.post('UPSERT_ROLE', true, null, body);
+    return this.restService.post('UPSERT_ROLE', null, body);
   }
 }

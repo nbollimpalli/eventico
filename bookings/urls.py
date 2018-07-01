@@ -4,5 +4,8 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^skip-and-book/$', views.skip_and_book),
+    url(r'^book/$', views.book),
+    url(r'^pay/$', views.pay),
+    url(r'^success/$', views.success),
+    url(r'^failure/$', views.failure),
 ]

@@ -20,12 +20,12 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['']);
   }
 
-  get adminToolBar() : Object{
-    return this.userservice.user.AdminToolBar;
-  }
-
   get loggedIn()  : Boolean{
     return this.userservice.user.LoggedIn;
+  }
+
+  get permissions() {
+    return this.userservice.user.Permissions;
   }
 
 }

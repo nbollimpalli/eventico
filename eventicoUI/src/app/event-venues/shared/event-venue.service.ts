@@ -24,19 +24,19 @@ export class EventVenueService {
   getEventVenue(id)
   {
     var params =  {id: id};
-    return this.restService.get('GET_EVENT_VENUE', true, null, params);
+    return this.restService.get('GET_EVENT_VENUE', null, params);
   }
 
   createEventVenue(createETObj : EventVenue)
   {
     const createJSON = createETObj.getCreateJSON();
-    return this.restService.post( 'CREATE_EVENT_VENUE', true, null, createJSON );
+    return this.restService.post( 'CREATE_EVENT_VENUE', null, createJSON );
   }
 
   updateEventVenue(updateETObj : EventVenue)
   {
     const updateJSON = updateETObj.getUpdateJSON();
-    return this.restService.post( 'UPDATE_EVENT_VENUE', true, null, updateJSON );
+    return this.restService.post( 'UPDATE_EVENT_VENUE', null, updateJSON );
   }
 
   upsertVenueLayout(eventVenue : EventVenue)
@@ -45,7 +45,7 @@ export class EventVenueService {
     upsertJSON['object_id'] = eventVenue.Id;
     upsertJSON['model'] = 'eventvenue';
     upsertJSON['app_label'] = 'events';
-    return this.restService.post('UPSERT_LAYOUT', true, null, upsertJSON);
+    return this.restService.post('UPSERT_LAYOUT', null, upsertJSON);
   }
 
   loadEventVenues()
@@ -60,7 +60,7 @@ export class EventVenueService {
   fetchEventVenues()
   {
     var params = {};
-    return this.restService.get('GET_EVENT_VENUES', true, null, params);
+    return this.restService.get('GET_EVENT_VENUES', null, params);
   }
 
   syncUIEventVenues(data)

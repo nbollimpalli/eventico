@@ -12,13 +12,13 @@ export class EventTypeService {
   createEventType(createETObj : EventType)
   {
     const createJSON = createETObj.getCreateJSON();
-    return this.restService.post( 'CREATE_EVENT_TYPE', true, null, createJSON );
+    return this.restService.post( 'CREATE_EVENT_TYPE', null, createJSON );
   }
 
   updateEventType(updateETObj : EventType)
   {
     const updateJSON = updateETObj.getUpdateJSON();
-    return this.restService.post( 'UPDATE_EVENT_TYPE', true, null, updateJSON );
+    return this.restService.post( 'UPDATE_EVENT_TYPE', null, updateJSON );
   }
 
   loadEventTypes()
@@ -33,7 +33,7 @@ export class EventTypeService {
   fetchEventTypes()
   {
     var params = {};
-    return this.restService.get('GET_EVENT_TYPES', true, null, params);
+    return this.restService.get('GET_EVENT_TYPES', null, params);
   }
 
   syncUIEventTypes(data)

@@ -13,7 +13,7 @@ export class EventService {
   upsertEvent(upsertEventObj : Event)
   {
     const upsertJSON = upsertEventObj.export();
-    return this.restService.post( 'UPSERT_EVENT', true, null, upsertJSON );
+    return this.restService.post( 'UPSERT_EVENT', null, upsertJSON );
   }
 
   updateEventLayout( event : Event )
@@ -24,7 +24,7 @@ export class EventService {
   getEvent(id)
   {
     var params = {'id' : id};
-    return this.restService.get('GET_EVENT', true, null, params);
+    return this.restService.get('GET_EVENT', null, params);
   }
 
   loadEvents()
@@ -39,7 +39,7 @@ export class EventService {
   fetchEvents()
   {
     var params = {};
-    return this.restService.get('GET_EVENTS', true, null, params);
+    return this.restService.get('GET_EVENTS', null, params);
   }
 
   syncUIEvents(data)
@@ -67,7 +67,7 @@ export class EventService {
     upsertJSON['object_id'] = event.Id;
     upsertJSON['model'] = 'event';
     upsertJSON['app_label'] = 'events';
-    return this.restService.post('UPSERT_LAYOUT', true, null, upsertJSON);
+    return this.restService.post('UPSERT_LAYOUT', null, upsertJSON);
   }
 
 }

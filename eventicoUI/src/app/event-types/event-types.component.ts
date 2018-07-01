@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventType } from './shared/event-type.model';
 import { EventTypeService } from './shared/event-type.service';
+import { UserService } from '../event-user/shared/user.service'
 
 @Component({
   selector: 'app-event-types',
@@ -9,7 +10,7 @@ import { EventTypeService } from './shared/event-type.service';
 })
 export class EventTypesComponent implements OnInit {
 
-  constructor(private eventTypeService : EventTypeService) { }
+  constructor(private eventTypeService : EventTypeService, private userservice : UserService) { }
 
   ngOnInit() {
     this.eventTypeService.loadEventTypes();
@@ -17,5 +18,9 @@ export class EventTypesComponent implements OnInit {
 
   get eventTypes() : Object{
     return this.eventTypeService.eventTypes;
+  }
+
+  get permissions() {
+    return this.userservice.user.Permissions;
   }
 }

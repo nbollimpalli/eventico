@@ -1,5 +1,20 @@
+<ngx-loading [show]="loading" ></ngx-loading>
+<form id="payment_form" name="payment_form" #payment_form [action]="payment_request_form.action" method="post" [style.display]="'none'"  name="payuForm" >
+  <input name="key" #key="ngModel" [(ngModel)]="payment_request_form.key" required />
+  <input name="hash" #hash="ngModel" [(ngModel)]="payment_request_form.hash" required/>
+  <input name="txnid" #txnid="ngModel" [(ngModel)]="payment_request_form.txnid" required/>
+  <input name="amount" #amount="ngModel" [(ngModel)]="payment_request_form.amount" required/>
+  <input name="firstname" #firstname="ngModel" [(ngModel)]="payment_request_form.firstname" required/>
+  <input name="email" #email="ngModel" [(ngModel)]="payment_request_form.email" required/>
+  <input name="phone" #phone="ngModel" [(ngModel)]="payment_request_form.phone" required/>
+  <textarea name="productinfo">{{ payment_request_form.product_info }}</textarea>
+  <input #surl="ngModel" name="surl" [(ngModel)]="payment_request_form.action" size="64" required/>
+  <input #furl="ngModel" name="furl" [(ngModel)]="payment_request_form.action" size="64" required/>
+  <input name="service_provider" value="payu_paisa" size="64" />
+  <input *ngIf="payment_form.valid" type="submit" value="Submit" />
+</form>
 <mat-card class="banner-card">
-  <img class="boking_banner responsive center" [src]="event.images['banner'].url" onerror="this.src='https://algovent-s3-static.s3.amazonaws.com/eventico/media/event_bWDUlrT.jpg'">
+  <img class="boking_banner responsive center" [src]="event.images['banner'].url">
 </mat-card>
 <div id="wrapper">
   <mat-card class="">
@@ -12,7 +27,7 @@
           <span class="demo-2"> -- {{ price.desc }} </span>
         </p>
         <mat-divider></mat-divider>
-
+        {{  a }}
       </mat-list-item>
     </mat-list>
   </mat-card>
@@ -27,7 +42,6 @@
             </td>
           <tr>
         </table>
-
       </mat-card-content>
   </mat-card>
   <mat-card class="" >
@@ -52,7 +66,7 @@
     </mat-list>
     <mat-divider></mat-divider>
 
-    <mat-card-actions>
+    <mat-card-actions *ngIf="bookingLayout.selection_info['total'] > 0">
       <button mat-button (click)="onNavigate()">PAY</button>
       <button mat-button (click)="skipAndBook()">SKIP PAY & BOOK</button>
     </mat-card-actions>

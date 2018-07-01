@@ -73,7 +73,7 @@ class LayoutService():
         for group in groups:
             for row in group['rows']:
                 for col in row['cols']:
-                    if(col['type'] == 'active' and col['lid'] in lids):
+                    if(col['type'] == 'active' and ('lid' in col) and col['lid'] in lids):
                         col['type'] = 'na'
 
         layoutSerializer = LayoutSerializer(instance=layout, data={'layout': layout_json})
@@ -82,3 +82,27 @@ class LayoutService():
             return True
         else:
             return False
+
+
+    def fetch_total(layout, lids):
+        layout_json = layout.layout
+        total = 0.00
+        groups = layout_json['groups']
+        price_list = layout_json['priceList']
+        price_map = {}
+        for price in price_list:
+            price_map[price['name']] = price
+
+        for group in groups:
+            for row in group['rows']:
+                for col in row['cols']:
+                    # import code;
+                    # code.interact(local=dict(globals(), **locals()))
+                    if( ('lid' in col) and col['lid'] in lids):
+                        price_name = col['price']
+                        pricelist_entry = price_map[price_name]
+                        value = pricelist_entry['value']
+                        total = total + value
+
+        return total
+

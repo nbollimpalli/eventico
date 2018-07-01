@@ -1,0 +1,47 @@
+<h2 mat-dialog-title>Booking Confirmation</h2>
+<mat-dialog-content>
+
+    <form name="BookingConfirmationForm"  #BookingConfirmationForm="ngForm">
+    <div class="container">
+      <div class="row">
+        <h2 style="text-align:center"></h2>
+
+        <div class="vl">
+        </div>
+        <div class="col">
+          <input id="Email" type="text" class="form-control" #Email="ngModel" name="Email" placeholder="Email" [(ngModel)]="userservice.user.SendToMailId" required email>
+          <app-show-errors [control]="Email"></app-show-errors>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" #Mobile="ngModel" name="Mobile" placeholder="Mobile" [(ngModel)]="userservice.user.SendToMobile" required validateMobile>
+          <app-show-errors [control]="Mobile"></app-show-errors>
+        </div>
+      </div>
+    </div>
+    <mat-list>
+      <mat-list-item *ngFor="let summary_unit of data.bookingLayout.selection_info['selection_summary']">
+        <mat-icon class="pricing_color_icon" matListIcon [style.color]="data.bookingLayout.priceMap[summary_unit.price].color">event_seat</mat-icon>
+        <h3 matLine> {{ data.bookingLayout.priceMap[summary_unit.price].label }} </h3>
+        <p matLine>
+          <span> RS {{ data.bookingLayout.priceMap[summary_unit.price].value }} </span>
+          <span class="demo-2"> x {{ summary_unit.qty }} </span>
+        </p>
+        <button mat-icon-button (click)="data.bookingLayout.removeSelection(summary_unit)"><mat-icon>delete_outline</mat-icon></button>
+        <mat-divider></mat-divider>
+
+      </mat-list-item>
+
+      <mat-list-item>
+        <mat-icon class="pricing_color_icon" matListIcon >payment</mat-icon>
+        <h2 matLine> Total </h2>
+        RS.{{ data.bookingLayout.selection_info['total'] }}
+      </mat-list-item>
+    </mat-list>
+    </form>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="'book'" [mat-dialog-close]="true" cdkFocusInitial [disabled]="!(BookingConfirmationForm.valid)">Proceed To Payment</button>
+  <button mat-button *ngIf="permissions['skip_pay_and_book'] == true" [mat-dialog-close]="'skipAndBook'" [mat-dialog-close]="true" [disabled]="!(BookingConfirmationForm.valid)">Skip Payment And Book</button>
+</mat-dialog-actions>

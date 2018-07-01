@@ -11,70 +11,73 @@ export class UserService {
     this.user = new User();
   }
 
-  setGuestProfile()
+  registerUser()
   {
-    this.user.LoggedIn = false;
-    this.user.FirstName = 'Guest';
-    this.user.LastName = 'User';
-    this.user.AdminToolBar = {
-      'allowed':false,
-      'newEvent':false,
-      'reports':false,
-      'manageUsers': false
-    }
-    this.user.EventCard = {'allowed' : true, 'edit': false, 'share' : true, 'book' : true}
+    const body = this.user.export_register_info();
+    return this.restService.post( 'REGISTER_USER', null, body );
   }
 
-  registerUser(user : User)
+  loginUser()
   {
-    const body = {
-      email : user.Email,
-      password : user.Password,
-      first_name : user.FirstName,
-      last_name : user.LastName
-    }
-    return this.restService.post( 'REGISTER_USER', true, null, body );
+    const body = this.user.export_login_info();
+    return this.restService.post( 'LOGIN_USER', null, body );
+
   }
 
-  loginUser(user : User)
+  updateBasicInfo(data)
   {
-    const body = {
-      email : user.Email,
-      password : user.Password
+    if(data)
+    {
+      this.user.Email = data['email'];
+      this.user.Name = data['name'];
+      this.user.Mobile = data['mobile'];
+      this.user.SendToMailId = data['email'];
+      this.user.SendToMobile = data['mobile'];
     }
-    return this.restService.post( 'LOGIN_USER', true, null, body );
-
   }
 
   updateProfile()
   {
-    this.setGuestProfile();
-    if(localStorage.getItem('userToken') != null)
-    {
-      this.fetchProfile().subscribe( (data) => {
-        this.user.LoggedIn = true;
-        this.user.FirstName = 'Naveen';
-        this.user.LastName = 'B';
-        this.user.AdminToolBar = {
-          'allowed':true,
-          'newEvent':true,
-          'reports':true,
-          'manageUsers': true
-        }
+    this.user.ProfileUpdationPending = true;
+    this.fetchProfile().subscribe(
+      (sdata) => {
+        this.user.import(sdata['data']['user']);
+      },
+      (fdata) => {
+
+      },
+      () => {
+        this.user.ProfileUpdationPending = false;
       }
-      );
-    }
+    );
   }
 
   fetchProfile()
   {
     var params = {};
-    return this.restService.get('FETCH_ROLE_PROFILE', false, null, params);
+    return this.restService.get('FETCH_USER_PROFILE', null, params);
   }
 
   social_auth_login(data)
   {
-    return this.restService.post('SOCIAL_SIGN_ON', true, null, data);
+    return this.restService.post('SOCIAL_SIGN_ON', null, data);
   }
 
+  sendForgotPasswordOTP(email : String)
+  {
+    const body = { 'email' : email };
+    return this.restService.post('SEND_OTP', null, body);
+  }
+
+  verify_otp(email : String, otp : String)
+  {
+    const body = { 'email' : email, 'otp' : otp }
+    return this.restService.post('VERIFY_OTP', null, body);
+  }
+
+  reset_password(token : String, password : String)
+  {
+    const body = { 'token' : token, 'password' : password}
+    return this.restService.post('RESET_PASSWORD', null, body);
+  }
 }

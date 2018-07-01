@@ -9,8 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material.module';
 import { AuthGuard } from './auth/auth.guard';
 import { AntiauthGuard } from './auth/antiauth.guard';
-import { AdminauthGuard } from './auth/adminauth.guard';
-import { SuperadminauthGuard } from './auth/superadminauth.guard';
 import { HTTP_INTERCEPTORS } from '@angular/common/http'
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
@@ -25,6 +23,7 @@ import {
     GoogleLoginProvider,
     FacebookLoginProvider,
 } from "angular-6-social-login";
+import { LoadingModule } from 'ngx-loading';
 
 import { UserService } from './event-user/shared/user.service';
 import { EventService } from './events/shared/event.service';
@@ -38,15 +37,11 @@ import { DatetimeService } from './shared-services/datetime.service';
 import { BookingService } from './bookings/shared/booking.service';
 import { SeoService } from './shared-services/seo.service';
 import { ManageUserService } from './event-user/users/shared/manage-user.service';
-import { RoleService } from './event-user/users/roles/shared/role.service';
 
 import { RegisterComponent } from './event-user/register/register.component';
 import { LoginComponent } from './event-user/login/login.component';
 
 import { UsersComponent } from './event-user/users/users.component';
-import { UserComponent } from './event-user/users/user/user.component';
-import { RolesComponent } from './event-user/users/roles/roles.component';
-import { RoleComponent } from './event-user/users/roles/role/role.component';
 
 //import { UpdateProfileComponent } from './event-user/settings/settings.component';
 import { SettingsComponent } from './event-user/settings/settings.component';
@@ -69,6 +64,15 @@ import { BookingComponent } from './bookings/booking/booking.component';
 
 import { SelectRoleDialog } from './event-user/users/users.component';
 import { UpdateRoleName } from './event-user/users/users.component';
+import { BookingConfirmationComponent } from './popups/booking-confirmation/booking-confirmation.component';
+import { TermsConditionsComponent } from './popups/terms-conditions/terms-conditions.component';
+import { SplashScreenComponent } from './popups/splash-screen/splash-screen.component';
+import { ShowErrorsComponent } from './shared-services/show-errors/show-errors.component';
+import { ForgotPasswordComponent } from './popups/forgot-password/forgot-password.component';
+
+//derectives
+import {MobileValidatorDirective} from './directives/mobile-validator.directive';
+import {EmailValidatorDirective} from './directives/email-validator.directive';
 
 // Configs
 export function getAuthServiceConfigs() {
@@ -105,11 +109,14 @@ export function getAuthServiceConfigs() {
     BookingsComponent,
     BookingComponent,
     UsersComponent,
-    UserComponent,
-    RolesComponent,
-    RoleComponent,
     SelectRoleDialog,
     UpdateRoleName,
+    BookingConfirmationComponent,
+    TermsConditionsComponent,
+    ShowErrorsComponent,
+    MobileValidatorDirective,
+    EmailValidatorDirective,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -123,6 +130,7 @@ export function getAuthServiceConfigs() {
     FlexLayoutModule,
     SlideshowModule,
     SocialLoginModule,
+    LoadingModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true} // <-- debugging purposes only
@@ -131,8 +139,11 @@ export function getAuthServiceConfigs() {
   entryComponents: [
     SelectRoleDialog,
     UpdateRoleName,
+    TermsConditionsComponent,
+    BookingConfirmationComponent,
+    ForgotPasswordComponent,
   ],
-  providers: [SeoService, BookingService, DatetimeService, RestService, ApiFactoryService, FileManagerService, EventVenueService, EventTypeService, EventService, UserService, AuthGuard, AntiauthGuard, AdminauthGuard, SuperadminauthGuard,
+  providers: [SeoService, BookingService, DatetimeService, RestService, ApiFactoryService, FileManagerService, EventVenueService, EventTypeService, EventService, UserService, AuthGuard, AntiauthGuard,
   {
     provide : HTTP_INTERCEPTORS,
     useClass : AuthInterceptor,

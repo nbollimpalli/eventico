@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { EventLayout } from '../../shared/event-layout.model';
 import { FileManagerService } from '../../shared-services/file-manager.service';
-
+import { UserService } from '../../event-user/shared/user.service'
 @Component({
   selector: 'app-new-event',
   templateUrl: './new-event.component.html',
@@ -18,7 +18,6 @@ import { FileManagerService } from '../../shared-services/file-manager.service';
 })
 export class NewEventComponent implements OnInit {
   event : Event;
-  showOverlay : string;
   mode : string;
   eventLayout : EventLayout;
   color : string;
@@ -27,11 +26,11 @@ export class NewEventComponent implements OnInit {
   enddatetime: boolean;
   minDate : Date;
   endMinDate : Date;
-  constructor(private eventService : EventService, private router : Router, private eventTypeService : EventTypeService, private eventVenueService : EventVenueService, private route : ActivatedRoute, private fileManager : FileManagerService)
+  loading = false;
+  constructor(private eventService : EventService, private router : Router, private eventTypeService : EventTypeService, private eventVenueService : EventVenueService, private route : ActivatedRoute, private fileManager : FileManagerService, private userservice : UserService)
   {
     this.color = '#ffffff';
     this.mode = "new";
-    this.showOverlay = 'none';
     this.enddatetime = true;
     this.route.params.subscribe(params => this.setupEvent(params['id']));
     this.minDate = new Date();
@@ -46,7 +45,7 @@ export class NewEventComponent implements OnInit {
     console.log('file uploaded');
 
     this.banner = files.item(0);
-    this.showOverlay = 'block';
+    this.loading = true;
     this.updateEventBanner()
   }
 
@@ -63,7 +62,7 @@ export class NewEventComponent implements OnInit {
       this.fileManager.upload(this.banner, options).subscribe(data => {
           console.log(data);
           this.event.images['banner'].url = data["upload"];
-          this.showOverlay = 'none';
+          this.loading = false;
         }, error => {
           console.log(error);
         });
@@ -92,14 +91,14 @@ export class NewEventComponent implements OnInit {
       .subscribe( (data) => {
         this.mode = 'edit';
         this.eventService.updateEventInfo(data, this.event);
-        this.showOverlay = 'none';
+        this.loading = false;
         console.log(this.event);
       }
       );
     }
     else
     {
-      this.showOverlay = 'none';
+      this.loading = false;
     }
   }
 
@@ -152,24 +151,6 @@ export class NewEventComponent implements OnInit {
     }
     );
   }
-
-//  updateVenueDetails()
-//  {
-//    if(this.event.EventVenueId != null)
-//    {
-//      this.showOverlay = 'block';
-//      this.eventVenueService.getEventVenue(this.event.EventVenueId)
-//      .subscribe( (data) => {
-//        var obj = JSON.parse(data.toString());
-//        var eventVenue = this.eventVenueService.makeEventVenueObject(obj[0]);
-//        this.eventLayout.import(eventVenue.eventVenueLayout.export());
-//        this.event.LayoutType = eventVenue.eventVenueLayout.layout_type;
-//        this.showOverlay = 'none';
-//        console.log(this.eventLayout);
-//      }
-//      );
-//    }
-//  }
 
   markNA(form : NgForm) : void
   {
@@ -291,6 +272,10 @@ export class NewEventComponent implements OnInit {
 
   get layout_groups(){
     return this.eventLayout.groups;
+  }
+
+  get permissions() {
+    return this.userservice.user.Permissions;
   }
 
 }

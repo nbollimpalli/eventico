@@ -11,8 +11,8 @@ from django.contrib.contenttypes.models import ContentType;
 class FileView(APIView):
   parser_classes = (MultiPartParser, FormParser)
 
-  #@api_view(['POST'])
-  #@permission_classes([AllowAny])
+  @api_view(['POST'])
+  @permission_classes([IsAuthenticated])
   def post(self, request, *args, **kwargs):
     objId = request.data['objectId']
     model = request.data['model']

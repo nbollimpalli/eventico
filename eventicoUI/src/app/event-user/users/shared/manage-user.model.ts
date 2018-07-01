@@ -14,7 +14,7 @@ export class ManageUser {
     if(user_info)
     {
       this.Id = user_info['id'];
-      this.Name = user_info['first_name'] + ' ' + user_info['last_name'];
+      this.Name = user_info['name'];
       this.Email = user_info['email'];
       this.Status = user_info['status'];
       this.Role = user_info['role'];

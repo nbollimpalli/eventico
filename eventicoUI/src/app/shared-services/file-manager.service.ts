@@ -16,7 +16,7 @@ export class FileManagerService {
         }
       }
       debugger;
-    return this.restService.post( 'UPLOAD_FILE', false, null, formData );
+    return this.restService.post( 'UPLOAD_FILE', null, formData );
   }
 
   delete_file(key: string) {

@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 from django.db import models
 from django.db import transaction
+import uuid
 from ecore.models import Role
 from django.contrib.auth.models import (
     AbstractBaseUser, PermissionsMixin, BaseUserManager
@@ -34,7 +35,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=80, unique=True, blank=False)
     name = models.CharField(max_length=255, blank=True)
     mobile = models.CharField(max_length=30, blank=True)
-    role = models.ForeignKey(Role, on_delete=models.DO_NOTHING, default=1)
+    role = models.ForeignKey(Role, on_delete=models.DO_NOTHING, default=Role.objects.get(name='default').id)
     status = models.CharField(max_length=255, default='pending')
     fb_pic = models.URLField(max_length=255, null=True)
     google_pic = models.URLField(max_length=255, null=True)
@@ -47,6 +48,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     otps_sent = models.IntegerField(default=0)
     otp_limit_start_time = models.DateTimeField(null=True)
     otp_limit_end_time = models.DateTimeField(null=True)
+    user_uuid = models.UUIDField(max_length=100, unique=True, default=uuid.uuid4, null=True, blank=True)
+    verification_token = models.UUIDField(max_length=100, unique=True, default=uuid.uuid4, null=True, blank=True)
+    subscribe = models.BooleanField(default=True)
+    agreed_terms = models.BooleanField(default=True)
     objects = UserManager()
 
     USERNAME_FIELD = 'email'

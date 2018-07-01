@@ -9,7 +9,7 @@ export class Booking {
   mode : String;
   event_mode : String;
   layout_mode : string;
-
+  skip_payment = false;
   constructor(mode : String)
   {
     this.mode = mode;

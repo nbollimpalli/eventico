@@ -3,6 +3,7 @@ import { EventType } from '../shared/event-type.model';
 import { EventTypeService } from '../shared/event-type.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from '../../event-user/shared/user.service'
 
 @Component({
   selector: 'app-new-event-type',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class NewEventTypeComponent implements OnInit {
   eventType : EventType;
-  constructor(private eventTypeService : EventTypeService, private router : Router)
+  constructor(private eventTypeService : EventTypeService, private router : Router, private userservice : UserService)
   {
     this.eventType = new EventType({});
   }
@@ -35,6 +36,10 @@ export class NewEventTypeComponent implements OnInit {
       this.router.navigate(['']);
     }
     );
+  }
+
+  get permissions() {
+    return this.userservice.user.Permissions;
   }
 
 }

@@ -20,8 +20,14 @@ export class UsersComponent implements OnInit {
   pageSizeOptions = [5, 10, 25];
   users = [];
   roles = [];
+  roles_map : Map<string, Role>;
   update_permission_role = null;
+  current_role_id = null;
+  loading = false;
   constructor(public dialog: MatDialog, private manageUserService : ManageUserService) {
+    this.roles_map = new Map<string, Role>();
+    this.loading = true;
+
     this.manageUserService.fetchUsers().subscribe( (data) => {
         if(data)
         {
@@ -39,10 +45,13 @@ export class UsersComponent implements OnInit {
             {
               var role = new Role(data['roles'][i]);
               this.roles.push(role);
+              this.roles_map.set(role.Id, role);
             }
           }
         }
         console.log(this.roles);
+        this.loading = false;
+
       }
     );
   }
@@ -80,8 +89,7 @@ export class UsersComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(result == 'updated')
       {
-        this.manageUserService.upsertRole(role).subscribe( (data) => {
-        });
+        this.upsertRole(role);
       }
     });
   }
@@ -89,16 +97,40 @@ export class UsersComponent implements OnInit {
   goto_permission_view(role)
   {
     this.update_permission_role = role;
-    debugger;
+    this.current_role_id = role.Id;
   }
 
   goto_role_view()
   {
     this.update_permission_role = null;
+    this.current_role_id = null;
+
   }
 
-  update_permission()
+  upsertRolePermission(pem)
   {
+    var role = this.roles_map.get(this.current_role_id);
+    role.modifiedPems.push(pem);
+    this.upsertRole(role);
+  }
+
+  upsertRole(role)
+  {
+      console.log(role);
+    this.loading = true;
+    this.manageUserService.upsertRole(role).subscribe( (resp) => {
+        if(resp)
+        {
+          var data = resp['data']
+          if(data && data['role'])
+          {
+            role.import(data['role']);
+          }
+        }
+        role.modifiedPems = [];
+        this.loading = false;
+      }
+    );
   }
 
 }

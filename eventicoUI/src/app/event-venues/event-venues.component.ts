@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventVenue } from './shared/event-venue.model';
 import { EventVenueService } from './shared/event-venue.service';
+import { UserService } from '../event-user/shared/user.service'
 
 @Component({
   selector: 'app-event-venues',
@@ -9,7 +10,7 @@ import { EventVenueService } from './shared/event-venue.service';
 })
 export class EventVenuesComponent implements OnInit {
 
-  constructor(private eventVenueService : EventVenueService) { }
+  constructor(private eventVenueService : EventVenueService, private userservice : UserService) { }
 
   ngOnInit() {
     this.eventVenueService.loadEventVenues();
@@ -17,6 +18,10 @@ export class EventVenuesComponent implements OnInit {
 
   get eventVenues() : Object{
     return this.eventVenueService.eventVenues;
+  }
+
+  get permissions() {
+    return this.userservice.user.Permissions;
   }
 
 }

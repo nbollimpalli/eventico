@@ -18,18 +18,17 @@
 
   </mat-toolbar-row>
 </mat-toolbar>
-<mat-toolbar *ngIf="adminToolBar['allowed'] == true" class="admin-toolbar">
-  <i class="material-icons md-dark">supervisor_account</i>
-  <button mat-button routerLink="events/event"><mat-icon aria-label="Settings">playlist_add</mat-icon> <span class="responsive_span_text">New Event</span> </button>
-  <button mat-button routerLink="event-types"><mat-icon aria-label="Settings">table_chart</mat-icon> <span class="responsive_span_text">Event Types</span> </button>
-  <button mat-button routerLink="event-venues"><mat-icon aria-label="Settings">movie_creation</mat-icon> <span class="responsive_span_text">Event Venues</span></button>
+<mat-toolbar *ngIf="permissions['admin_tool_bar'] == true" class="admin-toolbar">
+  <button *ngIf="permissions['new_event'] == true" mat-button routerLink="events/event"><mat-icon aria-label="Settings">playlist_add</mat-icon> <span class="responsive_span_text">New Event</span> </button>
+  <button *ngIf="permissions['event_types'] == true" mat-button routerLink="event-types"><mat-icon aria-label="Settings">table_chart</mat-icon> <span class="responsive_span_text">Event Types</span> </button>
+  <button *ngIf="permissions['event_venues'] == true" mat-button routerLink="event-venues"><mat-icon aria-label="Settings">movie_creation</mat-icon> <span class="responsive_span_text">Event Venues</span></button>
   <span class="admin-tollbar-spacer"></span>
   <mat-menu #addon_tools="matMenu" class="addon-tools" yPosition="below" xPosition="before">
-    <button mat-menu-item routerLink="users"><mat-icon aria-label="Settings">find_replace</mat-icon> User Management</button>
-    <button mat-menu-item routerLink=""><mat-icon aria-label="Settings">cloud_download</mat-icon> Reports</button>
+    <button *ngIf="permissions['user_management'] == true" mat-menu-item routerLink="users"><mat-icon aria-label="Settings">find_replace</mat-icon> User Management</button>
+    <button *ngIf="permissions['reports'] == true" mat-menu-item routerLink=""><mat-icon aria-label="Settings">cloud_download</mat-icon> Reports</button>
   </mat-menu>
 
-  <button class="addon-tools" mat-icon-button [matMenuTriggerFor]="addon_tools">
+  <button *ngIf="permissions['more_admin_tools'] == true" class="addon-tools" mat-icon-button [matMenuTriggerFor]="addon_tools">
     <mat-icon>more_vert</mat-icon>
   </button>
 </mat-toolbar>

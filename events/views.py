@@ -4,20 +4,18 @@ from django.core import serializers
 import copy
 import datetime
 from django.contrib.contenttypes.models import ContentType;
-from eventico import settings
-from .models import Event, EventType, EventVenue, EventPrice, Layout
+from .models import EventType, EventVenue, EventPrice, Layout
 # Create your views here.
-from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated,AllowAny
 from rest_framework.response import Response
 from rest_framework import status
-from events.serializers import EventSerializer, EventTypeSerializer, EventPriceSerializer, EventVenueSerializer, LayoutSerializer
+from events.serializers import EventTypeSerializer, EventPriceSerializer, EventVenueSerializer, LayoutSerializer
 from django.http import JsonResponse
 from rest_framework_jwt.settings import api_settings
 from events.services.layout_service import LayoutService
 jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
 jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
-from metadata_service.metadata_service import *
+from ecore.metadata_service import *
 import os
 
 def index(request):
@@ -37,7 +35,7 @@ def index(request):
     return render_to_response('index.html', {'js_list': js_list, 'css_list' : css_list, 'title' : metadata_details['title'], 'image_url':metadata_details['image_url'], 'desc':metadata_details['desc']})
 
 @api_view(['GET'])
-@permission_classes([AllowAny])
+@permission_classes([IsAuthenticated])
 def get_event_types(request):
     event_type_objects = EventType.objects.all();
     event_type_objects = serializers.serialize("json", event_type_objects)
@@ -51,7 +49,7 @@ def get_events(request):
     return JsonResponse(events, status=status.HTTP_200_OK, safe=False)
 
 @api_view(['GET'])
-@permission_classes([AllowAny])
+@permission_classes([IsAuthenticated])
 def get_event_venues(request):
     event_venue_objects = EventVenue.objects.all();
     event_venue_objects = serializers.serialize("json", event_venue_objects)
@@ -74,7 +72,7 @@ def get_event(request):
     return  JsonResponse(response, status=status.HTTP_200_OK, safe=False)
 
 @api_view(['GET'])
-@permission_classes([AllowAny])
+@permission_classes([IsAuthenticated])
 def get_event_venue(request):
     evId = request.GET['id'];
     event_venue_object = EventVenue.objects.get(id=evId)
@@ -98,7 +96,7 @@ def get_event_pricelists(request):
 
 
 @api_view(['POST'])
-@permission_classes([AllowAny])
+@permission_classes([IsAuthenticated])
 def create_event_type(request):
     event_type = request.data
     serializer = EventTypeSerializer(data=event_type)
@@ -107,7 +105,7 @@ def create_event_type(request):
     return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 @api_view(['POST'])
-@permission_classes([AllowAny])
+@permission_classes([IsAuthenticated])
 def create_event(request):
     event = request.data
     times = event.get('times')
@@ -123,7 +121,7 @@ def create_event(request):
     return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 @api_view(['POST'])
-@permission_classes([AllowAny])
+@permission_classes([IsAuthenticated])
 def create_event_venue(request):
     event_venue = request.data
     serializer = EventVenueSerializer(data=event_venue)
@@ -132,7 +130,7 @@ def create_event_venue(request):
     return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 @api_view(['POST'])
-@permission_classes([AllowAny])
+@permission_classes([IsAuthenticated])
 def create_event_price(request):
     event_price = request.data
     serializer = EventPriceSerializer(data=event_price)
@@ -141,7 +139,7 @@ def create_event_price(request):
     return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 @api_view(['POST'])
-@permission_classes([AllowAny])
+@permission_classes([IsAuthenticated])
 def update_event_type(request):
     event_type = request.data
     serializer = EventTypeSerializer(data=event_type)
@@ -150,7 +148,7 @@ def update_event_type(request):
     return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 @api_view(['POST'])
-@permission_classes([AllowAny])
+@permission_classes([IsAuthenticated])
 def upsert_event(request):
     event = request.data
     default_price = event.get('default_price')
@@ -188,7 +186,7 @@ def upsert_event(request):
         return Response({'messages' : 'No layout found for the event venue'}, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['POST'])
-@permission_classes([AllowAny])
+@permission_classes([IsAuthenticated])
 def update_event_venue(request):
     event_venue_json = copy.deepcopy(request.data)
     event_venue_json.pop('id', None)
@@ -200,7 +198,7 @@ def update_event_venue(request):
     return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
 
 @api_view(['POST'])
-@permission_classes([AllowAny])
+@permission_classes([IsAuthenticated])
 def update_event_price(request):
     event_price = request.data
     serializer = EventPriceSerializer(data=event_price)
@@ -209,7 +207,7 @@ def update_event_price(request):
     return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 @api_view(['POST'])
-@permission_classes([AllowAny])
+@permission_classes([IsAuthenticated])
 def upsert_layout(request):
     objId = request.data['object_id']
     model = request.data['model']

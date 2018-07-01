@@ -13,4 +13,8 @@ export class AppComponent {
   }
   ngOnInit() {
   }
+
+  get loading() : boolean {
+    return this.userservice.user.ProfileUpdationPending;
+  }
 }

@@ -40,23 +40,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ecore',
     'users',
     'events',
     'storages',
     'file_manager',
     'bookings',
-    'ecore',
 ]
 
 
 
 JWT_AUTH = {
-
     'JWT_VERIFY': True,
     'JWT_VERIFY_EXPIRATION': True,
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=3000),
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=30),
     'JWT_AUTH_HEADER_PREFIX': 'Bearer',
-
 }
 
 MIDDLEWARE = [

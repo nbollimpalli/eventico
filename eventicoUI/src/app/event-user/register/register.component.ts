@@ -1,6 +1,5 @@
 import { User } from '../shared/user.model';
 import { UserService } from '../shared/user.service';
-import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {
@@ -8,6 +7,8 @@ import {
     FacebookLoginProvider,
     GoogleLoginProvider
 } from 'angular-6-social-login';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-register',
@@ -19,8 +20,8 @@ export class RegisterComponent implements OnInit {
   user : User;
   passwordPattern : string;
   emailPattern : string;
-  constructor(private userservice : UserService, private toastr : ToastrService, private socialAuthService: AuthService) {
-    this.user = new User();
+  constructor(private userservice : UserService, private socialAuthService: AuthService, private router : Router, public snackBar: MatSnackBar) {
+    this.user = this.userservice.user;
     this.passwordPattern = '^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$';
   }
 
@@ -32,16 +33,7 @@ export class RegisterComponent implements OnInit {
     if(form != null)
     {
       form.reset();
-      this.user = {
-        Email: '',
-        FirstName: '',
-        LastName: '',
-        Mobile: '',
-        Password: '',
-        AdminToolBar: null,
-        EventCard: null,
-        LoggedIn: null
-      }
+      this.user.reset();
     }
   }
 
@@ -53,24 +45,74 @@ export class RegisterComponent implements OnInit {
       socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
     }
 
-
     this.socialAuthService.signIn(socialPlatformProvider).then(
       (userData) => {
         console.log(socialPlatform+" sign in data : " , userData);
-        // Now sign-in with userData
-        // ...
-
+        this.userservice.social_auth_login(userData)
+        .subscribe( (data) => {
+          this.afterLogin(data)
+        }
+        );
       }
     );
   }
 
+  afterLogin(data)
+  {
+    localStorage.setItem('userToken', data['data']['user']['token']);
+    this.userservice.updateProfile();
+    this.router.navigate(['/login']);
+  }
+
   onRegister(form : NgForm) {
-    this.userservice.registerUser(form.value)
-    .subscribe( (data) => {
-      this.resetForm(form);
-      this.toastr.success('User registration is successful');
+
+    if(this.userservice.user.AgreeTerms != true)
+    {
+      this.show_snackbar('Please agree terms and conditions in order to signup');
+      return;
     }
+
+    if(form.valid != true)
+    {
+      return;
+    }
+
+    this.userservice.registerUser()
+    .subscribe(
+      (sdata) => {
+        this.afterRegister(sdata);
+      },
+      (fdata) => {
+        this.afterRegisterFailure(fdata['error'])
+      }
     );
   }
 
+  show_snackbar(message)
+  {
+    var action = 'OK';
+    let snack_bar = this.snackBar.open(message, action, {
+      verticalPosition : 'top',
+      horizontalPosition: 'right',
+    });
+  }
+
+  afterRegister(data)
+  {
+    this.userservice.user.import(data['data']['user']);
+    if(data['messages'])
+    {
+      this.show_snackbar(data['messages'].join(','));
+    }
+    this.router.navigate(['']);
+  }
+
+  afterRegisterFailure(data)
+  {
+    this.userservice.user.ProfileUpdationPending = false;
+    if(data['messages'])
+    {
+      this.show_snackbar(data['messages'].join(','));
+    }
+  }
 }

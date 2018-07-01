@@ -1,0 +1,54 @@
+{% extends "email_templates/base.html" %}
+
+{% block content %}
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="25" class="em_height">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="middle" align="center"><img src="https://www.sendwithus.com/assets/img/emailmonks/images/img1.png" width="150" height="149" alt="" style="display:block; font-family:Arial, sans-serif; font-size:25px; line-height:149px; color:#c27cbb;"  border="0" /></td>
+  </tr>
+  <tr>
+    <td height="25" class="em_height">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="25" style="font-size:1px; line-height:1px;">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="1" bgcolor="#d8e4f0" style="font-size:0px;line-height:0px;"><img src="https://www.sendwithus.com/assets/img/emailmonks/images/spacer.gif" width="1" height="1" alt="" style="display:block;" border="0" /></td>
+  </tr>
+  <tr>
+    <td height="34" style="font-size:1px; line-height:1px;">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="font-family:'Open Sans', Arial, sans-serif; font-size:18px; font-weight:bold; line-height:20px; color:#feae39;">Congratulations!</td>
+  </tr>
+  <tr>
+    <td align="center" style="font-family:'Open Sans', Arial, sans-serif; font-size:18px; font-weight:bold; line-height:20px; color:#feae39;">Your account has been successfully created.</td>
+  </tr>
+  <tr>
+    <td height="20" style="font-size:1px; line-height:1px;">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" style="font-family:'Open Sans', Arial, sans-serif; font-size:16px; line-height:20px; color:#feae39;">If you did not create this account, please <a href="#" target="_blank" style="text-decoration:underline; color:#feae39;">click here</a></td>
+  </tr>
+  <tr>
+    <td height="15" style="font-size:1px; line-height:1px;">&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top" align="center">
+      <table width="210" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr>
+          <td valign="middle" align="center" height="45" bgcolor="#feae39" style="font-family:'Open Sans', Arial, sans-serif; font-size:17px; font-weight:bold; color:#ffffff; text-transform:uppercase;"><a href="{{ verify_url }}" target="_blank" style="text-decoration:none; color:#ffffff; display:block; line-height:45px;">verify my account</a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td height="34" class="em_height">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="31" class="em_height">&nbsp;</td>
+  </tr>
+</table>
+{% endblock %}

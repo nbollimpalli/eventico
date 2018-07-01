@@ -7,7 +7,7 @@ import { EventVenueLayout } from '../../shared/event-venue-layout.model';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {FormControl} from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-
+import { UserService } from '../../event-user/shared/user.service'
 @Component({
   selector: 'app-new-event-venue',
   templateUrl: './new-event-venue.component.html',
@@ -19,7 +19,7 @@ export class NewEventVenueComponent implements OnInit {
   markEmptyControl: FormControl = new FormControl();
   mode : string;
   showOverlay: string;
-  constructor(private eventVenueService : EventVenueService, private router : Router, public dialog: MatDialog, private route : ActivatedRoute)
+  constructor(private eventVenueService : EventVenueService, private router : Router, public dialog: MatDialog, private route : ActivatedRoute, private userservice : UserService)
   {
     this.showOverlay = 'block';
     this.route.params.subscribe(params => this.setupEventVenue(params['id']));
@@ -228,5 +228,9 @@ export class NewEventVenueComponent implements OnInit {
     group_index: -1,
     col_index: -1
   };
+
+  get permissions() {
+    return this.userservice.user.Permissions;
+  }
 }
 

@@ -47,6 +47,10 @@ input,
   text-decoration: none; /* remove underline from anchors */
 }
 
+.checks {
+  font-size: 14px;
+}
+
 input:hover,
 .btn:hover {
   opacity: 1;

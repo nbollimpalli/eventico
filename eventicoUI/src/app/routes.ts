@@ -1,15 +1,10 @@
 import { Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
 import { AntiauthGuard } from './auth/antiauth.guard';
-import { AdminauthGuard } from './auth/adminauth.guard';
-import { SuperadminauthGuard } from './auth/superadminauth.guard';
 
 import { RegisterComponent } from './event-user/register/register.component';
 import { LoginComponent } from './event-user/login/login.component';
 import { UsersComponent } from './event-user/users/users.component';
-import { UserComponent } from './event-user/users/user/user.component';
-import { RolesComponent } from './event-user/users/roles/roles.component';
-import { RoleComponent } from './event-user/users/roles/role/role.component';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -32,16 +27,13 @@ export const appRoutes: Routes = [
   { path: '', component: EventsComponent , pathMatch: 'full'},
   { path: 'signup', component: RegisterComponent, canActivate: [AntiauthGuard] },
   { path: 'login', component: LoginComponent, canActivate: [AntiauthGuard] },
-  { path: 'users', component: UsersComponent},
-  { path: 'user', component: UserComponent},
-  { path: 'roles', component: RolesComponent},
-  { path: 'role', component: RoleComponent},
+  { path: 'users', component: UsersComponent, canActivate: [AuthGuard]},
   { path: 'events/event', component: NewEventComponent, canActivate: [AuthGuard] },
-  { path: 'event-types', component: EventTypesComponent},
-  { path: 'event-types/event-type', component: NewEventTypeComponent},
-  { path: 'event-venues', component: EventVenuesComponent},
-  { path: 'event-venues/event-venue', component: NewEventVenueComponent},
-  { path: 'bookings', component: BookingsComponent},
+  { path: 'event-types', component: EventTypesComponent, canActivate: [AuthGuard]},
+  { path: 'event-types/event-type', component: NewEventTypeComponent, canActivate: [AuthGuard]},
+  { path: 'event-venues', component: EventVenuesComponent, canActivate: [AuthGuard]},
+  { path: 'event-venues/event-venue', component: NewEventVenueComponent, canActivate: [AuthGuard]},
+  { path: 'bookings', component: BookingsComponent, canActivate: [AuthGuard]},
   { path: 'bookings/booking', component: BookingComponent},
   {path: '**', component: EventsComponent }
 ];

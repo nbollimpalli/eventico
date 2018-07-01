@@ -16,10 +16,12 @@ export class ApiFactoryService {
     //event user services
     this.api_map.set('LOGIN_USER', '/users/api-token-auth/');
     this.api_map.set('REGISTER_USER', '/users/create/');
-    this.api_map.set('FETCH_ROLE_PROFILE', '/users/profile');
+    this.api_map.set('FETCH_USER_PROFILE', '/users/profile');
     this.api_map.set('SOCIAL_SIGN_ON', '/users/social-auth/');
     this.api_map.set('FORGOT_PASSWORD', '/users/forgot-password/');
-    this.api_map.set('RESEND_OTP', '/users/resend-otp/');
+    this.api_map.set('SEND_OTP', '/users/send-otp/');
+    this.api_map.set('VERIFY_OTP', '/users/verify-otp/');
+    this.api_map.set('RESET_PASSWORD', '/users/reset-password/');
 
     //file manager services
     this.api_map.set('UPLOAD_FILE', '/file/upload/');
@@ -50,7 +52,7 @@ export class ApiFactoryService {
     this.api_map.set('UPSERT_LAYOUT', '/layout/upsert/');
 
     //booking service
-    this.api_map.set('SKIP_AND_BOOK', '/bookings/skip-and-book/');
+    this.api_map.set('BOOK', '/bookings/book/');
 
     //manage users apis
     this.api_map.set('GET_USERS', '/users/fetch-users/');

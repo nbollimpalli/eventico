@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../event-user/shared/user.service'
 
 @Component({
   selector: 'app-bookings',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookingsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userservice : UserService) { }
 
   ngOnInit() {
+  }
+
+  get permissions() {
+    return this.userservice.user.Permissions;
   }
 
 }

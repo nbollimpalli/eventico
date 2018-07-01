@@ -4,12 +4,15 @@ import { UserService } from '../shared/user.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material';
+import { ForgotPasswordComponent } from '../../popups/forgot-password/forgot-password.component';
+
 import {
     AuthService,
     FacebookLoginProvider,
     GoogleLoginProvider
 } from 'angular-6-social-login';
-
+import {MatDialog} from '@angular/material';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -21,9 +24,10 @@ export class LoginComponent implements OnInit {
   user : User;
   passwordPattern : string;
   emailPattern : string;
+  loading = false;
 
-  constructor(private userservice : UserService, private toastr : ToastrService, private router : Router, private socialAuthService: AuthService) {
-    this.user = new User();
+  constructor(private userservice : UserService, private toastr : ToastrService, private router : Router, private socialAuthService: AuthService, public snackBar: MatSnackBar, public dialog: MatDialog,) {
+    this.user = userservice.user;
     this.passwordPattern = '^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$';
   }
 
@@ -55,32 +59,68 @@ export class LoginComponent implements OnInit {
     if(form != null)
     {
       form.reset();
-      this.user = {
-        Email: '',
-        FirstName: '',
-        LastName: '',
-        Mobile: '',
-        Password: '',
-        AdminToolBar: null,
-        EventCard: null,
-        LoggedIn: null
-      }
+      this.user.reset();
     }
   }
 
   onLogin(form : NgForm) {
-    this.userservice.loginUser(form.value)
-    .subscribe( (data) => {
-      this.afterLogin(data)
+    if(form.valid != true)
+    {
+      return;
     }
+    this.userservice.loginUser()
+    .subscribe(
+      (sdata) => {
+        this.afterLogin(sdata);
+      },
+      (fdata) => {
+        this.afterLoginFailure(fdata['error']);
+      },
     );
   }
 
   afterLogin(data)
   {
     localStorage.setItem('userToken', data['data']['user']['token']);
-    this.userservice.updateProfile();
+    this.userservice.user.import(data['data']['user']);
+    if(data['messages'])
+    {
+      this.show_snackbar(data['messages'].join(','));
+    }
     this.router.navigate(['']);
+  }
+
+  afterLoginFailure(data)
+  {
+    this.userservice.user.ProfileUpdationPending = false;
+    if(data['messages'])
+    {
+      this.show_snackbar(data['messages'].join(','));
+    }
+  }
+
+  show_snackbar(message)
+  {
+    var action = 'OK';
+    let snack_bar = this.snackBar.open(message, action, {
+      verticalPosition : 'top',
+      horizontalPosition: 'right',
+    });
+  }
+
+  forgot_password()
+  {
+    const dialogRef = this.dialog.open(ForgotPasswordComponent, {
+      width: '80%',
+      data: {}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+        if(result == 'success')
+        {
+          this.show_snackbar('Password reset successful');
+        }
+    });
   }
 
 }

@@ -3,6 +3,7 @@ import {FormControl} from '@angular/forms';
 import { Event } from './shared/event.model';
 import { EventService } from './shared/event.service';
 import { ObservableMedia } from '@angular/flex-layout';
+import { UserService } from '../event-user/shared/user.service'
 import { Observable } from "rxjs";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/takeWhile";
@@ -22,8 +23,8 @@ export class EventsComponent implements OnInit {
     'Three'
    ];
 
-  constructor(private eventService : EventService, private observableMedia: ObservableMedia) { }
-
+  constructor(private eventService : EventService, private observableMedia: ObservableMedia, private userservice : UserService) { }
+  loading = false;
   ngOnInit( ) {
     this.eventService.loadEvents();
     const grid = new Map([
@@ -50,5 +51,9 @@ export class EventsComponent implements OnInit {
 
   get events() : Object{
     return this.eventService.events;
+  }
+
+  get permissions() {
+    return this.userservice.user.Permissions;
   }
 }

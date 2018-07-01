@@ -1,3 +1,4 @@
+<ngx-loading [show]="loading" ></ngx-loading>
 <mat-card class="register-card">
   <div class="container">
   <form #userRegistrationForm="ngForm" (ngSubmit)="onRegister(userRegistrationForm)">
@@ -21,12 +22,17 @@
           <p>Or</p>
         </div>
 
-        <input  type="email" placeholder="Email" #Email="ngModel" [(ngModel)]="user.Email" name="Email" required>
-        <input  placeholder="Mobile" #FirstName="ngModel" [(ngModel)]="user.Mobile" name="Mobile" required>
-        <input  placeholder="Firstname" #FirstName="ngModel" [(ngModel)]="user.FirstName" name="FirstName" required>
-        <input  placeholder="Lastname" #LastName="ngModel" [(ngModel)]="user.LastName" name="LastName" required>
+        <app-show-errors [control]="Email"></app-show-errors>
+        <input  type="email" placeholder="Email" #Email="ngModel" [(ngModel)]="user.Email" name="Email" required email>
+        <app-show-errors [control]="Mobile"></app-show-errors>
+        <input  placeholder="Mobile" #Mobile="ngModel" [(ngModel)]="user.Mobile" name="Mobile" required validateMobile>
+        <app-show-errors [control]="Name"></app-show-errors>
+        <input  placeholder="Name" #Name="ngModel" [(ngModel)]="user.Name" name="Name" required>
+        <app-show-errors [control]="Password"></app-show-errors>
         <input  placeholder="Password" type="password" #Password="ngModel" [(ngModel)]="user.Password" name="Password" required>
-        <input type="submit" value="Sign Up">
+        <mat-checkbox name="AgreeTerms" #AgreeTerms [(ngModel)]="user.AgreeTerms" color="warn"><span class="checks">I Agree <a href="#" target="_blank">Terms & Conditions</a></span></mat-checkbox><br>
+        <mat-checkbox name="Subscribe" [(ngModel)]="user.Subscribe" color="warn"><span class="checks">SUBSCRIBE FOR OUR NEWS LETTERS</span></mat-checkbox>
+        <input type="submit" value="Sign Up" >
       </div>
 
     </div>

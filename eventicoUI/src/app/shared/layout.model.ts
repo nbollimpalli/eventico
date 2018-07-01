@@ -11,7 +11,7 @@ export class Layout {
 
   priceList = [
     {
-      value: 0,
+      value: 0.0,
       desc: 'Basic price',
       color: '#acb19b',
       label: 'Basic',
