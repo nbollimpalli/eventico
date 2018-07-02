@@ -41,8 +41,16 @@ class Payment(models.Model):
     #paisapay, cash
     mode = models.CharField(max_length=40)
     amount = models.DecimalField(default=0, decimal_places=2, max_digits=20)
-    txn_id = models.UUIDField(max_length=255, unique=True, default=uuid.uuid4().hex[:30].upper(), null=True, blank=True)
+    txn_id = models.CharField(max_length=255, unique=True, null=True, blank=True)
     uuid = models.UUIDField(max_length=100, unique=True, default=uuid.uuid4, null=True, blank=True)
     content_type = models.ForeignKey(ContentType, on_delete=models.DO_NOTHING, null=True, blank=True)
     object_id = models.PositiveIntegerField(null=True, blank=True)
     content_object = GenericForeignKey('content_type', 'object_id')
+
+class Location(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+    place_id = models.CharField(max_length=255, unique=True)
+    location_url = models.CharField(max_length=255, unique=True)
+    address = models.TextField(blank=True)
+    uuid = models.UUIDField(max_length=100, unique=True, default=uuid.uuid4, null=True, blank=True)
+    created_on = models.DateTimeField(auto_now_add=True)
