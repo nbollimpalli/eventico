@@ -29,4 +29,14 @@ export class EventType {
     return updateJSON;
   }
 
+  export()
+  {
+    var res = {
+      "id" : this.Id,
+      "name" : this.Name,
+      "desc" : this.Desc
+    }
+    return res;
+  }
+
 }

@@ -42,10 +42,7 @@ export class ApiFactoryService {
     this.api_map.set('GET_EVENT_VENUES', '/eventvenues/');
 
     //event type services
-    this.api_map.set('CREATE_EVENT_TYPE', '/eventtype/create/');
-    this.api_map.set('UPDATE_EVENT_TYPE', '/eventtype/update/');
-    this.api_map.set('DELETE_EVENT_TYPE', '/eventtype/delete/');
-    this.api_map.set('GET_EVENT_TYPE', '/eventtype/');
+    this.api_map.set('UPSERT_EVENT_TYPE', '/eventtype/upsert/');
     this.api_map.set('GET_EVENT_TYPES', '/eventtypes/');
 
     //layout

@@ -9,24 +9,20 @@ export class EventTypeService {
 
   constructor(private restService : RestService) { }
 
-  createEventType(createETObj : EventType)
+  upsertEventType(eventType : EventType)
   {
-    const createJSON = createETObj.getCreateJSON();
-    return this.restService.post( 'CREATE_EVENT_TYPE', null, createJSON );
-  }
-
-  updateEventType(updateETObj : EventType)
-  {
-    const updateJSON = updateETObj.getUpdateJSON();
-    return this.restService.post( 'UPDATE_EVENT_TYPE', null, updateJSON );
+    const body = eventType.export();
+    return this.restService.post( 'UPSERT_EVENT_TYPE', null, body );
   }
 
   loadEventTypes()
   {
     this.eventTypes = [];
-    this.fetchEventTypes().subscribe( (data) => {
-        this.syncUIEventTypes(data);
-      }
+    this.fetchEventTypes().subscribe(
+      (sdata) => {
+        this.syncUIEventTypes(sdata['data']['event_types']);
+      },
+      (fdata) => {}
       );
   }
 
@@ -36,16 +32,10 @@ export class EventTypeService {
     return this.restService.get('GET_EVENT_TYPES', null, params);
   }
 
-  syncUIEventTypes(data)
+  syncUIEventTypes(eventTypeList)
   {
-    console.log('sync data ::');
-    console.log(data);
-    var eventTypeList = JSON.parse(data);
     for (let i = 0; i < eventTypeList.length; i++) {
-         var id = eventTypeList[i]["pk"];
-         var eventTypeJsonObject = eventTypeList[i]["fields"];
-         eventTypeJsonObject["id"] = id;
-         var eventType = new EventType(eventTypeJsonObject);
+         var eventType = new EventType(eventTypeList[i]);
          this.eventTypes.push(eventType);
     }
     console.log(this.eventTypes);

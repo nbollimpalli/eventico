@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>Event Type</h2>
+<mat-dialog-content>
+  <form name="upsertEventTypeForm" #upsertEventTypeForm="ngForm">
+    <mat-form-field [style.width]="'100%'">
+      <input matInput  placeholder="Name" #Name="ngModel" [(ngModel)]="eventType.Name" name="Name" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field [style.width]="'100%'">
+      <textarea matInput placeholder="Description" #Desc="ngModel" [(ngModel)]="eventType.Desc" name="Description" required></textarea>
+    </mat-form-field>
+    <br>
+    <div>
+      <button mat-button (click)="upsert_event_type()" [disabled]="!upsertEventTypeForm.valid">UPSERT EVENT TYPE</button>
+    </div>
+  </form>
+</mat-dialog-content>
+

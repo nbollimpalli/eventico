@@ -40,12 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ecore',
     'users',
     'events',
     'storages',
     'file_manager',
     'bookings',
+    'ecore',
 ]
 
 

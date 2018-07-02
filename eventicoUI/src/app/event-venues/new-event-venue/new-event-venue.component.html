@@ -1,4 +1,5 @@
 <ngx-loading [show]="loading" ></ngx-loading>
+
 <div  [style.display]="showOverlay" class="overlay">
   <div class="indicator">
     <svg width="16px" height="12px">
@@ -12,12 +13,23 @@
     <form class="new-event-venue-form" #eventVenueCreationForm="ngForm">
       <mat-card class="new-event-venue-card">
         <mat-card-content>
+            <mat-form-field  class="full-width">
+              <input  placeholder="Search Events" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl" matInput>
+            </mat-form-field>
+
             <mat-form-field class="full-width">
               <input matInput placeholder="Name" #Name="ngModel" [(ngModel)]="eventVenue.Name" name="Name" required>
             </mat-form-field>
             <mat-form-field class="full-width">
               <textarea matInput placeholder="Description" #Desc="ngModel" [(ngModel)]="eventVenue.Desc" name="Description" required></textarea>
             </mat-form-field>
+
+
+
+            <agm-map [latitude]="lat" [longitude]="lng" [scrollwheel]="false" [zoom]="zoom">
+              <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            </agm-map>
+
           <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
         </mat-card-content>
       </mat-card>

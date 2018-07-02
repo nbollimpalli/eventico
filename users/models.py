@@ -35,7 +35,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=80, unique=True, blank=False)
     name = models.CharField(max_length=255, blank=True)
     mobile = models.CharField(max_length=30, blank=True)
-    role = models.ForeignKey(Role, on_delete=models.DO_NOTHING, default=Role.objects.get(name='default').id)
+    role = models.ForeignKey(Role, on_delete=models.DO_NOTHING)
     status = models.CharField(max_length=255, default='pending')
     fb_pic = models.URLField(max_length=255, null=True)
     google_pic = models.URLField(max_length=255, null=True)

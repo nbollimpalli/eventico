@@ -1,23 +1,27 @@
 <ngx-loading [show]="loading" ></ngx-loading>
-<mat-toolbar class="events-filter-toolbar">
-  <mat-toolbar-row>
-    <mat-form-field *ngIf="permissions['search_events'] == true" class="half-width">
-    <input  type="text" placeholder="Search Events" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
-    <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let option of options" [value]="option">
-        {{ option }}
-      </mat-option>
-    </mat-autocomplete>
-    </mat-form-field>
 
-    <span class="tollbar-splitter"></span>
-    <mat-form-field>
-      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker touchUi #picker></mat-datepicker>
-    </mat-form-field>
-  </mat-toolbar-row>
-</mat-toolbar>
+<div class="container">
+  <mat-toolbar>
+    <mat-toolbar-row>
+      <mat-form-field  class="half-width">
+        <input  placeholder="Search Events" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl" matInput>
+      </mat-form-field>
+
+      <span class="tollbar-splitter"></span>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker></mat-datepicker>
+      </mat-form-field>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <!--<div class="form-group">-->
+    <!--<input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">-->
+  <!--</div>-->
+  <agm-map [latitude]="lat" [longitude]="lng" [scrollwheel]="false" [zoom]="zoom">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
+</div>
 
 <div class="spacer"></div>
 <div class="events-container">

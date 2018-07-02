@@ -50,6 +50,7 @@ class CreateUserAPIView(APIView):
             with transaction.atomic():
                 user = request.data
                 email = user['email']
+                default_role = Role.objects.get(name='default')
                 try:
                     user_instance = User.objects.get(email=email)
                     if(user_instance != None):
@@ -58,7 +59,7 @@ class CreateUserAPIView(APIView):
                     raise e
                 except Exception as e:
                     print('new user')
-
+                user['role'] = default_role.id
                 serializer = UserSerializer(data=user)
                 serializer.is_valid(raise_exception=True)
                 serializer.save()

@@ -13,7 +13,6 @@ import { EventsComponent } from './events/events.component';
 import { NewEventComponent } from './events/new-event/new-event.component';
 
 import { EventTypesComponent } from './event-types/event-types.component';
-import { NewEventTypeComponent } from './event-types/new-event-type/new-event-type.component';
 
 import { EventVenuesComponent } from './event-venues/event-venues.component';
 import { NewEventVenueComponent } from './event-venues/new-event-venue/new-event-venue.component';
@@ -30,7 +29,6 @@ export const appRoutes: Routes = [
   { path: 'users', component: UsersComponent, canActivate: [AuthGuard]},
   { path: 'events/event', component: NewEventComponent, canActivate: [AuthGuard] },
   { path: 'event-types', component: EventTypesComponent, canActivate: [AuthGuard]},
-  { path: 'event-types/event-type', component: NewEventTypeComponent, canActivate: [AuthGuard]},
   { path: 'event-venues', component: EventVenuesComponent, canActivate: [AuthGuard]},
   { path: 'event-venues/event-venue', component: NewEventVenueComponent, canActivate: [AuthGuard]},
   { path: 'bookings', component: BookingsComponent, canActivate: [AuthGuard]},

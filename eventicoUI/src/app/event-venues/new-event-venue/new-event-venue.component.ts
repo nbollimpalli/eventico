@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , ElementRef, NgZone, ViewChild} from '@angular/core';
 import { EventVenue } from '../shared/event-venue.model';
 import { EventVenueService } from '../shared/event-venue.service';
 import { NgForm } from '@angular/forms';
@@ -8,6 +8,9 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {FormControl} from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../../event-user/shared/user.service'
+import { } from 'googlemaps';
+import { MapsAPILoader } from '@agm/core';
+
 @Component({
   selector: 'app-new-event-venue',
   templateUrl: './new-event-venue.component.html',
@@ -19,7 +22,26 @@ export class NewEventVenueComponent implements OnInit {
   markEmptyControl: FormControl = new FormControl();
   mode : string;
   showOverlay: string;
-  constructor(private eventVenueService : EventVenueService, private router : Router, public dialog: MatDialog, private route : ActivatedRoute, private userservice : UserService)
+
+  myControl: FormControl = new FormControl();
+
+  lat: number = 51.678418;
+  lng: number = 7.809007;
+  public searchControl: FormControl;
+  public zoom: number;
+
+  @ViewChild("search")
+  public searchElementRef: ElementRef;
+
+  constructor(
+    private eventVenueService : EventVenueService,
+    private router : Router,
+    public dialog: MatDialog,
+    private route : ActivatedRoute,
+    private userservice : UserService,
+    private mapsAPILoader: MapsAPILoader,
+    private ngZone: NgZone
+  )
   {
     this.showOverlay = 'block';
     this.route.params.subscribe(params => this.setupEventVenue(params['id']));
@@ -52,8 +74,40 @@ export class NewEventVenueComponent implements OnInit {
     }
   }
 
+  searchLocationCallback(selectedData:any) {
+        console.log(selectedData);
+  }
+
   ngOnInit() {
     this.resetForm();
+    this.zoom = 4;
+    this.searchControl = new FormControl();
+
+    //set current position
+    this.setCurrentPosition();
+
+    //load Places Autocomplete
+    this.mapsAPILoader.load().then(() => {
+      let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
+        componentRestrictions: {country: 'in'}
+      });
+      autocomplete.addListener("place_changed", () => {
+        this.ngZone.run(() => {
+          //get the place result
+          let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+
+          //verify result
+          if (place.geometry === undefined || place.geometry === null) {
+            return;
+          }
+
+          //set latitude, longitude and zoom
+          this.lat = place.geometry.location.lat();
+          this.lng = place.geometry.location.lng();
+          this.zoom = 12;
+        });
+      });
+    });
   }
 
   resetForm(form? : NgForm) {
@@ -231,6 +285,16 @@ export class NewEventVenueComponent implements OnInit {
 
   get permissions() {
     return this.userservice.user.Permissions;
+  }
+
+  private setCurrentPosition() {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.lat = position.coords.latitude;
+        this.lng = position.coords.longitude;
+        this.zoom = 12;
+      });
+    }
   }
 }
 

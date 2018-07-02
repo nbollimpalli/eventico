@@ -34,3 +34,7 @@
 }
 
 table { margin: auto; }
+
+agm-map {
+  height: 300px;
+}

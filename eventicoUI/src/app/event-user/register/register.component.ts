@@ -15,6 +15,7 @@ import { MatSnackBar } from '@angular/material';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
 export class RegisterComponent implements OnInit {
 
   user : User;

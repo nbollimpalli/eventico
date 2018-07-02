@@ -3200,38 +3200,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./routes */ "./src/app/routes.ts");
 /* harmony import */ var angular_6_social_login__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! angular-6-social-login */ "./node_modules/angular-6-social-login/angular-6-social-login.umd.js");
 /* harmony import */ var angular_6_social_login__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(angular_6_social_login__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var ngx_loading__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ngx-loading */ "./node_modules/ngx-loading/ngx-loading/ngx-loading.es5.js");
-/* harmony import */ var _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./event-user/shared/user.service */ "./src/app/event-user/shared/user.service.ts");
-/* harmony import */ var _events_shared_event_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./events/shared/event.service */ "./src/app/events/shared/event.service.ts");
-/* harmony import */ var _event_types_shared_event_type_service__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./event-types/shared/event-type.service */ "./src/app/event-types/shared/event-type.service.ts");
-/* harmony import */ var _event_venues_shared_event_venue_service__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./event-venues/shared/event-venue.service */ "./src/app/event-venues/shared/event-venue.service.ts");
-/* harmony import */ var _shared_services_file_manager_service__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./shared-services/file-manager.service */ "./src/app/shared-services/file-manager.service.ts");
-/* harmony import */ var _shared_services_api_factory_service__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./shared-services/api-factory.service */ "./src/app/shared-services/api-factory.service.ts");
-/* harmony import */ var _shared_services_rest_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./shared-services/rest.service */ "./src/app/shared-services/rest.service.ts");
-/* harmony import */ var _shared_services_datetime_service__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./shared-services/datetime.service */ "./src/app/shared-services/datetime.service.ts");
-/* harmony import */ var _bookings_shared_booking_service__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./bookings/shared/booking.service */ "./src/app/bookings/shared/booking.service.ts");
-/* harmony import */ var _shared_services_seo_service__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./shared-services/seo.service */ "./src/app/shared-services/seo.service.ts");
-/* harmony import */ var _event_user_register_register_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./event-user/register/register.component */ "./src/app/event-user/register/register.component.ts");
-/* harmony import */ var _event_user_login_login_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./event-user/login/login.component */ "./src/app/event-user/login/login.component.ts");
-/* harmony import */ var _event_user_users_users_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./event-user/users/users.component */ "./src/app/event-user/users/users.component.ts");
-/* harmony import */ var _event_user_settings_settings_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./event-user/settings/settings.component */ "./src/app/event-user/settings/settings.component.ts");
-/* harmony import */ var _event_user_event_user_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./event-user/event-user.component */ "./src/app/event-user/event-user.component.ts");
-/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
-/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
-/* harmony import */ var _events_events_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./events/events.component */ "./src/app/events/events.component.ts");
-/* harmony import */ var _events_new_event_new_event_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./events/new-event/new-event.component */ "./src/app/events/new-event/new-event.component.ts");
-/* harmony import */ var _event_types_event_types_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./event-types/event-types.component */ "./src/app/event-types/event-types.component.ts");
-/* harmony import */ var _event_types_new_event_type_new_event_type_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./event-types/new-event-type/new-event-type.component */ "./src/app/event-types/new-event-type/new-event-type.component.ts");
-/* harmony import */ var _event_venues_event_venues_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./event-venues/event-venues.component */ "./src/app/event-venues/event-venues.component.ts");
-/* harmony import */ var _event_venues_new_event_venue_new_event_venue_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./event-venues/new-event-venue/new-event-venue.component */ "./src/app/event-venues/new-event-venue/new-event-venue.component.ts");
-/* harmony import */ var _bookings_bookings_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./bookings/bookings.component */ "./src/app/bookings/bookings.component.ts");
-/* harmony import */ var _bookings_booking_booking_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./bookings/booking/booking.component */ "./src/app/bookings/booking/booking.component.ts");
-/* harmony import */ var _popups_booking_confirmation_booking_confirmation_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./popups/booking-confirmation/booking-confirmation.component */ "./src/app/popups/booking-confirmation/booking-confirmation.component.ts");
-/* harmony import */ var _popups_terms_conditions_terms_conditions_component__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./popups/terms-conditions/terms-conditions.component */ "./src/app/popups/terms-conditions/terms-conditions.component.ts");
-/* harmony import */ var _shared_services_show_errors_show_errors_component__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./shared-services/show-errors/show-errors.component */ "./src/app/shared-services/show-errors/show-errors.component.ts");
-/* harmony import */ var _popups_forgot_password_forgot_password_component__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./popups/forgot-password/forgot-password.component */ "./src/app/popups/forgot-password/forgot-password.component.ts");
-/* harmony import */ var _directives_mobile_validator_directive__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./directives/mobile-validator.directive */ "./src/app/directives/mobile-validator.directive.ts");
-/* harmony import */ var _directives_email_validator_directive__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./directives/email-validator.directive */ "./src/app/directives/email-validator.directive.ts");
+/* harmony import */ var ng4_geoautocomplete__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ng4-geoautocomplete */ "./node_modules/ng4-geoautocomplete/index.js");
+/* harmony import */ var ngx_loading__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ngx-loading */ "./node_modules/ngx-loading/ngx-loading/ngx-loading.es5.js");
+/* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/index.js");
+/* harmony import */ var _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./event-user/shared/user.service */ "./src/app/event-user/shared/user.service.ts");
+/* harmony import */ var _events_shared_event_service__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./events/shared/event.service */ "./src/app/events/shared/event.service.ts");
+/* harmony import */ var _event_types_shared_event_type_service__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./event-types/shared/event-type.service */ "./src/app/event-types/shared/event-type.service.ts");
+/* harmony import */ var _event_venues_shared_event_venue_service__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./event-venues/shared/event-venue.service */ "./src/app/event-venues/shared/event-venue.service.ts");
+/* harmony import */ var _shared_services_file_manager_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./shared-services/file-manager.service */ "./src/app/shared-services/file-manager.service.ts");
+/* harmony import */ var _shared_services_api_factory_service__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./shared-services/api-factory.service */ "./src/app/shared-services/api-factory.service.ts");
+/* harmony import */ var _shared_services_rest_service__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./shared-services/rest.service */ "./src/app/shared-services/rest.service.ts");
+/* harmony import */ var _shared_services_datetime_service__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./shared-services/datetime.service */ "./src/app/shared-services/datetime.service.ts");
+/* harmony import */ var _bookings_shared_booking_service__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./bookings/shared/booking.service */ "./src/app/bookings/shared/booking.service.ts");
+/* harmony import */ var _shared_services_seo_service__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./shared-services/seo.service */ "./src/app/shared-services/seo.service.ts");
+/* harmony import */ var _event_user_register_register_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./event-user/register/register.component */ "./src/app/event-user/register/register.component.ts");
+/* harmony import */ var _event_user_login_login_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./event-user/login/login.component */ "./src/app/event-user/login/login.component.ts");
+/* harmony import */ var _event_user_users_users_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./event-user/users/users.component */ "./src/app/event-user/users/users.component.ts");
+/* harmony import */ var _event_user_settings_settings_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./event-user/settings/settings.component */ "./src/app/event-user/settings/settings.component.ts");
+/* harmony import */ var _event_user_event_user_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./event-user/event-user.component */ "./src/app/event-user/event-user.component.ts");
+/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
+/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
+/* harmony import */ var _events_events_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./events/events.component */ "./src/app/events/events.component.ts");
+/* harmony import */ var _events_new_event_new_event_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./events/new-event/new-event.component */ "./src/app/events/new-event/new-event.component.ts");
+/* harmony import */ var _event_types_event_types_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./event-types/event-types.component */ "./src/app/event-types/event-types.component.ts");
+/* harmony import */ var _event_venues_event_venues_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./event-venues/event-venues.component */ "./src/app/event-venues/event-venues.component.ts");
+/* harmony import */ var _event_venues_new_event_venue_new_event_venue_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./event-venues/new-event-venue/new-event-venue.component */ "./src/app/event-venues/new-event-venue/new-event-venue.component.ts");
+/* harmony import */ var _bookings_bookings_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./bookings/bookings.component */ "./src/app/bookings/bookings.component.ts");
+/* harmony import */ var _bookings_booking_booking_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./bookings/booking/booking.component */ "./src/app/bookings/booking/booking.component.ts");
+/* harmony import */ var _popups_booking_confirmation_booking_confirmation_component__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./popups/booking-confirmation/booking-confirmation.component */ "./src/app/popups/booking-confirmation/booking-confirmation.component.ts");
+/* harmony import */ var _popups_terms_conditions_terms_conditions_component__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./popups/terms-conditions/terms-conditions.component */ "./src/app/popups/terms-conditions/terms-conditions.component.ts");
+/* harmony import */ var _shared_services_show_errors_show_errors_component__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./shared-services/show-errors/show-errors.component */ "./src/app/shared-services/show-errors/show-errors.component.ts");
+/* harmony import */ var _popups_forgot_password_forgot_password_component__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./popups/forgot-password/forgot-password.component */ "./src/app/popups/forgot-password/forgot-password.component.ts");
+/* harmony import */ var _popups_event_type_upsert_event_type_upsert_component__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./popups/event-type-upsert/event-type-upsert.component */ "./src/app/popups/event-type-upsert/event-type-upsert.component.ts");
+/* harmony import */ var _directives_mobile_validator_directive__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ./directives/mobile-validator.directive */ "./src/app/directives/mobile-validator.directive.ts");
+/* harmony import */ var _directives_email_validator_directive__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ./directives/email-validator.directive */ "./src/app/directives/email-validator.directive.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3239,6 +3241,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
  // Included with Angular CLI.
+
+
 
 
 
@@ -3316,29 +3320,29 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_16__["AppComponent"],
-                _event_user_register_register_component__WEBPACK_IMPORTED_MODULE_30__["RegisterComponent"],
-                _header_header_component__WEBPACK_IMPORTED_MODULE_35__["HeaderComponent"],
-                _footer_footer_component__WEBPACK_IMPORTED_MODULE_36__["FooterComponent"],
-                _events_events_component__WEBPACK_IMPORTED_MODULE_37__["EventsComponent"],
-                _event_user_login_login_component__WEBPACK_IMPORTED_MODULE_31__["LoginComponent"],
-                _events_new_event_new_event_component__WEBPACK_IMPORTED_MODULE_38__["NewEventComponent"],
-                _event_types_event_types_component__WEBPACK_IMPORTED_MODULE_39__["EventTypesComponent"],
-                _event_types_new_event_type_new_event_type_component__WEBPACK_IMPORTED_MODULE_40__["NewEventTypeComponent"],
-                _event_venues_event_venues_component__WEBPACK_IMPORTED_MODULE_41__["EventVenuesComponent"],
-                _event_venues_new_event_venue_new_event_venue_component__WEBPACK_IMPORTED_MODULE_42__["NewEventVenueComponent"],
-                _event_user_settings_settings_component__WEBPACK_IMPORTED_MODULE_33__["SettingsComponent"],
-                _event_user_event_user_component__WEBPACK_IMPORTED_MODULE_34__["EventUserComponent"],
-                _bookings_bookings_component__WEBPACK_IMPORTED_MODULE_43__["BookingsComponent"],
-                _bookings_booking_booking_component__WEBPACK_IMPORTED_MODULE_44__["BookingComponent"],
-                _event_user_users_users_component__WEBPACK_IMPORTED_MODULE_32__["UsersComponent"],
-                _event_user_users_users_component__WEBPACK_IMPORTED_MODULE_32__["SelectRoleDialog"],
-                _event_user_users_users_component__WEBPACK_IMPORTED_MODULE_32__["UpdateRoleName"],
-                _popups_booking_confirmation_booking_confirmation_component__WEBPACK_IMPORTED_MODULE_45__["BookingConfirmationComponent"],
-                _popups_terms_conditions_terms_conditions_component__WEBPACK_IMPORTED_MODULE_46__["TermsConditionsComponent"],
-                _shared_services_show_errors_show_errors_component__WEBPACK_IMPORTED_MODULE_47__["ShowErrorsComponent"],
-                _directives_mobile_validator_directive__WEBPACK_IMPORTED_MODULE_49__["MobileValidatorDirective"],
-                _directives_email_validator_directive__WEBPACK_IMPORTED_MODULE_50__["EmailValidatorDirective"],
-                _popups_forgot_password_forgot_password_component__WEBPACK_IMPORTED_MODULE_48__["ForgotPasswordComponent"],
+                _event_user_register_register_component__WEBPACK_IMPORTED_MODULE_32__["RegisterComponent"],
+                _header_header_component__WEBPACK_IMPORTED_MODULE_37__["HeaderComponent"],
+                _footer_footer_component__WEBPACK_IMPORTED_MODULE_38__["FooterComponent"],
+                _events_events_component__WEBPACK_IMPORTED_MODULE_39__["EventsComponent"],
+                _event_user_login_login_component__WEBPACK_IMPORTED_MODULE_33__["LoginComponent"],
+                _events_new_event_new_event_component__WEBPACK_IMPORTED_MODULE_40__["NewEventComponent"],
+                _event_types_event_types_component__WEBPACK_IMPORTED_MODULE_41__["EventTypesComponent"],
+                _event_venues_event_venues_component__WEBPACK_IMPORTED_MODULE_42__["EventVenuesComponent"],
+                _event_venues_new_event_venue_new_event_venue_component__WEBPACK_IMPORTED_MODULE_43__["NewEventVenueComponent"],
+                _event_user_settings_settings_component__WEBPACK_IMPORTED_MODULE_35__["SettingsComponent"],
+                _event_user_event_user_component__WEBPACK_IMPORTED_MODULE_36__["EventUserComponent"],
+                _bookings_bookings_component__WEBPACK_IMPORTED_MODULE_44__["BookingsComponent"],
+                _bookings_booking_booking_component__WEBPACK_IMPORTED_MODULE_45__["BookingComponent"],
+                _event_user_users_users_component__WEBPACK_IMPORTED_MODULE_34__["UsersComponent"],
+                _event_user_users_users_component__WEBPACK_IMPORTED_MODULE_34__["SelectRoleDialog"],
+                _event_user_users_users_component__WEBPACK_IMPORTED_MODULE_34__["UpdateRoleName"],
+                _popups_booking_confirmation_booking_confirmation_component__WEBPACK_IMPORTED_MODULE_46__["BookingConfirmationComponent"],
+                _popups_terms_conditions_terms_conditions_component__WEBPACK_IMPORTED_MODULE_47__["TermsConditionsComponent"],
+                _shared_services_show_errors_show_errors_component__WEBPACK_IMPORTED_MODULE_48__["ShowErrorsComponent"],
+                _directives_mobile_validator_directive__WEBPACK_IMPORTED_MODULE_51__["MobileValidatorDirective"],
+                _directives_email_validator_directive__WEBPACK_IMPORTED_MODULE_52__["EmailValidatorDirective"],
+                _popups_forgot_password_forgot_password_component__WEBPACK_IMPORTED_MODULE_49__["ForgotPasswordComponent"],
+                _popups_event_type_upsert_event_type_upsert_component__WEBPACK_IMPORTED_MODULE_50__["EventTypeUpsertComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -3352,18 +3356,24 @@ var AppModule = /** @class */ (function () {
                 _angular_flex_layout__WEBPACK_IMPORTED_MODULE_14__["FlexLayoutModule"],
                 ng_simple_slideshow__WEBPACK_IMPORTED_MODULE_15__["SlideshowModule"],
                 angular_6_social_login__WEBPACK_IMPORTED_MODULE_18__["SocialLoginModule"],
-                ngx_loading__WEBPACK_IMPORTED_MODULE_19__["LoadingModule"],
+                ngx_loading__WEBPACK_IMPORTED_MODULE_20__["LoadingModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"].forRoot(_routes__WEBPACK_IMPORTED_MODULE_17__["appRoutes"], { enableTracing: true } // <-- debugging purposes only
                 ),
+                ng4_geoautocomplete__WEBPACK_IMPORTED_MODULE_19__["Ng4GeoautocompleteModule"].forRoot(),
+                _agm_core__WEBPACK_IMPORTED_MODULE_21__["AgmCoreModule"].forRoot({
+                    apiKey: 'AIzaSyC3eViY2iEDMnabfeZ8dKoLnnpgzSVO-3I',
+                    libraries: ['places'],
+                }),
             ],
             entryComponents: [
-                _event_user_users_users_component__WEBPACK_IMPORTED_MODULE_32__["SelectRoleDialog"],
-                _event_user_users_users_component__WEBPACK_IMPORTED_MODULE_32__["UpdateRoleName"],
-                _popups_terms_conditions_terms_conditions_component__WEBPACK_IMPORTED_MODULE_46__["TermsConditionsComponent"],
-                _popups_booking_confirmation_booking_confirmation_component__WEBPACK_IMPORTED_MODULE_45__["BookingConfirmationComponent"],
-                _popups_forgot_password_forgot_password_component__WEBPACK_IMPORTED_MODULE_48__["ForgotPasswordComponent"],
+                _event_user_users_users_component__WEBPACK_IMPORTED_MODULE_34__["SelectRoleDialog"],
+                _event_user_users_users_component__WEBPACK_IMPORTED_MODULE_34__["UpdateRoleName"],
+                _popups_terms_conditions_terms_conditions_component__WEBPACK_IMPORTED_MODULE_47__["TermsConditionsComponent"],
+                _popups_booking_confirmation_booking_confirmation_component__WEBPACK_IMPORTED_MODULE_46__["BookingConfirmationComponent"],
+                _popups_forgot_password_forgot_password_component__WEBPACK_IMPORTED_MODULE_49__["ForgotPasswordComponent"],
+                _popups_event_type_upsert_event_type_upsert_component__WEBPACK_IMPORTED_MODULE_50__["EventTypeUpsertComponent"],
             ],
-            providers: [_shared_services_seo_service__WEBPACK_IMPORTED_MODULE_29__["SeoService"], _bookings_shared_booking_service__WEBPACK_IMPORTED_MODULE_28__["BookingService"], _shared_services_datetime_service__WEBPACK_IMPORTED_MODULE_27__["DatetimeService"], _shared_services_rest_service__WEBPACK_IMPORTED_MODULE_26__["RestService"], _shared_services_api_factory_service__WEBPACK_IMPORTED_MODULE_25__["ApiFactoryService"], _shared_services_file_manager_service__WEBPACK_IMPORTED_MODULE_24__["FileManagerService"], _event_venues_shared_event_venue_service__WEBPACK_IMPORTED_MODULE_23__["EventVenueService"], _event_types_shared_event_type_service__WEBPACK_IMPORTED_MODULE_22__["EventTypeService"], _events_shared_event_service__WEBPACK_IMPORTED_MODULE_21__["EventService"], _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_20__["UserService"], _auth_auth_guard__WEBPACK_IMPORTED_MODULE_9__["AuthGuard"], _auth_antiauth_guard__WEBPACK_IMPORTED_MODULE_10__["AntiauthGuard"],
+            providers: [_shared_services_seo_service__WEBPACK_IMPORTED_MODULE_31__["SeoService"], _bookings_shared_booking_service__WEBPACK_IMPORTED_MODULE_30__["BookingService"], _shared_services_datetime_service__WEBPACK_IMPORTED_MODULE_29__["DatetimeService"], _shared_services_rest_service__WEBPACK_IMPORTED_MODULE_28__["RestService"], _shared_services_api_factory_service__WEBPACK_IMPORTED_MODULE_27__["ApiFactoryService"], _shared_services_file_manager_service__WEBPACK_IMPORTED_MODULE_26__["FileManagerService"], _event_venues_shared_event_venue_service__WEBPACK_IMPORTED_MODULE_25__["EventVenueService"], _event_types_shared_event_type_service__WEBPACK_IMPORTED_MODULE_24__["EventTypeService"], _events_shared_event_service__WEBPACK_IMPORTED_MODULE_23__["EventService"], _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_22__["UserService"], _auth_auth_guard__WEBPACK_IMPORTED_MODULE_9__["AuthGuard"], _auth_antiauth_guard__WEBPACK_IMPORTED_MODULE_10__["AntiauthGuard"],
                 {
                     provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HTTP_INTERCEPTORS"],
                     useClass: _auth_auth_interceptor__WEBPACK_IMPORTED_MODULE_11__["AuthInterceptor"],
@@ -4122,7 +4132,7 @@ module.exports = ".example-card {\n  max-width: 400px;\n}\n\n.example-header-ima
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ngx-loading [show]=\"loading\" ></ngx-loading>\n<mat-toolbar class=\"events-filter-toolbar\">\n  <mat-toolbar-row>\n    <span class=\"tollbar-splitter\"></span>\n    <button *ngIf=\"permissions['new_event_type'] == true\" mat-button routerLink=\"event-type\"><i class=\"material-icons md-dark\">playlist_add</i> New Event Type</button>\n  </mat-toolbar-row>\n</mat-toolbar>\n<mat-divider></mat-divider>\n\n<mat-list *ngIf=\"permissions['list_event_types'] == true\">\n  <mat-list-item *ngFor=\"let eventType of eventTypes\">\n    <mat-icon matListIcon>grain</mat-icon>\n    <h3 matLine> {{ eventType.Name }} </h3>\n    <p matLine>\n          <span> {{ eventType.Desc }} </span>\n    </p>\n    <button matTooltip=\"Edit Permissions\" *ngIf=\"permissions['edit_event_type'] == true\" (click)=\"goto_permission_view(role)\" mat-icon-button><mat-icon>edit</mat-icon></button>\n    <mat-divider></mat-divider>\n  </mat-list-item>\n</mat-list>\n"
+module.exports = "<ngx-loading [show]=\"loading\" ></ngx-loading>\n<mat-toolbar class=\"events-filter-toolbar\">\n  <mat-toolbar-row>\n    <span class=\"tollbar-splitter\"></span>\n    <button *ngIf=\"permissions['new_event_type'] == true\" mat-button (click)=\"new_event_type()\"><i class=\"material-icons md-dark\">playlist_add</i> New Event Type</button>\n  </mat-toolbar-row>\n</mat-toolbar>\n<mat-divider></mat-divider>\n\n<mat-list *ngIf=\"permissions['list_event_types'] == true\">\n  <mat-list-item *ngFor=\"let eventType of eventTypes\">\n    <mat-icon matListIcon>grain</mat-icon>\n    <h3 matLine> {{ eventType.Name }} </h3>\n    <p matLine>\n          <span> {{ eventType.Desc }} </span>\n    </p>\n    <button matTooltip=\"Edit Permissions\" *ngIf=\"permissions['edit_event_type'] == true\" (click)=\"edit_event_type(eventType)\" mat-icon-button><mat-icon>edit</mat-icon></button>\n    <mat-divider></mat-divider>\n  </mat-list-item>\n</mat-list>\n"
 
 /***/ }),
 
@@ -4137,8 +4147,11 @@ module.exports = "<ngx-loading [show]=\"loading\" ></ngx-loading>\n<mat-toolbar 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EventTypesComponent", function() { return EventTypesComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _shared_event_type_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./shared/event-type.service */ "./src/app/event-types/shared/event-type.service.ts");
-/* harmony import */ var _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../event-user/shared/user.service */ "./src/app/event-user/shared/user.service.ts");
+/* harmony import */ var _shared_event_type_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./shared/event-type.model */ "./src/app/event-types/shared/event-type.model.ts");
+/* harmony import */ var _shared_event_type_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shared/event-type.service */ "./src/app/event-types/shared/event-type.service.ts");
+/* harmony import */ var _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../event-user/shared/user.service */ "./src/app/event-user/shared/user.service.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _popups_event_type_upsert_event_type_upsert_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../popups/event-type-upsert/event-type-upsert.component */ "./src/app/popups/event-type-upsert/event-type-upsert.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4151,10 +4164,14 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
+
 var EventTypesComponent = /** @class */ (function () {
-    function EventTypesComponent(eventTypeService, userservice) {
+    function EventTypesComponent(eventTypeService, userservice, dialog) {
         this.eventTypeService = eventTypeService;
         this.userservice = userservice;
+        this.dialog = dialog;
     }
     EventTypesComponent.prototype.ngOnInit = function () {
         this.eventTypeService.loadEventTypes();
@@ -4173,112 +4190,32 @@ var EventTypesComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    EventTypesComponent.prototype.new_event_type = function () {
+        var eventType = new _shared_event_type_model__WEBPACK_IMPORTED_MODULE_1__["EventType"]({});
+        var dialogRef = this.dialog.open(_popups_event_type_upsert_event_type_upsert_component__WEBPACK_IMPORTED_MODULE_5__["EventTypeUpsertComponent"], {
+            width: '80%',
+            data: { 'event_type': eventType }
+        });
+        dialogRef.afterClosed().subscribe(function (result) {
+        });
+    };
+    EventTypesComponent.prototype.edit_event_type = function (eventType) {
+        var dialogRef = this.dialog.open(_popups_event_type_upsert_event_type_upsert_component__WEBPACK_IMPORTED_MODULE_5__["EventTypeUpsertComponent"], {
+            width: '80%',
+            data: { 'event_type': eventType }
+        });
+        dialogRef.afterClosed().subscribe(function (result) {
+        });
+    };
     EventTypesComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-event-types',
             template: __webpack_require__(/*! ./event-types.component.html */ "./src/app/event-types/event-types.component.html"),
             styles: [__webpack_require__(/*! ./event-types.component.css */ "./src/app/event-types/event-types.component.css")]
         }),
-        __metadata("design:paramtypes", [_shared_event_type_service__WEBPACK_IMPORTED_MODULE_1__["EventTypeService"], _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"]])
+        __metadata("design:paramtypes", [_shared_event_type_service__WEBPACK_IMPORTED_MODULE_2__["EventTypeService"], _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_3__["UserService"], _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialog"]])
     ], EventTypesComponent);
     return EventTypesComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/event-types/new-event-type/new-event-type.component.css":
-/*!*************************************************************************!*\
-  !*** ./src/app/event-types/new-event-type/new-event-type.component.css ***!
-  \*************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".new-event-type-card\n{\n   max-width: 30%;\n   margin: 100px auto;\n}\n\n.full-width\n{\n  width : 100%;\n}\n\n.new-event-type-card-title\n{\n  flex: 1 1 auto;\n  text-align: center;\n}\n"
-
-/***/ }),
-
-/***/ "./src/app/event-types/new-event-type/new-event-type.component.html":
-/*!**************************************************************************!*\
-  !*** ./src/app/event-types/new-event-type/new-event-type.component.html ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<ngx-loading [show]=\"loading\" ></ngx-loading>\n<mat-card class=\"new-event-type-card\">\n  <mat-card-title class=\"new-event-type-card-title\">New Event Type</mat-card-title>\n  <form class=\"new-event-type-form\" #eventTypeCreationForm=\"ngForm\" (ngSubmit)=\"onSubmit(eventTypeCreationForm)\">\n  <mat-card-content>\n      <mat-form-field class=\"full-width\">\n        <input matInput placeholder=\"Name\" #Name=\"ngModel\" [(ngModel)]=\"eventType.Name\" name=\"Name\" required>\n      </mat-form-field>\n      <mat-form-field class=\"full-width\">\n        <textarea matInput placeholder=\"Description\" #Desc=\"ngModel\" [(ngModel)]=\"eventType.Desc\" name=\"Description\" required></textarea>\n      </mat-form-field>\n  </mat-card-content>\n  <mat-card-actions>\n    <button mat-raised-button type=\"submit\" class=\"full-width\" color=\"primary\">CREATE</button>\n  </mat-card-actions>\n  </form>\n</mat-card>\n"
-
-/***/ }),
-
-/***/ "./src/app/event-types/new-event-type/new-event-type.component.ts":
-/*!************************************************************************!*\
-  !*** ./src/app/event-types/new-event-type/new-event-type.component.ts ***!
-  \************************************************************************/
-/*! exports provided: NewEventTypeComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewEventTypeComponent", function() { return NewEventTypeComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _shared_event_type_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/event-type.model */ "./src/app/event-types/shared/event-type.model.ts");
-/* harmony import */ var _shared_event_type_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/event-type.service */ "./src/app/event-types/shared/event-type.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../event-user/shared/user.service */ "./src/app/event-user/shared/user.service.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var NewEventTypeComponent = /** @class */ (function () {
-    function NewEventTypeComponent(eventTypeService, router, userservice) {
-        this.eventTypeService = eventTypeService;
-        this.router = router;
-        this.userservice = userservice;
-        this.eventType = new _shared_event_type_model__WEBPACK_IMPORTED_MODULE_1__["EventType"]({});
-    }
-    NewEventTypeComponent.prototype.ngOnInit = function () {
-        this.resetForm();
-    };
-    NewEventTypeComponent.prototype.resetForm = function (form) {
-        if (form != null) {
-            form.reset();
-            this.eventType = new _shared_event_type_model__WEBPACK_IMPORTED_MODULE_1__["EventType"]({});
-        }
-    };
-    NewEventTypeComponent.prototype.onSubmit = function (form) {
-        var _this = this;
-        this.eventTypeService.createEventType(this.eventType)
-            .subscribe(function (data) {
-            _this.resetForm(form);
-            _this.router.navigate(['']);
-        });
-    };
-    Object.defineProperty(NewEventTypeComponent.prototype, "permissions", {
-        get: function () {
-            return this.userservice.user.Permissions;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    NewEventTypeComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-new-event-type',
-            template: __webpack_require__(/*! ./new-event-type.component.html */ "./src/app/event-types/new-event-type/new-event-type.component.html"),
-            styles: [__webpack_require__(/*! ./new-event-type.component.css */ "./src/app/event-types/new-event-type/new-event-type.component.css")]
-        }),
-        __metadata("design:paramtypes", [_shared_event_type_service__WEBPACK_IMPORTED_MODULE_2__["EventTypeService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"]])
-    ], NewEventTypeComponent);
-    return NewEventTypeComponent;
 }());
 
 
@@ -4315,6 +4252,14 @@ var EventType = /** @class */ (function () {
             "desc": this.Desc
         };
         return updateJSON;
+    };
+    EventType.prototype.export = function () {
+        var res = {
+            "id": this.Id,
+            "name": this.Name,
+            "desc": this.Desc
+        };
+        return res;
     };
     return EventType;
 }());
@@ -4353,34 +4298,24 @@ var EventTypeService = /** @class */ (function () {
         this.restService = restService;
         this.eventTypes = [];
     }
-    EventTypeService.prototype.createEventType = function (createETObj) {
-        var createJSON = createETObj.getCreateJSON();
-        return this.restService.post('CREATE_EVENT_TYPE', null, createJSON);
-    };
-    EventTypeService.prototype.updateEventType = function (updateETObj) {
-        var updateJSON = updateETObj.getUpdateJSON();
-        return this.restService.post('UPDATE_EVENT_TYPE', null, updateJSON);
+    EventTypeService.prototype.upsertEventType = function (eventType) {
+        var body = eventType.export();
+        return this.restService.post('UPSERT_EVENT_TYPE', null, body);
     };
     EventTypeService.prototype.loadEventTypes = function () {
         var _this = this;
         this.eventTypes = [];
-        this.fetchEventTypes().subscribe(function (data) {
-            _this.syncUIEventTypes(data);
-        });
+        this.fetchEventTypes().subscribe(function (sdata) {
+            _this.syncUIEventTypes(sdata['data']['event_types']);
+        }, function (fdata) { });
     };
     EventTypeService.prototype.fetchEventTypes = function () {
         var params = {};
         return this.restService.get('GET_EVENT_TYPES', null, params);
     };
-    EventTypeService.prototype.syncUIEventTypes = function (data) {
-        console.log('sync data ::');
-        console.log(data);
-        var eventTypeList = JSON.parse(data);
+    EventTypeService.prototype.syncUIEventTypes = function (eventTypeList) {
         for (var i = 0; i < eventTypeList.length; i++) {
-            var id = eventTypeList[i]["pk"];
-            var eventTypeJsonObject = eventTypeList[i]["fields"];
-            eventTypeJsonObject["id"] = id;
-            var eventType = new _event_type_model__WEBPACK_IMPORTED_MODULE_1__["EventType"](eventTypeJsonObject);
+            var eventType = new _event_type_model__WEBPACK_IMPORTED_MODULE_1__["EventType"](eventTypeList[i]);
             this.eventTypes.push(eventType);
         }
         console.log(this.eventTypes);
@@ -5436,7 +5371,7 @@ var EventVenuesComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".new-event-venue-card\n{\n   max-width: 30%;\n   margin: 100px auto;\n}\n\n.full-width\n{\n  width : 100%;\n}\n\n.new-event-venue-card-title\n{\n  flex: 1 1 auto;\n  text-align: center;\n}\n\n.example-card {\n  max-width: 250px;\n}\n\n.layout-create-toolbar\n{\n  margin-top : 20px;\n}\n\n.tollbar-splitter\n{\n  flex: 1 1 auto;\n}\n\n.layout-content\n{\n  align: center;\n}\n\ntable { margin: auto; }\n"
+module.exports = ".new-event-venue-card\n{\n   max-width: 30%;\n   margin: 100px auto;\n}\n\n.full-width\n{\n  width : 100%;\n}\n\n.new-event-venue-card-title\n{\n  flex: 1 1 auto;\n  text-align: center;\n}\n\n.example-card {\n  max-width: 250px;\n}\n\n.layout-create-toolbar\n{\n  margin-top : 20px;\n}\n\n.tollbar-splitter\n{\n  flex: 1 1 auto;\n}\n\n.layout-content\n{\n  align: center;\n}\n\ntable { margin: auto; }\n\nagm-map {\n  height: 300px;\n}\n"
 
 /***/ }),
 
@@ -5447,7 +5382,7 @@ module.exports = ".new-event-venue-card\n{\n   max-width: 30%;\n   margin: 100px
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ngx-loading [show]=\"loading\" ></ngx-loading>\n<div  [style.display]=\"showOverlay\" class=\"overlay\">\n  <div class=\"indicator\">\n    <svg width=\"16px\" height=\"12px\">\n      <polyline id=\"back\" points=\"1 6 4 6 6 11 10 1 12 6 15 6\"></polyline>\n      <polyline id=\"front\" points=\"1 6 4 6 6 11 10 1 12 6 15 6\"></polyline>\n    </svg>\n  </div>\n</div>\n<mat-horizontal-stepper *ngIf=\"eventVenue != null\">\n  <mat-step label=\"Setup Event Venue\">\n    <form class=\"new-event-venue-form\" #eventVenueCreationForm=\"ngForm\">\n      <mat-card class=\"new-event-venue-card\">\n        <mat-card-content>\n            <mat-form-field class=\"full-width\">\n              <input matInput placeholder=\"Name\" #Name=\"ngModel\" [(ngModel)]=\"eventVenue.Name\" name=\"Name\" required>\n            </mat-form-field>\n            <mat-form-field class=\"full-width\">\n              <textarea matInput placeholder=\"Description\" #Desc=\"ngModel\" [(ngModel)]=\"eventVenue.Desc\" name=\"Description\" required></textarea>\n            </mat-form-field>\n          <mat-spinner [style.display]=\"showSpinner ? 'block' : 'none'\"></mat-spinner>\n        </mat-card-content>\n      </mat-card>\n      <div>\n        <button  mat-button type=\"submit\" (click)=\"upsertEventVenue()\">UPSERT</button>\n        <button  *ngIf=\"eventVenue.Id != null || eventVenue.Id != undefined\" mat-button matStepperNext >Next</button>\n      </div>\n    </form>\n  </mat-step>\n  <mat-step label=\"Set Layout\" *ngIf=\"eventVenue.Id != null\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-venue-form\" #addGroupForm=\"ngForm\" (ngSubmit)=\"addGroup(addGroupForm)\">\n          <input mat-input type=\"text\" #groupName=\"ngModel\" [(ngModel)]=\"addGroupFormData.group_name\" placeholder=\"Group Name\" name=\"groupName\" >\n          <input mat-input type=\"number\" #rows=\"ngModel\" [(ngModel)]=\"addGroupFormData.rows\" placeholder=\"Rows\" name=\"rows\" >\n          <input mat-input type=\"number\" #cols=\"ngModel\" [(ngModel)]=\"addGroupFormData.cols\" placeholder=\"Cols\" name=\"cols\" >\n          <span class=\"tollbar-splitter\"></span>\n          <button mat-button type=\"submit\" color=\"primary\" >Add Group</button>\n        </form>\n        <mat-form-field>\n            <mat-select  #LayoutType placeholder=\"Layout Type\" [(ngModel)]=\"eventVenue.eventVenueLayout.layout_type\" name=\"LayoutType\">\n              <mat-option value=\"none\">\n                NONE\n              </mat-option>\n              <mat-option value=\"box\">\n                BOX\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-card  *ngIf=\"eventVenue.eventVenueLayout.layout_type == 'box'\" class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\">\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.type != 'active'\" [matTooltip]=\"col.number\" class=\"seat-button\" disabled  mat-icon-button><mat-icon [style.color]=\"eventVenueLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ eventVenueLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col.type == 'active'\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+eventVenueLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"eventVenueLayout.priceMap[col.price].color\" aria-label=\"Event Seat\">{{ eventVenueLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n          <tr *ngIf=\"group != null && group.rows != null && group.rows[0] != null\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>.</button>\n            </td>\n            <td *ngFor=\"let col of group.rows[0].cols; let m = index\" class=\"seat-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ m }}</button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div *ngIf=\"eventVenue.eventVenueLayout.layout_type == 'box'\">\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n    <div *ngIf=\"eventVenue.eventVenueLayout.layout_type == 'none'\">\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button (click)=\"upsertLayout()\">UPSERT LAYOUT</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Mark Empty Space\" *ngIf=\"eventVenue.eventVenueLayout.layout_type == 'box' && eventVenue.Id != null\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-venue-form\" #markEmptyForm=\"ngForm\" (ngSubmit)=\"markEmpty(markEmptyForm)\">\n\n          <mat-form-field>\n            <mat-select placeholder=\"Select Group\" #GroupSelect=\"ngModel\" [(ngModel)]=\"markEmptyFormData.group_index\" name=\"GroupSelect\">\n              <mat-option *ngFor=\"let group of layout_groups;let i = index\" [value]=\"i\">\n                {{ group.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markEmptyFormData.group_index != -1\">\n            <mat-select  #RowSelect placeholder=\"Select Row\" [(ngModel)]=\"markEmptyFormData.row_index\" name=\"RowSelect\">\n              <mat-option *ngFor=\"let row of layout_groups[markEmptyFormData.group_index].rows ;let j = index\" [value]=\"j\">\n                {{ row.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markEmptyFormData.row_index != -1\">\n            <mat-select  #StartColSelect placeholder=\"Select Start Column\" [(ngModel)]=\"markEmptyFormData.start_col_index\" name=\"StartColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markEmptyFormData.group_index].rows[markEmptyFormData.row_index].cols ;let k = index\" [value]=\"k\">\n                {{ k }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markEmptyFormData.row_index != -1\">\n            <mat-select  #EndColSelect placeholder=\"Select End Column\" [(ngModel)]=\"markEmptyFormData.end_col_index\" name=\"EndColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markEmptyFormData.group_index].rows[markEmptyFormData.row_index].cols;let l = index\" [value]=\"l\">\n                {{ l }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <span class=\"tollbar-splitter\"></span>\n          <button mat-button type=\"submit\" color=\"primary\" >Mark Empty</button>\n          <button mat-button >Reset Layout</button>\n        </form>\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\">\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.type != 'active'\" [matTooltip]=\"col.number\" class=\"seat-button\" disabled  mat-icon-button><mat-icon [style.color]=\"eventVenueLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ eventVenueLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col.type == 'active'\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+eventVenueLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"eventVenueLayout.priceMap[col.price].color\" aria-label=\"Event Seat\">{{ eventVenueLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n          <tr *ngIf=\"group != null && group.rows != null && group.rows[0] != null\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>.</button>\n            </td>\n            <td *ngFor=\"let col of group.rows[0].cols; let m = index\" class=\"seat-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ m }}</button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Set Path\" *ngIf=\"eventVenue.eventVenueLayout.layout_type == 'box' && eventVenue.Id != null\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-venue-form\" #addPathForm=\"ngForm\" (ngSubmit)=\"addPath(addPathForm)\">\n          <mat-form-field>\n            <mat-select placeholder=\"Select Group\" #GroupSelect=\"ngModel\" [(ngModel)]=\"addPathFormData.group_index\" name=\"GroupSelect\">\n              <mat-option *ngFor=\"let group of layout_groups;let i = index\" [value]=\"i\">\n                {{ group.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"addPathFormData.group_index != -1\">\n            <mat-select  #ColSelect placeholder=\"Select Col index\" [(ngModel)]=\"addPathFormData.col_index\" name=\"ColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[addPathFormData.group_index].rows[0].cols ;let j = index\" [value]=\"j\">\n                {{ j }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <span class=\"tollbar-splitter\"></span>\n          <button mat-button type=\"submit\" color=\"primary\" >Add Path</button>\n          <button mat-button >Reset Layout</button>\n        </form>\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\">\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.type != 'active'\" [matTooltip]=\"col.number\" class=\"seat-button\" disabled  mat-icon-button><mat-icon [style.color]=\"eventVenueLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ eventVenueLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col.type == 'active'\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+eventVenueLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"eventVenueLayout.priceMap[col.price].color\" aria-label=\"Event Seat\">{{ eventVenueLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n          <tr *ngIf=\"group != null && group.rows != null && group.rows[0] != null\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>seat</button>\n            </td>\n            <td *ngFor=\"let col of group.rows[0].cols; let m = index\" class=\"seat-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ m }}</button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Confirm Details\" *ngIf=\"eventVenue.eventVenueLayout.layout_type == 'box' && eventVenue.Id != null\">\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\" disabled>\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.type != 'active'\" [matTooltip]=\"col.number\" class=\"seat-button\" disabled  mat-icon-button><mat-icon [style.color]=\"eventVenueLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ eventVenueLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col.type == 'active'\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+eventVenueLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"eventVenueLayout.priceMap[col.price].color\" aria-label=\"Event Seat\">{{ eventVenueLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button (click)=\"upsertLayout()\">UPSERT LAYOUT</button>\n      <button mat-button matStepperPrevious>Back</button>\n    </div>\n  </mat-step>\n</mat-horizontal-stepper>\n"
+module.exports = "<ngx-loading [show]=\"loading\" ></ngx-loading>\n\n<div  [style.display]=\"showOverlay\" class=\"overlay\">\n  <div class=\"indicator\">\n    <svg width=\"16px\" height=\"12px\">\n      <polyline id=\"back\" points=\"1 6 4 6 6 11 10 1 12 6 15 6\"></polyline>\n      <polyline id=\"front\" points=\"1 6 4 6 6 11 10 1 12 6 15 6\"></polyline>\n    </svg>\n  </div>\n</div>\n<mat-horizontal-stepper *ngIf=\"eventVenue != null\">\n  <mat-step label=\"Setup Event Venue\">\n    <form class=\"new-event-venue-form\" #eventVenueCreationForm=\"ngForm\">\n      <mat-card class=\"new-event-venue-card\">\n        <mat-card-content>\n            <mat-form-field  class=\"full-width\">\n              <input  placeholder=\"Search Events\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"form-control\" #search [formControl]=\"searchControl\" matInput>\n            </mat-form-field>\n\n            <mat-form-field class=\"full-width\">\n              <input matInput placeholder=\"Name\" #Name=\"ngModel\" [(ngModel)]=\"eventVenue.Name\" name=\"Name\" required>\n            </mat-form-field>\n            <mat-form-field class=\"full-width\">\n              <textarea matInput placeholder=\"Description\" #Desc=\"ngModel\" [(ngModel)]=\"eventVenue.Desc\" name=\"Description\" required></textarea>\n            </mat-form-field>\n\n\n\n            <agm-map [latitude]=\"lat\" [longitude]=\"lng\" [scrollwheel]=\"false\" [zoom]=\"zoom\">\n              <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n            </agm-map>\n\n          <mat-spinner [style.display]=\"showSpinner ? 'block' : 'none'\"></mat-spinner>\n        </mat-card-content>\n      </mat-card>\n      <div>\n        <button  mat-button type=\"submit\" (click)=\"upsertEventVenue()\">UPSERT</button>\n        <button  *ngIf=\"eventVenue.Id != null || eventVenue.Id != undefined\" mat-button matStepperNext >Next</button>\n      </div>\n    </form>\n  </mat-step>\n  <mat-step label=\"Set Layout\" *ngIf=\"eventVenue.Id != null\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-venue-form\" #addGroupForm=\"ngForm\" (ngSubmit)=\"addGroup(addGroupForm)\">\n          <input mat-input type=\"text\" #groupName=\"ngModel\" [(ngModel)]=\"addGroupFormData.group_name\" placeholder=\"Group Name\" name=\"groupName\" >\n          <input mat-input type=\"number\" #rows=\"ngModel\" [(ngModel)]=\"addGroupFormData.rows\" placeholder=\"Rows\" name=\"rows\" >\n          <input mat-input type=\"number\" #cols=\"ngModel\" [(ngModel)]=\"addGroupFormData.cols\" placeholder=\"Cols\" name=\"cols\" >\n          <span class=\"tollbar-splitter\"></span>\n          <button mat-button type=\"submit\" color=\"primary\" >Add Group</button>\n        </form>\n        <mat-form-field>\n            <mat-select  #LayoutType placeholder=\"Layout Type\" [(ngModel)]=\"eventVenue.eventVenueLayout.layout_type\" name=\"LayoutType\">\n              <mat-option value=\"none\">\n                NONE\n              </mat-option>\n              <mat-option value=\"box\">\n                BOX\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-card  *ngIf=\"eventVenue.eventVenueLayout.layout_type == 'box'\" class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\">\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.type != 'active'\" [matTooltip]=\"col.number\" class=\"seat-button\" disabled  mat-icon-button><mat-icon [style.color]=\"eventVenueLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ eventVenueLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col.type == 'active'\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+eventVenueLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"eventVenueLayout.priceMap[col.price].color\" aria-label=\"Event Seat\">{{ eventVenueLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n          <tr *ngIf=\"group != null && group.rows != null && group.rows[0] != null\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>.</button>\n            </td>\n            <td *ngFor=\"let col of group.rows[0].cols; let m = index\" class=\"seat-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ m }}</button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div *ngIf=\"eventVenue.eventVenueLayout.layout_type == 'box'\">\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n    <div *ngIf=\"eventVenue.eventVenueLayout.layout_type == 'none'\">\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button (click)=\"upsertLayout()\">UPSERT LAYOUT</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Mark Empty Space\" *ngIf=\"eventVenue.eventVenueLayout.layout_type == 'box' && eventVenue.Id != null\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-venue-form\" #markEmptyForm=\"ngForm\" (ngSubmit)=\"markEmpty(markEmptyForm)\">\n\n          <mat-form-field>\n            <mat-select placeholder=\"Select Group\" #GroupSelect=\"ngModel\" [(ngModel)]=\"markEmptyFormData.group_index\" name=\"GroupSelect\">\n              <mat-option *ngFor=\"let group of layout_groups;let i = index\" [value]=\"i\">\n                {{ group.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markEmptyFormData.group_index != -1\">\n            <mat-select  #RowSelect placeholder=\"Select Row\" [(ngModel)]=\"markEmptyFormData.row_index\" name=\"RowSelect\">\n              <mat-option *ngFor=\"let row of layout_groups[markEmptyFormData.group_index].rows ;let j = index\" [value]=\"j\">\n                {{ row.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markEmptyFormData.row_index != -1\">\n            <mat-select  #StartColSelect placeholder=\"Select Start Column\" [(ngModel)]=\"markEmptyFormData.start_col_index\" name=\"StartColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markEmptyFormData.group_index].rows[markEmptyFormData.row_index].cols ;let k = index\" [value]=\"k\">\n                {{ k }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markEmptyFormData.row_index != -1\">\n            <mat-select  #EndColSelect placeholder=\"Select End Column\" [(ngModel)]=\"markEmptyFormData.end_col_index\" name=\"EndColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markEmptyFormData.group_index].rows[markEmptyFormData.row_index].cols;let l = index\" [value]=\"l\">\n                {{ l }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <span class=\"tollbar-splitter\"></span>\n          <button mat-button type=\"submit\" color=\"primary\" >Mark Empty</button>\n          <button mat-button >Reset Layout</button>\n        </form>\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\">\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.type != 'active'\" [matTooltip]=\"col.number\" class=\"seat-button\" disabled  mat-icon-button><mat-icon [style.color]=\"eventVenueLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ eventVenueLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col.type == 'active'\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+eventVenueLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"eventVenueLayout.priceMap[col.price].color\" aria-label=\"Event Seat\">{{ eventVenueLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n          <tr *ngIf=\"group != null && group.rows != null && group.rows[0] != null\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>.</button>\n            </td>\n            <td *ngFor=\"let col of group.rows[0].cols; let m = index\" class=\"seat-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ m }}</button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Set Path\" *ngIf=\"eventVenue.eventVenueLayout.layout_type == 'box' && eventVenue.Id != null\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-venue-form\" #addPathForm=\"ngForm\" (ngSubmit)=\"addPath(addPathForm)\">\n          <mat-form-field>\n            <mat-select placeholder=\"Select Group\" #GroupSelect=\"ngModel\" [(ngModel)]=\"addPathFormData.group_index\" name=\"GroupSelect\">\n              <mat-option *ngFor=\"let group of layout_groups;let i = index\" [value]=\"i\">\n                {{ group.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"addPathFormData.group_index != -1\">\n            <mat-select  #ColSelect placeholder=\"Select Col index\" [(ngModel)]=\"addPathFormData.col_index\" name=\"ColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[addPathFormData.group_index].rows[0].cols ;let j = index\" [value]=\"j\">\n                {{ j }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <span class=\"tollbar-splitter\"></span>\n          <button mat-button type=\"submit\" color=\"primary\" >Add Path</button>\n          <button mat-button >Reset Layout</button>\n        </form>\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\">\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.type != 'active'\" [matTooltip]=\"col.number\" class=\"seat-button\" disabled  mat-icon-button><mat-icon [style.color]=\"eventVenueLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ eventVenueLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col.type == 'active'\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+eventVenueLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"eventVenueLayout.priceMap[col.price].color\" aria-label=\"Event Seat\">{{ eventVenueLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n          <tr *ngIf=\"group != null && group.rows != null && group.rows[0] != null\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>seat</button>\n            </td>\n            <td *ngFor=\"let col of group.rows[0].cols; let m = index\" class=\"seat-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ m }}</button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Confirm Details\" *ngIf=\"eventVenue.eventVenueLayout.layout_type == 'box' && eventVenue.Id != null\">\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\" disabled>\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.type != 'active'\" [matTooltip]=\"col.number\" class=\"seat-button\" disabled  mat-icon-button><mat-icon [style.color]=\"eventVenueLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ eventVenueLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col.type == 'active'\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+eventVenueLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"eventVenueLayout.priceMap[col.price].color\" aria-label=\"Event Seat\">{{ eventVenueLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button (click)=\"upsertLayout()\">UPSERT LAYOUT</button>\n      <button mat-button matStepperPrevious>Back</button>\n    </div>\n  </mat-step>\n</mat-horizontal-stepper>\n"
 
 /***/ }),
 
@@ -5468,6 +5403,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../event-user/shared/user.service */ "./src/app/event-user/shared/user.service.ts");
+/* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5485,15 +5421,21 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var NewEventVenueComponent = /** @class */ (function () {
-    function NewEventVenueComponent(eventVenueService, router, dialog, route, userservice) {
+    function NewEventVenueComponent(eventVenueService, router, dialog, route, userservice, mapsAPILoader, ngZone) {
         var _this = this;
         this.eventVenueService = eventVenueService;
         this.router = router;
         this.dialog = dialog;
         this.route = route;
         this.userservice = userservice;
+        this.mapsAPILoader = mapsAPILoader;
+        this.ngZone = ngZone;
         this.markEmptyControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]();
+        this.myControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]();
+        this.lat = 51.678418;
+        this.lng = 7.809007;
         this.addPathDialogData = {
             title: 'Update Path Tool',
             fields: [
@@ -5558,8 +5500,36 @@ var NewEventVenueComponent = /** @class */ (function () {
             this.showOverlay = 'none';
         }
     };
+    NewEventVenueComponent.prototype.searchLocationCallback = function (selectedData) {
+        console.log(selectedData);
+    };
     NewEventVenueComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.resetForm();
+        this.zoom = 4;
+        this.searchControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]();
+        //set current position
+        this.setCurrentPosition();
+        //load Places Autocomplete
+        this.mapsAPILoader.load().then(function () {
+            var autocomplete = new google.maps.places.Autocomplete(_this.searchElementRef.nativeElement, {
+                componentRestrictions: { country: 'in' }
+            });
+            autocomplete.addListener("place_changed", function () {
+                _this.ngZone.run(function () {
+                    //get the place result
+                    var place = autocomplete.getPlace();
+                    //verify result
+                    if (place.geometry === undefined || place.geometry === null) {
+                        return;
+                    }
+                    //set latitude, longitude and zoom
+                    _this.lat = place.geometry.location.lat();
+                    _this.lng = place.geometry.location.lng();
+                    _this.zoom = 12;
+                });
+            });
+        });
     };
     NewEventVenueComponent.prototype.resetForm = function (form) {
         if (form != null) {
@@ -5660,13 +5630,33 @@ var NewEventVenueComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    NewEventVenueComponent.prototype.setCurrentPosition = function () {
+        var _this = this;
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                _this.lat = position.coords.latitude;
+                _this.lng = position.coords.longitude;
+                _this.zoom = 12;
+            });
+        }
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])("search"),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])
+    ], NewEventVenueComponent.prototype, "searchElementRef", void 0);
     NewEventVenueComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-new-event-venue',
             template: __webpack_require__(/*! ./new-event-venue.component.html */ "./src/app/event-venues/new-event-venue/new-event-venue.component.html"),
             styles: [__webpack_require__(/*! ./new-event-venue.component.css */ "./src/app/event-venues/new-event-venue/new-event-venue.component.css")]
         }),
-        __metadata("design:paramtypes", [_shared_event_venue_service__WEBPACK_IMPORTED_MODULE_2__["EventVenueService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialog"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_6__["UserService"]])
+        __metadata("design:paramtypes", [_shared_event_venue_service__WEBPACK_IMPORTED_MODULE_2__["EventVenueService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialog"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+            _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_6__["UserService"],
+            _agm_core__WEBPACK_IMPORTED_MODULE_7__["MapsAPILoader"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"]])
     ], NewEventVenueComponent);
     return NewEventVenueComponent;
 }());
@@ -5775,20 +5765,18 @@ var EventVenueService = /** @class */ (function () {
         var _this = this;
         this.eventVenues = [];
         this.fetchEventVenues().subscribe(function (data) {
-            _this.syncUIEventVenues(data);
+            _this.syncUIEventVenues(data['data']['event_venues']);
+        }, function (data) {
         });
     };
     EventVenueService.prototype.fetchEventVenues = function () {
         var params = {};
         return this.restService.get('GET_EVENT_VENUES', null, params);
     };
-    EventVenueService.prototype.syncUIEventVenues = function (data) {
-        console.log('sync data ::');
-        console.log(data);
-        var EventVenueList = JSON.parse(data);
+    EventVenueService.prototype.syncUIEventVenues = function (event_venues) {
         var mode = 'list';
-        for (var i = 0; i < EventVenueList.length; i++) {
-            var eventVenue = this.makeEventVenueObject(EventVenueList[i], mode);
+        for (var i = 0; i < event_venues.length; i++) {
+            var eventVenue = this.makeEventVenueObject(event_venues[i], mode);
             this.eventVenues.push(eventVenue);
         }
         console.log(this.eventVenues);
@@ -5818,7 +5806,7 @@ var EventVenueService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".event-card {\n  max-width: 350px;\n  max-height: 300px;\n  border-radius: 8px;\n  background: #F2F2F2;\n}\n\n.events-filter-toolbar\n{\n  max-width: 80%;\n  position: relative;\n  margin: auto;\n  top:30px;\n\tbottom: 30px;\n\tleft: 0;\n\tright: 0;\n\tborder-radius: 6px;\n}\n\n.spacer{\n  height: 30px;\n}\n\nmat-card-tile{\n  min-width: 250px;\n  min-height: 400px;\n}\n\n.events-container\n{\n  width: 80%;\n  position: relative;\n  margin: auto;\n  top:15px;\n\tbottom: 0;\n\tleft: 0;\n\tright: 0;\n}\n\n.card-image\n{\n  margin-bottom: 0px;\n  max-height: 150px;\n}\n\n.toolbar-splitter\n{\n  flex: 1 1 auto;\n}\n\n.event_name_location{\n  width: 70%;\n\tfloat: left;\n\tpadding: 8px 0px 10px 0px;\n\n}\n\n@media only screen and (max-width: 1105px) {\n   .event_name_location{\n   \twidth: 70%;\n   }\n}\n\n@media only screen and (max-width: 1020px) {\n  .event_name_location{\n   \twidth: 70%;\n   }\n}\n\n@media only screen and (max-width: 685px) {\n  .event_name_location{\n   \twidth: 60%;\n   }\n}\n\n@media only screen and (max-width: 560px) {\n  .event_name_location{\n   \twidth: 60%;\n   }\n}\n\n.event_date_month{\n\tpadding: 8px 0px 0px 25px;\n\twidth: 20%;\n\tfloat: left;\n}\n\n.event_date_month{\n\ttext-transform: uppercase;\n\tposition: relative;\n}\n\n.event_month{\n\tcolor: #E08284;\n}\n\n.event_date_month p{\n\tmargin: 0px;\n\tfont-size: 10px\n}\n\np.event_date{\n\tfont-size: 16px;\n\tfont-weight: 500;\n}\n\np.event_name{\n  margin-top: 0px;\n}\n\n.event_date_month:after{\n\tposition: absolute;\n    content: '';\n    height: 1px;\n    width: 52px;\n    -webkit-transform: rotate(90deg);\n            transform: rotate(90deg);\n    top: 33px;\n    right: -5px;\n\tbackground: #f1f1f1;\n}\n\na.event_location{\n\tfont-size: 12px;\n\tcolor: #999;\n\ttext-decoration: none\n}\n\na.event_location:hover{\n\ttext-decoration: underline;\n}\n\n.event_price{\n\tfont-size: 10px;\n\tcolor: #999;\n}\n\n.date_name_location{\n\tposition: relative;\n}\n\n.date_name_location:after{\n    position: absolute;\n    content: '';\n    width: 100%;\n    height: 1px;\n    background: #F1F1F2;\n    bottom: -120px;\n    left: 0px;\n}\n\n\n"
+module.exports = ".event-card {\n  max-width: 350px;\n  max-height: 300px;\n  border-radius: 8px;\n  background: #F2F2F2;\n}\n\n.events-filter-toolbar\n{\n  max-width: 80%;\n  position: relative;\n  margin: auto;\n  top:30px;\n\tbottom: 30px;\n\tleft: 0;\n\tright: 0;\n\tborder-radius: 6px;\n}\n\n.spacer{\n  height: 30px;\n}\n\nmat-card-tile{\n  min-width: 250px;\n  min-height: 400px;\n}\n\n.events-container\n{\n  width: 80%;\n  position: relative;\n  margin: auto;\n  top:15px;\n\tbottom: 0;\n\tleft: 0;\n\tright: 0;\n}\n\n.card-image\n{\n  margin-bottom: 0px;\n  max-height: 150px;\n}\n\n.toolbar-splitter\n{\n  flex: 1 1 auto;\n}\n\n.event_name_location{\n  width: 70%;\n\tfloat: left;\n\tpadding: 8px 0px 10px 0px;\n\n}\n\n@media only screen and (max-width: 1105px) {\n   .event_name_location{\n   \twidth: 70%;\n   }\n}\n\n@media only screen and (max-width: 1020px) {\n  .event_name_location{\n   \twidth: 70%;\n   }\n}\n\n@media only screen and (max-width: 685px) {\n  .event_name_location{\n   \twidth: 60%;\n   }\n}\n\n@media only screen and (max-width: 560px) {\n  .event_name_location{\n   \twidth: 60%;\n   }\n}\n\n.event_date_month{\n\tpadding: 8px 0px 0px 25px;\n\twidth: 20%;\n\tfloat: left;\n}\n\n.event_date_month{\n\ttext-transform: uppercase;\n\tposition: relative;\n}\n\n.event_month{\n\tcolor: #E08284;\n}\n\n.event_date_month p{\n\tmargin: 0px;\n\tfont-size: 10px\n}\n\np.event_date{\n\tfont-size: 16px;\n\tfont-weight: 500;\n}\n\np.event_name{\n  margin-top: 0px;\n}\n\n.event_date_month:after{\n\tposition: absolute;\n    content: '';\n    height: 1px;\n    width: 52px;\n    -webkit-transform: rotate(90deg);\n            transform: rotate(90deg);\n    top: 33px;\n    right: -5px;\n\tbackground: #f1f1f1;\n}\n\na.event_location{\n\tfont-size: 12px;\n\tcolor: #999;\n\ttext-decoration: none\n}\n\na.event_location:hover{\n\ttext-decoration: underline;\n}\n\n.event_price{\n\tfont-size: 10px;\n\tcolor: #999;\n}\n\n.date_name_location{\n\tposition: relative;\n}\n\n.date_name_location:after{\n    position: absolute;\n    content: '';\n    width: 100%;\n    height: 1px;\n    background: #F1F1F2;\n    bottom: -120px;\n    left: 0px;\n}\n\nagm-map {\n  height: 300px;\n}\n\n"
 
 /***/ }),
 
@@ -5829,7 +5817,7 @@ module.exports = ".event-card {\n  max-width: 350px;\n  max-height: 300px;\n  bo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ngx-loading [show]=\"loading\" ></ngx-loading>\n<mat-toolbar class=\"events-filter-toolbar\">\n  <mat-toolbar-row>\n    <mat-form-field *ngIf=\"permissions['search_events'] == true\" class=\"half-width\">\n    <input  type=\"text\" placeholder=\"Search Events\" aria-label=\"Number\" matInput [formControl]=\"myControl\" [matAutocomplete]=\"auto\">\n    <mat-autocomplete #auto=\"matAutocomplete\">\n      <mat-option *ngFor=\"let option of options\" [value]=\"option\">\n        {{ option }}\n      </mat-option>\n    </mat-autocomplete>\n    </mat-form-field>\n\n    <span class=\"tollbar-splitter\"></span>\n    <mat-form-field>\n      <input matInput [matDatepicker]=\"picker\" placeholder=\"Choose a date\">\n      <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n      <mat-datepicker touchUi #picker></mat-datepicker>\n    </mat-form-field>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<div class=\"spacer\"></div>\n<div class=\"events-container\">\n<mat-grid-list [cols]=\"cols | async\" gutterSize=\"15px\" >\n  <mat-grid-tile *ngFor=\"let event of events\">\n    <mat-card class=\"event-card\">\n      <img mat-card-image class=\"card-image\" [src]=\"event.images['banner'].url\" onerror=\"this.src='https://algovent-s3-static.s3.amazonaws.com/eventico/media/event_bWDUlrT.jpg'\" alt=\"Photo of a Shiba Inu\">\n    <mat-card-content>\n        <div class=\"date_name_location\">\n          <div class=\"event_date_month\">\n            <p class=\"event_month\">{{event['times']['start']['month']}}</p>\n            <p class=\"event_date\">{{event['times']['start']['day_num']}}</p>\n            <p class=\"event_day\">{{event['times']['start']['day']}}</p>\n          </div>\n          <div class=\"event_name_location\">\n            <p class=\"event_name\">{{event.Name}}</p>\n            <a href=\"#\" class=\"event_location\">Phoenix Market City: Whitefield</a>\n            <p class=\"event_price\" >Rs. 999 Onwards</p>\n          </div>\n        </div>\n      </mat-card-content>\n      <mat-card-actions>\n        <button *ngIf=\"permissions['book_event'] == true\" mat-button [routerLink]=\"['bookings/booking',{event_id: event.Id}]\" color=\"#cc3333cc\" >Book</button>\n        <span class=\"toolbar-splitter\"></span>\n        <button mat-icon-button routerLink=\"\"><mat-icon aria-label=\"Share\">share</mat-icon></button>\n        <button *ngIf=\"permissions['edit_event'] == true\" mat-icon-button [routerLink]=\"['events/event',{id: event.Id }]\"><mat-icon aria-label=\"Edit\">edit</mat-icon></button>\n      </mat-card-actions>\n    </mat-card>\n  </mat-grid-tile>\n</mat-grid-list>\n</div>\n"
+module.exports = "<ngx-loading [show]=\"loading\" ></ngx-loading>\n\n<div class=\"container\">\n  <mat-toolbar>\n    <mat-toolbar-row>\n      <mat-form-field  class=\"half-width\">\n        <input  placeholder=\"Search Events\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"form-control\" #search [formControl]=\"searchControl\" matInput>\n      </mat-form-field>\n\n      <span class=\"tollbar-splitter\"></span>\n      <mat-form-field>\n        <input matInput [matDatepicker]=\"picker\" placeholder=\"Choose a date\">\n        <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n        <mat-datepicker touchUi #picker></mat-datepicker>\n      </mat-form-field>\n    </mat-toolbar-row>\n  </mat-toolbar>\n  <!--<div class=\"form-group\">-->\n    <!--<input placeholder=\"search for location\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"form-control\" #search [formControl]=\"searchControl\">-->\n  <!--</div>-->\n  <agm-map [latitude]=\"lat\" [longitude]=\"lng\" [scrollwheel]=\"false\" [zoom]=\"zoom\">\n    <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n  </agm-map>\n</div>\n\n<div class=\"spacer\"></div>\n<div class=\"events-container\">\n<mat-grid-list [cols]=\"cols | async\" gutterSize=\"15px\" >\n  <mat-grid-tile *ngFor=\"let event of events\">\n    <mat-card class=\"event-card\">\n      <img mat-card-image class=\"card-image\" [src]=\"event.images['banner'].url\" onerror=\"this.src='https://algovent-s3-static.s3.amazonaws.com/eventico/media/event_bWDUlrT.jpg'\" alt=\"Photo of a Shiba Inu\">\n    <mat-card-content>\n        <div class=\"date_name_location\">\n          <div class=\"event_date_month\">\n            <p class=\"event_month\">{{event['times']['start']['month']}}</p>\n            <p class=\"event_date\">{{event['times']['start']['day_num']}}</p>\n            <p class=\"event_day\">{{event['times']['start']['day']}}</p>\n          </div>\n          <div class=\"event_name_location\">\n            <p class=\"event_name\">{{event.Name}}</p>\n            <a href=\"#\" class=\"event_location\">Phoenix Market City: Whitefield</a>\n            <p class=\"event_price\" >Rs. 999 Onwards</p>\n          </div>\n        </div>\n      </mat-card-content>\n      <mat-card-actions>\n        <button *ngIf=\"permissions['book_event'] == true\" mat-button [routerLink]=\"['bookings/booking',{event_id: event.Id}]\" color=\"#cc3333cc\" >Book</button>\n        <span class=\"toolbar-splitter\"></span>\n        <button mat-icon-button routerLink=\"\"><mat-icon aria-label=\"Share\">share</mat-icon></button>\n        <button *ngIf=\"permissions['edit_event'] == true\" mat-icon-button [routerLink]=\"['events/event',{id: event.Id }]\"><mat-icon aria-label=\"Edit\">edit</mat-icon></button>\n      </mat-card-actions>\n    </mat-card>\n  </mat-grid-tile>\n</mat-grid-list>\n</div>\n"
 
 /***/ }),
 
@@ -5851,6 +5839,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/add/operator/map */ "./node_modules/rxjs-compat/_esm5/add/operator/map.js");
 /* harmony import */ var rxjs_add_operator_takeWhile__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/add/operator/takeWhile */ "./node_modules/rxjs-compat/_esm5/add/operator/takeWhile.js");
 /* harmony import */ var rxjs_add_operator_startWith__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/add/operator/startWith */ "./node_modules/rxjs-compat/_esm5/add/operator/startWith.js");
+/* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5868,21 +5857,47 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var EventsComponent = /** @class */ (function () {
-    function EventsComponent(eventService, observableMedia, userservice) {
+    function EventsComponent(eventService, observableMedia, userservice, mapsAPILoader, ngZone) {
         this.eventService = eventService;
         this.observableMedia = observableMedia;
         this.userservice = userservice;
+        this.mapsAPILoader = mapsAPILoader;
+        this.ngZone = ngZone;
         this.myControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]();
-        this.options = [
-            'One',
-            'Two',
-            'Three'
-        ];
+        this.options = [];
+        this.lat = 51.678418;
+        this.lng = 7.809007;
         this.loading = false;
     }
     EventsComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.zoom = 4;
+        this.searchControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]();
+        //set current position
+        this.setCurrentPosition();
+        //load Places Autocomplete
+        this.mapsAPILoader.load().then(function () {
+            var autocomplete = new google.maps.places.Autocomplete(_this.searchElementRef.nativeElement, {
+                types: ['geocode'],
+                componentRestrictions: { country: 'in' }
+            });
+            autocomplete.addListener("place_changed", function () {
+                _this.ngZone.run(function () {
+                    //get the place result
+                    var place = autocomplete.getPlace();
+                    //verify result
+                    if (place.geometry === undefined || place.geometry === null) {
+                        return;
+                    }
+                    //set latitude, longitude and zoom
+                    _this.lat = place.geometry.location.lat();
+                    _this.lng = place.geometry.location.lng();
+                    _this.zoom = 12;
+                });
+            });
+        });
         this.eventService.loadEvents();
         var grid = new Map([
             ["xs", 1],
@@ -5905,6 +5920,16 @@ var EventsComponent = /** @class */ (function () {
         })
             .startWith(start);
     };
+    EventsComponent.prototype.setCurrentPosition = function () {
+        var _this = this;
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                _this.lat = position.coords.latitude;
+                _this.lng = position.coords.longitude;
+                _this.zoom = 12;
+            });
+        }
+    };
     Object.defineProperty(EventsComponent.prototype, "events", {
         get: function () {
             return this.eventService.events;
@@ -5919,13 +5944,21 @@ var EventsComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])("search"),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])
+    ], EventsComponent.prototype, "searchElementRef", void 0);
     EventsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-events',
             template: __webpack_require__(/*! ./events.component.html */ "./src/app/events/events.component.html"),
             styles: [__webpack_require__(/*! ./events.component.css */ "./src/app/events/events.component.css")]
         }),
-        __metadata("design:paramtypes", [_shared_event_service__WEBPACK_IMPORTED_MODULE_2__["EventService"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_3__["ObservableMedia"], _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"]])
+        __metadata("design:paramtypes", [_shared_event_service__WEBPACK_IMPORTED_MODULE_2__["EventService"],
+            _angular_flex_layout__WEBPACK_IMPORTED_MODULE_3__["ObservableMedia"],
+            _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"],
+            _agm_core__WEBPACK_IMPORTED_MODULE_8__["MapsAPILoader"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"]])
     ], EventsComponent);
     return EventsComponent;
 }());
@@ -6748,6 +6781,119 @@ var BookingConfirmationComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/popups/event-type-upsert/event-type-upsert.component.css":
+/*!**************************************************************************!*\
+  !*** ./src/app/popups/event-type-upsert/event-type-upsert.component.css ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/popups/event-type-upsert/event-type-upsert.component.html":
+/*!***************************************************************************!*\
+  !*** ./src/app/popups/event-type-upsert/event-type-upsert.component.html ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h2 mat-dialog-title>Event Type</h2>\n<mat-dialog-content>\n  <form name=\"upsertEventTypeForm\" #upsertEventTypeForm=\"ngForm\">\n    <mat-form-field [style.width]=\"'100%'\">\n      <input matInput  placeholder=\"Name\" #Name=\"ngModel\" [(ngModel)]=\"eventType.Name\" name=\"Name\" required>\n    </mat-form-field>\n    <br>\n    <mat-form-field [style.width]=\"'100%'\">\n      <textarea matInput placeholder=\"Description\" #Desc=\"ngModel\" [(ngModel)]=\"eventType.Desc\" name=\"Description\" required></textarea>\n    </mat-form-field>\n    <br>\n    <div>\n      <button mat-button (click)=\"upsert_event_type()\" [disabled]=\"!upsertEventTypeForm.valid\">UPSERT EVENT TYPE</button>\n    </div>\n  </form>\n</mat-dialog-content>\n\n"
+
+/***/ }),
+
+/***/ "./src/app/popups/event-type-upsert/event-type-upsert.component.ts":
+/*!*************************************************************************!*\
+  !*** ./src/app/popups/event-type-upsert/event-type-upsert.component.ts ***!
+  \*************************************************************************/
+/*! exports provided: EventTypeUpsertComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EventTypeUpsertComponent", function() { return EventTypeUpsertComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../event-user/shared/user.service */ "./src/app/event-user/shared/user.service.ts");
+/* harmony import */ var _event_types_shared_event_type_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../event-types/shared/event-type.service */ "./src/app/event-types/shared/event-type.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+
+
+
+var EventTypeUpsertComponent = /** @class */ (function () {
+    function EventTypeUpsertComponent(dialogRef, data, userservice, snackBar, eventTypeService, router) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+        this.userservice = userservice;
+        this.snackBar = snackBar;
+        this.eventTypeService = eventTypeService;
+        this.router = router;
+        this.eventType = this.data['event_type'];
+    }
+    EventTypeUpsertComponent.prototype.ngOnInit = function () {
+    };
+    EventTypeUpsertComponent.prototype.upsert_event_type = function () {
+        var _this = this;
+        this.eventTypeService.upsertEventType(this.eventType)
+            .subscribe(function (sdata) {
+            _this.afterRequest(sdata);
+            _this.eventTypeService.loadEventTypes();
+            _this.dialogRef.close();
+        }, function (fdata) {
+            _this.afterRequestFailure(fdata['error']);
+        });
+    };
+    EventTypeUpsertComponent.prototype.show_snackbar = function (message) {
+        var action = 'OK';
+        var snack_bar = this.snackBar.open(message, action, {
+            verticalPosition: 'top',
+            horizontalPosition: 'right',
+        });
+    };
+    EventTypeUpsertComponent.prototype.afterRequest = function (data) {
+        this.userservice.user.ProfileUpdationPending = false;
+        if (data['messages']) {
+            this.show_snackbar(data['messages'].join(','));
+        }
+    };
+    EventTypeUpsertComponent.prototype.afterRequestFailure = function (data) {
+        this.userservice.user.ProfileUpdationPending = false;
+        if (data['messages']) {
+            this.show_snackbar(data['messages'].join(','));
+        }
+    };
+    EventTypeUpsertComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-event-type-upsert',
+            template: __webpack_require__(/*! ./event-type-upsert.component.html */ "./src/app/popups/event-type-upsert/event-type-upsert.component.html"),
+            styles: [__webpack_require__(/*! ./event-type-upsert.component.css */ "./src/app/popups/event-type-upsert/event-type-upsert.component.css")]
+        }),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object, _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"], _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatSnackBar"], _event_types_shared_event_type_service__WEBPACK_IMPORTED_MODULE_3__["EventTypeService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
+    ], EventTypeUpsertComponent);
+    return EventTypeUpsertComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/popups/forgot-password/forgot-password.component.css":
 /*!**********************************************************************!*\
   !*** ./src/app/popups/forgot-password/forgot-password.component.css ***!
@@ -6984,12 +7130,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _events_events_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./events/events.component */ "./src/app/events/events.component.ts");
 /* harmony import */ var _events_new_event_new_event_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./events/new-event/new-event.component */ "./src/app/events/new-event/new-event.component.ts");
 /* harmony import */ var _event_types_event_types_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./event-types/event-types.component */ "./src/app/event-types/event-types.component.ts");
-/* harmony import */ var _event_types_new_event_type_new_event_type_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./event-types/new-event-type/new-event-type.component */ "./src/app/event-types/new-event-type/new-event-type.component.ts");
-/* harmony import */ var _event_venues_event_venues_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./event-venues/event-venues.component */ "./src/app/event-venues/event-venues.component.ts");
-/* harmony import */ var _event_venues_new_event_venue_new_event_venue_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./event-venues/new-event-venue/new-event-venue.component */ "./src/app/event-venues/new-event-venue/new-event-venue.component.ts");
-/* harmony import */ var _bookings_bookings_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./bookings/bookings.component */ "./src/app/bookings/bookings.component.ts");
-/* harmony import */ var _bookings_booking_booking_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./bookings/booking/booking.component */ "./src/app/bookings/booking/booking.component.ts");
-
+/* harmony import */ var _event_venues_event_venues_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./event-venues/event-venues.component */ "./src/app/event-venues/event-venues.component.ts");
+/* harmony import */ var _event_venues_new_event_venue_new_event_venue_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./event-venues/new-event-venue/new-event-venue.component */ "./src/app/event-venues/new-event-venue/new-event-venue.component.ts");
+/* harmony import */ var _bookings_bookings_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./bookings/bookings.component */ "./src/app/bookings/bookings.component.ts");
+/* harmony import */ var _bookings_booking_booking_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./bookings/booking/booking.component */ "./src/app/bookings/booking/booking.component.ts");
 
 
 
@@ -7009,11 +7153,10 @@ var appRoutes = [
     { path: 'users', component: _event_user_users_users_component__WEBPACK_IMPORTED_MODULE_4__["UsersComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_0__["AuthGuard"]] },
     { path: 'events/event', component: _events_new_event_new_event_component__WEBPACK_IMPORTED_MODULE_6__["NewEventComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_0__["AuthGuard"]] },
     { path: 'event-types', component: _event_types_event_types_component__WEBPACK_IMPORTED_MODULE_7__["EventTypesComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_0__["AuthGuard"]] },
-    { path: 'event-types/event-type', component: _event_types_new_event_type_new_event_type_component__WEBPACK_IMPORTED_MODULE_8__["NewEventTypeComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_0__["AuthGuard"]] },
-    { path: 'event-venues', component: _event_venues_event_venues_component__WEBPACK_IMPORTED_MODULE_9__["EventVenuesComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_0__["AuthGuard"]] },
-    { path: 'event-venues/event-venue', component: _event_venues_new_event_venue_new_event_venue_component__WEBPACK_IMPORTED_MODULE_10__["NewEventVenueComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_0__["AuthGuard"]] },
-    { path: 'bookings', component: _bookings_bookings_component__WEBPACK_IMPORTED_MODULE_11__["BookingsComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_0__["AuthGuard"]] },
-    { path: 'bookings/booking', component: _bookings_booking_booking_component__WEBPACK_IMPORTED_MODULE_12__["BookingComponent"] },
+    { path: 'event-venues', component: _event_venues_event_venues_component__WEBPACK_IMPORTED_MODULE_8__["EventVenuesComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_0__["AuthGuard"]] },
+    { path: 'event-venues/event-venue', component: _event_venues_new_event_venue_new_event_venue_component__WEBPACK_IMPORTED_MODULE_9__["NewEventVenueComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_0__["AuthGuard"]] },
+    { path: 'bookings', component: _bookings_bookings_component__WEBPACK_IMPORTED_MODULE_10__["BookingsComponent"], canActivate: [_auth_auth_guard__WEBPACK_IMPORTED_MODULE_0__["AuthGuard"]] },
+    { path: 'bookings/booking', component: _bookings_booking_booking_component__WEBPACK_IMPORTED_MODULE_11__["BookingComponent"] },
     { path: '**', component: _events_events_component__WEBPACK_IMPORTED_MODULE_5__["EventsComponent"] }
 ];
 
@@ -7075,10 +7218,7 @@ var ApiFactoryService = /** @class */ (function () {
         this.api_map.set('GET_EVENT_VENUE', '/eventvenue/');
         this.api_map.set('GET_EVENT_VENUES', '/eventvenues/');
         //event type services
-        this.api_map.set('CREATE_EVENT_TYPE', '/eventtype/create/');
-        this.api_map.set('UPDATE_EVENT_TYPE', '/eventtype/update/');
-        this.api_map.set('DELETE_EVENT_TYPE', '/eventtype/delete/');
-        this.api_map.set('GET_EVENT_TYPE', '/eventtype/');
+        this.api_map.set('UPSERT_EVENT_TYPE', '/eventtype/upsert/');
         this.api_map.set('GET_EVENT_TYPES', '/eventtypes/');
         //layout
         this.api_map.set('UPSERT_LAYOUT', '/layout/upsert/');

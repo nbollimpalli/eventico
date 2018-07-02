@@ -144,3 +144,7 @@ a.event_location:hover{
 }
 
 
+agm-map {
+  height: 300px;
+}
+

@@ -51,8 +51,11 @@ export class EventVenueService {
   loadEventVenues()
   {
     this.eventVenues = [];
-    this.fetchEventVenues().subscribe( (data) => {
-        this.syncUIEventVenues(data);
+    this.fetchEventVenues().subscribe(
+      (data) => {
+        this.syncUIEventVenues(data['data']['event_venues']);
+      },
+      (data) => {
       }
       );
   }
@@ -63,16 +66,14 @@ export class EventVenueService {
     return this.restService.get('GET_EVENT_VENUES', null, params);
   }
 
-  syncUIEventVenues(data)
+  syncUIEventVenues(event_venues)
   {
-    console.log('sync data ::');
-    console.log(data);
-    var EventVenueList = JSON.parse(data);
     var mode = 'list';
-    for (let i = 0; i < EventVenueList.length; i++) {
-         var eventVenue = this.makeEventVenueObject(EventVenueList[i], mode);
+    for (let i = 0; i < event_venues.length; i++) {
+         var eventVenue = this.makeEventVenueObject(event_venues[i], mode);
          this.eventVenues.push(eventVenue);
     }
+
     console.log(this.eventVenues);
   }
 

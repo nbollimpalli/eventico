@@ -23,7 +23,9 @@ import {
     GoogleLoginProvider,
     FacebookLoginProvider,
 } from "angular-6-social-login";
+import { Ng4GeoautocompleteModule } from 'ng4-geoautocomplete';
 import { LoadingModule } from 'ngx-loading';
+import { AgmCoreModule } from '@agm/core';
 
 import { UserService } from './event-user/shared/user.service';
 import { EventService } from './events/shared/event.service';
@@ -54,7 +56,6 @@ import { EventsComponent } from './events/events.component';
 import { NewEventComponent } from './events/new-event/new-event.component';
 
 import { EventTypesComponent } from './event-types/event-types.component';
-import { NewEventTypeComponent } from './event-types/new-event-type/new-event-type.component';
 
 import { EventVenuesComponent } from './event-venues/event-venues.component';
 import { NewEventVenueComponent } from './event-venues/new-event-venue/new-event-venue.component';
@@ -69,6 +70,7 @@ import { TermsConditionsComponent } from './popups/terms-conditions/terms-condit
 import { SplashScreenComponent } from './popups/splash-screen/splash-screen.component';
 import { ShowErrorsComponent } from './shared-services/show-errors/show-errors.component';
 import { ForgotPasswordComponent } from './popups/forgot-password/forgot-password.component';
+import { EventTypeUpsertComponent } from './popups/event-type-upsert/event-type-upsert.component';
 
 //derectives
 import {MobileValidatorDirective} from './directives/mobile-validator.directive';
@@ -101,7 +103,6 @@ export function getAuthServiceConfigs() {
     LoginComponent,
     NewEventComponent,
     EventTypesComponent,
-    NewEventTypeComponent,
     EventVenuesComponent,
     NewEventVenueComponent,
     SettingsComponent,
@@ -117,6 +118,7 @@ export function getAuthServiceConfigs() {
     MobileValidatorDirective,
     EmailValidatorDirective,
     ForgotPasswordComponent,
+    EventTypeUpsertComponent,
   ],
   imports: [
     BrowserModule,
@@ -135,6 +137,11 @@ export function getAuthServiceConfigs() {
       appRoutes,
       { enableTracing: true} // <-- debugging purposes only
     ),
+    Ng4GeoautocompleteModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyC3eViY2iEDMnabfeZ8dKoLnnpgzSVO-3I',
+      libraries: ['places'],
+    }),
   ],
   entryComponents: [
     SelectRoleDialog,
@@ -142,6 +149,7 @@ export function getAuthServiceConfigs() {
     TermsConditionsComponent,
     BookingConfirmationComponent,
     ForgotPasswordComponent,
+    EventTypeUpsertComponent,
   ],
   providers: [SeoService, BookingService, DatetimeService, RestService, ApiFactoryService, FileManagerService, EventVenueService, EventTypeService, EventService, UserService, AuthGuard, AntiauthGuard,
   {

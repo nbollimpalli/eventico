@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   emailPattern : string;
   loading = false;
 
-  constructor(private userservice : UserService, private toastr : ToastrService, private router : Router, private socialAuthService: AuthService, public snackBar: MatSnackBar, public dialog: MatDialog,) {
+  constructor(private userservice : UserService, private toastr : ToastrService, private router : Router, private socialAuthService: AuthService, public snackBar: MatSnackBar, public dialog: MatDialog) {
     this.user = userservice.user;
     this.passwordPattern = '^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$';
   }
