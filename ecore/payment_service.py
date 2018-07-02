@@ -3,11 +3,14 @@ from django.contrib.contenttypes.models import ContentType
 import hashlib
 from .config import *
 from .constants import *
+import uuid
+
 class PaymentService():
     payment = None
     def create_new_payment(self, object, payment_info):
         payment = Payment()
         payment.object_id = object.id
+        payment.txn_id = uuid.uuid4().hex[:30].upper()
         payment.content_type = ContentType.objects.get_for_model(object)
         payment.type = payment_info['type']
         payment.mode = payment_info['mode']
