@@ -287,6 +287,20 @@ def upsert_role_permission(request):
         resp.mark_failed(['Unable to update this role information, please contact consent developer'])
     return resp.export()
 
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def search(request):
+    resp = JsonResponse()
+    try:
+        search_params = request.data
+        search_type = search_params['search_type']
+        pagination_params = search_params['pagination_params']
+        autocomplete_mode = search_params['autocomplete_mode']
+
+    except Exception as e:
+        resp.mark_failed(['Unable to Find search results, please try again'])
+    return resp.export()
+
 def update_role_permission(role, permissions):
     if(permissions and role):
         permission_ids = []

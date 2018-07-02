@@ -23,7 +23,7 @@ import {
     GoogleLoginProvider,
     FacebookLoginProvider,
 } from "angular-6-social-login";
-import { Ng4GeoautocompleteModule } from 'ng4-geoautocomplete';
+
 import { LoadingModule } from 'ngx-loading';
 import { AgmCoreModule } from '@agm/core';
 
@@ -137,7 +137,6 @@ export function getAuthServiceConfigs() {
       appRoutes,
       { enableTracing: true} // <-- debugging purposes only
     ),
-    Ng4GeoautocompleteModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyC3eViY2iEDMnabfeZ8dKoLnnpgzSVO-3I',
       libraries: ['places'],

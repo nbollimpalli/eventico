@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../../event-user/shared/user.service'
 import { } from 'googlemaps';
 import { MapsAPILoader } from '@agm/core';
+import { Location } from '../../shared/location.model';
 
 @Component({
   selector: 'app-new-event-venue',
@@ -18,15 +19,15 @@ import { MapsAPILoader } from '@agm/core';
 })
 export class NewEventVenueComponent implements OnInit {
   eventVenue : EventVenue;
+  venueLocation : Location;
   eventVenueLayout : EventVenueLayout;
   markEmptyControl: FormControl = new FormControl();
   mode : string;
-  showOverlay: string;
 
   myControl: FormControl = new FormControl();
 
-  lat: number = 51.678418;
-  lng: number = 7.809007;
+  lat: number = 12.972442;
+  lng: number = 77.580643;
   public searchControl: FormControl;
   public zoom: number;
 
@@ -43,7 +44,6 @@ export class NewEventVenueComponent implements OnInit {
     private ngZone: NgZone
   )
   {
-    this.showOverlay = 'block';
     this.route.params.subscribe(params => this.setupEventVenue(params['id']));
   }
 
@@ -59,8 +59,7 @@ export class NewEventVenueComponent implements OnInit {
         ev["layout"] = data["layout"];
         this.eventVenue = new EventVenue(ev, this.mode);
         this.eventVenueLayout = this.eventVenue.eventVenueLayout;
-        console.log(this.eventVenue);
-        this.showOverlay = 'none';
+        this.venueLocation = new Location();
       }
       );
     }
@@ -69,8 +68,7 @@ export class NewEventVenueComponent implements OnInit {
       this.mode = "new";
       this.eventVenue = new EventVenue({}, this.mode);
       this.eventVenueLayout = this.eventVenue.eventVenueLayout;
-      this.showOverlay = 'none';
-
+      this.venueLocation = new Location();
     }
   }
 
@@ -95,6 +93,11 @@ export class NewEventVenueComponent implements OnInit {
         this.ngZone.run(() => {
           //get the place result
           let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+          debugger;
+          this.venueLocation.Name = place.name;
+          this.venueLocation.Address = place.formatted_address;
+          this.venueLocation.PlaceId = place.id;
+          this.venueLocation.LocationUrl = place.url;
 
           //verify result
           if (place.geometry === undefined || place.geometry === null) {

@@ -2,43 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4aa6be1b-e7e7-4311-ab0f-471f7feaa3e5" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/bookings/migrations/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ecore/migrations/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/events/migrations/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/file_manager/migrations/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/users/migrations/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ecore/search_service.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/eventico/settings.py" afterPath="$PROJECT_DIR$/eventico/settings.py" />
+      <change beforePath="$PROJECT_DIR$/ecore/views.py" afterPath="$PROJECT_DIR$/ecore/views.py" />
       <change beforePath="$PROJECT_DIR$/eventico/static/js/main.js" afterPath="$PROJECT_DIR$/eventico/static/js/main.js" />
       <change beforePath="$PROJECT_DIR$/eventico/static/js/vendor.js" afterPath="$PROJECT_DIR$/eventico/static/js/vendor.js" />
       <change beforePath="$PROJECT_DIR$/eventicoUI/package-lock.json" afterPath="$PROJECT_DIR$/eventicoUI/package-lock.json" />
       <change beforePath="$PROJECT_DIR$/eventicoUI/package.json" afterPath="$PROJECT_DIR$/eventicoUI/package.json" />
       <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/app.module.ts" afterPath="$PROJECT_DIR$/eventicoUI/src/app/app.module.ts" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/event-types/event-types.component.html" afterPath="$PROJECT_DIR$/eventicoUI/src/app/event-types/event-types.component.html" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/event-types/event-types.component.ts" afterPath="$PROJECT_DIR$/eventicoUI/src/app/event-types/event-types.component.ts" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/event-types/new-event-type/new-event-type.component.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/event-types/new-event-type/new-event-type.component.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/event-types/new-event-type/new-event-type.component.spec.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/event-types/new-event-type/new-event-type.component.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/event-types/shared/event-type.model.ts" afterPath="$PROJECT_DIR$/eventicoUI/src/app/event-types/shared/event-type.model.ts" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/event-types/shared/event-type.service.ts" afterPath="$PROJECT_DIR$/eventicoUI/src/app/event-types/shared/event-type.service.ts" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/event-user/login/login.component.ts" afterPath="$PROJECT_DIR$/eventicoUI/src/app/event-user/login/login.component.ts" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/event-user/register/register.component.ts" afterPath="$PROJECT_DIR$/eventicoUI/src/app/event-user/register/register.component.ts" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/event-venues/new-event-venue/new-event-venue.component.css" afterPath="$PROJECT_DIR$/eventicoUI/src/app/event-venues/new-event-venue/new-event-venue.component.css" />
       <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/event-venues/new-event-venue/new-event-venue.component.html" afterPath="$PROJECT_DIR$/eventicoUI/src/app/event-venues/new-event-venue/new-event-venue.component.html" />
       <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/event-venues/new-event-venue/new-event-venue.component.ts" afterPath="$PROJECT_DIR$/eventicoUI/src/app/event-venues/new-event-venue/new-event-venue.component.ts" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/event-venues/shared/event-venue.service.ts" afterPath="$PROJECT_DIR$/eventicoUI/src/app/event-venues/shared/event-venue.service.ts" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/events/events.component.css" afterPath="$PROJECT_DIR$/eventicoUI/src/app/events/events.component.css" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/events/events.component.html" afterPath="$PROJECT_DIR$/eventicoUI/src/app/events/events.component.html" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/events/events.component.ts" afterPath="$PROJECT_DIR$/eventicoUI/src/app/events/events.component.ts" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/routes.ts" afterPath="$PROJECT_DIR$/eventicoUI/src/app/routes.ts" />
-      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/shared-services/api-factory.service.ts" afterPath="$PROJECT_DIR$/eventicoUI/src/app/shared-services/api-factory.service.ts" />
-      <change beforePath="$PROJECT_DIR$/events/urls.py" afterPath="$PROJECT_DIR$/events/urls.py" />
-      <change beforePath="$PROJECT_DIR$/events/views.py" afterPath="$PROJECT_DIR$/events/views.py" />
+      <change beforePath="$PROJECT_DIR$/eventicoUI/src/app/shared/location.model.ts" afterPath="$PROJECT_DIR$/eventicoUI/src/app/shared/location.model.ts" />
       <change beforePath="$PROJECT_DIR$/static/js/main.js" afterPath="$PROJECT_DIR$/static/js/main.js" />
       <change beforePath="$PROJECT_DIR$/static/js/vendor.js" afterPath="$PROJECT_DIR$/static/js/vendor.js" />
-      <change beforePath="$PROJECT_DIR$/users/models.py" afterPath="$PROJECT_DIR$/users/models.py" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" afterPath="$PROJECT_DIR$/users/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,45 +28,15 @@
       <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/app.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="895">
-              <caret line="142" column="17" lean-forward="false" selection-start-line="142" selection-start-column="17" selection-end-line="142" selection-end-column="17" />
+            <state relative-caret-position="458">
+              <caret line="139" column="4" lean-forward="false" selection-start-line="139" selection-start-column="4" selection-end-line="139" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new-event-venue.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/event-venues/new-event-venue/new-event-venue.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="events.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/events/events.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="601">
-              <caret line="71" column="7" lean-forward="false" selection-start-line="43" selection-start-column="4" selection-end-line="71" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="events.component.spec.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/events/events.component.spec.ts">
+      <file leaf-file-name="layout.model.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/shared/layout.model.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -99,21 +45,57 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="events.component.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/events/events.component.css">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ecore/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="882">
-              <caret line="148" column="1" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="148" selection-end-column="1" />
+            <state relative-caret-position="830">
+              <caret line="298" column="0" lean-forward="false" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search_service.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ecore/search_service.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="131" lean-forward="false" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="131" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new-event-venue.component.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/event-venues/new-event-venue/new-event-venue.component.css">
+      <file leaf-file-name="rm_service.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ecore/rm_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="39" column="1" lean-forward="false" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+            <state relative-caret-position="210">
+              <caret line="14" column="12" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="47" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ecore/serializers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new-event-venue.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/event-venues/new-event-venue/new-event-venue.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="91" lean-forward="false" selection-start-line="20" selection-start-column="91" selection-end-line="20" selection-end-column="91" />
               <folding />
             </state>
           </provider>
@@ -122,8 +104,18 @@
       <file leaf-file-name="new-event-venue.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/event-venues/new-event-venue/new-event-venue.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="667">
-              <caret line="92" column="9" lean-forward="false" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
+            <state relative-caret-position="666">
+              <caret line="92" column="31" lean-forward="true" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="location.model.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/shared/location.model.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -134,16 +126,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="660">
               <caret line="47" column="67" lean-forward="false" selection-start-line="47" selection-start-column="67" selection-end-line="47" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="events.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/events/events.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="12" lean-forward="false" selection-start-line="20" selection-start-column="2" selection-end-line="22" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -160,7 +142,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>home</find>
       <find>Welcome</find>
       <find>Welc</find>
       <find>uui</find>
@@ -190,6 +171,7 @@
       <find>event_type</find>
       <find>latit</find>
       <find>mapsAPILoader</find>
+      <find>setupEventVenue</find>
     </findStrings>
     <replaceStrings>
       <replace>mat</replace>
@@ -214,9 +196,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/user_cannot_be_verified.html" />
-        <option value="$PROJECT_DIR$/templates/user_verify_failure.html" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/user_verify_success.html" />
         <option value="$PROJECT_DIR$/eventicoUI/src/app/popups/booking-confirmation/booking-confirmation.component.ts" />
         <option value="$PROJECT_DIR$/eventicoUI/src/app/shared-services/show-errors/show-errors.component.html" />
@@ -258,10 +237,13 @@
         <option value="$PROJECT_DIR$/eventicoUI/src/app/event-venues/shared/event-venue.service.ts" />
         <option value="$PROJECT_DIR$/eventicoUI/src/app/events/events.component.css" />
         <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/eventicoUI/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/eventicoUI/src/app/events/events.component.html" />
         <option value="$PROJECT_DIR$/eventicoUI/src/app/events/events.component.ts" />
         <option value="$PROJECT_DIR$/eventicoUI/src/app/event-venues/new-event-venue/new-event-venue.component.css" />
+        <option value="$PROJECT_DIR$/eventicoUI/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/ecore/search_service.py" />
+        <option value="$PROJECT_DIR$/ecore/views.py" />
+        <option value="$PROJECT_DIR$/eventicoUI/src/app/shared/location.model.ts" />
         <option value="$PROJECT_DIR$/eventicoUI/src/app/event-venues/new-event-venue/new-event-venue.component.ts" />
         <option value="$PROJECT_DIR$/eventicoUI/src/app/event-venues/new-event-venue/new-event-venue.component.html" />
         <option value="$PROJECT_DIR$/ecore/models.py" />
@@ -301,6 +283,11 @@
               <item name="eventico" type="b2602c69:ProjectViewProjectNode" />
               <item name="eventico" type="462c0819:PsiDirectoryNode" />
               <item name="ecore" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eventico" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eventico" type="462c0819:PsiDirectoryNode" />
+              <item name="eventicoUI" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="eventico" type="b2602c69:ProjectViewProjectNode" />
@@ -423,54 +410,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ecore/migrations/0003_auto_20180701_2228.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ecore/migrations/0004_auto_20180701_2228.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ecore/migrations/0005_auto_20180701_2234.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ecore/migrations/0006_auto_20180701_2236.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookings/migrations/0004_auto_20180701_2234.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookings/migrations/0002_auto_20180630_1932.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bookings/migrations/0003_booking_user.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -765,14 +704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="895">
-          <caret line="142" column="17" lean-forward="false" selection-start-line="142" selection-start-column="17" selection-end-line="142" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/events/events.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -813,18 +744,80 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="139" column="4" lean-forward="false" selection-start-line="139" selection-start-column="4" selection-end-line="139" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ecore/rm_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="12" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="47" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ecore/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ecore/search_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="131" lean-forward="false" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="131" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ecore/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="830">
+          <caret line="298" column="0" lean-forward="false" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/shared/layout.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/shared/location.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/event-venues/new-event-venue/new-event-venue.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="20" column="91" lean-forward="false" selection-start-line="20" selection-start-column="91" selection-end-line="20" selection-end-column="91" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/eventicoUI/src/app/event-venues/new-event-venue/new-event-venue.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="92" column="9" lean-forward="false" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
+        <state relative-caret-position="666">
+          <caret line="92" column="31" lean-forward="true" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
           <folding />
         </state>
       </provider>
