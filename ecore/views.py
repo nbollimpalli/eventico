@@ -203,7 +203,7 @@ def seed_permissions(request):
 
     with transaction.atomic():
         for r in roles:
-            role = Role(name=r['name'], display_name=['display_name'], desc=r['desc'], status=r['status'], access_everything=r['access_everything'] )
+            role = Role(name=r['name'], display_name=r['display_name'], desc=r['desc'], status=r['status'], access_everything=r['access_everything'] )
             role.save()
 
         for m in pem_list:

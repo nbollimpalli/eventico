@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import Role, Permission, RolePermission
-
+from .models import Location
 
 class RoleSerializer(serializers.ModelSerializer):
 
@@ -20,3 +20,10 @@ class RolePermissionSerializer(serializers.ModelSerializer):
     class Meta(object):
         model = RolePermission
         fields = ('id', 'role', 'permission')
+
+
+class LocationSerializer(serializers.ModelSerializer):
+
+    class Meta(object):
+        model = Location
+        fields = ('id', 'name', 'place_id', 'location_url', 'address')

@@ -24,7 +24,8 @@ class EventVenueSerializer(serializers.ModelSerializer):
 
     class Meta(object):
         model = EventVenue
-        fields = ('id', 'name', 'desc', 'status')
+        depth = 2
+        fields = ('id', 'desc', 'status', 'location', 'location_id')
 
 class EventPriceSerializer(serializers.ModelSerializer):
 

@@ -48,9 +48,9 @@ class Payment(models.Model):
     content_object = GenericForeignKey('content_type', 'object_id')
 
 class Location(models.Model):
-    name = models.CharField(max_length=255, unique=True)
-    place_id = models.CharField(max_length=255, unique=True)
-    location_url = models.CharField(max_length=255, unique=True)
+    name = models.CharField(max_length=255)
+    place_id = models.CharField(max_length=255)
+    location_url = models.CharField(max_length=255)
     address = models.TextField(blank=True)
     uuid = models.UUIDField(max_length=100, unique=True, default=uuid.uuid4, null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)

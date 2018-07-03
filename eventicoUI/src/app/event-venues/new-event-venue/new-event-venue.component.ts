@@ -1,4 +1,4 @@
-import { Component, OnInit , ElementRef, NgZone, ViewChild} from '@angular/core';
+import { Component, OnInit , ElementRef, NgZone, ViewChild, AfterViewInit} from '@angular/core';
 import { EventVenue } from '../shared/event-venue.model';
 import { EventVenueService } from '../shared/event-venue.service';
 import { NgForm } from '@angular/forms';
@@ -11,7 +11,7 @@ import { UserService } from '../../event-user/shared/user.service'
 import { } from 'googlemaps';
 import { MapsAPILoader } from '@agm/core';
 import { Location } from '../../shared/location.model';
-
+import { SnackbarService } from '../../shared-services/snackbar.service';
 @Component({
   selector: 'app-new-event-venue',
   templateUrl: './new-event-venue.component.html',
@@ -30,9 +30,11 @@ export class NewEventVenueComponent implements OnInit {
   lng: number = 77.580643;
   public searchControl: FormControl;
   public zoom: number;
-
+  mapView;
   @ViewChild("search")
   public searchElementRef: ElementRef;
+  @ViewChild("map")
+  public mapElementRef : ElementRef;
 
   constructor(
     private eventVenueService : EventVenueService,
@@ -41,9 +43,11 @@ export class NewEventVenueComponent implements OnInit {
     private route : ActivatedRoute,
     private userservice : UserService,
     private mapsAPILoader: MapsAPILoader,
-    private ngZone: NgZone
+    private ngZone: NgZone,
+    private snackbarService : SnackbarService,
   )
   {
+    this.snackbarService.load();
     this.route.params.subscribe(params => this.setupEventVenue(params['id']));
   }
 
@@ -53,13 +57,38 @@ export class NewEventVenueComponent implements OnInit {
     if(id != null && id != '' && id != "undefined")
     {
       this.mode = "edit";
+      this.eventVenue = new EventVenue({}, this.mode);
+      this.eventVenueLayout = this.eventVenue.eventVenueLayout;
+      this.venueLocation = new Location();
+      this.eventVenue.location = this.venueLocation;
       this.eventVenueService.getEventVenue(id)
-      .subscribe( (data) => {
-        var ev = data['event_venue'];
-        ev["layout"] = data["layout"];
-        this.eventVenue = new EventVenue(ev, this.mode);
-        this.eventVenueLayout = this.eventVenue.eventVenueLayout;
-        this.venueLocation = new Location();
+      .subscribe(
+      (data) => {
+        var venue = data['data']['event_venue'];
+        var layout = data['data']['layout'];
+        venue['layout'] = layout;
+        this.eventVenue.import(venue, this.mode);
+        this.setPosition();
+        this.mapsAPILoader.load().then(() => {
+                var request = {
+                  placeId: this.eventVenue.location.PlaceId
+                 };
+                var service = new google.maps.places.PlacesService(this.mapElementRef.nativeElement);
+                this.snackbarService.afterRequest(data);
+                this.snackbarService.load();
+                service.getDetails(request,(result, status) => {
+                    this.snackbarService.calm();
+                    let place: google.maps.places.PlaceResult = result;
+                    this.lat = place.geometry.location.lat();
+                    this.lng = place.geometry.location.lng();
+                    this.zoom = 12;
+                });
+
+        }
+        );
+      },
+      (data) => {
+        this.snackbarService.afterRequestFailure(data);
       }
       );
     }
@@ -69,34 +98,29 @@ export class NewEventVenueComponent implements OnInit {
       this.eventVenue = new EventVenue({}, this.mode);
       this.eventVenueLayout = this.eventVenue.eventVenueLayout;
       this.venueLocation = new Location();
+      this.eventVenue.location = this.venueLocation;
+      this.snackbarService.calm();
     }
   }
 
-  searchLocationCallback(selectedData:any) {
-        console.log(selectedData);
-  }
-
-  ngOnInit() {
-    this.resetForm();
-    this.zoom = 4;
-    this.searchControl = new FormControl();
-
+  ngAfterViewInit()
+  {
     //set current position
-    this.setCurrentPosition();
+    this.setPosition();
 
     //load Places Autocomplete
     this.mapsAPILoader.load().then(() => {
       let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
         componentRestrictions: {country: 'in'}
       });
+
       autocomplete.addListener("place_changed", () => {
         this.ngZone.run(() => {
           //get the place result
           let place: google.maps.places.PlaceResult = autocomplete.getPlace();
-          debugger;
           this.venueLocation.Name = place.name;
           this.venueLocation.Address = place.formatted_address;
-          this.venueLocation.PlaceId = place.id;
+          this.venueLocation.PlaceId = place.place_id;
           this.venueLocation.LocationUrl = place.url;
 
           //verify result
@@ -111,6 +135,12 @@ export class NewEventVenueComponent implements OnInit {
         });
       });
     });
+  }
+
+  ngOnInit() {
+    this.resetForm();
+    this.zoom = 4;
+    this.searchControl = new FormControl();
   }
 
   resetForm(form? : NgForm) {
@@ -156,15 +186,6 @@ export class NewEventVenueComponent implements OnInit {
     }
   }
 
-  onSubmit(form : NgForm) {
-    this.eventVenueService.createEventVenue(this.eventVenue)
-    .subscribe( (data) => {
-      this.resetForm(form);
-      this.router.navigate(['']);
-    }
-    );
-  }
-
   addGroup(form : NgForm)
   {
     console.log(this.addGroupFormData);
@@ -183,13 +204,7 @@ export class NewEventVenueComponent implements OnInit {
   {
     console.log(this.addPathFormData);
     var response = this.eventVenueLayout.addPath(this.addPathFormData);
-    if(response.success)
-    {
-    }
-    else
-    {
-      alert(response.message);
-    }
+    this.snackbarService.show_snackbar(response.message);
     this.resetAddPathForm(form);
   }
 
@@ -197,31 +212,39 @@ export class NewEventVenueComponent implements OnInit {
   {
     console.log(this.addGroupFormData);
     var response = this.eventVenueLayout.markEmpty(this.markEmptyFormData);
-    if(response.success)
-    {
-    }
-    else
-    {
-      alert(response.message);
-    }
+    this.snackbarService.show_snackbar(response.message);
     this.resetMarkEmptyForm(form);
   }
 
   upsertEventVenue()
   {
+    this.snackbarService.load();
     this.eventVenueService.upsertEventVenue(this.eventVenue)
-    .subscribe( (data) => {
-      this.eventVenue.Id = data['id'];
+    .subscribe(
+    (data) => {
+      this.eventVenue.Id = data['data']['venue']['id'];
+      this.eventVenue.location.Id = data['data']['venue']['location']['id'];
+      this.snackbarService.afterRequest(data);
+    },
+    (data) => {
+      this.snackbarService.afterRequestFailure(data);
     }
+
     );
   }
 
   upsertLayout()
   {
+    this.snackbarService.load();
     this.eventVenueService.upsertVenueLayout(this.eventVenue)
-    .subscribe( (data) => {
-      this.eventVenue.eventVenueLayout.Id = data['id'];
-      this.router.navigate(['']);
+    .subscribe(
+    (data) => {
+      this.eventVenue.eventVenueLayout.Id = data['data']['layout']['id'];
+      this.snackbarService.afterRequest(data);
+      this.router.navigate(['/event-venues']);
+    },
+    (data) => {
+      this.snackbarService.afterRequestFailure(data);
     }
     );
   }
@@ -229,40 +252,6 @@ export class NewEventVenueComponent implements OnInit {
   get layout_groups(){
     return this.eventVenueLayout.groups;
   }
-
-  addPathDialogData =
-  {
-    title: 'Update Path Tool',
-    fields:
-      [
-        {field_type: 'text', name: 'Group Name',default_value: '', value: ''},
-        {field_type: 'number', name: 'Column',default_value: 0, value: 0}
-      ]
-  };
-
-  markEmptyDialogData =
-  {
-    title: 'Mark Empty Tool',
-    fields:
-      [
-        {field_type: 'text', name: 'Group Name',default_value: '', value: ''},
-        {field_type: 'number', name: 'Row',default_value: 0, value: 0},
-        {field_type: 'number', name: 'Start Column',default_value: 1, value: 1},
-        {field_type: 'number', name: 'End Column',default_value: 1, value: 1}
-      ]
-  };
-
-  addNewGroupDialogData =
-  {
-    title: 'Create New Group',
-    fields:
-      [
-        {field_type: 'text', name: 'Group Name',default_value: '', value: ''},
-        {field_type: 'number', name: 'Rows',default_value: 0, value: 0},
-        {field_type: 'number', name: 'Columns',default_value: 0, value: 0}
-      ]
-  };
-
 
 
   addGroupFormData =
@@ -290,13 +279,16 @@ export class NewEventVenueComponent implements OnInit {
     return this.userservice.user.Permissions;
   }
 
-  private setCurrentPosition() {
-    if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        this.lat = position.coords.latitude;
-        this.lng = position.coords.longitude;
-        this.zoom = 12;
-      });
+  private setPosition() {
+    if(this.mode == 'new')
+    {
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          this.lat = position.coords.latitude;
+          this.lng = position.coords.longitude;
+          this.zoom = 14;
+        });
+      }
     }
   }
 }

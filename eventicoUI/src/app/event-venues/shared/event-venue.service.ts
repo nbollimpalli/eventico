@@ -9,34 +9,16 @@ export class EventVenueService {
 
   constructor(private restService : RestService) { }
 
-  upsertEventVenue(upsertETObj : EventVenue)
+  upsertEventVenue(eventVenue : EventVenue)
   {
-    if(upsertETObj.Id == null || upsertETObj.Id == '')
-    {
-      return this.createEventVenue(upsertETObj);
-    }
-    else
-    {
-      return this.updateEventVenue(upsertETObj);
-    }
+      const body = eventVenue.export();
+      return this.restService.post( 'UPSERT_EVENT_VENUE', null, body );
   }
 
   getEventVenue(id)
   {
     var params =  {id: id};
     return this.restService.get('GET_EVENT_VENUE', null, params);
-  }
-
-  createEventVenue(createETObj : EventVenue)
-  {
-    const createJSON = createETObj.getCreateJSON();
-    return this.restService.post( 'CREATE_EVENT_VENUE', null, createJSON );
-  }
-
-  updateEventVenue(updateETObj : EventVenue)
-  {
-    const updateJSON = updateETObj.getUpdateJSON();
-    return this.restService.post( 'UPDATE_EVENT_VENUE', null, updateJSON );
   }
 
   upsertVenueLayout(eventVenue : EventVenue)
@@ -70,22 +52,11 @@ export class EventVenueService {
   {
     var mode = 'list';
     for (let i = 0; i < event_venues.length; i++) {
-         var eventVenue = this.makeEventVenueObject(event_venues[i], mode);
+         var eventVenue = new EventVenue(event_venues[i], mode);
          this.eventVenues.push(eventVenue);
     }
 
     console.log(this.eventVenues);
-  }
-
-
-
-  makeEventVenueObject(data, mode) : EventVenue
-  {
-     var id = data["pk"];
-     var EventVenueJsonObject = data["fields"];
-     EventVenueJsonObject["id"] = id;
-     var eventVenue = new EventVenue(EventVenueJsonObject, mode);
-     return eventVenue;
   }
 
 }

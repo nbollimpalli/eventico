@@ -9,20 +9,12 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-divider></mat-divider>
-<mat-grid-list *ngIf="permissions['list_event_venues'] == true" cols="3" rowHeight="6:3">
-  <mat-grid-tile *ngFor="let eventVenue of eventVenues">
-    <mat-card class="example-card">
-      <mat-card-header>
-        <mat-card-title>{{ eventVenue.Name }}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>
-          {{ eventVenue.Desc }}
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button *ngIf="permissions['edit_event_venue'] == true" mat-button [routerLink]="['event-venue',{id: eventVenue.Id }]">EDIT</button>
-      </mat-card-actions>
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+
+<mat-list *ngIf="permissions['list_event_venues'] == true">
+  <mat-list-item *ngFor="let eventVenue of eventVenues">
+    <mat-icon matListIcon>local_play</mat-icon>
+    <h3 matLine> {{ eventVenue.location.Name }} </h3>
+    <button matTooltip="Edit Permissions" *ngIf="permissions['edit_event_venue'] == true" [routerLink]="['event-venue',{id: eventVenue.Id }]" mat-icon-button><mat-icon>edit</mat-icon></button>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-list>

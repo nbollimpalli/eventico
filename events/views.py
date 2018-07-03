@@ -17,7 +17,9 @@ jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
 jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
 from ecore.metadata_service import *
 import os
-
+from ecore.models import Location
+from django.db import transaction
+from ecore.serializers import LocationSerializer
 def index(request):
     js_path = "eventico/static/js"  # insert the path to your directory
     css_path = "eventico/static/css"  # insert the path to your directory
@@ -88,9 +90,10 @@ def get_event_venue(request):
             layout = layoutSerializer.data
 
         eventVenueSerializer = EventVenueSerializer(instance=event_venue_object)
-        response = { 'event_venue' : eventVenueSerializer.data, 'layout' :  layout}
+        resp.add_data('event_venue', eventVenueSerializer.data)
+        resp.add_data('layout', layout)
     except Exception as e:
-        resp.mark_failed(['Unable to process this request'])
+        resp.mark_failed(['Unable to process this request, Please contact your developer'])
     return resp.export()
 
 @api_view(['GET'])
@@ -110,15 +113,44 @@ def get_event_venues(request):
 def upsert_event_venue(request):
     resp = JsonResponse()
     try:
-        event_venue_json = copy.deepcopy(request.data)
-        event_venue_json.pop('id', None)
-        evId = request.data['id'];
-        event_venue = EventVenue.objects.get(id=evId)
-        serializer = EventVenueSerializer(instance=event_venue, data=event_venue_json)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
+        with transaction.atomic():
+            message = 'Event Venue Updated Successfully'
+            data = request.data
+            venue = data['venue']
+            location = data['location']
+
+            try:
+                venue_id = venue['id']
+                venue_instance = EventVenue.objects.get(id=venue_id)
+            except Exception as e:
+                message = 'Event Venue Created Successfully'
+                venue_instance = None
+            try:
+                location_id = location['id']
+                location_instance = Location.objects.get(id=location_id)
+            except Exception as e:
+                location_instance = None
+            if(location_instance):
+                lserializer = LocationSerializer(instance=location_instance, data=location)
+            else:
+                lserializer = LocationSerializer(data=location)
+            lserializer.is_valid(raise_exception=True)
+            lserializer.save()
+            print(lserializer.instance.id)
+            if (venue_instance):
+                vserializer = EventVenueSerializer(instance=venue_instance, data=venue)
+            else:
+                vserializer = EventVenueSerializer(data=venue)
+            vserializer.is_valid(raise_exception=True)
+            vserializer.save()
+            vserializer.instance.location = lserializer.instance
+            vserializer.instance.save()
+            resp.add_data('venue', vserializer.data)
+            resp.add_data('location', lserializer.data)
+            resp.add_json_messages([message])
     except Exception as e:
         resp.mark_failed(['Unable to process this request'])
+        print(str(e))
     return resp.export()
 
 #-----------------events api -------------------#
@@ -230,28 +262,38 @@ def upsert_event_price(request):
 def upsert_layout(request):
     resp = JsonResponse()
     try:
-        objId = request.data['object_id']
-        model = request.data['model']
-        app_label = request.data['app_label']
-        contentType = ContentType.objects.get(app_label=app_label, model=model)
-        kclass = contentType.model_class()
-        kclass_instance = kclass.objects.get(id=objId)
-        layout_input = request.data
-        layout_input = {'layout': layout_input['layout'], 'layout_type' : layout_input['layout_type'], 'content_object' : kclass_instance, 'content_type': contentType.id, 'object_id': int(objId) }
-        if("id" in request.data):
-            lId = request.data['id'];
-            layout_object = Layout.objects.get(id=lId)
-            layout_serializer = LayoutSerializer(instance=layout_object, data=layout_input)
-        else:
-            layout_serializer = LayoutSerializer(data=layout_input)
+        with transaction.atomic():
+            message = 'Layout Updated Successfully';
+            objId = request.data['object_id']
+            model = request.data['model']
+            app_label = request.data['app_label']
+            contentType = ContentType.objects.get(app_label=app_label, model=model)
+            kclass = contentType.model_class()
+            kclass_instance = kclass.objects.get(id=objId)
+            layout_input = request.data
+            layout_input = {'layout': layout_input['layout'], 'layout_type' : layout_input['layout_type'], 'content_object' : kclass_instance, 'content_type': contentType.id, 'object_id': int(objId) }
+            if("id" in request.data):
+                lId = request.data['id'];
+                layout_object = Layout.objects.get(id=lId)
+                layout_serializer = LayoutSerializer(instance=layout_object, data=layout_input)
+            else:
+                message = "Layout Got created successfully"
+                layout_serializer = LayoutSerializer(data=layout_input)
 
-        if layout_serializer.is_valid():
-            layout_serializer.save()
-            return Response(layout_serializer.data, status=status.HTTP_201_CREATED)
-        else:
-            return Response(layout_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            if layout_serializer.is_valid():
+                layout_serializer.save()
+                resp.add_data('layout', layout_serializer.data)
+                resp.add_json_messages([message])
+            else:
+                raise EventException('Unable to process this request, Please contact your developer')
+    except EventException as e:
+        resp.mark_failed([str(e)])
     except Exception as e:
         resp.mark_failed(['Unable to process this request'])
     return resp.export()
 
 
+class EventException(Exception):
+    def __init__(self, message, errors):
+        super().__init__(message)
+        self.errors = errors

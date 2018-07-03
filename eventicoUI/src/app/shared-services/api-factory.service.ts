@@ -35,9 +35,8 @@ export class ApiFactoryService {
     this.api_map.set('GET_EVENTS', '/events/');
 
     //event venue services
-    this.api_map.set('CREATE_EVENT_VENUE', '/eventvenue/create/');
-    this.api_map.set('UPDATE_EVENT_VENUE', '/eventvenue/update/');
-    this.api_map.set('DELETE_EVENT_VENUE', '/eventvenue/delete/');
+    this.api_map.set('UPSERT_EVENT_VENUE', '/eventvenue/upsert/');
+    this.api_map.set('DISABLE_EVENT_VENUE', '/eventvenue/disable/');
     this.api_map.set('GET_EVENT_VENUE', '/eventvenue/');
     this.api_map.set('GET_EVENT_VENUES', '/eventvenues/');
 

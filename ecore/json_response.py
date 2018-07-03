@@ -9,6 +9,10 @@ class JsonResponse():
     http_status_code = status.HTTP_200_OK
 
     def __init__(self):
+        self.json_messages = []
+        self.json_data = {}
+        self.success = True
+        self.http_status_code = status.HTTP_200_OK
         print('created new json response')
 
     def add_json_messages(self, messages):

@@ -1,8 +1,9 @@
 export class Location {
-  Name : String;
-  Address : String;
-  PlaceId : String;
-  LocationUrl : String;
+  Id : string;
+  Name : string;
+  Address : string;
+  PlaceId : string;
+  LocationUrl : string;
 
   constructor()
   {
@@ -12,16 +13,18 @@ export class Location {
   {
     if(input)
     {
-      this.Name = input.get('name');
-      this.Address = input.get('address');
-      this.PlaceId = input.get('place_id');
-      this.LocationUrl = input.get('location_url');
+      this.Id = input['id'];
+      this.Name = input['name'];
+      this.Address = input['address'];
+      this.PlaceId = input['place_id'];
+      this.LocationUrl = input['location_url'];
     }
   }
 
   export()
   {
     var res = {
+      'id' : this.Id,
       'name' : this.Name,
       'address' : this.Address,
       'place_id' : this.PlaceId,

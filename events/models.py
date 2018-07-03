@@ -5,6 +5,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericRelation
 from file_manager.models import File
 import uuid
+from ecore.models import Location
 
 class Layout(models.Model):
     layout_type = models.CharField(max_length=255, default='none')
@@ -23,11 +24,11 @@ class EventType(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
 class EventVenue(models.Model):
-    name = models.CharField(max_length=255)
     uuid = models.UUIDField(max_length=100, unique=True, default=uuid.uuid4, null=True, blank=True)
     desc = models.TextField()
     status = models.CharField(max_length=255, default='pending')
     created_on = models.DateTimeField(auto_now_add=True)
+    location = models.ForeignKey(Location, models.SET_NULL, blank=True, null=True)
     layouts = GenericRelation(Layout)
 
 class Event(models.Model):

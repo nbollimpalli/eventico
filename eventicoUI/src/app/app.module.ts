@@ -38,8 +38,9 @@ import { RestService } from './shared-services/rest.service'
 import { DatetimeService } from './shared-services/datetime.service';
 import { BookingService } from './bookings/shared/booking.service';
 import { SeoService } from './shared-services/seo.service';
-import { ManageUserService } from './event-user/users/shared/manage-user.service';
+import { SnackbarService } from './shared-services/snackbar.service';
 
+import { ManageUserService } from './event-user/users/shared/manage-user.service';
 import { RegisterComponent } from './event-user/register/register.component';
 import { LoginComponent } from './event-user/login/login.component';
 
@@ -150,7 +151,7 @@ export function getAuthServiceConfigs() {
     ForgotPasswordComponent,
     EventTypeUpsertComponent,
   ],
-  providers: [SeoService, BookingService, DatetimeService, RestService, ApiFactoryService, FileManagerService, EventVenueService, EventTypeService, EventService, UserService, AuthGuard, AntiauthGuard,
+  providers: [SnackbarService, SeoService, BookingService, DatetimeService, RestService, ApiFactoryService, FileManagerService, EventVenueService, EventTypeService, EventService, UserService, AuthGuard, AntiauthGuard,
   {
     provide : HTTP_INTERCEPTORS,
     useClass : AuthInterceptor,

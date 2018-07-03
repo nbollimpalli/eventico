@@ -40,6 +40,18 @@ body
     height: auto;
 }
 
+.screen-container
+{
+    display:-webkit-flex;
+    -webkit-justify-content:center;
+
+    display:flex;
+    justify-content:center;
+
+    text-align: center;
+    font-size: 12px;
+}
+
 .seat-col
 {
 
