@@ -11,6 +11,7 @@ class Layout(models.Model):
     layout_type = models.CharField(max_length=255, default='none')
     layout = JSONField(default={})
     uuid = models.UUIDField(max_length=100, unique=True, default=uuid.uuid4, null=True, blank=True)
+    status = models.CharField(max_length=255, default='active')
     content_type = models.ForeignKey(ContentType, on_delete=models.DO_NOTHING, null=True, blank=True)
     object_id = models.PositiveIntegerField(null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True, null=True, blank=True)

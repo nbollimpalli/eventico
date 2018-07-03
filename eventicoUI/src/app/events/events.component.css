@@ -5,19 +5,8 @@
   background: #F2F2F2;
 }
 
-.events-filter-toolbar
-{
-  max-width: 80%;
-  position: relative;
-  margin: auto;
-  top:30px;
-	bottom: 30px;
-	left: 0;
-	right: 0;
-	border-radius: 6px;
-}
 .spacer{
-  height: 30px;
+  height: 10px;
 }
 
 mat-card-tile{
@@ -41,10 +30,7 @@ mat-card-tile{
   max-height: 150px;
 }
 
-.toolbar-splitter
-{
-  flex: 1 1 auto;
-}
+
 
 .event_name_location{
   width: 70%;
@@ -148,3 +134,63 @@ agm-map {
   height: 300px;
 }
 
+
+input[type=text] {
+    width: 50%;
+    box-sizing: content-box;
+    border: 0px solid #ccc;
+    border-radius: 2px;
+    font-size: 14px;
+    background-color: #eee;
+    padding: 10px 10px 10px 10px;
+}
+
+.date-filter {
+    border-width: 0px;
+    width: 55px;
+}
+
+input[type=text]:focus {
+    outline-width: 0;
+}
+
+.twrapper {
+  display: flex;
+  flex-flow: row wrap;
+  /* This aligns items to the end line on main-axis */
+  justify-content: space-between;
+}
+
+.tchild1 {
+    flex: 1 90%;
+  }
+
+  .tchild2 {
+    flex: 1 10%;
+  }
+
+/* Medium screens */
+@media all and (max-width: 800px) {
+  .twrapper {
+    /* When on medium sized screens, we center it by evenly distributing empty space around items */
+    justify-content: space-around;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .twrapper{
+    flex-direction: column;
+  }
+  .tchild1 {
+    flex: 1 100%;
+  }
+
+  .tchild2 {
+    flex: 1 100%;
+    align-self: center ;
+  }
+
+  input[type=text] {
+    width: 100%;
+  }
+}

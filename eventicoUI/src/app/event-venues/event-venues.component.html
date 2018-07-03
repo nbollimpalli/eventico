@@ -1,9 +1,9 @@
 <ngx-loading [show]="loading" ></ngx-loading>
 <mat-toolbar class="event-venues-filter-toolbar">
   <mat-toolbar-row>
-    <mat-form-field *ngIf="permissions['search_event_venues'] == true" primary>
-      <input  matInput type="text" placeholder="Search">
-    </mat-form-field>
+    <!--<mat-form-field *ngIf="permissions['search_event_venues'] == true" primary>-->
+      <!--<input  matInput type="text" placeholder="Search">-->
+    <!--</mat-form-field>-->
     <span class="tollbar-splitter"></span>
     <button *ngIf="permissions['new_event_venue'] == true" mat-button routerLink="event-venue"><i class="material-icons md-dark">playlist_add</i> New Event Venue</button>
   </mat-toolbar-row>

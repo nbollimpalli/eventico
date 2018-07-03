@@ -1,6 +1,6 @@
 .new-event-card
 {
-   max-width: 30%;
+   max-width: 40%;
    margin: 100px auto;
 }
 
@@ -63,6 +63,11 @@
   width : 20%;
 }
 
+.fteen-width
+{
+  width : 10%;
+}
+
 .ten-width
 {
   width : 10%;
@@ -89,4 +94,20 @@ table { margin: auto; }
 .pricing_color_icon
 {
   cursor: pointer;
+}
+
+
+@media only screen and (max-width: 685px) {
+  .new-event-card
+  {
+     max-width: 70%;
+     margin: 50px auto;
+  }
+}
+@media only screen and (max-width: 560px) {
+  .new-event-card
+  {
+     max-width: 100%;
+     margin: 0px auto;
+  }
 }

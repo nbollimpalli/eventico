@@ -16,7 +16,7 @@ export class Event {
         date: new Date(),
         hh: 1,
         mm: 0,
-        period: 'am',
+        period: 'AM',
         month : 'MTH',
         day : 'DAY',
         day_num : 'DAY NUM'
@@ -26,7 +26,7 @@ export class Event {
         date: new Date(),
         hh: 1,
         mm: 15,
-        period: 'am'
+        period: 'AM'
       }
   }
   images = {

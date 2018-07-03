@@ -293,10 +293,10 @@ def search(request):
     resp = JsonResponse()
     try:
         search_params = request.data
-        search_type = search_params['search_type']
-        pagination_params = search_params['pagination_params']
-        autocomplete_mode = search_params['autocomplete_mode']
-
+        # search_type = search_params['search_type']
+        # pagination_params = search_params['pagination_params']
+        # autocomplete_mode = search_params['autocomplete_mode']
+        resp.add_json_messages(['search complete'])
     except Exception as e:
         resp.mark_failed(['Unable to Find search results, please try again'])
     return resp.export()

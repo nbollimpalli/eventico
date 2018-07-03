@@ -39,6 +39,7 @@ import { DatetimeService } from './shared-services/datetime.service';
 import { BookingService } from './bookings/shared/booking.service';
 import { SeoService } from './shared-services/seo.service';
 import { SnackbarService } from './shared-services/snackbar.service';
+import { SearchService } from './shared-services/search.service';
 
 import { ManageUserService } from './event-user/users/shared/manage-user.service';
 import { RegisterComponent } from './event-user/register/register.component';
@@ -151,7 +152,7 @@ export function getAuthServiceConfigs() {
     ForgotPasswordComponent,
     EventTypeUpsertComponent,
   ],
-  providers: [SnackbarService, SeoService, BookingService, DatetimeService, RestService, ApiFactoryService, FileManagerService, EventVenueService, EventTypeService, EventService, UserService, AuthGuard, AntiauthGuard,
+  providers: [SearchService, SnackbarService, SeoService, BookingService, DatetimeService, RestService, ApiFactoryService, FileManagerService, EventVenueService, EventTypeService, EventService, UserService, AuthGuard, AntiauthGuard,
   {
     provide : HTTP_INTERCEPTORS,
     useClass : AuthInterceptor,

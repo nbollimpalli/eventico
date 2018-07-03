@@ -38,4 +38,4 @@ class LayoutSerializer(serializers.ModelSerializer):
 
     class Meta(object):
         model = Layout
-        fields = ('id', 'layout', 'layout_type', 'content_type', 'object_id')
+        fields = ('id', 'layout', 'layout_type', 'content_type', 'object_id', 'status')

@@ -1,27 +1,20 @@
 <ngx-loading [show]="loading" ></ngx-loading>
-
-<div class="container">
-  <mat-toolbar>
-    <mat-toolbar-row>
-      <mat-form-field  class="half-width">
-        <input  placeholder="Search Events" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl" matInput>
-      </mat-form-field>
-
-      <span class="tollbar-splitter"></span>
-      <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker touchUi #picker></mat-datepicker>
-      </mat-form-field>
-    </mat-toolbar-row>
-  </mat-toolbar>
-  <!--<div class="form-group">-->
-    <!--<input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">-->
-  <!--</div>-->
-  <agm-map [latitude]="lat" [longitude]="lng" [scrollwheel]="false" [zoom]="zoom">
-    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-  </agm-map>
+<div class="spacer"></div>
+<div class="twrapper">
+  <div class="tchild1">
+    <input class="searchbox" type="text" placeholder="Search" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="queryField">
+  </div>
+  <div class="tchild2">
+    <input matInput class="date-filter" [disabled]="true" [matDatepicker]="picker" placeholder="Date">
+    <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker disabled="false" touchUi #picker></mat-datepicker>
+  </div>
 </div>
+<div class="spacer"></div>
+<agm-map [latitude]="lat" [longitude]="lng" [scrollwheel]="false" [zoom]="zoom">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>
+
 
 <div class="spacer"></div>
 <div class="events-container">

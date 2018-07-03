@@ -54,6 +54,10 @@ export class ApiFactoryService {
     this.api_map.set('GET_USERS', '/users/fetch-users/');
     this.api_map.set('UPDATE_MANAGE_USER', '/users/update-manage-user/');
     this.api_map.set('UPSERT_ROLE', '/ecore/upsert-role/');
+
+    this.api_map.set('SEARCH', '/ecore/search/');
+
+
   }
 
   getApi(api_name) : string

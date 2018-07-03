@@ -82,7 +82,7 @@ def get_event_venue(request):
     try:
         evId = request.GET['id'];
         event_venue_object = EventVenue.objects.get(id=evId)
-        layouts = event_venue_object.layouts.all()
+        layouts = event_venue_object.layouts.filter(status='active')
         layout = {}
         if(layouts):
             layout = layouts[0]
@@ -277,6 +277,10 @@ def upsert_layout(request):
                 layout_object = Layout.objects.get(id=lId)
                 layout_serializer = LayoutSerializer(instance=layout_object, data=layout_input)
             else:
+                existing_layouts = Layout.objects.filter(object_id=objId, status='active')
+                for elayout in existing_layouts:
+                    elayout.status = 'archived'
+                existing_layouts.update()
                 message = "Layout Got created successfully"
                 layout_serializer = LayoutSerializer(data=layout_input)
 
@@ -289,6 +293,7 @@ def upsert_layout(request):
     except EventException as e:
         resp.mark_failed([str(e)])
     except Exception as e:
+        print(str(e))
         resp.mark_failed(['Unable to process this request'])
     return resp.export()
 

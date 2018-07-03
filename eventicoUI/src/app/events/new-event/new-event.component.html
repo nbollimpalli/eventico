@@ -13,17 +13,17 @@
             <mat-datepicker-toggle matSuffix [for]="startdate"></mat-datepicker-toggle>
             <mat-datepicker disabled="false" touchUi="true" #startdate></mat-datepicker>
           </mat-form-field>
-          <mat-form-field class="ten-width fivepx-margin-right">
+          <mat-form-field class="fteen-width fivepx-margin-right">
             <mat-select placeholder="HH" [value]="event['times']['start']['hh']" name="shh" required>
               <mat-option *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12]" [value]="i">{{i}}</mat-option>
             </mat-select>
           </mat-form-field>
-          <mat-form-field class="ten-width fivepx-margin-right">
+          <mat-form-field class="fteen-width fivepx-margin-right">
             <mat-select placeholder="MM" [value]="event['times']['start']['mm']" name="smm" required>
               <mat-option *ngFor="let i of [0,1,2,3,4,5,6,7,8,9,10,11,12]" [value]="i * 5">{{i*5}}</mat-option>
             </mat-select>
           </mat-form-field>
-          <mat-form-field class="ten-width fivepx-margin-right">
+          <mat-form-field class="fteen-width fivepx-margin-right">
             <mat-select placeholder="" [value]="event['times']['end']['period']" name="sAMPM">
               <mat-option selected value="AM">AM</mat-option>
               <mat-option selected value="PM">PM</mat-option>
@@ -35,17 +35,17 @@
             <mat-datepicker-toggle matSuffix [for]="enddate"></mat-datepicker-toggle>
             <mat-datepicker disabled="false" touchUi="true" #enddate></mat-datepicker>
           </mat-form-field>
-          <mat-form-field class="ten-width fivepx-margin-right">
+          <mat-form-field class="fteen-width fivepx-margin-right">
             <mat-select placeholder="HH" [(value)]="event['times']['end']['hh']" name="ehh" required>
               <mat-option *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12]" [value]="i">{{i}}</mat-option>
             </mat-select>
           </mat-form-field>
-          <mat-form-field class="ten-width fivepx-margin-right">
+          <mat-form-field class="fteen-width fivepx-margin-right">
             <mat-select placeholder="MM" [(value)]="event['times']['end']['mm']" name="emm" required>
               <mat-option *ngFor="let i of [0,1,2,3,4,5,6,7,8,9,10,11,12]" [value]="i * 5">{{i*5}}</mat-option>
             </mat-select>
           </mat-form-field>
-          <mat-form-field class="ten-width fivepx-margin-right">
+          <mat-form-field class="fteen-width fivepx-margin-right">
             <mat-select placeholder="" [(value)]="event['times']['end']['period']" name="eAMPM" required>
               <mat-option selected value="AM">AM</mat-option>
               <mat-option selected value="PM">PM</mat-option>
