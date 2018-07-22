@@ -52,5 +52,7 @@ class Location(models.Model):
     place_id = models.CharField(max_length=255)
     location_url = models.CharField(max_length=255)
     address = models.TextField(blank=True)
+    lat = models.DecimalField(default=0, decimal_places=32, max_digits=36)
+    lng = models.DecimalField(default=0, decimal_places=32, max_digits=36)
     uuid = models.UUIDField(max_length=100, unique=True, default=uuid.uuid4, null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)

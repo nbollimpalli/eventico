@@ -1,4 +1,6 @@
-import { EventLayout } from '../../shared/event-layout.model'
+import { EventLayout } from '../../shared/event-layout.model';
+import { EventVenue } from '../../event-venues/shared/event-venue.model';
+import { EventType } from '../../event-types/shared/event-type.model';
 
 export class Event {
   Id: number;
@@ -7,7 +9,9 @@ export class Event {
   LayoutType: string;
   EventTypeId: string;
   EventVenueId: string;
+  eventVenue : EventVenue;
   eventLayout: EventLayout;
+  eventType : EventType;
   mode : String;
   facebook_share_url : string;
   twitter_share_url : string;
@@ -57,23 +61,41 @@ export class Event {
       this.Id = eventJsonObject["id"];
       this.times = eventJsonObject['times'];
       this.eventLayout.import(eventJsonObject["layout"])
-      this.EventTypeId =  eventJsonObject["event_type"].toString();
-      this.EventVenueId = eventJsonObject["event_venue"].toString();
+      var event_type = eventJsonObject['event_type'];
+      var event_venue = eventJsonObject['event_venue'];
+      this.EventTypeId =  event_type['id'].toString();
+      this.EventVenueId = event_venue['id'].toString();
       if(eventJsonObject['images'] && eventJsonObject['images'].length > 0)
       {
-        this.images['banner']['url'] = eventJsonObject['images'][0]['upload'];
-        this.images['banner']['id'] = eventJsonObject['images'][0]['id'];
+        for(var image in eventJsonObject['images'])
+        {
+          if(eventJsonObject['images'][image]['file_type'] == 'event_banner')
+          {
+            this.images['banner']['url'] = eventJsonObject['images'][image]['upload'];
+            this.images['banner']['id'] = eventJsonObject['images'][image]['id'];
+          }
+        }
       }
     }
     else if(this.mode == 'list')
     {
       this.Id = eventJsonObject["id"];
       this.times = eventJsonObject['times'];
+      var event_type = eventJsonObject['event_type'];
+      var event_venue = eventJsonObject['event_venue'];
+      this.eventType = new EventType(event_type);
+      this.eventVenue = new EventVenue(event_venue, 'list');
+
       if(eventJsonObject['images'] && eventJsonObject['images'].length > 0)
       {
-        this.images['banner']['url'] = eventJsonObject['images'][0]['upload'];
-        this.images['banner']['id'] = eventJsonObject['images'][0]['id'];
-//        "https://graph.facebook.com?id="++"&scrape=true")
+        for(var image in eventJsonObject['images'])
+        {
+          if(eventJsonObject['images'][image]['file_type'] == 'event_banner')
+          {
+            this.images['banner']['url'] = eventJsonObject['images'][image]['upload'];
+            this.images['banner']['id'] = eventJsonObject['images'][image]['id'];
+          }
+        }
       }
     }
   }

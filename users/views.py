@@ -42,7 +42,7 @@ def getUserNames(request):
 
 class CreateUserAPIView(APIView):
     # Allow any user (authenticated or not) to access this url
-    permission_classes = (AllowAny,)
+    permission_classes = (AllowAny)
 
     def post(self, request):
         resp = JsonResponse()

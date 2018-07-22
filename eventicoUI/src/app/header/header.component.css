@@ -3,10 +3,7 @@
   flex: 1 1 auto;
 }
 
-.logo
-{
-  max-width: 200px;
-}
+
 
 .header
 {
@@ -22,6 +19,8 @@
 .addon-tools {
   display: display;
 }
+
+
 @media only screen and (max-width: 700px) {
     .responsive_span_text {
         display: none;
@@ -33,5 +32,36 @@
       display: none;
     }
 
+}
+
+.logo-img
+{
+    max-width: 200px;
+}
+
+.logo-s-img
+{
+  max-width: 200px;
+  max-height: 50px;
+}
+.logo
+{
+  display: display;
+}
+
+.logo-s{
+  display: none;
+}
+
+@media only screen and (max-width: 560px) {
+  .logo
+  {
+    display: none;
+  }
+
+  .logo-s{
+    display: inline;
+    padding-top : 8px;
+  }
 }
 

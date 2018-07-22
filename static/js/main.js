@@ -3571,7 +3571,7 @@ module.exports = ".center {\n    display: block;\n    margin-left: auto;\n    ma
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ngx-loading [show]=\"loading\" ></ngx-loading>\n<form id=\"payment_form\" name=\"payment_form\" #payment_form [action]=\"payment_request_form.action\" method=\"post\" [style.display]=\"'none'\"  name=\"payuForm\" >\n  <input name=\"key\" #key=\"ngModel\" [(ngModel)]=\"payment_request_form.key\" required />\n  <input name=\"hash\" #hash=\"ngModel\" [(ngModel)]=\"payment_request_form.hash\" required/>\n  <input name=\"txnid\" #txnid=\"ngModel\" [(ngModel)]=\"payment_request_form.txnid\" required/>\n  <input name=\"amount\" #amount=\"ngModel\" [(ngModel)]=\"payment_request_form.amount\" required/>\n  <input name=\"firstname\" #firstname=\"ngModel\" [(ngModel)]=\"payment_request_form.firstname\" required/>\n  <input name=\"email\" #email=\"ngModel\" [(ngModel)]=\"payment_request_form.email\" required/>\n  <input name=\"phone\" #phone=\"ngModel\" [(ngModel)]=\"payment_request_form.phone\" required/>\n  <textarea name=\"productinfo\">{{ payment_request_form.product_info }}</textarea>\n  <input #surl=\"ngModel\" name=\"surl\" [(ngModel)]=\"payment_request_form.action\" size=\"64\" required/>\n  <input #furl=\"ngModel\" name=\"furl\" [(ngModel)]=\"payment_request_form.action\" size=\"64\" required/>\n  <input name=\"service_provider\" value=\"payu_paisa\" size=\"64\" />\n  <input *ngIf=\"payment_form.valid\" type=\"submit\" value=\"Submit\" />\n</form>\n<mat-card class=\"banner-card\">\n  <img class=\"boking_banner responsive center\" [src]=\"event.images['banner'].url\">\n</mat-card>\n<div id=\"wrapper\">\n  <mat-card class=\"\">\n    <mat-list>\n      <mat-list-item *ngFor=\"let price of bookingLayout.priceList\">\n        <mat-icon class=\"pricing_color_icon\" matListIcon [style.color]=\"price.color\">event_seat</mat-icon>\n        <h3 matLine> {{ price.label }} </h3>\n        <p matLine>\n          <span> RS {{ price.value }} </span>\n          <span class=\"demo-2\"> -- {{ price.desc }} </span>\n        </p>\n        <mat-divider></mat-divider>\n        {{  a }}\n      </mat-list-item>\n    </mat-list>\n  </mat-card>\n  <mat-card  class=\"scrollable-content\" style=\"flex-basis: 800px\">\n    <mat-card-content >\n        <table *ngFor=\"let group of layout_groups\" disabled>\n          <tr *ngFor=\"let row of group.rows\">\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.type != 'active'\" [matTooltip]=\"col.number\" class=\"seat-button\" disabled  mat-icon-button><mat-icon [style.color]=\"bookingLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ bookingLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col['selected'] == true\" (click)=\"bookingLayout.selectSeat(col)\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+bookingLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"bookingLayout.typeColors['na']\" aria-label=\"Event Seat\">{{ bookingLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col.type == 'active' && col['selected'] != true\" (click)=\"bookingLayout.selectSeat(col)\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+bookingLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"bookingLayout.priceMap[col.price].color\" aria-label=\"Event Seat\">{{ bookingLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n        </table>\n      </mat-card-content>\n  </mat-card>\n  <mat-card class=\"\" >\n    <mat-list>\n      <mat-list-item *ngFor=\"let summary_unit of bookingLayout.selection_info['selection_summary']\">\n        <mat-icon class=\"pricing_color_icon\" matListIcon [style.color]=\"bookingLayout.priceMap[summary_unit.price].color\">event_seat</mat-icon>\n        <h3 matLine> {{ bookingLayout.priceMap[summary_unit.price].label }} </h3>\n        <p matLine>\n          <span> RS {{ bookingLayout.priceMap[summary_unit.price].value }} </span>\n          <span class=\"demo-2\"> x {{ summary_unit.qty }} </span>\n        </p>\n        <button mat-icon-button (click)=\"bookingLayout.removeSelection(summary_unit)\"><mat-icon>delete_outline</mat-icon></button>\n        <mat-divider></mat-divider>\n\n      </mat-list-item>\n\n      <mat-list-item>\n        <mat-icon class=\"pricing_color_icon\" matListIcon >payment</mat-icon>\n        <h2 matLine> Total </h2>\n        <button mat-icon-button>RS. {{ bookingLayout.selection_info['total'] }}</button>\n      </mat-list-item>\n    </mat-list>\n    <mat-divider></mat-divider>\n\n    <mat-card-actions *ngIf=\"bookingLayout.selection_info['total'] > 0\">\n      <button mat-button (click)=\"onNavigate()\">PAY</button>\n      <button mat-button (click)=\"skipAndBook()\">SKIP PAY & BOOK</button>\n    </mat-card-actions>\n  </mat-card>\n</div>\n<div class=\"spacer\"></div>\n<div class=\"screen-container\">\n  <div style=\"text-align: center\" class=\"screen-div\">SCREEN HERE</div>\n</div>\n"
+module.exports = "<form id=\"payment_form\" name=\"payment_form\" #payment_form [action]=\"payment_request_form.action\" method=\"post\" hidden=\"true\"  name=\"payuForm\" >\n  <input name=\"key\" #key=\"ngModel\" [(ngModel)]=\"payment_request_form.key\" required />\n  <input name=\"hash\" #hash=\"ngModel\" [(ngModel)]=\"payment_request_form.hash\" required/>\n  <input name=\"txnid\" #txnid=\"ngModel\" [(ngModel)]=\"payment_request_form.txnid\" required/>\n  <input name=\"amount\" #amount=\"ngModel\" [(ngModel)]=\"payment_request_form.amount\" required/>\n  <input name=\"firstname\" #firstname=\"ngModel\" [(ngModel)]=\"payment_request_form.firstname\" required/>\n  <input name=\"email\" #email=\"ngModel\" [(ngModel)]=\"payment_request_form.email\" required/>\n  <input name=\"phone\" #phone=\"ngModel\" [(ngModel)]=\"payment_request_form.phone\" required/>\n  <textarea name=\"productinfo\">{{ payment_request_form.product_info }}</textarea>\n  <input #surl=\"ngModel\" name=\"surl\" [(ngModel)]=\"payment_request_form.action\" size=\"64\" required/>\n  <input #furl=\"ngModel\" name=\"furl\" [(ngModel)]=\"payment_request_form.action\" size=\"64\" required/>\n  <input name=\"service_provider\" value=\"payu_paisa\" size=\"64\" />\n  <input *ngIf=\"payment_form.valid\" type=\"submit\" value=\"Submit\" />\n</form>\n<mat-card class=\"banner-card\">\n  <img class=\"boking_banner responsive center\" [src]=\"event.images['banner'].url\">\n</mat-card>\n<div id=\"wrapper\">\n  <mat-card class=\"\">\n    <mat-list>\n      <mat-list-item *ngFor=\"let price of bookingLayout.priceList\">\n        <mat-icon class=\"pricing_color_icon\" matListIcon [style.color]=\"price.color\">event_seat</mat-icon>\n        <h3 matLine> {{ price.label }} </h3>\n        <p matLine>\n          <span> RS {{ price.value }} </span>\n          <span class=\"demo-2\"> -- {{ price.desc }} </span>\n        </p>\n        <mat-divider></mat-divider>\n        {{  a }}\n      </mat-list-item>\n    </mat-list>\n  </mat-card>\n  <mat-card  class=\"scrollable-content\" style=\"flex-basis: 800px\">\n    <mat-card-content >\n        <table *ngFor=\"let group of layout_groups\" disabled>\n          <tr *ngFor=\"let row of group.rows\">\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.type != 'active'\" [matTooltip]=\"col.number\" class=\"seat-button\" disabled  mat-icon-button><mat-icon [style.color]=\"bookingLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ bookingLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col['selected'] == true\" (click)=\"bookingLayout.selectSeat(col)\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+bookingLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"bookingLayout.typeColors['na']\" aria-label=\"Event Seat\">{{ bookingLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col.type == 'active' && col['selected'] != true\" (click)=\"bookingLayout.selectSeat(col)\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+bookingLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"bookingLayout.priceMap[col.price].color\" aria-label=\"Event Seat\">{{ bookingLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n        </table>\n      </mat-card-content>\n  </mat-card>\n  <mat-card class=\"\" >\n    <mat-list>\n      <mat-list-item *ngFor=\"let summary_unit of bookingLayout.selection_info['selection_summary']\">\n        <mat-icon class=\"pricing_color_icon\" matListIcon [style.color]=\"bookingLayout.priceMap[summary_unit.price].color\">event_seat</mat-icon>\n        <h3 matLine> {{ bookingLayout.priceMap[summary_unit.price].label }} </h3>\n        <p matLine>\n          <span> RS {{ bookingLayout.priceMap[summary_unit.price].value }} </span>\n          <span class=\"demo-2\"> x {{ summary_unit.qty }} </span>\n        </p>\n        <button mat-icon-button (click)=\"bookingLayout.removeSelection(summary_unit)\"><mat-icon>delete_outline</mat-icon></button>\n        <mat-divider></mat-divider>\n\n      </mat-list-item>\n\n      <mat-list-item>\n        <mat-icon class=\"pricing_color_icon\" matListIcon >payment</mat-icon>\n        <h2 matLine> Total </h2>\n        <button mat-icon-button>RS. {{ bookingLayout.selection_info['total'] }}</button>\n      </mat-list-item>\n    </mat-list>\n    <mat-divider></mat-divider>\n\n    <mat-card-actions *ngIf=\"bookingLayout.selection_info['total'] > 0\">\n      <button mat-button (click)=\"onNavigate()\">PAY</button>\n      <button mat-button (click)=\"skipAndBook()\">SKIP PAY & BOOK</button>\n    </mat-card-actions>\n  </mat-card>\n</div>\n<div class=\"spacer\"></div>\n<div class=\"screen-container\">\n  <div style=\"text-align: center\" class=\"screen-div\">SCREEN HERE</div>\n</div>\n"
 
 /***/ }),
 
@@ -5488,7 +5488,7 @@ var NewEventVenueComponent = /** @class */ (function () {
                         var place = result;
                         _this.lat = place.geometry.location.lat();
                         _this.lng = place.geometry.location.lng();
-                        _this.zoom = 12;
+                        _this.zoom = 14;
                     });
                 });
             }, function (data) {
@@ -5528,14 +5528,16 @@ var NewEventVenueComponent = /** @class */ (function () {
                     //set latitude, longitude and zoom
                     _this.lat = place.geometry.location.lat();
                     _this.lng = place.geometry.location.lng();
-                    _this.zoom = 12;
+                    _this.venueLocation.lat = _this.lat;
+                    _this.venueLocation.lng = _this.lng;
+                    _this.zoom = 14;
                 });
             });
         });
     };
     NewEventVenueComponent.prototype.ngOnInit = function () {
         this.resetForm();
-        this.zoom = 4;
+        this.zoom = 14;
         this.searchControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormControl"]();
     };
     NewEventVenueComponent.prototype.resetForm = function (form) {
@@ -5808,7 +5810,7 @@ var EventVenueService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".event-card {\n  max-width: 350px;\n  max-height: 300px;\n  border-radius: 8px;\n  background: #F2F2F2;\n}\n\n.spacer{\n  height: 10px;\n}\n\nmat-card-tile{\n  min-width: 250px;\n  min-height: 400px;\n}\n\n.events-container\n{\n  width: 80%;\n  position: relative;\n  margin: auto;\n  top:15px;\n\tbottom: 0;\n\tleft: 0;\n\tright: 0;\n}\n\n.card-image\n{\n  margin-bottom: 0px;\n  max-height: 150px;\n}\n\n.event_name_location{\n  width: 70%;\n\tfloat: left;\n\tpadding: 8px 0px 10px 0px;\n\n}\n\n@media only screen and (max-width: 1105px) {\n   .event_name_location{\n   \twidth: 70%;\n   }\n}\n\n@media only screen and (max-width: 1020px) {\n  .event_name_location{\n   \twidth: 70%;\n   }\n}\n\n@media only screen and (max-width: 685px) {\n  .event_name_location{\n   \twidth: 60%;\n   }\n}\n\n@media only screen and (max-width: 560px) {\n  .event_name_location{\n   \twidth: 60%;\n   }\n}\n\n.event_date_month{\n\tpadding: 8px 0px 0px 25px;\n\twidth: 20%;\n\tfloat: left;\n}\n\n.event_date_month{\n\ttext-transform: uppercase;\n\tposition: relative;\n}\n\n.event_month{\n\tcolor: #E08284;\n}\n\n.event_date_month p{\n\tmargin: 0px;\n\tfont-size: 10px\n}\n\np.event_date{\n\tfont-size: 16px;\n\tfont-weight: 500;\n}\n\np.event_name{\n  margin-top: 0px;\n}\n\n.event_date_month:after{\n\tposition: absolute;\n    content: '';\n    height: 1px;\n    width: 52px;\n    -webkit-transform: rotate(90deg);\n            transform: rotate(90deg);\n    top: 33px;\n    right: -5px;\n\tbackground: #f1f1f1;\n}\n\na.event_location{\n\tfont-size: 12px;\n\tcolor: #999;\n\ttext-decoration: none\n}\n\na.event_location:hover{\n\ttext-decoration: underline;\n}\n\n.event_price{\n\tfont-size: 10px;\n\tcolor: #999;\n}\n\n.date_name_location{\n\tposition: relative;\n}\n\n.date_name_location:after{\n    position: absolute;\n    content: '';\n    width: 100%;\n    height: 1px;\n    background: #F1F1F2;\n    bottom: -120px;\n    left: 0px;\n}\n\nagm-map {\n  height: 300px;\n}\n\ninput[type=text] {\n    width: 50%;\n    box-sizing: content-box;\n    border: 0px solid #ccc;\n    border-radius: 2px;\n    font-size: 14px;\n    background-color: #eee;\n    padding: 10px 10px 10px 10px;\n}\n\n.date-filter {\n    border-width: 0px;\n    width: 55px;\n}\n\ninput[type=text]:focus {\n    outline-width: 0;\n}\n\n.twrapper {\n  display: flex;\n  flex-flow: row wrap;\n  /* This aligns items to the end line on main-axis */\n  justify-content: space-between;\n}\n\n.tchild1 {\n    flex: 1 90%;\n  }\n\n.tchild2 {\n    flex: 1 10%;\n  }\n\n/* Medium screens */\n\n@media all and (max-width: 800px) {\n  .twrapper {\n    /* When on medium sized screens, we center it by evenly distributing empty space around items */\n    justify-content: space-around;\n  }\n}\n\n@media all and (max-width: 500px) {\n  .twrapper{\n    flex-direction: column;\n  }\n  .tchild1 {\n    flex: 1 100%;\n  }\n\n  .tchild2 {\n    flex: 1 100%;\n    -ms-grid-row-align: center ;\n        align-self: center ;\n  }\n\n  input[type=text] {\n    width: 100%;\n  }\n}\n"
+module.exports = ".event-card {\n  max-width: 350px;\n  max-height: 300px;\n  border-radius: 8px;\n  background: #F2F2F2;\n}\n\n.spacer{\n  height: 10px;\n}\n\nmat-card-tile{\n  min-width: 250px;\n  min-height: 400px;\n}\n\n.events-container\n{\n  width: 80%;\n  position: relative;\n  margin: auto;\n  top:0px;\n\tbottom: 0;\n\tleft: 0;\n\tright: 0;\n}\n\n.card-image\n{\n  margin-bottom: 0px;\n  max-height: 150px;\n}\n\n.event_name_location{\n  width: 70%;\n\tfloat: left;\n\tpadding: 8px 0px 10px 0px;\n\n}\n\n@media only screen and (max-width: 1105px) {\n   .event_name_location{\n   \twidth: 70%;\n   }\n}\n\n@media only screen and (max-width: 1020px) {\n  .event_name_location{\n   \twidth: 70%;\n   }\n}\n\n@media only screen and (max-width: 685px) {\n  .event_name_location{\n   \twidth: 60%;\n   }\n}\n\n@media only screen and (max-width: 560px) {\n  .event_name_location{\n   \twidth: 60%;\n   }\n}\n\n.event_date_month{\n\tpadding: 8px 0px 0px 25px;\n\twidth: 20%;\n\tfloat: left;\n}\n\n.event_date_month{\n\ttext-transform: uppercase;\n\tposition: relative;\n}\n\n.event_month{\n\tcolor: #E08284;\n}\n\n.event_date_month p{\n\tmargin: 0px;\n\tfont-size: 10px\n}\n\np.event_date{\n\tfont-size: 16px;\n\tfont-weight: 500;\n}\n\np.event_name{\n  margin-top: 0px;\n}\n\n.event_date_month:after{\n\tposition: absolute;\n    content: '';\n    height: 1px;\n    width: 52px;\n    -webkit-transform: rotate(90deg);\n            transform: rotate(90deg);\n    top: 33px;\n    right: -5px;\n\tbackground: #f1f1f1;\n}\n\na.event_location{\n\tfont-size: 12px;\n\tcolor: #999;\n\ttext-decoration: none\n}\n\na.event_location:hover{\n\ttext-decoration: underline;\n}\n\n.event_price{\n\tfont-size: 10px;\n\tcolor: #999;\n}\n\n.date_name_location{\n\tposition: relative;\n}\n\n.date_name_location:after{\n    position: absolute;\n    content: '';\n    width: 100%;\n    height: 1px;\n    background: #F1F1F2;\n    bottom: -120px;\n    left: 0px;\n}\n\nagm-map {\n  height: 300px;\n}\n\ninput[type=text] {\n    width: 50%;\n    box-sizing: content-box;\n    border: 0px solid #ccc;\n    border-radius: 2px;\n    font-size: 14px;\n    background-color: #eee;\n    padding: 10px 10px 10px 10px;\n}\n\n.date-filter {\n    border-width: 0px;\n    width: 55px;\n}\n\ninput[type=text]:focus {\n    outline-width: 0;\n}\n\n.twrapper {\n  display: flex;\n  flex-flow: row wrap;\n  /* This aligns items to the end line on main-axis */\n  justify-content: space-between;\n}\n\n.tchild1 {\n    flex: 1 90%;\n  }\n\n.tchild2 {\n    flex: 1 10%;\n  }\n\n/* Medium screens */\n\n@media all and (max-width: 800px) {\n  .twrapper {\n    /* When on medium sized screens, we center it by evenly distributing empty space around items */\n    justify-content: space-around;\n  }\n}\n\n@media all and (max-width: 500px) {\n  .twrapper{\n    flex-direction: column;\n  }\n  .tchild1 {\n    flex: 1 100%;\n  }\n\n  .tchild2 {\n    flex: 1 100%;\n    -ms-grid-row-align: center ;\n        align-self: center ;\n  }\n\n  input[type=text] {\n    width: 100%;\n  }\n}\n"
 
 /***/ }),
 
@@ -5819,7 +5821,7 @@ module.exports = ".event-card {\n  max-width: 350px;\n  max-height: 300px;\n  bo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ngx-loading [show]=\"loading\" ></ngx-loading>\n<div class=\"spacer\"></div>\n<div class=\"twrapper\">\n  <div class=\"tchild1\">\n    <input class=\"searchbox\" type=\"text\" placeholder=\"Search\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"form-control\" #search [formControl]=\"queryField\">\n  </div>\n  <div class=\"tchild2\">\n    <input matInput class=\"date-filter\" [disabled]=\"true\" [matDatepicker]=\"picker\" placeholder=\"Date\">\n    <mat-datepicker-toggle  matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n    <mat-datepicker disabled=\"false\" touchUi #picker></mat-datepicker>\n  </div>\n</div>\n<div class=\"spacer\"></div>\n<agm-map [latitude]=\"lat\" [longitude]=\"lng\" [scrollwheel]=\"false\" [zoom]=\"zoom\">\n  <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n</agm-map>\n\n\n<div class=\"spacer\"></div>\n<div class=\"events-container\">\n<mat-grid-list [cols]=\"cols | async\" gutterSize=\"15px\" >\n  <mat-grid-tile *ngFor=\"let event of events\">\n    <mat-card class=\"event-card\">\n      <img mat-card-image class=\"card-image\" [src]=\"event.images['banner'].url\" onerror=\"this.src='https://algovent-s3-static.s3.amazonaws.com/eventico/media/event_bWDUlrT.jpg'\" alt=\"Photo of a Shiba Inu\">\n    <mat-card-content>\n        <div class=\"date_name_location\">\n          <div class=\"event_date_month\">\n            <p class=\"event_month\">{{event['times']['start']['month']}}</p>\n            <p class=\"event_date\">{{event['times']['start']['day_num']}}</p>\n            <p class=\"event_day\">{{event['times']['start']['day']}}</p>\n          </div>\n          <div class=\"event_name_location\">\n            <p class=\"event_name\">{{event.Name}}</p>\n            <a href=\"#\" class=\"event_location\">Phoenix Market City: Whitefield</a>\n            <p class=\"event_price\" >Rs. 999 Onwards</p>\n          </div>\n        </div>\n      </mat-card-content>\n      <mat-card-actions>\n        <button *ngIf=\"permissions['book_event'] == true\" mat-button [routerLink]=\"['bookings/booking',{event_id: event.Id}]\" color=\"#cc3333cc\" >Book</button>\n        <span class=\"toolbar-splitter\"></span>\n        <button mat-icon-button routerLink=\"\"><mat-icon aria-label=\"Share\">share</mat-icon></button>\n        <button *ngIf=\"permissions['edit_event'] == true\" mat-icon-button [routerLink]=\"['events/event',{id: event.Id }]\"><mat-icon aria-label=\"Edit\">edit</mat-icon></button>\n      </mat-card-actions>\n    </mat-card>\n  </mat-grid-tile>\n</mat-grid-list>\n</div>\n"
+module.exports = "<ngx-loading [show]=\"loading\" ></ngx-loading>\n<div class=\"spacer\"></div>\n<agm-map [latitude]=\"lat\" [longitude]=\"lng\" [scrollwheel]=\"false\" [zoom]=\"zoom\">\n\n  <agm-marker  *ngFor=\"let event of events; let i = index\"  [label]=\"\"\n      [markerDraggable]=\"false\" [latitude]=\"event.eventVenue.location.lat\"  [longitude]=\"event.eventVenue.location.lng\">\n    <agm-info-window>\n      <mat-card class=\"event-card\">\n        <mat-card-content>\n            {{event.Name}} | {{event['times']['start']['month']}}/{{event['times']['start']['day_num']}}/{{event['times']['start']['day']}}\n          </mat-card-content>\n          <mat-card-actions>\n            <button *ngIf=\"permissions['book_event'] == true\" mat-button [routerLink]=\"['bookings/booking',{event_id: event.Id}]\" color=\"#cc3333cc\" >Book</button>\n          </mat-card-actions>\n        </mat-card>\n    </agm-info-window>\n  </agm-marker>\n</agm-map>\n\n<div class=\"spacer\"></div>\n\n<div class=\"twrapper\">\n  <div class=\"tchild1\">\n    <input class=\"searchbox\" type=\"text\" placeholder=\"Search\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"form-control\" #search [formControl]=\"queryField\">\n  </div>\n  <div class=\"tchild2\">\n    <input matInput class=\"date-filter\" [disabled]=\"true\" [matDatepicker]=\"picker\" placeholder=\"Date\">\n    <mat-datepicker-toggle  matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n    <mat-datepicker disabled=\"false\" touchUi #picker></mat-datepicker>\n  </div>\n</div>\n<div class=\"events-container\">\n<mat-grid-list [cols]=\"cols | async\" gutterSize=\"15px\" >\n  <mat-grid-tile *ngFor=\"let event of events\">\n    <mat-card class=\"event-card\">\n      <img *ngIf=\"event.images['banner'].url\" mat-card-image class=\"card-image\" [src]=\"event.images['banner'].url\" alt=\"Photo of a Shiba Inu\">\n    <mat-card-content>\n        <div class=\"date_name_location\">\n          <div class=\"event_date_month\">\n            <p class=\"event_month\">{{event['times']['start']['month']}}</p>\n            <p class=\"event_date\">{{event['times']['start']['day_num']}}</p>\n            <p class=\"event_day\">{{event['times']['start']['day']}}</p>\n          </div>\n          <div class=\"event_name_location\">\n            <p class=\"event_name\">{{event.Name}}</p>\n            <a [href]=\"event.eventVenue.location.LocationUrl\" target=\"_blank\" class=\"event_location\">{{ event.eventVenue.location.Name }}</a>\n            <p class=\"event_price\" >Rs. 999 Onwards</p>\n          </div>\n        </div>\n      </mat-card-content>\n      <mat-card-actions>\n        <button *ngIf=\"permissions['book_event'] == true\" mat-button [routerLink]=\"['bookings/booking',{event_id: event.Id}]\" color=\"#cc3333cc\" >Book</button>\n        <span class=\"toolbar-splitter\"></span>\n        <button mat-icon-button routerLink=\"\"><mat-icon aria-label=\"Share\">share</mat-icon></button>\n        <button *ngIf=\"permissions['edit_event'] == true\" mat-icon-button [routerLink]=\"['events/event',{id: event.Id }]\"><mat-icon aria-label=\"Edit\">edit</mat-icon></button>\n      </mat-card-actions>\n    </mat-card>\n  </mat-grid-tile>\n</mat-grid-list>\n</div>\n"
 
 /***/ }),
 
@@ -5842,10 +5844,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_add_operator_takeWhile__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/add/operator/takeWhile */ "./node_modules/rxjs-compat/_esm5/add/operator/takeWhile.js");
 /* harmony import */ var rxjs_add_operator_startWith__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/add/operator/startWith */ "./node_modules/rxjs-compat/_esm5/add/operator/startWith.js");
 /* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/index.js");
-/* harmony import */ var _shared_services_search_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../shared-services/search.service */ "./src/app/shared-services/search.service.ts");
-/* harmony import */ var rxjs_add_operator_debounceTime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/add/operator/debounceTime */ "./node_modules/rxjs-compat/_esm5/add/operator/debounceTime.js");
-/* harmony import */ var rxjs_add_operator_distinctUntilChanged__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs/add/operator/distinctUntilChanged */ "./node_modules/rxjs-compat/_esm5/add/operator/distinctUntilChanged.js");
-/* harmony import */ var rxjs_add_operator_switchMap__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs/add/operator/switchMap */ "./node_modules/rxjs-compat/_esm5/add/operator/switchMap.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _shared_services_search_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../shared-services/search.service */ "./src/app/shared-services/search.service.ts");
+/* harmony import */ var rxjs_add_operator_debounceTime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs/add/operator/debounceTime */ "./node_modules/rxjs-compat/_esm5/add/operator/debounceTime.js");
+/* harmony import */ var rxjs_add_operator_distinctUntilChanged__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs/add/operator/distinctUntilChanged */ "./node_modules/rxjs-compat/_esm5/add/operator/distinctUntilChanged.js");
+/* harmony import */ var rxjs_add_operator_switchMap__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs/add/operator/switchMap */ "./node_modules/rxjs-compat/_esm5/add/operator/switchMap.js");
+/* harmony import */ var _shared_services_snackbar_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../shared-services/snackbar.service */ "./src/app/shared-services/snackbar.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5868,34 +5872,41 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var EventsComponent = /** @class */ (function () {
-    function EventsComponent(eventService, observableMedia, userservice, mapsAPILoader, ngZone, _searchService) {
+    function EventsComponent(eventService, observableMedia, userservice, mapsAPILoader, ngZone, _searchService, snackbarService, router) {
         this.eventService = eventService;
         this.observableMedia = observableMedia;
         this.userservice = userservice;
         this.mapsAPILoader = mapsAPILoader;
         this.ngZone = ngZone;
         this._searchService = _searchService;
+        this.snackbarService = snackbarService;
+        this.router = router;
         this.options = [];
-        this.lat = 51.678418;
-        this.lng = 7.809007;
+        this.lat = 12.93341230000000000000000000000000;
+        this.lng = 77.69136019999996000000000000000000;
         this.results = [];
         this.queryField = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]();
         this.loading = false;
+        this.snackbarService.load();
     }
     EventsComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.queryField.valueChanges
-            .subscribe(function (queryField) { return _this._searchService.search(queryField, 'EVENTS')
             .debounceTime(1000)
             .distinctUntilChanged()
-            .subscribe(function (response) { return console.log(response); }); });
+            .switchMap(function (query) { return _this._searchService.search(query, 'EVENTS'); })
+            .subscribe(function (sdata) {
+        }, function (fdata) {
+        });
         //set current position
         this.setCurrentPosition();
         this.eventService.loadEvents();
         var grid = new Map([
             ["xs", 1],
-            ["sm", 2],
+            ["sm", 1],
             ["md", 2],
             ["lg", 3],
             ["xl", 3]
@@ -5914,19 +5925,28 @@ var EventsComponent = /** @class */ (function () {
         })
             .startWith(start);
     };
+    EventsComponent.prototype.ngAfterViewInit = function () {
+        this.snackbarService.calm();
+    };
     EventsComponent.prototype.setCurrentPosition = function () {
-        var _this = this;
-        if ("geolocation" in navigator) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                _this.lat = position.coords.latitude;
-                _this.lng = position.coords.longitude;
-                _this.zoom = 12;
-            });
-        }
+        //    if ("geolocation" in navigator) {
+        //      navigator.geolocation.getCurrentPosition((position) => {
+        //        this.lat = position.coords.latitude;
+        //        this.lng = position.coords.longitude;
+        //        this.zoom = 11;
+        //      });
+        //    }
     };
     Object.defineProperty(EventsComponent.prototype, "events", {
         get: function () {
             return this.eventService.events;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(EventsComponent.prototype, "locations", {
+        get: function () {
+            return this.eventService.locations;
         },
         enumerable: true,
         configurable: true
@@ -5938,6 +5958,10 @@ var EventsComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    EventsComponent.prototype.eventClicked = function (event) {
+        this.router.navigate(['bookings/booking', { event_id: event.Id }]);
+        console.log(event);
+    };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])("search"),
         __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])
@@ -5953,7 +5977,9 @@ var EventsComponent = /** @class */ (function () {
             _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"],
             _agm_core__WEBPACK_IMPORTED_MODULE_8__["MapsAPILoader"],
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"],
-            _shared_services_search_service__WEBPACK_IMPORTED_MODULE_9__["SearchService"]])
+            _shared_services_search_service__WEBPACK_IMPORTED_MODULE_10__["SearchService"],
+            _shared_services_snackbar_service__WEBPACK_IMPORTED_MODULE_14__["SnackbarService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_9__["Router"]])
     ], EventsComponent);
     return EventsComponent;
 }());
@@ -5969,7 +5995,7 @@ var EventsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".new-event-card\n{\n   max-width: 40%;\n   margin: 100px auto;\n}\n\n@media only screen and (max-width: 1105px) {\n   .new-event-card\n    {\n       max-width: 40%;\n       margin: 100px auto;\n    }\n}\n\n@media only screen and (max-width: 1020px) {\n  .new-event-card\n  {\n     max-width: 50%;\n     margin: 100px auto;\n  }\n}\n\n@media only screen and (max-width: 685px) {\n  .new-event-card\n  {\n     max-width: 70%;\n     margin: 100px auto;\n  }\n}\n\n@media only screen and (max-width: 560px) {\n  .event_name_location{\n   \twidth: 100%;\n   }\n}\n\n.full-width\n{\n  width : 100%;\n}\n\n.half-width\n{\n  width : 50%;\n}\n\n.fr5-width\n{\n  width : 40%;\n}\n\n.forty-width\n{\n  width : 40%;\n}\n\n.thirty-width\n{\n  width : 30%;\n}\n\n.twenty-width\n{\n  width : 20%;\n}\n\n.fteen-width\n{\n  width : 10%;\n}\n\n.ten-width\n{\n  width : 10%;\n}\n\n.fivepx-margin-right\n{\n  margin-right: 5px;\n}\n\n.new-event-card-title\n{\n  flex: 1 1 auto;\n  text-align: center;\n}\n\n.layout-content\n{\n  align: center;\n}\n\ntable { margin: auto; }\n\n.pricing_color_icon\n{\n  cursor: pointer;\n}\n\n@media only screen and (max-width: 685px) {\n  .new-event-card\n  {\n     max-width: 70%;\n     margin: 50px auto;\n  }\n}\n\n@media only screen and (max-width: 560px) {\n  .new-event-card\n  {\n     max-width: 100%;\n     margin: 0px auto;\n  }\n}\n"
+module.exports = ".new-event-card\n{\n   max-width: 40%;\n   margin: 100px auto;\n}\n\n@media only screen and (max-width: 1105px) {\n   .new-event-card\n    {\n       max-width: 40%;\n       margin: 100px auto;\n    }\n}\n\n@media only screen and (max-width: 1020px) {\n  .new-event-card\n  {\n     max-width: 50%;\n     margin: 100px auto;\n  }\n}\n\n@media only screen and (max-width: 685px) {\n  .new-event-card\n  {\n     max-width: 70%;\n     margin: 100px auto;\n  }\n}\n\n@media only screen and (max-width: 560px) {\n  .event_name_location{\n   \twidth: 100%;\n   }\n}\n\n.center {\n    display: block;\n    margin-left: auto;\n    margin-right: auto;\n}\n\n.center > img {\n  height : 100%;\n}\n\n.banner-card {\n  padding-top: 0px;\n  padding-bottom: 0px;\n  background: #d7dac99e;\n  max-height: 350px;\n}\n\n.full-width\n{\n  width : 100%;\n}\n\n.half-width\n{\n  width : 50%;\n}\n\n.fr5-width\n{\n  width : 40%;\n}\n\n.forty-width\n{\n  width : 40%;\n}\n\n.thirty-width\n{\n  width : 30%;\n}\n\n.twenty-width\n{\n  width : 20%;\n}\n\n.fteen-width\n{\n  width : 10%;\n}\n\n.ten-width\n{\n  width : 10%;\n}\n\n.fivepx-margin-right\n{\n  margin-right: 5px;\n}\n\n.new-event-card-title\n{\n  flex: 1 1 auto;\n  text-align: center;\n}\n\n.layout-content\n{\n  align: center;\n}\n\ntable { margin: auto; }\n\n.pricing_color_icon\n{\n  cursor: pointer;\n}\n\n@media only screen and (max-width: 685px) {\n  .new-event-card\n  {\n     max-width: 70%;\n     margin: 50px auto;\n  }\n}\n\n@media only screen and (max-width: 560px) {\n  .new-event-card\n  {\n     max-width: 100%;\n     margin: 0px auto;\n  }\n}\n"
 
 /***/ }),
 
@@ -5980,7 +6006,7 @@ module.exports = ".new-event-card\n{\n   max-width: 40%;\n   margin: 100px auto;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ngx-loading [show]=\"loading\" ></ngx-loading>\n<mat-horizontal-stepper>\n  <mat-step label=\"Setup Event Info\">\n    <mat-card class=\"new-event-card\">\n      <mat-card-title ><i class=\"material-icons\">today</i></mat-card-title>\n      <form class=\"new-event-form\" #eventCreationForm=\"ngForm\" >\n      <mat-card-content>\n          <mat-form-field class=\"full-width\">\n            <input matInput placeholder=\"Name\" #Name=\"ngModel\" [(ngModel)]=\"event.Name\" name=\"Name\" required>\n          </mat-form-field>\n          <mat-form-field class=\"forty-width fivepx-margin-right\">\n            <input matInput [min]=\"minDate\" [matDatepicker]=\"startdate\" placeholder=\"Start Date\" [(value)] = \"event.times['start']['date']\" disabled required>\n            <mat-datepicker-toggle matSuffix [for]=\"startdate\"></mat-datepicker-toggle>\n            <mat-datepicker disabled=\"false\" touchUi=\"true\" #startdate></mat-datepicker>\n          </mat-form-field>\n          <mat-form-field class=\"fteen-width fivepx-margin-right\">\n            <mat-select placeholder=\"HH\" [value]=\"event['times']['start']['hh']\" name=\"shh\" required>\n              <mat-option *ngFor=\"let i of [1,2,3,4,5,6,7,8,9,10,11,12]\" [value]=\"i\">{{i}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field class=\"fteen-width fivepx-margin-right\">\n            <mat-select placeholder=\"MM\" [value]=\"event['times']['start']['mm']\" name=\"smm\" required>\n              <mat-option *ngFor=\"let i of [0,1,2,3,4,5,6,7,8,9,10,11,12]\" [value]=\"i * 5\">{{i*5}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field class=\"fteen-width fivepx-margin-right\">\n            <mat-select placeholder=\"\" [value]=\"event['times']['end']['period']\" name=\"sAMPM\">\n              <mat-option selected value=\"AM\">AM</mat-option>\n              <mat-option selected value=\"PM\">PM</mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field class=\"forty-width fivepx-margin-right\">\n            <input matInput [min]=\"event['times']['start']['date']\" [matDatepicker]=\"enddate\" placeholder=\"End Date\" [(value)] = \"event['times']['end']['date']\" required disabled>\n            <mat-datepicker-toggle matSuffix [for]=\"enddate\"></mat-datepicker-toggle>\n            <mat-datepicker disabled=\"false\" touchUi=\"true\" #enddate></mat-datepicker>\n          </mat-form-field>\n          <mat-form-field class=\"fteen-width fivepx-margin-right\">\n            <mat-select placeholder=\"HH\" [(value)]=\"event['times']['end']['hh']\" name=\"ehh\" required>\n              <mat-option *ngFor=\"let i of [1,2,3,4,5,6,7,8,9,10,11,12]\" [value]=\"i\">{{i}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field class=\"fteen-width fivepx-margin-right\">\n            <mat-select placeholder=\"MM\" [(value)]=\"event['times']['end']['mm']\" name=\"emm\" required>\n              <mat-option *ngFor=\"let i of [0,1,2,3,4,5,6,7,8,9,10,11,12]\" [value]=\"i * 5\">{{i*5}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field class=\"fteen-width fivepx-margin-right\">\n            <mat-select placeholder=\"\" [(value)]=\"event['times']['end']['period']\" name=\"eAMPM\" required>\n              <mat-option selected value=\"AM\">AM</mat-option>\n              <mat-option selected value=\"PM\">PM</mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field class=\"full-width\">\n            <input matInput type=\"number\" placeholder=\"Default Price\" #Name=\"ngModel\" [(ngModel)]=\"defaultPrice['value']\" name=\"DefaultPrice\" required>\n          </mat-form-field>\n          <mat-form-field class=\"full-width\">\n            <input matInput type=\"text\" placeholder=\"Default Price Label\" #Name=\"ngModel\" [(ngModel)]=\"defaultPrice['label']\" name=\"DefaultPriceLabel\" required>\n          </mat-form-field>\n          <mat-form-field class=\"full-width\">\n            <input matInput type=\"text\" placeholder=\"Default Price Description\" #Name=\"ngModel\" [(ngModel)]=\"defaultPrice['desc']\" name=\"DefaultPriceDesc\" required>\n          </mat-form-field>\n            <mat-form-field class=\"full-width\">\n            <textarea matInput placeholder=\"Description\" #Desc=\"ngModel\" [(ngModel)]=\"event.Desc\" name=\"Description\" required></textarea>\n          </mat-form-field>\n          <mat-form-field class=\"half-width\">\n          <mat-select  placeholder=\"Select EventType\" [(value)]=\"event.EventTypeId\"  name=\"EventType\">\n              <mat-option *ngFor=\"let eventType of eventTypes\" value=\"{{eventType.Id}}\">{{eventType.Name}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field class=\"half-width\">\n            <mat-select placeholder=\"Select Event venue\" [(value)]=\"event.EventVenueId\"  name=\"EventVenue\" >\n              <mat-option *ngFor=\"let eventVenue of eventVenues\" value=\"{{eventVenue.Id}}\" >{{eventVenue.Name}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n      </mat-card-content>\n      </form>\n    </mat-card>\n    <div>\n      <button  mat-button type=\"submit\" (click)=\"upsertEvent()\">UPSERT</button>\n      <button  *ngIf=\"event['Id'] != null && event['Id'] != undefined\" mat-button matStepperNext >NEXT</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Setup Banners\" *ngIf=\"event.Id != null\">\n    <mat-card>\n      <mat-card-content>\n        <img [src]=\"this.event.images['banner'].url\" onerror=\"this.src='https://algovent-s3-static.s3.amazonaws.com/eventico/media/default_bannger.jpg'\">\n      </mat-card-content>\n      <mat-divider></mat-divider>\n      <mat-card-actions>\n        <input type=\"file\"   (change)=\"handleFileInput($event.target.files)\">\n        <button mat-button  *ngIf=\"this.event.images['banner'].url != ''\" color=\"warning\"> REMOVE</button>\n      </mat-card-actions>\n    </mat-card>\n  <div>\n    <button  mat-button matStepperPrevious>BACK</button>\n    <button  mat-button matStepperNext >NEXT</button>\n  </div>\n  </mat-step>\n\n  <mat-step label=\"Mark Unavailability\" *ngIf=\"event.LayoutType == 'box' && event.Id != null\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-form\" #markNAForm=\"ngForm\" (ngSubmit)=\"markNA(markNAForm)\">\n\n          <mat-form-field>\n            <mat-select placeholder=\"Select Group\" #GroupSelect=\"ngModel\" [(ngModel)]=\"markNAFormData.group_index\" name=\"GroupSelect\">\n              <mat-option *ngFor=\"let group of layout_groups;let i = index\" [value]=\"i\">\n                {{ group.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markNAFormData.group_index != -1\">\n            <mat-select  #RowSelect placeholder=\"Select Row\" [(ngModel)]=\"markNAFormData.row_index\" name=\"RowSelect\">\n              <mat-option *ngFor=\"let row of layout_groups[markNAFormData.group_index].rows ;let j = index\" [value]=\"j\">\n                {{ row.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markNAFormData.row_index != -1\">\n            <mat-select  #StartColSelect placeholder=\"Select Start Column\" [(ngModel)]=\"markNAFormData.start_col_index\" name=\"StartColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markNAFormData.group_index].rows[markNAFormData.row_index].cols ;let k = index\" [value]=\"k\">\n                {{ k }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markNAFormData.row_index != -1\">\n            <mat-select  #EndColSelect placeholder=\"Select End Column\" [(ngModel)]=\"markNAFormData.end_col_index\" name=\"EndColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markNAFormData.group_index].rows[markNAFormData.row_index].cols;let l = index\" [value]=\"l\">\n                {{ l }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n          <button mat-button type=\"submit\" color=\"primary\" >Mark N/A</button>\n        </form>\n        <span class=\"tollbar-splitter\"></span>\n\n        <button  mat-button [(colorPicker)]=\"eventLayout.typeColors.path\" [cpPosition]=\"'left'\">Path Color</button>\n        <button  mat-button [(colorPicker)]=\"eventLayout.typeColors.na\" [cpPosition]=\"'left'\">N/A Color</button>\n\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\">\n          <mat-divider></mat-divider>\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button [matTooltip]=\"col.number\" class=\"seat-button\" [disabled]=\"eventLayout.typeActionDisabled[col.type]\"  mat-icon-button><mat-icon [style.color]=\"eventLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n          <tr *ngIf=\"group != null && group.rows != null && group.rows[0] != null\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ group.name }}</button>\n            </td>\n            <td *ngFor=\"let col of group.rows[0].cols; let m = index\" class=\"seat-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ m }}</button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Setup Pricing\" *ngIf=\"event.Id != null\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-form\" #addPricingForm=\"ngForm\" (ngSubmit)=\"addPricing(addPricingForm)\">\n\n          <mat-form-field primary>\n            <input matInput  type=\"text\" placeholder=\"Label\" #Label=\"ngModel\" [(ngModel)]=\"addPricingFormData.label\" name=\"Label\" >\n          </mat-form-field>\n          <mat-form-field primary>\n            <input matInput type=\"number\" placeholder=\"Value\" #Value=\"ngModel\" [(ngModel)]=\"addPricingFormData.value\" name=\"Value\" >\n          </mat-form-field>\n          <mat-form-field primary>\n            <input matInput type=\"text\" placeholder=\"Description\" #Desc=\"ngModel\" [(ngModel)]=\"addPricingFormData.desc\" name=\"Desc\" >\n          </mat-form-field>\n          <button mat-button type=\"submit\" color=\"primary\" >Add</button>\n        </form>\n        <span class=\"tollbar-splitter\"></span>\n\n      </mat-toolbar-row>\n    </mat-toolbar>\n\n    <mat-list>\n      <mat-list-item *ngFor=\"let price of eventLayout.priceList\">\n        <mat-icon class=\"pricing_color_icon\" matListIcon [(colorPicker)]=\"price.color\" [style.color]=\"price.color\">event_seat</mat-icon>\n        <h3 matLine> {{ price.label }} </h3>\n        <p matLine>\n          <span> {{ price.value }} </span>\n          <span class=\"demo-2\"> -- {{ price.desc }} </span>\n        </p>\n\n        <button *ngIf=\"price.name != 'default'\" mat-icon-button><mat-icon>delete</mat-icon></button>\n      </mat-list-item>\n    </mat-list>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Mark Pricing\" *ngIf=\"eventLayout.layout_type == 'box' && event.Id != null\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-form\" #markPricingForm=\"ngForm\" (ngSubmit)=\"markPricing(markPricingForm)\">\n\n          <mat-form-field>\n            <mat-select placeholder=\"Select Price\" #GroupSelect=\"ngModel\" [(ngModel)]=\"markPricingFormData.price_index\" name=\"PriceSelect\">\n              <mat-option *ngFor=\"let price of eventLayout.priceList;let i = index\" [value]=\"i\">\n                {{ price['label'] }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field>\n            <mat-select placeholder=\"Select Group\" #GroupSelect=\"ngModel\" [(ngModel)]=\"markPricingFormData.group_index\" name=\"GroupSelect\">\n              <mat-option *ngFor=\"let group of layout_groups;let i = index\" [value]=\"i\">\n                {{ group.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markPricingFormData.group_index != -1\">\n            <mat-select  #RowSelect placeholder=\"Select Row\" [(ngModel)]=\"markPricingFormData.row_index\" name=\"RowSelect\">\n              <mat-option *ngFor=\"let row of layout_groups[markPricingFormData.group_index].rows ;let j = index\" [value]=\"j\">\n                {{ row.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markPricingFormData.row_index != -1\">\n            <mat-select  #StartColSelect placeholder=\"Select Start Column\" [(ngModel)]=\"markPricingFormData.start_col_index\" name=\"StartColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markPricingFormData.group_index].rows[markPricingFormData.row_index].cols ;let k = index\" [value]=\"k\">\n                {{ k }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markPricingFormData.row_index != -1\">\n            <mat-select  #EndColSelect placeholder=\"Select End Column\" [(ngModel)]=\"markPricingFormData.end_col_index\" name=\"EndColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markPricingFormData.group_index].rows[markPricingFormData.row_index].cols;let l = index\" [value]=\"l\">\n                {{ l }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n          <button mat-button type=\"submit\" color=\"primary\" >Mark Pricing</button>\n        </form>\n        <span class=\"tollbar-splitter\"></span>\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\">\n          <mat-divider></mat-divider>\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.type != 'active'\" [matTooltip]=\"col.number\" class=\"seat-button\" disabled  mat-icon-button><mat-icon [style.color]=\"eventLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col.type == 'active'\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+eventLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"eventLayout.priceMap[col.price].color\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n          <tr *ngIf=\"group != null && group.rows != null && group.rows[0] != null\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ group.name }}</button>\n            </td>\n            <td *ngFor=\"let col of group.rows[0].cols; let m = index\" class=\"seat-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ m }}</button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Confirm Details\" *ngIf=\"event.Id != null\">\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\" disabled>\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.type != 'active'\" [matTooltip]=\"col.number\" class=\"seat-button\" disabled  mat-icon-button><mat-icon [style.color]=\"eventLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col.type == 'active'\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+eventLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"eventLayout.priceMap[col.price].color\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n        </table>\n        <div class=\"screen-div\">SCREEN HERE</div>\n      </mat-card-content>\n    </mat-card>\n    <div>\n      <button mat-button (click)=\"upsertLayout()\">UPSERT LAYOUT</button>\n      <button mat-button matStepperPrevious>Back</button>\n    </div>\n  </mat-step>\n</mat-horizontal-stepper>\n"
+module.exports = "<mat-horizontal-stepper>\n  <mat-step label=\"Setup Event Info\">\n    <mat-card class=\"new-event-card\">\n      <mat-card-title ><i class=\"material-icons\">today</i></mat-card-title>\n      <form class=\"new-event-form\" #eventCreationForm=\"ngForm\" >\n      <mat-card-content>\n          <mat-form-field class=\"full-width\">\n            <input matInput placeholder=\"Name\" #Name=\"ngModel\" [(ngModel)]=\"event.Name\" name=\"Name\" required>\n          </mat-form-field>\n          <mat-form-field class=\"forty-width fivepx-margin-right\">\n            <input matInput [min]=\"minDate\" [matDatepicker]=\"startdate\" placeholder=\"Start Date\" [(value)] = \"event.times['start']['date']\" disabled required>\n            <mat-datepicker-toggle matSuffix [for]=\"startdate\"></mat-datepicker-toggle>\n            <mat-datepicker disabled=\"false\" touchUi=\"true\" #startdate></mat-datepicker>\n          </mat-form-field>\n          <mat-form-field class=\"fteen-width fivepx-margin-right\">\n            <mat-select placeholder=\"HH\" [value]=\"event['times']['start']['hh']\" name=\"shh\" required>\n              <mat-option *ngFor=\"let i of [1,2,3,4,5,6,7,8,9,10,11,12]\" [value]=\"i\">{{i}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field class=\"fteen-width fivepx-margin-right\">\n            <mat-select placeholder=\"MM\" [value]=\"event['times']['start']['mm']\" name=\"smm\" required>\n              <mat-option *ngFor=\"let i of [0,1,2,3,4,5,6,7,8,9,10,11,12]\" [value]=\"i * 5\">{{i*5}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field class=\"fteen-width fivepx-margin-right\">\n            <mat-select placeholder=\"\" [value]=\"event['times']['end']['period']\" name=\"sAMPM\">\n              <mat-option selected value=\"AM\">AM</mat-option>\n              <mat-option selected value=\"PM\">PM</mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field class=\"forty-width fivepx-margin-right\">\n            <input matInput [min]=\"event['times']['start']['date']\" [matDatepicker]=\"enddate\" placeholder=\"End Date\" [(value)] = \"event['times']['end']['date']\" required disabled>\n            <mat-datepicker-toggle matSuffix [for]=\"enddate\"></mat-datepicker-toggle>\n            <mat-datepicker disabled=\"false\" touchUi=\"true\" #enddate></mat-datepicker>\n          </mat-form-field>\n          <mat-form-field class=\"fteen-width fivepx-margin-right\">\n            <mat-select placeholder=\"HH\" [(value)]=\"event['times']['end']['hh']\" name=\"ehh\" required>\n              <mat-option *ngFor=\"let i of [1,2,3,4,5,6,7,8,9,10,11,12]\" [value]=\"i\">{{i}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field class=\"fteen-width fivepx-margin-right\">\n            <mat-select placeholder=\"MM\" [(value)]=\"event['times']['end']['mm']\" name=\"emm\" required>\n              <mat-option *ngFor=\"let i of [0,1,2,3,4,5,6,7,8,9,10,11,12]\" [value]=\"i * 5\">{{i*5}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field class=\"fteen-width fivepx-margin-right\">\n            <mat-select placeholder=\"\" [(value)]=\"event['times']['end']['period']\" name=\"eAMPM\" required>\n              <mat-option selected value=\"AM\">AM</mat-option>\n              <mat-option selected value=\"PM\">PM</mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field class=\"full-width\">\n            <input matInput type=\"number\" placeholder=\"Default Price\" #Name=\"ngModel\" [(ngModel)]=\"defaultPrice['value']\" name=\"DefaultPrice\" required>\n          </mat-form-field>\n          <mat-form-field class=\"full-width\">\n            <input matInput type=\"text\" placeholder=\"Default Price Label\" #Name=\"ngModel\" [(ngModel)]=\"defaultPrice['label']\" name=\"DefaultPriceLabel\" required>\n          </mat-form-field>\n          <mat-form-field class=\"full-width\">\n            <input matInput type=\"text\" placeholder=\"Default Price Description\" #Name=\"ngModel\" [(ngModel)]=\"defaultPrice['desc']\" name=\"DefaultPriceDesc\" required>\n          </mat-form-field>\n            <mat-form-field class=\"full-width\">\n            <textarea matInput placeholder=\"Description\" #Desc=\"ngModel\" [(ngModel)]=\"event.Desc\" name=\"Description\" required></textarea>\n          </mat-form-field>\n          <mat-form-field class=\"half-width\">\n          <mat-select  placeholder=\"Select EventType\" [(value)]=\"event.EventTypeId\"  name=\"EventType\">\n              <mat-option *ngFor=\"let eventType of eventTypes\" value=\"{{eventType.Id}}\">{{eventType.Name}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field class=\"half-width\">\n            <mat-select placeholder=\"Select Event venue\" [(value)]=\"event.EventVenueId\"  name=\"EventVenue\" >\n              <mat-option *ngFor=\"let eventVenue of eventVenues\" value=\"{{eventVenue.Id}}\" >{{eventVenue.location.Name}}</mat-option>\n            </mat-select>\n          </mat-form-field>\n      </mat-card-content>\n      </form>\n    </mat-card>\n    <div>\n      <button  mat-button type=\"submit\" (click)=\"upsertEvent()\">UPSERT</button>\n      <button  *ngIf=\"event['Id'] != null && event['Id'] != undefined\" mat-button matStepperNext >NEXT</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Setup Banners\" *ngIf=\"event.Id != null\">\n    <mat-toolbar>\n      <mat-toolbar-row>\n        <span class=\"tollbar-splitter\"></span>\n        <button  mat-button (click)=\"ImageInput.click()\" >UPLOAD IMAGE</button>\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <div class=\"spacer\"></div>\n    <mat-card class=\"banner-card\">\n      <img class=\"boking_banner responsive center\" [src]=\"this.event.images['banner'].url\">\n    </mat-card>\n    <div class=\"spacer\"></div>\n    <div>\n      <button  mat-button matStepperPrevious>BACK</button>\n      <button  mat-button matStepperNext >NEXT</button>\n      <input type=\"file\" hidden=\"true\" #ImageInput (change)=\"handleFileInput($event.target.files)\">\n    </div>\n  </mat-step>\n\n  <mat-step label=\"Setup Pricing\" *ngIf=\"event.Id != null\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-form\" #addPricingForm=\"ngForm\" (ngSubmit)=\"addPricing(addPricingForm)\">\n\n          <mat-form-field primary>\n            <input matInput  type=\"text\" placeholder=\"Label\" #Label=\"ngModel\" [(ngModel)]=\"addPricingFormData.label\" name=\"Label\" >\n          </mat-form-field>\n          <mat-form-field primary>\n            <input matInput type=\"number\" placeholder=\"Value\" #Value=\"ngModel\" [(ngModel)]=\"addPricingFormData.value\" name=\"Value\" >\n          </mat-form-field>\n          <mat-form-field primary>\n            <input matInput type=\"text\" placeholder=\"Description\" #Desc=\"ngModel\" [(ngModel)]=\"addPricingFormData.desc\" name=\"Desc\" >\n          </mat-form-field>\n          <button mat-button type=\"submit\" color=\"primary\" >Add</button>\n        </form>\n        <span class=\"tollbar-splitter\"></span>\n\n      </mat-toolbar-row>\n    </mat-toolbar>\n\n    <mat-list [style.padding-bottom]=\"'300px'\">\n      <mat-list-item *ngFor=\"let price of eventLayout.priceList\">\n        <mat-icon class=\"pricing_color_icon\" matListIcon [(colorPicker)]=\"price.color\" [style.color]=\"price.color\">event_seat</mat-icon>\n        <h3 matLine> {{ price.label }} </h3>\n        <p matLine>\n          <span> {{ price.value }} </span>\n          <span class=\"demo-2\"> -- {{ price.desc }} </span>\n        </p>\n\n        <button *ngIf=\"price.name != 'default'\" mat-icon-button><mat-icon>delete</mat-icon></button>\n      </mat-list-item>\n    </mat-list>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step label=\"UPDATE LAYOUT\" *ngIf=\"eventLayout.layout_type == 'box' && event.Id != null\">\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-form\" #markNAForm=\"ngForm\" (ngSubmit)=\"markNA(markNAForm)\">\n\n          <mat-form-field>\n            <mat-select placeholder=\"Select Group\" #GroupSelect=\"ngModel\" [(ngModel)]=\"markNAFormData.group_index\" name=\"GroupSelect\">\n              <mat-option *ngFor=\"let group of layout_groups;let i = index\" [value]=\"i\">\n                {{ group.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markNAFormData.group_index != -1\">\n            <mat-select  #RowSelect placeholder=\"Select Row\" [(ngModel)]=\"markNAFormData.row_index\" name=\"RowSelect\">\n              <mat-option *ngFor=\"let row of layout_groups[markNAFormData.group_index].rows ;let j = index\" [value]=\"j\">\n                {{ row.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markNAFormData.row_index != -1\">\n            <mat-select  #StartColSelect placeholder=\"Select Start Column\" [(ngModel)]=\"markNAFormData.start_col_index\" name=\"StartColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markNAFormData.group_index].rows[markNAFormData.row_index].cols ;let k = index\" [value]=\"k\">\n                {{ k }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markNAFormData.row_index != -1\">\n            <mat-select  #EndColSelect placeholder=\"Select End Column\" [(ngModel)]=\"markNAFormData.end_col_index\" name=\"EndColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markNAFormData.group_index].rows[markNAFormData.row_index].cols;let l = index\" [value]=\"l\">\n                {{ l }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n          <button mat-button type=\"submit\" color=\"primary\" >Mark N/A</button>\n        </form>\n        <span class=\"tollbar-splitter\"></span>\n\n        <button  mat-button [(colorPicker)]=\"eventLayout.typeColors.path\" [cpPosition]=\"'left'\">Path Color</button>\n        <button  mat-button [(colorPicker)]=\"eventLayout.typeColors.na\" [cpPosition]=\"'left'\">N/A Color</button>\n\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <div class=\"spacer\"></div>\n    <mat-toolbar class=\"layout-create-toolbar\">\n      <mat-toolbar-row>\n        <form class=\"new-event-form\" #markPricingForm=\"ngForm\" (ngSubmit)=\"markPricing(markPricingForm)\">\n\n          <mat-form-field>\n            <mat-select placeholder=\"Select Price\" #GroupSelect=\"ngModel\" [(ngModel)]=\"markPricingFormData.price_index\" name=\"PriceSelect\">\n              <mat-option *ngFor=\"let price of eventLayout.priceList;let i = index\" [value]=\"i\">\n                {{ price['label'] }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field>\n            <mat-select placeholder=\"Select Group\" #GroupSelect=\"ngModel\" [(ngModel)]=\"markPricingFormData.group_index\" name=\"GroupSelect\">\n              <mat-option *ngFor=\"let group of layout_groups;let i = index\" [value]=\"i\">\n                {{ group.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markPricingFormData.group_index != -1\">\n            <mat-select  #RowSelect placeholder=\"Select Row\" [(ngModel)]=\"markPricingFormData.row_index\" name=\"RowSelect\">\n              <mat-option *ngFor=\"let row of layout_groups[markPricingFormData.group_index].rows ;let j = index\" [value]=\"j\">\n                {{ row.name }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markPricingFormData.row_index != -1\">\n            <mat-select  #StartColSelect placeholder=\"Select Start Column\" [(ngModel)]=\"markPricingFormData.start_col_index\" name=\"StartColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markPricingFormData.group_index].rows[markPricingFormData.row_index].cols ;let k = index\" [value]=\"k\">\n                {{ k }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field *ngIf=\"markPricingFormData.row_index != -1\">\n            <mat-select  #EndColSelect placeholder=\"Select End Column\" [(ngModel)]=\"markPricingFormData.end_col_index\" name=\"EndColSelect\">\n              <mat-option *ngFor=\"let col of layout_groups[markPricingFormData.group_index].rows[markPricingFormData.row_index].cols;let l = index\" [value]=\"l\">\n                {{ l }}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n          <button mat-button type=\"submit\" color=\"primary\" >Mark Pricing</button>\n        </form>\n        <span class=\"tollbar-splitter\"></span>\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <div class=\"spacer\"></div>\n    <mat-card class=\"layout-card scrollable-content\">\n      <mat-card-content>\n        <table *ngFor=\"let group of layout_groups\">\n          <mat-divider></mat-divider>\n          <tr *ngFor=\"let row of group.rows\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{row.name}}</button>\n            </td>\n            <td *ngFor=\"let col of row.cols\" class=\"seat-col\">\n              <button *ngIf=\"col.type != 'active'\" [matTooltip]=\"col.number\" class=\"seat-button\" disabled  mat-icon-button><mat-icon [style.color]=\"eventLayout.typeColors[col.type]\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n              <button *ngIf=\"col.type == 'active'\" [matTooltip]=\"'seat : '+col.number+' ,cost : '+eventLayout.priceMap[col.price].value\" class=\"seat-button\" mat-icon-button><mat-icon [style.color]=\"eventLayout.priceMap[col.price].color\" aria-label=\"Event Seat\">{{ eventLayout.typeIcons[col.type] }}</mat-icon></button>\n            </td>\n          <tr>\n          <tr *ngIf=\"group != null && group.rows != null && group.rows[0] != null\">\n            <td class=\"row-name-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ group.name }}</button>\n            </td>\n            <td *ngFor=\"let col of group.rows[0].cols; let m = index\" class=\"seat-col\">\n              <button class=\"seat-button\" mat-icon-button>{{ m }}</button>\n            </td>\n          <tr>\n        </table>\n      </mat-card-content>\n    </mat-card>\n    <div class=\"spacer\"></div>\n    <div class=\"screen-container\">\n      <div style=\"text-align: center\" class=\"screen-div\">SCREEN HERE</div>\n    </div>\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button (click)=\"upsertLayout()\">UPSERT LAYOUT</button>\n    </div>\n  </mat-step>\n</mat-horizontal-stepper>\n"
 
 /***/ }),
 
@@ -6002,6 +6028,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _shared_services_file_manager_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../shared-services/file-manager.service */ "./src/app/shared-services/file-manager.service.ts");
 /* harmony import */ var _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../event-user/shared/user.service */ "./src/app/event-user/shared/user.service.ts");
+/* harmony import */ var _shared_services_snackbar_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../shared-services/snackbar.service */ "./src/app/shared-services/snackbar.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6020,8 +6047,9 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var NewEventComponent = /** @class */ (function () {
-    function NewEventComponent(eventService, router, eventTypeService, eventVenueService, route, fileManager, userservice) {
+    function NewEventComponent(eventService, router, eventTypeService, eventVenueService, route, fileManager, userservice, snackbarService) {
         var _this = this;
         this.eventService = eventService;
         this.router = router;
@@ -6030,8 +6058,8 @@ var NewEventComponent = /** @class */ (function () {
         this.route = route;
         this.fileManager = fileManager;
         this.userservice = userservice;
+        this.snackbarService = snackbarService;
         this.banner = null;
-        this.loading = false;
         this.markNAFormData = {
             group_index: -1,
             row_index: -1,
@@ -6050,6 +6078,7 @@ var NewEventComponent = /** @class */ (function () {
             value: "",
             desc: ""
         };
+        this.snackbarService.load();
         this.color = '#ffffff';
         this.mode = "new";
         this.enddatetime = true;
@@ -6062,7 +6091,6 @@ var NewEventComponent = /** @class */ (function () {
     NewEventComponent.prototype.handleFileInput = function (files) {
         console.log('file uploaded');
         this.banner = files.item(0);
-        this.loading = true;
         this.updateEventBanner();
     };
     NewEventComponent.prototype.updateEventBanner = function () {
@@ -6074,16 +6102,18 @@ var NewEventComponent = /** @class */ (function () {
                 app_label: 'events',
                 file_type: 'event_banner',
             };
+            this.snackbarService.load();
             this.fileManager.upload(this.banner, options).subscribe(function (data) {
                 console.log(data);
-                _this.event.images['banner'].url = data["upload"];
-                _this.loading = false;
+                _this.event.images['banner'].url = data['data']['file']["upload"];
+                _this.snackbarService.afterRequest(data);
             }, function (error) {
                 console.log(error);
+                _this.snackbarService.afterRequestFailure(error);
             });
         }
         else {
-            alert('please create event before uloading the banner');
+            this.snackbarService.show_snackbar('please create event before uloading the banner');
         }
     };
     NewEventComponent.prototype.setupEvent = function (id) {
@@ -6097,53 +6127,63 @@ var NewEventComponent = /** @class */ (function () {
         if (id != null && id != '' && id != "undefined") {
             this.mode = "update";
             this.eventService.getEvent(id)
-                .subscribe(function (data) {
+                .subscribe(function (sdata) {
                 _this.mode = 'edit';
-                _this.eventService.updateEventInfo(data, _this.event);
-                _this.loading = false;
-                console.log(_this.event);
+                var eventInfo = sdata['data'];
+                _this.eventService.updateEventInfo(eventInfo, _this.event);
+                _this.snackbarService.afterRequest(sdata);
+            }, function (fdata) {
+                _this.snackbarService.afterRequestFailure(fdata);
             });
         }
         else {
-            this.loading = false;
+            this.snackbarService.calm();
         }
     };
     NewEventComponent.prototype.upsertEvent = function () {
         var _this = this;
         if (this.event == null) {
-            alert('Invalid Event');
+            this.snackbarService.show_snackbar('Invalid Event');
         }
         else if (this.event.Name == null || this.event.Name == undefined || this.event.Name == '') {
-            alert('Event name cannot be empty');
+            this.snackbarService.show_snackbar('Event name cannot be empty');
         }
         else if (this.defaultPrice['value'] == null || this.defaultPrice['value'] == undefined || this.defaultPrice['value'] <= 0) {
-            alert('default price of the event must greater than 0');
+            this.snackbarService.show_snackbar('default price of the event must greater than 0');
         }
         else if (this.defaultPrice['label'] == null || this.defaultPrice['label'] == undefined || this.defaultPrice['label'] == '') {
-            alert('Label of the default price cannot be empty');
+            this.snackbarService.show_snackbar('Label of the default price cannot be empty');
         }
         else if (this.event.Desc == null || this.event.Desc == undefined || this.event.Desc == '') {
-            alert('Event description cannot be empty');
+            this.snackbarService.show_snackbar('Event description cannot be empty');
         }
         else if (this.event.EventTypeId == null || this.event.EventTypeId == undefined) {
-            alert('Event type cannot be empty');
+            this.snackbarService.show_snackbar('Event type cannot be empty');
         }
         else if (this.event.EventVenueId == null || this.event.EventVenueId == undefined) {
-            alert('Event Venue cannot be empty');
+            this.snackbarService.show_snackbar('Event Venue cannot be empty');
         }
+        this.snackbarService.load();
         this.eventService.upsertEvent(this.event)
             .subscribe(function (data) {
-            var event_info = data['event'];
-            event_info['layout'] = data['layout'];
+            var event_info = data['data']['event'];
+            event_info['layout'] = data['data']['layout'];
             _this.event.mode = 'edit';
             _this.event.import(event_info);
+            _this.snackbarService.afterRequest(data);
+        }, function (fdata) {
+            _this.snackbarService.afterRequestFailure(fdata);
         });
     };
     NewEventComponent.prototype.upsertLayout = function () {
         var _this = this;
+        this.snackbarService.load();
         this.eventService.upsertEventLayout(this.event)
             .subscribe(function (data) {
+            _this.snackbarService.afterRequest(data);
             _this.router.navigate(['']);
+        }, function (fdata) {
+            _this.snackbarService.afterRequestFailure(fdata);
         });
     };
     NewEventComponent.prototype.markNA = function (form) {
@@ -6152,7 +6192,7 @@ var NewEventComponent = /** @class */ (function () {
         if (response.success) {
         }
         else {
-            alert(response.message);
+            this.snackbarService.show_snackbar(response.message);
         }
         this.resetMarkNAForm(form);
     };
@@ -6166,14 +6206,16 @@ var NewEventComponent = /** @class */ (function () {
         }
     };
     NewEventComponent.prototype.addPricing = function (form) {
-        console.log(this.addPricingFormData);
         var response = this.eventLayout.addPricing(this.addPricingFormData);
         if (response.success) {
+            this.snackbarService.show_snackbar(response.message);
         }
         else {
-            alert(response.message);
+            this.snackbarService.show_snackbar(response.message);
         }
         this.resetAddPricingForm(form);
+    };
+    NewEventComponent.prototype.addTaxDetail = function (form) {
     };
     NewEventComponent.prototype.resetAddPricingForm = function (form) {
         if (form != null) {
@@ -6189,7 +6231,7 @@ var NewEventComponent = /** @class */ (function () {
         if (response.success) {
         }
         else {
-            alert(response.message);
+            this.snackbarService.show_snackbar(response.message);
         }
         this.resetMarkPricingForm(form);
     };
@@ -6243,7 +6285,14 @@ var NewEventComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./new-event.component.html */ "./src/app/events/new-event/new-event.component.html"),
             styles: [__webpack_require__(/*! ./new-event.component.css */ "./src/app/events/new-event/new-event.component.css")]
         }),
-        __metadata("design:paramtypes", [_shared_event_service__WEBPACK_IMPORTED_MODULE_4__["EventService"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"], _event_types_shared_event_type_service__WEBPACK_IMPORTED_MODULE_2__["EventTypeService"], _event_venues_shared_event_venue_service__WEBPACK_IMPORTED_MODULE_3__["EventVenueService"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"], _shared_services_file_manager_service__WEBPACK_IMPORTED_MODULE_6__["FileManagerService"], _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_7__["UserService"]])
+        __metadata("design:paramtypes", [_shared_event_service__WEBPACK_IMPORTED_MODULE_4__["EventService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"],
+            _event_types_shared_event_type_service__WEBPACK_IMPORTED_MODULE_2__["EventTypeService"],
+            _event_venues_shared_event_venue_service__WEBPACK_IMPORTED_MODULE_3__["EventVenueService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"],
+            _shared_services_file_manager_service__WEBPACK_IMPORTED_MODULE_6__["FileManagerService"],
+            _event_user_shared_user_service__WEBPACK_IMPORTED_MODULE_7__["UserService"],
+            _shared_services_snackbar_service__WEBPACK_IMPORTED_MODULE_8__["SnackbarService"]])
     ], NewEventComponent);
     return NewEventComponent;
 }());
@@ -6263,6 +6312,10 @@ var NewEventComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Event", function() { return Event; });
 /* harmony import */ var _shared_event_layout_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared/event-layout.model */ "./src/app/shared/event-layout.model.ts");
+/* harmony import */ var _event_venues_shared_event_venue_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../event-venues/shared/event-venue.model */ "./src/app/event-venues/shared/event-venue.model.ts");
+/* harmony import */ var _event_types_shared_event_type_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../event-types/shared/event-type.model */ "./src/app/event-types/shared/event-type.model.ts");
+
+
 
 var Event = /** @class */ (function () {
     function Event(eventJsonObject, mode) {
@@ -6304,20 +6357,33 @@ var Event = /** @class */ (function () {
             this.Id = eventJsonObject["id"];
             this.times = eventJsonObject['times'];
             this.eventLayout.import(eventJsonObject["layout"]);
-            this.EventTypeId = eventJsonObject["event_type"].toString();
-            this.EventVenueId = eventJsonObject["event_venue"].toString();
+            var event_type = eventJsonObject['event_type'];
+            var event_venue = eventJsonObject['event_venue'];
+            this.EventTypeId = event_type['id'].toString();
+            this.EventVenueId = event_venue['id'].toString();
             if (eventJsonObject['images'] && eventJsonObject['images'].length > 0) {
-                this.images['banner']['url'] = eventJsonObject['images'][0]['upload'];
-                this.images['banner']['id'] = eventJsonObject['images'][0]['id'];
+                for (var image in eventJsonObject['images']) {
+                    if (eventJsonObject['images'][image]['file_type'] == 'event_banner') {
+                        this.images['banner']['url'] = eventJsonObject['images'][image]['upload'];
+                        this.images['banner']['id'] = eventJsonObject['images'][image]['id'];
+                    }
+                }
             }
         }
         else if (this.mode == 'list') {
             this.Id = eventJsonObject["id"];
             this.times = eventJsonObject['times'];
+            var event_type = eventJsonObject['event_type'];
+            var event_venue = eventJsonObject['event_venue'];
+            this.eventType = new _event_types_shared_event_type_model__WEBPACK_IMPORTED_MODULE_2__["EventType"](event_type);
+            this.eventVenue = new _event_venues_shared_event_venue_model__WEBPACK_IMPORTED_MODULE_1__["EventVenue"](event_venue, 'list');
             if (eventJsonObject['images'] && eventJsonObject['images'].length > 0) {
-                this.images['banner']['url'] = eventJsonObject['images'][0]['upload'];
-                this.images['banner']['id'] = eventJsonObject['images'][0]['id'];
-                //        "https://graph.facebook.com?id="++"&scrape=true")
+                for (var image in eventJsonObject['images']) {
+                    if (eventJsonObject['images'][image]['file_type'] == 'event_banner') {
+                        this.images['banner']['url'] = eventJsonObject['images'][image]['upload'];
+                        this.images['banner']['id'] = eventJsonObject['images'][image]['id'];
+                    }
+                }
             }
         }
     };
@@ -6368,6 +6434,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _event_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./event.model */ "./src/app/events/shared/event.model.ts");
 /* harmony import */ var _shared_services_rest_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../shared-services/rest.service */ "./src/app/shared-services/rest.service.ts");
 /* harmony import */ var _shared_services_datetime_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared-services/datetime.service */ "./src/app/shared-services/datetime.service.ts");
+/* harmony import */ var _shared_services_snackbar_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../shared-services/snackbar.service */ "./src/app/shared-services/snackbar.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6381,18 +6448,18 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var EventService = /** @class */ (function () {
-    function EventService(restService, dtService) {
+    function EventService(restService, dtService, snackbarService) {
         this.restService = restService;
         this.dtService = dtService;
+        this.snackbarService = snackbarService;
         this.events = [];
+        this.locations = [];
     }
     EventService.prototype.upsertEvent = function (upsertEventObj) {
         var upsertJSON = upsertEventObj.export();
         return this.restService.post('UPSERT_EVENT', null, upsertJSON);
-    };
-    EventService.prototype.updateEventLayout = function (event) {
-        //event.eventlayout;
     };
     EventService.prototype.getEvent = function (id) {
         var params = { 'id': id };
@@ -6400,9 +6467,13 @@ var EventService = /** @class */ (function () {
     };
     EventService.prototype.loadEvents = function () {
         var _this = this;
+        this.snackbarService.load();
         this.events = [];
-        this.fetchEvents().subscribe(function (data) {
-            _this.syncUIEvents(data);
+        this.fetchEvents().subscribe(function (sdata) {
+            _this.syncUIEvents(sdata);
+            _this.snackbarService.calm();
+        }, function (fdata) {
+            _this.snackbarService.calm();
         });
     };
     EventService.prototype.fetchEvents = function () {
@@ -6410,11 +6481,11 @@ var EventService = /** @class */ (function () {
         return this.restService.get('GET_EVENTS', null, params);
     };
     EventService.prototype.syncUIEvents = function (data) {
-        console.log('sync data ::');
-        console.log(data);
-        for (var i = 0; i < data.length; i++) {
-            var event = new _event_model__WEBPACK_IMPORTED_MODULE_1__["Event"](data[i], 'list');
+        var jsonEvents = data['data']['events'];
+        for (var i = 0; i < jsonEvents.length; i++) {
+            var event = new _event_model__WEBPACK_IMPORTED_MODULE_1__["Event"](jsonEvents[i], 'list');
             this.events.push(event);
+            this.locations.push(event.eventVenue.location);
         }
         console.log(this.events);
     };
@@ -6433,7 +6504,9 @@ var EventService = /** @class */ (function () {
     };
     EventService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __metadata("design:paramtypes", [_shared_services_rest_service__WEBPACK_IMPORTED_MODULE_2__["RestService"], _shared_services_datetime_service__WEBPACK_IMPORTED_MODULE_3__["DatetimeService"]])
+        __metadata("design:paramtypes", [_shared_services_rest_service__WEBPACK_IMPORTED_MODULE_2__["RestService"],
+            _shared_services_datetime_service__WEBPACK_IMPORTED_MODULE_3__["DatetimeService"],
+            _shared_services_snackbar_service__WEBPACK_IMPORTED_MODULE_4__["SnackbarService"]])
     ], EventService);
     return EventService;
 }());
@@ -6512,7 +6585,7 @@ var FooterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".toolbar-splitter\n{\n  flex: 1 1 auto;\n}\n\n.logo\n{\n  max-width: 200px;\n}\n\n.header\n{\n  left: 0;\n  right: 0;\n}\n\n.admin-tollbar-spacer\n{\n  flex: 1 1 auto;\n}\n\n.addon-tools {\n  display: display;\n}\n\n@media only screen and (max-width: 700px) {\n    .responsive_span_text {\n        display: none;\n    }\n    .addon-tools {\n      display: display;\n    }\n    .big-screen {\n      display: none;\n    }\n\n}\n\n"
+module.exports = ".toolbar-splitter\n{\n  flex: 1 1 auto;\n}\n\n\n\n.header\n{\n  left: 0;\n  right: 0;\n}\n\n\n\n.admin-tollbar-spacer\n{\n  flex: 1 1 auto;\n}\n\n\n\n.addon-tools {\n  display: display;\n}\n\n\n\n@media only screen and (max-width: 700px) {\n    .responsive_span_text {\n        display: none;\n    }\n    .addon-tools {\n      display: display;\n    }\n    .big-screen {\n      display: none;\n    }\n\n}\n\n\n\n.logo-img\n{\n    max-width: 200px;\n}\n\n\n\n.logo-s-img\n{\n  max-width: 200px;\n  max-height: 50px;\n}\n\n\n\n.logo\n{\n  display: display;\n}\n\n\n\n.logo-s{\n  display: none;\n}\n\n\n\n@media only screen and (max-width: 560px) {\n  .logo\n  {\n    display: none;\n  }\n\n  .logo-s{\n    display: inline;\n    padding-top : 8px;\n  }\n}\n\n"
 
 /***/ }),
 
@@ -6523,7 +6596,7 @@ module.exports = ".toolbar-splitter\n{\n  flex: 1 1 auto;\n}\n\n.logo\n{\n  max-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar class=\"header navbar-static-top\" [style.background-color]=\"'#e5e5e8'\">\n  <mat-toolbar-row >\n    <a href=\"\" routerLink=\"\"><img class=\"logo\" src=\"https://algovent-s3-static.s3.amazonaws.com/eventico/media/TOTT_Logo_New.png\" alt=\"talk-of-the-town\"></a>\n\n    <span class=\"tollbar-splitter\"></span>\n    <button *ngIf=\"loggedIn == false\" mat-button routerLink=\"login\" [style.color]=\"'#000'\">LOGIN</button>\n    <div *ngIf=\"loggedIn\">\n    <mat-menu #notifications=\"matMenu\" yPosition=\"below\" xPosition=\"before\">\n      <button mat-menu-item><mat-icon [style.color]=\"'#000'\">history</mat-icon>bookings</button>\n      <button mat-menu-item><mat-icon [style.color]=\"'#000'\">settings</mat-icon>settings</button>\n      <button mat-menu-item (click)=\"logout()\"><mat-icon [style.color]=\"'#000'\">exit_to_app</mat-icon>logout</button>\n    </mat-menu>\n    <button mat-icon-button [matMenuTriggerFor]=\"notifications\" *ngIf=\"loggedIn\">\n      <mat-icon [style.color]=\"'#000'\">person</mat-icon>\n    </button>\n    </div>\n\n\n  </mat-toolbar-row>\n</mat-toolbar>\n<mat-toolbar *ngIf=\"permissions['admin_tool_bar'] == true\" class=\"admin-toolbar\">\n  <button *ngIf=\"permissions['new_event'] == true\" mat-button routerLink=\"events/event\"><mat-icon aria-label=\"Settings\">playlist_add</mat-icon> <span class=\"responsive_span_text\">New Event</span> </button>\n  <button *ngIf=\"permissions['event_types'] == true\" mat-button routerLink=\"event-types\"><mat-icon aria-label=\"Settings\">table_chart</mat-icon> <span class=\"responsive_span_text\">Event Types</span> </button>\n  <button *ngIf=\"permissions['event_venues'] == true\" mat-button routerLink=\"event-venues\"><mat-icon aria-label=\"Settings\">movie_creation</mat-icon> <span class=\"responsive_span_text\">Event Venues</span></button>\n  <span class=\"admin-tollbar-spacer\"></span>\n  <mat-menu #addon_tools=\"matMenu\" class=\"addon-tools\" yPosition=\"below\" xPosition=\"before\">\n    <button *ngIf=\"permissions['user_management'] == true\" mat-menu-item routerLink=\"users\"><mat-icon aria-label=\"Settings\">find_replace</mat-icon> User Management</button>\n    <button *ngIf=\"permissions['reports'] == true\" mat-menu-item routerLink=\"\"><mat-icon aria-label=\"Settings\">cloud_download</mat-icon> Reports</button>\n  </mat-menu>\n\n  <button *ngIf=\"permissions['more_admin_tools'] == true\" class=\"addon-tools\" mat-icon-button [matMenuTriggerFor]=\"addon_tools\">\n    <mat-icon>more_vert</mat-icon>\n  </button>\n</mat-toolbar>\n"
+module.exports = "<mat-toolbar class=\"header navbar-static-top\" [style.background-color]=\"'#e5e5e8'\">\n  <mat-toolbar-row >\n    <a href=\"\" routerLink=\"\" class=\"logo\"><img class=\"logo-img\" src=\"https://s3.ap-south-1.amazonaws.com/algovent-s3-static/eventico/media/TOTT_Logo_New.png\" alt=\"talk-of-the-town\"></a>\n    <a href=\"\" class=\"logo-s\" routerLink=\"\"><img class=\"logo-s-img\" src=\"https://s3.ap-south-1.amazonaws.com/algovent-s3-static/eventico/media/talkofthetownlogo.png\" alt=\"tot\"></a>\n    <span class=\"tollbar-splitter\"></span>\n    <button *ngIf=\"loggedIn == false\" mat-button routerLink=\"login\" [style.color]=\"'#000'\">LOGIN</button>\n    <div *ngIf=\"loggedIn\">\n    <mat-menu #notifications=\"matMenu\" yPosition=\"below\" xPosition=\"before\">\n      <button mat-menu-item><mat-icon [style.color]=\"'#000'\">history</mat-icon>bookings</button>\n      <button mat-menu-item><mat-icon [style.color]=\"'#000'\">settings</mat-icon>settings</button>\n      <button mat-menu-item (click)=\"logout()\"><mat-icon [style.color]=\"'#000'\">exit_to_app</mat-icon>logout</button>\n    </mat-menu>\n    <button mat-icon-button [matMenuTriggerFor]=\"notifications\" *ngIf=\"loggedIn\">\n      <mat-icon [style.color]=\"'#000'\">person</mat-icon>\n    </button>\n    </div>\n\n\n  </mat-toolbar-row>\n</mat-toolbar>\n<mat-toolbar *ngIf=\"permissions['admin_tool_bar'] == true\" class=\"admin-toolbar\">\n  <button *ngIf=\"permissions['new_event'] == true\" mat-button routerLink=\"events/event\"><mat-icon aria-label=\"Settings\">playlist_add</mat-icon> <span class=\"responsive_span_text\">New Event</span> </button>\n  <button *ngIf=\"permissions['event_types'] == true\" mat-button routerLink=\"event-types\"><mat-icon aria-label=\"Settings\">table_chart</mat-icon> <span class=\"responsive_span_text\">Event Types</span> </button>\n  <button *ngIf=\"permissions['event_venues'] == true\" mat-button routerLink=\"event-venues\"><mat-icon aria-label=\"Settings\">movie_creation</mat-icon> <span class=\"responsive_span_text\">Event Venues</span></button>\n  <span class=\"admin-tollbar-spacer\"></span>\n  <mat-menu #addon_tools=\"matMenu\" class=\"addon-tools\" yPosition=\"below\" xPosition=\"before\">\n    <button *ngIf=\"permissions['user_management'] == true\" mat-menu-item routerLink=\"users\"><mat-icon aria-label=\"Settings\">find_replace</mat-icon> User Management</button>\n    <button *ngIf=\"permissions['reports'] == true\" mat-menu-item routerLink=\"\"><mat-icon aria-label=\"Settings\">cloud_download</mat-icon> Reports</button>\n  </mat-menu>\n\n  <button *ngIf=\"permissions['more_admin_tools'] == true\" class=\"addon-tools\" mat-icon-button [matMenuTriggerFor]=\"addon_tools\">\n    <mat-icon>more_vert</mat-icon>\n  </button>\n</mat-toolbar>\n"
 
 /***/ }),
 
@@ -7317,7 +7390,6 @@ var FileManagerService = /** @class */ (function () {
                 formData.append(key, options[key]);
             }
         }
-        debugger;
         return this.restService.post('UPLOAD_FILE', null, formData);
     };
     FileManagerService.prototype.delete_file = function (key) {
@@ -7687,8 +7759,6 @@ var BookingLayout = /** @class */ (function (_super) {
     }
     BookingLayout.prototype.pollAndUpdate = function () {
     };
-    BookingLayout.prototype.updateEventLayout = function () {
-    };
     BookingLayout.prototype.selectSeat = function (seat) {
         console.log(seat);
         var summary = this.selection_info['selection_summary'];
@@ -7836,9 +7906,21 @@ var EventLayout = /** @class */ (function (_super) {
             status: 'active',
             name: pData.desc.slice(0, -1).replace(/\s/g, ""),
             count: 0,
+            taxes: [],
         });
         this.updatePricingMap();
         return { success: true, message: 'Successfully added new Pricing' };
+    };
+    EventLayout.prototype.addTax = function (tData) {
+        if (tData.label == null || tData.label == "" || tData.value == null) {
+            return { success: false, message: 'Invalid info provided, please make sure all the data is filled before adding new tax detail' };
+        }
+        if (tData.type != "absolute" || (tData.desc != "percent")) {
+            return { success: false, message: 'Invalid tax type' };
+        }
+        if (tData.applicable_object == null || tData.applicable_object == "" || tData.applicable_object == undefined) {
+            return { success: false, message: 'Invalid Applicable object information' };
+        }
     };
     EventLayout.prototype.updateEventLayout = function () {
     };
@@ -7998,9 +8080,11 @@ var Layout = /** @class */ (function () {
                 label: 'Basic',
                 status: 'active',
                 name: 'default',
-                count: 0
+                count: 0,
+                taxes: [],
             }
         ];
+        this.taxList = [];
         this.priceMap = {};
         this.mode = mode;
         this.updatePricingMap();
@@ -8151,6 +8235,8 @@ var Location = /** @class */ (function () {
             this.Address = input['address'];
             this.PlaceId = input['place_id'];
             this.LocationUrl = input['location_url'];
+            this.lat = Number(input['lat']);
+            this.lng = Number(input['lng']);
         }
     };
     Location.prototype.export = function () {
@@ -8159,7 +8245,9 @@ var Location = /** @class */ (function () {
             'name': this.Name,
             'address': this.Address,
             'place_id': this.PlaceId,
-            'location_url': this.LocationUrl
+            'location_url': this.LocationUrl,
+            'lat': Number(this.lat),
+            'lng': Number(this.lng),
         };
         return res;
     };

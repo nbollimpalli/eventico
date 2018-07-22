@@ -2,23 +2,24 @@ import { Injectable } from '@angular/core';
 import { Event } from './event.model';
 import { RestService } from '../../shared-services/rest.service';
 import { DatetimeService } from '../../shared-services/datetime.service'
-
+import { SnackbarService } from '../../shared-services/snackbar.service';
+import { Location } from '../../shared/location.model';
 @Injectable()
 export class EventService {
 
   events: Event[] = [];
-
-  constructor(private restService : RestService, private dtService : DatetimeService) { }
+  locations : Location[] = [];
+  constructor(
+    private restService : RestService,
+    private dtService : DatetimeService,
+    private snackbarService : SnackbarService
+  )
+  { }
 
   upsertEvent(upsertEventObj : Event)
   {
     const upsertJSON = upsertEventObj.export();
     return this.restService.post( 'UPSERT_EVENT', null, upsertJSON );
-  }
-
-  updateEventLayout( event : Event )
-  {
-    //event.eventlayout;
   }
 
   getEvent(id)
@@ -29,11 +30,17 @@ export class EventService {
 
   loadEvents()
   {
+    this.snackbarService.load();
     this.events = [];
-    this.fetchEvents().subscribe( (data) => {
-        this.syncUIEvents(data);
-      }
-      );
+    this.fetchEvents().subscribe(
+    (sdata) => {
+        this.syncUIEvents(sdata);
+        this.snackbarService.calm();
+    },
+    (fdata) => {
+        this.snackbarService.calm();
+    }
+    );
   }
 
   fetchEvents()
@@ -44,12 +51,13 @@ export class EventService {
 
   syncUIEvents(data)
   {
-    console.log('sync data ::');
-    console.log(data);
-    for (let i = 0; i < data.length; i++) {
-         var event = new Event(data[i], 'list');
+    var jsonEvents = data['data']['events']
+    for (let i = 0; i < jsonEvents.length; i++) {
+         var event = new Event(jsonEvents[i], 'list');
          this.events.push(event);
+         this.locations.push(event.eventVenue.location);
     }
+
     console.log(this.events);
   }
 

@@ -18,7 +18,33 @@ class EventSerializer(serializers.ModelSerializer):
     images = FileSerializer(many=True, read_only=True)
     class Meta(object):
         model = Event
+        depth = 2
         fields = ('id', 'name', 'desc', 'event_type', 'status', 'start_datetime', 'end_datetime', 'event_venue', 'times', 'images')
+        extra_kwargs = {
+            'id': {'required': True},
+            'name': {'required': True},
+            'desc': {'required': True},
+            'event_type': {'required': True},
+            'start_datetime': {'required': True},
+            'end_datetime': {'required': True},
+            'event_venue': {'required': True}
+        }
+
+class EventWriteSerializer(serializers.ModelSerializer):
+    # times =  JSONField(source='times')
+    images = FileSerializer(many=True, read_only=True)
+    class Meta(object):
+        model = Event
+        fields = ('id', 'name', 'desc', 'event_type', 'status', 'start_datetime', 'end_datetime', 'event_venue', 'times', 'images')
+        extra_kwargs = {
+            'id': {'required': True},
+            'name': {'required': True},
+            'desc': {'required': True},
+            'event_type': {'required': True},
+            'start_datetime': {'required': True},
+            'end_datetime': {'required': True},
+            'event_venue': {'required': True}
+        }
 
 class EventVenueSerializer(serializers.ModelSerializer):
 

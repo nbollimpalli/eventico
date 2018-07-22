@@ -1,5 +1,4 @@
-<ngx-loading [show]="loading" ></ngx-loading>
-<form id="payment_form" name="payment_form" #payment_form [action]="payment_request_form.action" method="post" [style.display]="'none'"  name="payuForm" >
+<form id="payment_form" name="payment_form" #payment_form [action]="payment_request_form.action" method="post" hidden="true"  name="payuForm" >
   <input name="key" #key="ngModel" [(ngModel)]="payment_request_form.key" required />
   <input name="hash" #hash="ngModel" [(ngModel)]="payment_request_form.hash" required/>
   <input name="txnid" #txnid="ngModel" [(ngModel)]="payment_request_form.txnid" required/>

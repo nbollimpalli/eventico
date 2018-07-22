@@ -15,7 +15,6 @@ export class FileManagerService {
           formData.append(key, options[key])
         }
       }
-      debugger;
     return this.restService.post( 'UPLOAD_FILE', null, formData );
   }
 

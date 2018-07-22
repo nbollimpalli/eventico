@@ -4,72 +4,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  {% csrf_token %}
   <title>Eventico</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
   <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
-  <style>
-    .indicator {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(2);
-    }
-    .indicator svg polyline {
-      fill: none;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .indicator svg polyline#back {
-      stroke: rgba(59,211,171,0.3);
-    }
-    .indicator svg polyline#front {
-      stroke: #3bd3ab;
-      stroke-dasharray: 12, 36;
-      stroke-dashoffset: 48;
-      animation: dash 1s linear infinite;
-    }
-    .cta {
-      position: fixed;
-      bottom: 20px;
-      right: 30px;
-      color: #222;
-      font-weight: bold;
-    }
-    @-moz-keyframes dash {
-      62.5% {
-        opacity: 0;
-      }
-      to {
-        stroke-dashoffset: 0;
-      }
-    }
-    @-webkit-keyframes dash {
-      62.5% {
-        opacity: 0;
-      }
-      to {
-        stroke-dashoffset: 0;
-      }
-    }
-    @-o-keyframes dash {
-      62.5% {
-        opacity: 0;
-      }
-      to {
-        stroke-dashoffset: 0;
-      }
-    }
-    @keyframes dash {
-      62.5% {
-        opacity: 0;
-      }
-      to {
-        stroke-dashoffset: 0;
-      }
-    }
 
   </style>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -81,14 +19,7 @@
 
 </head>
 <body>
-  <app-root>
-  <div class="indicator">
-    <svg width="16px" height="12px">
-      <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
-      <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
-    </svg>
-  </div>
-  </app-root>
+  <app-root></app-root>
 {% for js_file_name in js_list %}
   <script type="text/javascript" src="{% static 'js/' %}{{ js_file_name }}"></script>
 {% endfor %}

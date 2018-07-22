@@ -80,11 +80,29 @@ export class EventLayout  extends Layout{
       status: 'active',
       name: pData.desc.slice(0,-1).replace(/\s/g, ""),
       count: 0,
+      taxes: [],
     }
     );
     this.updatePricingMap();
     return {success: true, message: 'Successfully added new Pricing'};
 
+  }
+
+  addTax(tData)
+  {
+    if(tData.label == null || tData.label == "" || tData.value == null)
+    {
+      return {success: false, message: 'Invalid info provided, please make sure all the data is filled before adding new tax detail'};
+    }
+    if(tData.type != "absolute" || (tData.desc != "percent"))
+    {
+      return {success: false, message: 'Invalid tax type'};
+    }
+
+    if(tData.applicable_object == null || tData.applicable_object == "" || tData.applicable_object == undefined)
+    {
+      return {success: false, message: 'Invalid Applicable object information'}
+    }
   }
 
 

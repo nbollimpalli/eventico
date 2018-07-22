@@ -1,7 +1,7 @@
 <mat-toolbar class="header navbar-static-top" [style.background-color]="'#e5e5e8'">
   <mat-toolbar-row >
-    <a href="" routerLink=""><img class="logo" src="https://algovent-s3-static.s3.amazonaws.com/eventico/media/TOTT_Logo_New.png" alt="talk-of-the-town"></a>
-
+    <a href="" routerLink="" class="logo"><img class="logo-img" src="https://s3.ap-south-1.amazonaws.com/algovent-s3-static/eventico/media/TOTT_Logo_New.png" alt="talk-of-the-town"></a>
+    <a href="" class="logo-s" routerLink=""><img class="logo-s-img" src="https://s3.ap-south-1.amazonaws.com/algovent-s3-static/eventico/media/talkofthetownlogo.png" alt="tot"></a>
     <span class="tollbar-splitter"></span>
     <button *ngIf="loggedIn == false" mat-button routerLink="login" [style.color]="'#000'">LOGIN</button>
     <div *ngIf="loggedIn">

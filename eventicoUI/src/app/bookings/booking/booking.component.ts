@@ -76,7 +76,7 @@ export class BookingComponent implements OnInit {
 
   setupNewBooking(event_id)
   {
-    this.booking = new Booking(this.mode, )
+    this.booking = new Booking(this.mode, );
     this.bookingLayout = this.booking.bookingLayout;
     this.event = this.booking.event;
     if(event_id != null && event_id != "undefined")

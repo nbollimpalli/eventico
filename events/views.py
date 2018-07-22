@@ -10,7 +10,7 @@ from .models import EventType, EventVenue, EventPrice, Layout
 from rest_framework.permissions import IsAuthenticated,AllowAny
 from rest_framework.response import Response
 from rest_framework import status
-from events.serializers import EventTypeSerializer, EventPriceSerializer, EventVenueSerializer, LayoutSerializer
+from events.serializers import EventTypeSerializer, EventPriceSerializer, EventVenueSerializer, LayoutSerializer, EventWriteSerializer
 from rest_framework_jwt.settings import api_settings
 from events.services.layout_service import LayoutService
 jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
@@ -168,10 +168,11 @@ def get_event(request):
             layout = layouts[0]
         layoutSerializer = LayoutSerializer(instance=layout)
         eventSerializer = EventSerializer(instance=event_object)
-        response = { 'event' : eventSerializer.data, 'layout' : {}}
+        resp.add_data('event', eventSerializer.data)
         if (layout):
-            response['layout'] = layoutSerializer.data
-
+            resp.add_data('layout', layoutSerializer.data)
+        else:
+            resp.add_data('layout', {})
     except Exception as e:
         resp.mark_failed(['Unable to process this request'])
     return resp.export()
@@ -193,41 +194,58 @@ def get_events(request):
 def upsert_event(request):
     resp = JsonResponse()
     try:
-        event = request.data
-        default_price = event.get('default_price')
-        times = event.get('times')
-        start_datetime = times.get('start')
-        end_datetime = times.get('end')
-        start_datetime = start_datetime.get('date').split('T')[0] + ' ' + str(start_datetime.get('hh')) + ':' + str(
-            start_datetime.get('mm')) + start_datetime.get('period')
-        end_datetime = end_datetime.get('date').split('T')[0] + ' ' + str(end_datetime.get('hh')) + ':' + str(
-            end_datetime.get('mm')) + end_datetime.get('period')
-        event['start_datetime'] = datetime.datetime.strptime(start_datetime, '%Y-%m-%d %I:%M%p')
-        event['end_datetime'] = datetime.datetime.strptime(end_datetime, '%Y-%m-%d %I:%M%p')
-        layout = LayoutService.get_layout({'model' : 'eventvenue', 'object_id' : event['event_venue']})
-        if(layout):
-            mode = 'new'
-            if ("id" in request.data):
-                eId = request.data['id'];
-                event_object = Event.objects.get(id=eId)
-                serializer = EventSerializer(instance=event_object, data=event)
-                mode = 'edit'
-            else:
-                serializer = EventSerializer(data=event)
+        with transaction.atomic():
+            message = 'Event got created successfully.'
+            event = request.data
+            print(event)
+            default_price = event.get('default_price')
+            times = event.get('times')
+            start_datetime = times.get('start')
+            end_datetime = times.get('end')
+            start_datetime = start_datetime.get('date').split('T')[0] + ' ' + str(start_datetime.get('hh')) + ':' + str(
+                start_datetime.get('mm')) + start_datetime.get('period')
+            end_datetime = end_datetime.get('date').split('T')[0] + ' ' + str(end_datetime.get('hh')) + ':' + str(
+                end_datetime.get('mm')) + end_datetime.get('period')
+            event['start_datetime'] = datetime.datetime.strptime(start_datetime, '%Y-%m-%d %I:%M%p')
+            event['end_datetime'] = datetime.datetime.strptime(end_datetime, '%Y-%m-%d %I:%M%p')
+            layout = LayoutService.get_layout({'model' : 'eventvenue', 'object_id' : event['event_venue']})
+            print('---layout')
+            print(layout)
 
-            if serializer.is_valid():
-                serializer.save()
-                if(mode == 'new'):
-                    LayoutService.copy_layout(layout, serializer.instance)
-                layout = LayoutService.get_layout({'model': 'event', 'object_id': serializer.instance.id})
-                LayoutService.update_default_price(layout, default_price)
-                layout_serializer = LayoutSerializer(instance=layout)
-                return Response({'event' : serializer.data, 'layout' : layout_serializer.data}, status=status.HTTP_201_CREATED)
+            if(layout):
+                mode = 'new'
+                if ("id" in request.data):
+                    eId = request.data['id'];
+                    event_object = Event.objects.get(id=eId)
+                    print(event_object)
+                    serializer = EventWriteSerializer(instance=event_object, data=event)
+                    print(serializer.instance)
+                    mode = 'edit'
+                    message = 'Event got updated successfully.'
+                else:
+                    serializer = EventWriteSerializer(data=event)
+                # import code;
+                # code.interact(local=dict(globals(), **locals()))
+                if serializer.is_valid():
+                    serializer.save()
+                    serializer = EventSerializer(instance=serializer.instance)
+                    if(mode == 'new'):
+                        LayoutService.copy_layout(layout, serializer.instance)
+                    layout = LayoutService.get_layout({'model': 'event', 'object_id': serializer.instance.id})
+                    LayoutService.update_default_price(layout, default_price)
+                    layout_serializer = LayoutSerializer(instance=layout)
+                    resp.add_data('event', serializer.data)
+                    resp.add_data('layout', layout_serializer.data)
+                    resp.add_json_messages([message])
+                else:
+                    print(serializer.errors)
+                    raise EventException('Missing Fields, please update all the required fields', None)
             else:
-                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        else:
-            return Response({'messages' : 'No layout found for the event venue'}, status=status.HTTP_400_BAD_REQUEST)
+                raise EventException('No layout found for the event venue')
+    except EventException as e:
+        resp.mark_failed([str(e)])
     except Exception as e:
+        print(str(e))
         resp.mark_failed(['Unable to process this request'])
     return resp.export()
 

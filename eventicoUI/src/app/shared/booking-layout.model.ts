@@ -18,9 +18,7 @@ export class BookingLayout extends Layout{
 
   }
 
-  updateEventLayout(){
 
-  }
 
   selectSeat(seat){
     console.log(seat);

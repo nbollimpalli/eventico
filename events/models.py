@@ -44,6 +44,7 @@ class Event(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     layouts = GenericRelation(Layout)
     images = GenericRelation(File)
+    REQUIRED_FIELDS = ['name', 'desc', 'event_type', 'event_venue', 'start_datetime', 'end_datetime']
 
     @property
     def times(self):

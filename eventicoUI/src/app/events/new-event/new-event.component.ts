@@ -11,6 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 import { EventLayout } from '../../shared/event-layout.model';
 import { FileManagerService } from '../../shared-services/file-manager.service';
 import { UserService } from '../../event-user/shared/user.service'
+import { SnackbarService } from '../../shared-services/snackbar.service';
+
 @Component({
   selector: 'app-new-event',
   templateUrl: './new-event.component.html',
@@ -26,9 +28,18 @@ export class NewEventComponent implements OnInit {
   enddatetime: boolean;
   minDate : Date;
   endMinDate : Date;
-  loading = false;
-  constructor(private eventService : EventService, private router : Router, private eventTypeService : EventTypeService, private eventVenueService : EventVenueService, private route : ActivatedRoute, private fileManager : FileManagerService, private userservice : UserService)
+  constructor(
+    private eventService : EventService,
+    private router : Router,
+    private eventTypeService : EventTypeService,
+    private eventVenueService : EventVenueService,
+    private route : ActivatedRoute,
+    private fileManager : FileManagerService,
+    private userservice : UserService,
+    private snackbarService : SnackbarService,
+  )
   {
+    this.snackbarService.load();
     this.color = '#ffffff';
     this.mode = "new";
     this.enddatetime = true;
@@ -45,7 +56,6 @@ export class NewEventComponent implements OnInit {
     console.log('file uploaded');
 
     this.banner = files.item(0);
-    this.loading = true;
     this.updateEventBanner()
   }
 
@@ -59,17 +69,19 @@ export class NewEventComponent implements OnInit {
         app_label: 'events',
         file_type: 'event_banner',
       }
+      this.snackbarService.load();
       this.fileManager.upload(this.banner, options).subscribe(data => {
           console.log(data);
-          this.event.images['banner'].url = data["upload"];
-          this.loading = false;
-        }, error => {
+          this.event.images['banner'].url = data['data']['file']["upload"];
+          this.snackbarService.afterRequest(data);
+        }, (error) => {
           console.log(error);
+          this.snackbarService.afterRequestFailure(error);
         });
     }
     else
     {
-      alert('please create event before uloading the banner');
+      this.snackbarService.show_snackbar('please create event before uloading the banner');
     }
 
   }
@@ -88,66 +100,81 @@ export class NewEventComponent implements OnInit {
     {
       this.mode = "update";
       this.eventService.getEvent(id)
-      .subscribe( (data) => {
+      .subscribe(
+      (sdata) => {
         this.mode = 'edit';
-        this.eventService.updateEventInfo(data, this.event);
-        this.loading = false;
-        console.log(this.event);
+        var eventInfo = sdata['data'];
+        this.eventService.updateEventInfo(eventInfo, this.event);
+        this.snackbarService.afterRequest(sdata);
+      },
+      (fdata) => {
+        this.snackbarService.afterRequestFailure(fdata);
       }
       );
     }
     else
     {
-      this.loading = false;
+      this.snackbarService.calm();
     }
   }
 
   upsertEvent()
   {
-
     if(this.event == null)
     {
-      alert('Invalid Event');
+      this.snackbarService.show_snackbar('Invalid Event');
     }
     else if(this.event.Name == null || this.event.Name == undefined || this.event.Name == '')
     {
-      alert('Event name cannot be empty');
+      this.snackbarService.show_snackbar('Event name cannot be empty');
     }
     else if(this.defaultPrice['value'] == null || this.defaultPrice['value'] == undefined || this.defaultPrice['value'] <= 0)
     {
-      alert('default price of the event must greater than 0');
+      this.snackbarService.show_snackbar('default price of the event must greater than 0');
     }
     else if(this.defaultPrice['label'] == null || this.defaultPrice['label'] == undefined || this.defaultPrice['label'] == '')
     {
-      alert('Label of the default price cannot be empty');
+      this.snackbarService.show_snackbar('Label of the default price cannot be empty');
     }
     else if(this.event.Desc == null || this.event.Desc == undefined || this.event.Desc == '')
     {
-      alert('Event description cannot be empty');
+      this.snackbarService.show_snackbar('Event description cannot be empty');
     }
     else if(this.event.EventTypeId == null || this.event.EventTypeId == undefined)
     {
-      alert('Event type cannot be empty');
+      this.snackbarService.show_snackbar('Event type cannot be empty');
     }
     else if(this.event.EventVenueId == null || this.event.EventVenueId == undefined)
     {
-      alert('Event Venue cannot be empty');
+      this.snackbarService.show_snackbar('Event Venue cannot be empty');
     }
+    this.snackbarService.load();
     this.eventService.upsertEvent(this.event)
-    .subscribe( (data) => {
-       var event_info = data['event'];
-       event_info['layout'] = data['layout'];
+    .subscribe(
+    (data) => {
+       var event_info = data['data']['event'];
+       event_info['layout'] = data['data']['layout'];
        this.event.mode = 'edit';
        this.event.import(event_info);
+       this.snackbarService.afterRequest(data);
+     },
+     (fdata) => {
+       this.snackbarService.afterRequestFailure(fdata);
      }
     );
   }
 
   upsertLayout()
   {
+    this.snackbarService.load();
     this.eventService.upsertEventLayout(this.event)
-    .subscribe( (data) => {
+    .subscribe(
+    (data) => {
+      this.snackbarService.afterRequest(data);
       this.router.navigate(['']);
+    },
+    (fdata) => {
+      this.snackbarService.afterRequestFailure(fdata);
     }
     );
   }
@@ -161,7 +188,7 @@ export class NewEventComponent implements OnInit {
     }
     else
     {
-      alert(response.message);
+      this.snackbarService.show_snackbar(response.message);
     }
     this.resetMarkNAForm(form);
   }
@@ -180,16 +207,21 @@ export class NewEventComponent implements OnInit {
 
   addPricing(form : NgForm) : void
   {
-    console.log(this.addPricingFormData);
     var response = this.eventLayout.addPricing(this.addPricingFormData);
     if(response.success)
     {
+      this.snackbarService.show_snackbar(response.message);
     }
     else
     {
-      alert(response.message);
+      this.snackbarService.show_snackbar(response.message);
     }
     this.resetAddPricingForm(form);
+  }
+
+  addTaxDetail(form : NgForm) : void
+  {
+
   }
 
   resetAddPricingForm(form? : NgForm)
@@ -212,7 +244,7 @@ export class NewEventComponent implements OnInit {
     }
     else
     {
-      alert(response.message);
+      this.snackbarService.show_snackbar(response.message);
     }
     this.resetMarkPricingForm(form);
   }

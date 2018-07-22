@@ -81,7 +81,7 @@ export class NewEventVenueComponent implements OnInit {
                     let place: google.maps.places.PlaceResult = result;
                     this.lat = place.geometry.location.lat();
                     this.lng = place.geometry.location.lng();
-                    this.zoom = 12;
+                    this.zoom = 14;
                 });
 
         }
@@ -131,7 +131,9 @@ export class NewEventVenueComponent implements OnInit {
           //set latitude, longitude and zoom
           this.lat = place.geometry.location.lat();
           this.lng = place.geometry.location.lng();
-          this.zoom = 12;
+          this.venueLocation.lat = this.lat;
+          this.venueLocation.lng = this.lng;
+          this.zoom = 14;
         });
       });
     });
@@ -139,7 +141,7 @@ export class NewEventVenueComponent implements OnInit {
 
   ngOnInit() {
     this.resetForm();
-    this.zoom = 4;
+    this.zoom = 14;
     this.searchControl = new FormControl();
   }
 

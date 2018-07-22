@@ -13,12 +13,13 @@ mat-card-tile{
   min-width: 250px;
   min-height: 400px;
 }
+
 .events-container
 {
   width: 80%;
   position: relative;
   margin: auto;
-  top:15px;
+  top:0px;
 	bottom: 0;
 	left: 0;
 	right: 0;

@@ -33,6 +33,23 @@
    }
 }
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center > img {
+  height : 100%;
+}
+
+.banner-card {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background: #d7dac99e;
+  max-height: 350px;
+}
+
 .full-width
 {
   width : 100%;

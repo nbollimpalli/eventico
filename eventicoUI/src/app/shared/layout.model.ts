@@ -17,9 +17,15 @@ export class Layout {
       label: 'Basic',
       status: 'active',
       name: 'default',
-      count: 0
+      count: 0,
+      taxes : [],
     }
   ];
+
+  taxList = [
+
+  ]
+
   priceMap = {};
 
   constructor(mode){

@@ -1,5 +1,24 @@
 <ngx-loading [show]="loading" ></ngx-loading>
 <div class="spacer"></div>
+<agm-map [latitude]="lat" [longitude]="lng" [scrollwheel]="false" [zoom]="zoom">
+
+  <agm-marker  *ngFor="let event of events; let i = index"  [label]=""
+      [markerDraggable]="false" [latitude]="event.eventVenue.location.lat"  [longitude]="event.eventVenue.location.lng">
+    <agm-info-window>
+      <mat-card class="event-card">
+        <mat-card-content>
+            {{event.Name}} | {{event['times']['start']['month']}}/{{event['times']['start']['day_num']}}/{{event['times']['start']['day']}}
+          </mat-card-content>
+          <mat-card-actions>
+            <button *ngIf="permissions['book_event'] == true" mat-button [routerLink]="['bookings/booking',{event_id: event.Id}]" color="#cc3333cc" >Book</button>
+          </mat-card-actions>
+        </mat-card>
+    </agm-info-window>
+  </agm-marker>
+</agm-map>
+
+<div class="spacer"></div>
+
 <div class="twrapper">
   <div class="tchild1">
     <input class="searchbox" type="text" placeholder="Search" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="queryField">
@@ -10,18 +29,11 @@
     <mat-datepicker disabled="false" touchUi #picker></mat-datepicker>
   </div>
 </div>
-<div class="spacer"></div>
-<agm-map [latitude]="lat" [longitude]="lng" [scrollwheel]="false" [zoom]="zoom">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-</agm-map>
-
-
-<div class="spacer"></div>
 <div class="events-container">
 <mat-grid-list [cols]="cols | async" gutterSize="15px" >
   <mat-grid-tile *ngFor="let event of events">
     <mat-card class="event-card">
-      <img mat-card-image class="card-image" [src]="event.images['banner'].url" onerror="this.src='https://algovent-s3-static.s3.amazonaws.com/eventico/media/event_bWDUlrT.jpg'" alt="Photo of a Shiba Inu">
+      <img *ngIf="event.images['banner'].url" mat-card-image class="card-image" [src]="event.images['banner'].url" alt="Photo of a Shiba Inu">
     <mat-card-content>
         <div class="date_name_location">
           <div class="event_date_month">
@@ -31,7 +43,7 @@
           </div>
           <div class="event_name_location">
             <p class="event_name">{{event.Name}}</p>
-            <a href="#" class="event_location">Phoenix Market City: Whitefield</a>
+            <a [href]="event.eventVenue.location.LocationUrl" target="_blank" class="event_location">{{ event.eventVenue.location.Name }}</a>
             <p class="event_price" >Rs. 999 Onwards</p>
           </div>
         </div>
